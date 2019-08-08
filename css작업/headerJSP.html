@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>headerJSP</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+     #header{
+         border: 1px solid red;
+     }
+     #headerContents{
+        border: 1px solid blue;
+        height: 72px;
+        margin: 0 auto;
+        position: relative;
+        max-width: 1050px;
+     }
+     #logoBox{
+         float: left;
+         margin-top: 20px;
+     }
+     #logoBox a{
+         text-decoration: none;
+     }
+     #logoBox a div{
+         width: 142px;
+         height: 32px;
+         border: 1px solid gray;
+     }
+     #textMenu{
+         border: 1px solid green;
+         width: 484px;
+         position: absolute;
+         left: 170px;
+         top: 27px;
+     }
+     #textMenu ul,li{
+         list-style: none;
+     }
+     #textMenu ul li{
+         float: left;
+         text-align: center;
+         margin-left: 20px;
+         text-decoration: none;
+         
+     }
+
+    </style>
+</head>
+<body>
+    <div id=header>
+        <div id=headerContents>
+            <h1 id="logoBox">
+                <a href="#"><div>logoBox</div></a>
+            </h1>
+            <div id="textMenu">
+                <ul>
+                    <li><a href="#">주제별생각</a></li>
+                    <li><a href="#">주제별생각</a></li>
+                    <li><a href="#">주제별생각</a></li>
+                    <li><a href="#">주제별생각</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    
+    
+</body>
+</html>
