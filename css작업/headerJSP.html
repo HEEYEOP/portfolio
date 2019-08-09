@@ -12,6 +12,8 @@
             padding: 0;
             box-sizing: border-box;
         }
+    
+    /* header 스타일 시작 */
      #header{
          border: 1px solid red;
      }
@@ -42,19 +44,111 @@
          top: 27px;
      }
      #textMenu ul,li{
-         list-style: none;
+         list-style: none;   
      }
      #textMenu ul li{
          float: left;
          text-align: center;
          margin-left: 20px;
          text-decoration: none;
-         
      }
+     #imgMenu{
+        border: 1px solid green;
+         position: absolute;
+         right: 20px;
+         top: 27px;
+     }
+     #imgMenu ul li{
+         float: left;
+         text-align: center;
+         margin-right: 10px;
+         text-decoration: none;
+     }
+    
+    /* body스타일 시작 */
+    #mainImg{
+        border: 1px solid navy;
+        position: relative;
+        height: 360px;
+    }
+    #mainImgContents{
+        border: 1px solid chartreuse;
+        max-width: 1050px;
+        margin: 0 auto;
+        height: 360px;
+    }
+    #mainImgServeyList{
+        border: 1px solid teal;
+        width: 375px;
+        height: 360px;
+
+
+    }
+    #mainContents{
+        border: 1px solid darkblue;
+        overflow: hidden;
+    }
+    #noticeBox{
+        border: 1px solid darkmagenta;
+        max-width: 1050px;
+        margin: 0 auto;
+        margin-top: 10px;
+        position: relative;
+        line-height: 43px;
+        height: 43px;
+    }
+    #totalContentsBox{
+        border: 1px solid darkmagenta;
+        max-width: 1050px;
+        margin: 0 auto;
+        margin-top: 5px;
+        position: relative;
+        height: 43px;
+    }
+    #menuBox{
+        border: 1px solid blue;
+        max-width: 1050px;
+        margin: 0 auto;
+        margin-top: 20px;
+        position: relative;
+        height: 200px;
+    }
+    .menuBoxs{
+        border: 1px solid yellowgreen;
+        border-radius: 20%;
+        float: left;
+        height: 200px;
+        width: calc(100% / 4);
+    }
+    #rankBox{
+        border: 1px solid red;
+        max-width: 1050px;
+        margin: 0 auto;
+        margin-top: 20px;
+        position: relative;
+        height: 600px;
+    }
+    #hotRank{
+        border: 1px solid yellow;
+        width: 525px;
+        height: 600px;
+    }
+    #newRank{
+        border: 1px solid blue;
+        width: 525px;
+        height: 600px;
+        
+    }
+    //-----------여기서부터 다시하기 ---------------
+
+
+
+    
 
     </style>
 </head>
 <body>
+    <!-- header시작 -->
     <div id=header>
         <div id=headerContents>
             <h1 id="logoBox">
@@ -68,9 +162,45 @@
                     <li><a href="#">주제별생각</a></li>
                 </ul>
             </div>
-
+            <div id="imgMenu">
+                <ul>
+                    <li><a href="">검색</a></li>
+                    <li><a href="">생각쓰기</a></li>
+                    <li><a href="">로그인</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+    <!-- header끝 -->
+
+    <!-- body시작 -->
+    <div id="mainImg">
+        <div id="mainImgContents">
+            <div id="mainImgServeyList">
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContents">
+        <div id="noticeBox"></div>
+        <div id="totalContentsBox"></div>
+        <div id="menuBox">
+            <div class="menuBoxs"></div>
+            <div class="menuBoxs"></div>
+            <div class="menuBoxs"></div>
+            <div class="menuBoxs"></div>
+        </div>
+        <div id="rankBox">
+            <div id="hotRank">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="newRank"></div>
+        </div>
+    </div>
+
+    
     
     
 </body>
