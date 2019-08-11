@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>회원가입페이지</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+    /* header 스타일 시작 */
+     #header{
+         border: 1px solid red;
+     }
+     #headerContents{
+        border: 1px solid blue;
+        height: 72px;
+        margin: 0 auto;
+        position: relative;
+        max-width: 1050px;
+     }
+     #logoBox{
+         float: left;
+         margin-top: 20px;
+     }
+     #logoBox a{
+         text-decoration: none;
+     }
+     #logoBox a div{
+         width: 142px;
+         height: 32px;
+         border: 1px solid gray;
+     }
+     #textMenu{
+         border: 1px solid green;
+         width: 484px;
+         position: absolute;
+         left: 170px;
+         top: 27px;
+     }
+     #textMenu ul,li{
+         list-style: none;   
+     }
+     #textMenu ul li{
+         float: left;
+         text-align: center;
+         margin-left: 20px;
+         text-decoration: none;     /* 이거했는데 왜 밑줄 안없어지는규..? */
+     }
+     #imgMenu{
+        border: 1px solid green;
+         position: absolute;
+         right: 20px;
+         top: 27px;
+     }
+     #imgMenu ul li{
+         float: left;
+         text-align: center;
+         margin-right: 10px;
+         text-decoration: none;   /* 이거했는데 왜 밑줄 안없어짐? */
+     }
+    
+    /* body스타일 시작 */
+    #body{
+        border: 1px solid black;
+        min-height: 900px;
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 50px;
+    }
+    #signupForm{
+        border: 1px solid deeppink;
+        height: 800px;
+    }
+    .form{
+        border: 1px solid darkgreen;
+        width: 600px;
+        margin: 0 auto;
+    }
+    .boxDeco{
+        border: 1px solid red;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        text-align: left;
+        padding: 15px 20px 5px 20px;
+        height: 40px;
+        
+    }
+    
+
+
+    /* footer시작 */
+    #footer{
+        border: 1px solid navy;
+        position: relative;
+        height: 200px;
+    }
+    #footerContents{
+        border: 1px solid chartreuse;
+        max-width: 1050px;
+        margin: 0 auto;
+        height: 198px;
+    }
+
+
+
+
+
+    
+
+    </style>
+</head>
+<body>
+    <!-- header시작 -->
+    <div id=header>
+        <div id=headerContents>
+            <h1 id="logoBox">
+                <a href="#"><div>logoBox</div></a>
+            </h1>
+            <div id="textMenu">
+                <ul>
+                    <li><a href="#">주제별생각</a></li>
+                    <li><a href="#">주제별생각</a></li>
+                    <li><a href="#">주제별생각</a></li>
+                    <li><a href="#">주제별생각</a></li>
+                </ul>
+            </div>
+            <div id="imgMenu">
+                <ul>
+                    <li><a href="">검색</a></li>
+                    <li><a href="">생각쓰기</a></li>
+                    <li><a href="">로그인</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- header끝 -->
+
+    <!-- body시작 -->
+    <div id="body">
+        <div id="signupForm">
+            <form action="" class="form">
+                <h1>회원가입</h1>
+                사용자구분
+                <div class="boxDeco">
+                    <input type="radio">개인
+                    <input type="radio">기관
+                </div>
+                <div class="boxDeco">e-mail입력</div>
+                <div class="boxDeco">pw입력</div>
+                <div class="boxDeco">pw확인</div>
+                <div class="boxDeco">생년월일</div>
+                <div class="boxDeco">
+                    <input type="radio">남성
+                    <input type="radio">여성   
+                </div>
+                <button type="submit" class="btn btn-success">회원가입</button>
+
+            </form>
+        </div>
+        
+    </div>
+
+    <div id="footer">
+        <div id="footerContents">footer내용</div>
+
+    </div>
+
+
+    
+    
+    
+</body>
+</html>
