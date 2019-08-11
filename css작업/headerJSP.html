@@ -50,7 +50,7 @@
          float: left;
          text-align: center;
          margin-left: 20px;
-         text-decoration: none;
+         text-decoration: none;     /* 이거했는데 왜 밑줄 안없어지는규..? */
      }
      #imgMenu{
         border: 1px solid green;
@@ -62,7 +62,7 @@
          float: left;
          text-align: center;
          margin-right: 10px;
-         text-decoration: none;
+         text-decoration: none;   /* 이거했는데 왜 밑줄 안없어짐? */
      }
     
     /* body스타일 시작 */
@@ -130,16 +130,39 @@
     }
     #hotRank{
         border: 1px solid yellow;
-        width: 525px;
+        width: 520px;
         height: 600px;
     }
     #newRank{
         border: 1px solid blue;
-        width: 525px;
+        width: 520px;
         height: 600px;
-        
+        float: left;
+        /* ??????????????????????????????????????????????????????????????????????????이거 hotRank박스 옆에다가 붙여야하는데 */
     }
-    //-----------여기서부터 다시하기 ---------------
+    /* 여기까지 금요일 */
+    .Ranks{
+        border: 1px solid deeppink;
+        border-radius: 5%;
+        margin: 20px;
+        height: 150px;
+    }
+
+
+    /* footer시작 */
+    #footer{
+        border: 1px solid navy;
+        position: relative;
+        height: 200px;
+    }
+    #footerContents{
+        border: 1px solid chartreuse;
+        max-width: 1050px;
+        margin: 0 auto;
+        height: 198px;
+    }
+
+
 
 
 
@@ -192,13 +215,25 @@
         </div>
         <div id="rankBox">
             <div id="hotRank">
-                <div></div>
-                <div></div>
-                <div></div>
+                <h1>HotRank3</h1>
+                <div class="Ranks">TOP1</div>
+                <div class="Ranks">TOP2</div>
+                <div class="Ranks">TOP3</div>
             </div>
-            <div id="newRank"></div>
+            <!-- <div id="newRank">
+                <h1>NewRank3</h1>
+                <div class="Ranks">TOP1</div>
+                <div class="Ranks">TOP2</div>
+                <div class="Ranks">TOP3</div>
+            </div> -->
         </div>
     </div>
+
+    <div id="footer">
+        <div id="footerContents">footer내용</div>
+
+    </div>
+
 
     
     
