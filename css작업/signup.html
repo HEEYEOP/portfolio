@@ -7,6 +7,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-3.3.1.js"></script>
     <title>회원가입페이지</title>
+    <script>
+        $(document).ready(function(){
+            //생년월일 셀렉트박스 시작-----------------------------------
+            var day = [31,28,31,30,31,30,31,31,30,31,30,31];
+
+            $('#year').click(function(){
+                var today = new Date();
+                var year = today.getFullYear();
+                for(var i=year-100; i<year-5; i++){
+                    $(this).html('<option>'+i+'년</option>'); //append로 하면 한바퀴 중복된다 그래서 html로 하라, 근데 html사용법 잘모름----------------
+                }
+            })
+            $('#month').change(function(){
+                var value = $(this).val();
+                var lastDay = day[value-1];
+                for(var i=1; i<=lastDay; i++){
+                    $('#date').append('<option>'+ i +'일</option>');
+                }
+            });
+            $('#year').click();
+            //생년월일 셀렉트박스 끝-----------------------------------
+        });
+    
+    </script>
+    
+    
     <style>
         *{
             margin: 0;
@@ -74,6 +100,19 @@
         margin: 0 auto;
         padding: 50px;
     }
+    .tab{
+        background-color: #2f2f2f;
+        color: white;
+        display: block;
+        font-size: 13px;
+        text-align: center;
+        line-height: 50px;
+        margin: 5px;
+        position: relative;
+        border-radius: 10px;
+
+
+    }
     #signupForm{
         border: 1px solid deeppink;
         height: 800px;
@@ -85,12 +124,41 @@
     }
     .boxDeco{
         border: 1px solid red;
+        margin: 5px;
         margin-bottom: 30px;
         border-radius: 5px;
         text-align: left;
-        padding: 15px 20px 5px 20px;
-        height: 40px;
+        padding: 5px 20px 5px 0px;
+        height: 50px;
+        position: relative;
         
+    }
+    .insertIcon{
+        border: 1px solid navy;
+        width: 50px;
+        height: 35px;
+        display: inline-block;
+        margin-left: 2px;
+    }
+    .inputDeco{
+        border: none;
+        width: calc(100% - 100px);
+        height: 35px;
+        float: right;
+    }
+    .insertA{
+        width: 75px;
+        height: 48px;
+        display: inline-block;
+        text-align: center;
+        line-height: 48px;
+        background-color: #2f2f2f;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 5px;
+
     }
     
 
@@ -107,13 +175,6 @@
         margin: 0 auto;
         height: 198px;
     }
-
-
-
-
-
-    
-
     </style>
 </head>
 <body>
@@ -121,7 +182,7 @@
     <div id=header>
         <div id=headerContents>
             <h1 id="logoBox">
-                <a href="#"><div>logoBox</div></a>
+                <a href=""><div>logoBox</div></a>
             </h1>
             <div id="textMenu">
                 <ul>
@@ -147,18 +208,57 @@
         <div id="signupForm">
             <form action="" class="form">
                 <h1>회원가입</h1>
+                <li class="tab">E-mail로 회원가입</li>
                 사용자구분
                 <div class="boxDeco">
-                    <input type="radio">개인
-                    <input type="radio">기관
+                    <input type="checkbox">개인
+                    <input type="checkbox">기관
                 </div>
-                <div class="boxDeco">e-mail입력</div>
-                <div class="boxDeco">pw입력</div>
-                <div class="boxDeco">pw확인</div>
-                <div class="boxDeco">생년월일</div>
                 <div class="boxDeco">
-                    <input type="radio">남성
-                    <input type="radio">여성   
+                    <div class="insertIcon"></div>
+                    <input type="email" class="inputDeco" placeholder="E-mail을 입력하세요">
+                    <a href="#" class="insertA">인증하기</a>
+                </div>
+                <div class="boxDeco">
+                    <div class="insertIcon"></div>
+                    <input type="text" class="inputDeco" placeholder="비밀번호를 입력하세요">
+                </div>
+                <div class="boxDeco">
+                    <div class="insertIcon"></div>
+                    <input type="text" class="inputDeco" placeholder="동일한 비밀번호를 입력하세요">
+                </div>
+                <div class="boxDeco">
+                    <div class="insertIcon"></div>
+                    <input type="text" class="inputDeco" placeholder="이름을 입력하세요">
+                </div>
+                <div class="boxDeco">
+                    <div class="insertIcon"></div>
+                    <select id="year">
+                        <option value="0" selected>선택</option>
+                    </select>
+                    <select id="month">
+                        <option value="0" selected>선택</option>
+                        <option value="1">1월</option>
+                        <option value="2">2월</option>
+                        <option value="3">3월</option>
+                        <option value="4">4월</option>
+                        <option value="5">5월</option>
+                        <option value="6">6월</option>
+                        <option value="7">7월</option>
+                        <option value="8">8월</option>
+                        <option value="9">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                
+                    <select id="date">
+                        <option value="0" selected>선택</option>
+                    </select>
+                </div>
+                <div class="boxDeco">
+                    <input type="checkbox">남성
+                    <input type="checkbox">여성   
                 </div>
                 <button type="submit" class="btn btn-success">회원가입</button>
 
