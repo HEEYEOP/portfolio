@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-#body{
+	#body{
         border: 1px solid black;
         min-height: 900px;
         max-width: 1050px;
@@ -23,8 +23,6 @@
         margin: 5px;
         position: relative;
         border-radius: 10px;
-
-
     }
     #signupForm{
         border: 1px solid deeppink;
@@ -44,7 +42,6 @@
         padding: 5px 20px 5px 0px;
         height: 50px;
         position: relative;
-        
     }
     .insertIcon{
         border: 1px solid navy;
@@ -71,7 +68,6 @@
         top: 0;
         right: 0;
         border-radius: 5px;
-
     }
 </style>
 </head>
