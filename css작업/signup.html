@@ -9,24 +9,34 @@
     <title>회원가입페이지</title>
     <script>
         $(document).ready(function(){
-            //생년월일 셀렉트박스 시작-----------------------------------
-            var day = [31,28,31,30,31,30,31,31,30,31,30,31];
 
-            $('#year').click(function(){
-                var today = new Date();
-                var year = today.getFullYear();
-                for(var i=year-100; i<year-5; i++){
-                    $(this).html('<option>'+i+'년</option>'); //append로 하면 한바퀴 중복된다 그래서 html로 하라, 근데 html사용법 잘모름----------------
-                }
-            })
+            //생년월일 셀렉트박스 시작-----------------------------------
+            var today = new Date();
+            var year = today.getFullYear();
+            var str='';
+            for(var i = year-100; i<=year-5; i++){
+                str += '<option value="'+ i +'">'+ i +'년도</option>'
+            }
+            var oldStr = $('#year').html();
+           $('#year').html(oldStr+str);
+           
+
+
+            var day = [31,28,31,30,31,30,31,31,30,31,30,31];
+            
             $('#month').change(function(){
-                var value = $(this).val();
-                var lastDay = day[value-1];
-                for(var i=1; i<=lastDay; i++){
-                    $('#date').append('<option>'+ i +'일</option>');
-                }
+                var month = $(this).val();
+                addDay(month);
             });
-            $('#year').click();
+
+            function addDay(month){
+                var str = '';               //str은 뒤에서 문자열이 이어서 추가되기때문에 ''로 초기화한다
+                for(var i=1; i<=day[month-1]; i++){
+                    str += '<option value="'+ i +'">'+ i +'일</option>'
+                }
+                $('#day').html(str);
+            }
+            
             //생년월일 셀렉트박스 끝-----------------------------------
         });
     
@@ -252,7 +262,7 @@
                         <option value="12">12월</option>
                     </select>
                 
-                    <select id="date">
+                    <select id="day">
                         <option value="0" selected>선택</option>
                     </select>
                 </div>
