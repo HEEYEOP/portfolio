@@ -22,8 +22,15 @@ public class HomeController {
 	
 	@RequestMapping(value="/main/home")
 	public ModelAndView openTilesView(ModelAndView mv) throws Exception{
+		
 	    mv.setViewName("/main/home");
-	    mv.addObject("setHeader", "타일즈");
+	    return mv;
+	}
+	
+	@RequestMapping(value="/main/what")
+	public ModelAndView openTilesView2(ModelAndView mv) throws Exception{
+		
+	    mv.setViewName("/main/what");
 	    return mv;
 	}
 }

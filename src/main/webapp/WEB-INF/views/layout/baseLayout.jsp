@@ -7,12 +7,13 @@
 <head>
 <title>스프링</title>
 <jsp:include page="/WEB-INF/views/include/head.jsp"></jsp:include>
+
 </head>
 <body>
     <tiles:insertAttribute name="header"/>
-    <div class="container">        
+    <div>      
 		<tiles:insertAttribute name="body" />
-	</div>                                                  
+	</div>                                                
 	<tiles:insertAttribute name="footer" />
 </body>
 </html>
