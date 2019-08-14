@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입페이지</title>
 <style>
 	#body{
         border: 1px solid black;
@@ -12,6 +12,10 @@
         max-width: 1050px;
         margin: 0 auto;
         padding: 50px;
+    }
+    h1{
+    	text-align:center;
+    	margin:20px;
     }
     .tab{
         background-color: #2f2f2f;
@@ -21,6 +25,7 @@
         text-align: center;
         line-height: 50px;
         margin: 5px;
+        margin-bottom:20px;
         position: relative;
         border-radius: 10px;
     }
@@ -30,80 +35,72 @@
     }
     .form{
         border: 1px solid darkgreen;
-        width: 600px;
+        width: 800px;
         margin: 0 auto;
     }
-    .boxDeco{
-        border: 1px solid red;
-        margin: 5px;
-        margin-bottom: 30px;
-        border-radius: 5px;
-        text-align: left;
-        padding: 5px 20px 5px 0px;
-        height: 50px;
-        position: relative;
+    .width{
+    	width: 20%;
     }
-    .insertIcon{
-        border: 1px solid navy;
-        width: 50px;
-        height: 35px;
-        display: inline-block;
-        margin-left: 2px;
-    }
-    .inputDeco{
-        border: none;
-        width: calc(100% - 100px);
-        height: 35px;
-        float: right;
-    }
-    .insertA{
-        width: 75px;
-        height: 48px;
-        display: inline-block;
-        text-align: center;
-        line-height: 48px;
-        background-color: #2f2f2f;
-        color: white;
-        position: absolute;
-        top: 0;
-        right: 0;
-        border-radius: 5px;
+    .usertype{
+    	width: 50%;
+    	margin:0;
+    	margin-bottom: 20px;
+    	display:inline-block;
+    	background-color:#e9ecef;
+    	color: #495057;
+    	float:left;
+    	border: 1px solid #ced4da;
+  
     }
 </style>
 </head>
 <div id="body">
         <div id="signupForm">
-            <form action="" class="form">
+            <form action="" class="form was-validated">
                 <h1>회원가입</h1>
-                <li class="tab">E-mail로 회원가입</li>
-                	사용자구분
-                <div class="boxDeco">
-                    <input type="checkbox">개인
-                    <input type="checkbox">기관
+                <li class="tab">정보를 입력해주세요</li>
+                <button class="tab width usertype">개인사용자</button>
+                <button class="tab width usertype">기관사용자</button>
+                <div class="input-group mb-3 input-group-lg" style="display:none">
+                	<div class="input-group-prepend">
+                		<span class="input-group-text">첨부파일</span>
+                	</div>
+                	<input type="file" class="form-control">
                 </div>
-                <div class="boxDeco">
-                    <div class="insertIcon"></div>
-                    <input type="email" class="inputDeco" placeholder="E-mail을 입력하세요">
-                    <a href="#" class="insertA">인증하기</a>
+                <div class="input-group mb-3 input-group-lg">
+                	<div class="input-group-prepend">
+                		<span class="input-group-text">E-mail</span>
+                	</div>
+                	<input type="text" class="form-control"required>
+                	<div class="valid-feedback">Valid.</div>
+      				<div class="invalid-feedback">Please fill out this field.</div>
                 </div>
-                <div class="boxDeco">
-                    <div class="insertIcon"></div>
-                    <input type="text" class="inputDeco" placeholder="비밀번호를 입력하세요">
+                <div class="input-group mb-3 input-group-lg">
+                	<div class="input-group-prepend">
+                		<span class="input-group-text">비밀번호</span>
+                	</div>
+                    <input type="text" class="form-control">
                 </div>
-                <div class="boxDeco">
-                    <div class="insertIcon"></div>
-                    <input type="text" class="inputDeco" placeholder="동일한 비밀번호를 입력하세요">
+                <div class="input-group mb-3 input-group-lg">
+                	<div class="input-group-prepend">
+                		<span class="input-group-text">비밀번호 확인</span>
+                	</div>
+                    <input type="text" class="form-control">
                 </div>
-                <div class="boxDeco">
-                    <div class="insertIcon"></div>
-                    <input type="text" class="inputDeco" placeholder="이름을 입력하세요">
+                <div class="input-group mb-3 input-group-lg">
+                    <div class="input-group-prepend">
+                    	<span class="input-group-text">이름</span>
+                    </div>
+                    <input type="text" class="form-control">
                 </div>
-                <div class="boxDeco">
-                    <div class="insertIcon"></div>
-                    <select id="year">
+                <div class="input-group mb-3 input-group-lg">
+                    <div class="input-group-prepend">
+                    	<span class="input-group-text">생년월일</span>
+                    </div>
+                    <select id="year" class="width">
                         <option value="0" selected>선택</option>
                     </select>
-                    <select id="month">
+                    <select id="month" class="width">
                         <option value="0" selected>선택</option>
                         <option value="1">1월</option>
                         <option value="2">2월</option>
@@ -119,15 +116,19 @@
                         <option value="12">12월</option>
                     </select>
                 
-                    <select id="date">
+                    <select id="date" class="width">
                         <option value="0" selected>선택</option>
                     </select>
                 </div>
-                <div class="boxDeco">
-                    <input type="checkbox">남성
-                    <input type="checkbox">여성   
+                <div class="input-group mb-3 input-group-lg">
+                	<div class="input-group-prepend">
+                		<span class="input-group-text">성별</span>
+                	</div>
+                    <input type="checkbox" class="form-control">남성
+                    <input type="checkbox" class="form-control">여성
                 </div>
-                <button type="submit" class="btn btn-success">회원가입</button>
+              
+                <button type="submit" class="btn btn-success tab">회원가입</button>
 
             </form>
         </div>

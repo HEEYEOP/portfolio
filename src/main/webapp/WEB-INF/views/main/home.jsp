@@ -3,95 +3,31 @@
     pageEncoding="UTF-8"%>
 <head>
 <title>메인화면</title>
-<style>
-	*{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-     }
-	/* body스타일 시작 */
-    #mainImg{
-        border: 1px solid navy;
-        position: relative;
-        height: 360px;
-    }
-    #mainImgContents{
-        border: 1px solid chartreuse;
-        max-width: 1050px;
-        margin: 0 auto;
-        height: 360px;
-    }
-    #mainImgServeyList{
-        border: 1px solid teal;
-        width: 375px;
-        height: 360px;
-    }
-    #mainContents{
-        border: 1px solid darkblue;
-        overflow: hidden;
-    }
-    #noticeBox{
-        border: 1px solid darkmagenta;
-        max-width: 1050px;
-        margin: 0 auto;
-        margin-top: 10px;
-        position: relative;
-        line-height: 43px;
-        height: 43px;
-    }
-    #totalContentsBox{
-        border: 1px solid darkmagenta;
-        max-width: 1050px;
-        margin: 0 auto;
-        margin-top: 5px;
-        position: relative;
-        height: 43px;
-    }
-    #menuBox{
-        border: 1px solid blue;
-        max-width: 1050px;
-        margin: 0 auto;
-        margin-top: 20px;
-        position: relative;
-        height: 200px;
-    }
-    .menuBoxs{
-        border: 1px solid yellowgreen;
-        border-radius: 20%;
-        float: left;
-        height: 200px;
-        width: calc(100% / 4);
-    }
-    #rankBox{
-        border: 1px solid red;
-        max-width: 1050px;
-        margin: 0 auto;
-        margin-top: 20px;
-        position: relative;
-        height: 600px;
-    }
-    #hotRank{
-        border: 1px solid yellow;
-        width: 520px;
-        height: 600px;
-        display: inline-block;
-    }
-    #newRank{
-        border: 1px solid blue;
-        width: 520px;
-        height: 600px;
-        display: inline-block;
-    }
-    .Ranks{
-        border: 1px solid deeppink;
-        border-radius: 5%;
-        margin: 20px;
-        height: 150px;
-    }
-</style>
+
+<link href="<%=request.getContextPath()%>/resources/css/mainPage.css" rel="stylesheet">
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/mainPage.js"></script>
+
 </head>
 
-<!-- body시작 -->
+<!-- body시작---------------------------------------------------------------------------------------- -->
+<div id="searchWrap" ></div>
+<div id="searchBox">검색어를 입력하세요<img src="" alt=""></div>
+<div id="fieldBox">
+    <ul>
+        <li class="field">필드1</li>
+        <li class="field">필드2</li>
+        <li class="field">필드3</li>
+        <li class="field">필드4</li>
+        <li class="field">필드5</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
 <div id="body" style="min-height: 800px">
     <div id="mainImg">
         <div id="mainImgContents">

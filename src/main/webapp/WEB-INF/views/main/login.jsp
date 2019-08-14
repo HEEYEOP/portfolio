@@ -5,49 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/resources/css/loginPage.css" rel="stylesheet">
+
 <title>로그인화면</title>
-<style>
-	*{
-	      margin: 0;
-	      padding: 0;
-	      box-sizing: border-box;
-  	}
-	#body{
-        border: 1px solid black;
-        min-height: 800px;
-        max-width: 1050px;
-        margin: 0 auto;
-        
-    }
-    #loginImg{
-        border: 1px solid darkgreen;
-        height: 200px;
-    }
-    #loginBox{
-        border: 1px solid navy;
-        max-width: 930px;
-        margin: 0 auto;
-        width: 500px;
-        /* height: 300px; */
-        margin-top: 50px;
-        margin-bottom: 50px;
-        padding: 10px;
-    }
-    #searchInfoBox{
-        border: 1px solid #ced4da;
-        border-left: none;
-        border-right: none;
-        margin-top: 30px;
-    }
-    #searchInfoBox li{
-        margin-bottom: 10px;
-        color: darkgreen;
-    }
-    #searchInfoBox span{
-        width: 50%;
-        margin: 0;
-    }
-</style>
+
 </head>
 
 <div id="body">
