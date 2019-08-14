@@ -56,7 +56,7 @@
 </head>
 <div id="body">
         <div id="signupForm">
-            <form action="" class="form was-validated">
+            <form action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
                 <h1>회원가입</h1>
                 <li class="tab">정보를 입력해주세요</li>
                 <button class="tab width usertype">개인사용자</button>
@@ -71,7 +71,7 @@
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">E-mail</span>
                 	</div>
-                	<input type="text" class="form-control"required>
+                	<input type="text" class="form-control" name="user_email" required >
                 	<div class="valid-feedback">Valid.</div>
       				<div class="invalid-feedback">Please fill out this field.</div>
                 </div>

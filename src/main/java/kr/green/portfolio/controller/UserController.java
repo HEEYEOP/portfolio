@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.green.portfolio.dao.UserDAO;
+import kr.green.portfolio.vo.UserVO;
 
 /**
  * Handles requests for the application home page.
@@ -32,11 +33,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/main/signup")
-	public ModelAndView openTilesView2(ModelAndView mv) throws Exception{
+	public ModelAndView openTilesView2(ModelAndView mv,UserVO uVO, String user_email) throws Exception{
+		System.out.println(uVO);
 		
 	    mv.setViewName("/main/signup");
 	    return mv;
 	}
+	
+	
 	
 	@RequestMapping(value="/main/login", method=RequestMethod.GET)
 	public ModelAndView loginGet(ModelAndView mv) throws Exception{
@@ -44,4 +48,15 @@ public class UserController {
 	    mv.setViewName("/main/login");
 	    return mv;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
