@@ -88,12 +88,42 @@
         left: 430px;
         z-index: 3;
         display: none;
+        
+        /*글자css*/
+        font-size: 40px;
+        color: white;
+        text-align: center;
     }
     #searchWrap.fold,
     #searchBox.fold,
     .fold{
         display: block;
     }
+
+    #fieldBox{
+        background-color: black;
+        width: 1050px;
+        height: 500px;
+        position: absolute;
+        top: 100px;
+        left: calc((100% - 1050px) / 2);
+        z-index: 3;
+        padding: 30px;
+    
+    }
+    .field{
+        margin: 0 auto;
+        border: 1px solid white;
+        width: 150px;
+        height: 30px;
+        float: left;
+        /* --------------------------------------필드 박스 만들다가 멈춤 */
+    }
+
+
+
+
+
     
 
 
@@ -203,7 +233,7 @@
                 $('#searchBox').toggleClass('fold');
             })
             //----------------------------------------
-            
+
             
         })
     </script>
@@ -232,11 +262,31 @@
             </div>
         </div>
     </div>
-    <!-- header끝 -->
+    <!-- header끝 --> 
+
+
+
 
     <!-- body시작------------------------------------------------------------------------------------------------------ -->
     <div id="searchWrap" ></div>
-    <div id="searchBox">검색박스<img src="" alt=""></div>
+    <div id="searchBox">검색어를 입력하세요<img src="" alt=""></div>
+    <div id="fieldBox">
+        <ul>
+            <li class="field">필드1</li>
+            <li class="field">필드2</li>
+            <li class="field">필드3</li>
+            <li class="field">필드4</li>
+            <li class="field">필드5</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
     
     <div id="body">
         <div id="mainImg">
