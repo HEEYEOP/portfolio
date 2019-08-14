@@ -25,17 +25,23 @@ public class UserController {
 	
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-	
 	@RequestMapping(value="/main/home")
 	public ModelAndView openTilesView(ModelAndView mv) throws Exception{
 	    mv.setViewName("/main/home");
 	    return mv;
 	}
 	
-	@RequestMapping(value="/main/what")
+	@RequestMapping(value="/main/signup")
 	public ModelAndView openTilesView2(ModelAndView mv) throws Exception{
 		
-	    mv.setViewName("/main/what");
+	    mv.setViewName("/main/signup");
+	    return mv;
+	}
+	
+	@RequestMapping(value="/main/login", method=RequestMethod.GET)
+	public ModelAndView loginGet(ModelAndView mv) throws Exception{
+		
+	    mv.setViewName("/main/login");
 	    return mv;
 	}
 }

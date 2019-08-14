@@ -76,7 +76,7 @@
             <form action="" class="form">
                 <h1>회원가입</h1>
                 <li class="tab">E-mail로 회원가입</li>
-                사용자구분
+                	사용자구분
                 <div class="boxDeco">
                     <input type="checkbox">개인
                     <input type="checkbox">기관

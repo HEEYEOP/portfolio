@@ -18,6 +18,7 @@
       margin: 0 auto;
       position: relative;
       max-width: 1050px;
+      
    }
    #logoBox{
        float: left;
@@ -66,7 +67,7 @@
 <div id=header>
     <div id=headerContents>
         <h1 id="logoBox">
-            <a href="#"><div>logoBox</div></a>
+            <a href="<%=request.getContextPath()%>/main/home"><div>logoBox</div></a>
         </h1>
         <div id="textMenu">
             <ul>
@@ -80,7 +81,7 @@
             <ul>
                 <li><a href="">검색</a></li>
                 <li><a href="">생각쓰기</a></li>
-                <li><a href="">로그인</a></li>
+                <li><a href="<%=request.getContextPath()%>/main/login">로그인</a></li>
             </ul>
         </div>
     </div>
