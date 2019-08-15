@@ -59,19 +59,19 @@
             <form action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
                 <h1>회원가입</h1>
                 <li class="tab">정보를 입력해주세요</li>
-                <button class="tab width usertype">개인사용자</button>
-                <button class="tab width usertype">기관사용자</button>
+                <button type="button" class="tab width usertype">개인사용자</button>
+                <button type="button" class="tab width usertype">기관사용자</button>
                 <div class="input-group mb-3 input-group-lg" style="display:none">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">첨부파일</span>
                 	</div>
-                	<input type="file" class="form-control">
+                	<input name="confirmFile" type="file" class="form-control">
                 </div>
                 <div class="input-group mb-3 input-group-lg">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">E-mail</span>
                 	</div>
-                	<input type="text" class="form-control" name="user_email" required >
+                	<input name="user_email" type="text" class="form-control" required >
                 	<div class="valid-feedback">Valid.</div>
       				<div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -79,19 +79,19 @@
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">비밀번호</span>
                 	</div>
-                    <input type="text" class="form-control">
+                    <input name="user_pw" type="text" class="form-control">
                 </div>
                 <div class="input-group mb-3 input-group-lg">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">비밀번호 확인</span>
                 	</div>
-                    <input type="text" class="form-control">
+                    <input name="pwCheck" type="text" class="form-control">
                 </div>
                 <div class="input-group mb-3 input-group-lg">
                     <div class="input-group-prepend">
                     	<span class="input-group-text">이름</span>
                     </div>
-                    <input type="text" class="form-control">
+                    <input name="user_name" type="text" class="form-control">
                 </div>
                 <div class="input-group mb-3 input-group-lg">
                     <div class="input-group-prepend">
@@ -124,8 +124,8 @@
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">성별</span>
                 	</div>
-                    <input type="checkbox" class="form-control">남성
-                    <input type="checkbox" class="form-control">여성
+                    <input name="user_gender" type="checkbox"  value="M" class="form-control">남성
+                    <input name="user_gender" type="checkbox" Value="F" Sclass="form-control">여성
                 </div>
               
                 <button type="submit" class="btn btn-success tab">회원가입</button>
