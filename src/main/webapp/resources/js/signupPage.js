@@ -50,13 +50,30 @@ $(document).ready(function(){
     });
     //생년월일 데이터타입 변환하기 위한 작업시작----------------
     
+    //user_type 버튼 동작----------------------------------
+	
+	$('button[name=typeButton]').click(function(){
+        $('button[name=typeButton]').removeClass('active');
+        $(this).addClass('active');
+        $('#typeValue').val($(this).attr('value'));
+        
+        
+    });
+	
+	
     //아이디 중복 검사 시작----------------------------------
             
     $('#form').submit(function(){
+    	if($('#typeValue').val() == ''){
+    		alert('사용자타입을 선택해주세요')
+    		return false;
+    	}
 		if(!isCheck){ 
 			alert('아이디 중복 체크를 해주세요')
 			return false;
 		}
+		
+		
 	});	
 	
 	$('#dup').click(function(){
@@ -89,6 +106,29 @@ $(document).ready(function(){
 	$('input[name=user_email]').change(function(){
 		isCheck = false;
 	});
+	//아이디 중복 검사 끝----------------------------------
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
     
 });

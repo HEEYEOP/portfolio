@@ -18,9 +18,9 @@
         <h1>회원가입</h1>
             <form id="form" action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
                 <div class="tab">정보를 입력해주세요</div>
-                <button type="button" class="tab width usertype active btn-primary">개인사용자</button>
-                <button type="button" class="tab width usertype btn-primary" >기관사용자</button>
-               	
+                <button name="typeButton" type="button" class="tab width usertype btn-primary" value="IndividualUser">개인사용자</button>
+                <button name="typeButton" type="button" class="tab width usertype btn-primary" value="GroupUser">기관사용자</button>
+               	<input id="typeValue" type="hidden" name="user_type">
         
                 <div class="input-group mb-3 input-group-lg" style="display:none">
                 	<div class="input-group-prepend">
@@ -33,7 +33,7 @@
                 		<span class="input-group-text">E-mail</span>
                 	</div>
                 	<input name="user_email" type="text" class="form-control" required >
-                	<button type="button" id="dup">중복확인버튼</button>
+                	<button type="button" id="dup" class="input-group-text">중복체크</button>
                 	<div class="valid-feedback">Valid.</div>
       				<div class="invalid-feedback">Please fill out this field.</div>
                 </div>
