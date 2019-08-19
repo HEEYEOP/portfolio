@@ -5,7 +5,7 @@
 var isCheck = false;
 $(document).ready(function(){
 
-    //생년월일 셀렉트박스 옵션 추가기능 끝-----------------------------------
+    //생년월일 셀렉트박스 옵션 추가기능 시작-----------------------------------
     var today = new Date();
     var year = today.getFullYear();
     var str='';
@@ -37,7 +37,6 @@ $(document).ready(function(){
         $('#date').html(str);
     };
     
-    //생년월일 셀렉트박스 옵션 추가기능 끝-----------------------------------
     
     //생년월일 데이터타입 변환하기 위한 작업시작----------------
     
@@ -48,9 +47,8 @@ $(document).ready(function(){
         
         $('input[name=user_birth2]').val(''+year+'-'+month+'-'+date);
     });
-    //생년월일 데이터타입 변환하기 위한 작업시작----------------
     
-    //user_type 버튼 동작----------------------------------
+    //user_type 버튼 동작 시작----------------------------------
 	
 	$('button[name=typeButton]').click(function(){
         $('button[name=typeButton]').removeClass('active');
@@ -59,6 +57,7 @@ $(document).ready(function(){
         
         
     });
+	
 	
 	
     //아이디 중복 검사 시작----------------------------------
@@ -106,7 +105,58 @@ $(document).ready(function(){
 	$('input[name=user_email]').change(function(){
 		isCheck = false;
 	});
-	//아이디 중복 검사 끝----------------------------------
+	
+	//유효성 검사 시작------------------------------------------
+	$("form").validate({
+        rules: {
+            user_email: {
+                required : true,
+                minlength : 8,
+                maxlength : 20
+            },
+            user_pw: {
+                required : true,
+                minlength : 8,
+                maxlength : 20,
+                regex: /^\w*(\d[A-z]|[A-z]\d)\w*$/
+            },
+            pwCheck: {
+                required : true,
+                equalTo : user_pw
+            },
+            user_name: {
+                required : true,
+                minlength : 2,
+                maxlength : 20
+            }
+            
+        },
+        //규칙체크 실패시 출력될 메시지
+        messages : {
+            user_email: {
+                required : "필수로입력하세요",
+                minlength : "최소 {0}글자이상이어야 합니다",
+                maxlength : "최대 {0}글자이하이어야 합니다"
+            },
+            user_pw: {
+                required : "필수로입력하세요",
+                minlength : "최소 {0}글자이상이어야 합니다",
+                maxlength : "최대 {0}글자이하이어야 합니다",
+                regex : "영문자, 숫자로 이루어져있으며 최소 하나이상 포함"
+            },
+            pwCheck: {
+                required : "필수로입력하세요",
+                equalTo : "비밀번호가 일치하지 않습니다."
+            },
+            user_name: {
+                required : "필수로 입력하세요",
+                minlength : "최소 {0}글자이상이어야 합니다",
+                maxlength : "최대 {0}글자이하이어야 합니다", 
+                
+            }
+        }
+    });
+	
 
 	
 	

@@ -28,33 +28,38 @@
                 	</div>
                 	<input name="confirmFile" type="file" class="form-control">
                 </div>
+                
                 <div class="input-group mb-3 input-group-lg">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">E-mail</span>
                 	</div>
-                	<input name="user_email" type="text" class="form-control" required >
+                	<input id="user_email" name="user_email" type="email" class="form-control" required >
                 	<button type="button" id="dup" class="input-group-text">중복체크</button>
                 	<div class="valid-feedback">Valid.</div>
-      				<div class="invalid-feedback">Please fill out this field.</div>
+      				<div class="invalid-feedback">e-mail을 입력해주시기 바랍니다</div>
                 </div>
+                
                 <div class="input-group mb-3 input-group-lg">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">비밀번호</span>
                 	</div>
-                    <input name="user_pw" type="text" class="form-control">
+                    <input id="user_pw" name="user_pw" type="text" class="form-control">
                 </div>
+                
                 <div class="input-group mb-3 input-group-lg">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">비밀번호 확인</span>
                 	</div>
-                    <input name="pwCheck" type="text" class="form-control">
+                    <input id="pwCheck" name="pwCheck" type="text" class="form-control">
                 </div>
+                
                 <div class="input-group mb-3 input-group-lg">
                     <div class="input-group-prepend">
                     	<span class="input-group-text">이름</span>
                     </div>
-                    <input name="user_name" type="text" class="form-control">
+                    <input id="user_name" name="user_name" type="text" class="form-control">
                 </div>
+                
                 <div class="input-group mb-3 input-group-lg">
                     <div class="input-group-prepend">
                     	<span class="input-group-text">생년월일</span>
@@ -81,7 +86,7 @@
                     <select id="date" class="width" name="birth">
                         <option value="0" selected>선택</option>
                     </select>
-                    <input type="text" name="user_birth2">
+                    <input type="hidden" name="user_birth2" id="user_birth">
                 </div>
                 <div class="input-group mb-3 input-group-lg">
                 	<div class="input-group-prepend">
