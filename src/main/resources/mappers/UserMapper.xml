@@ -5,6 +5,9 @@
 	
 	<select id="getEmail" resultType="String">
 		select user_email from user
+	</select>	
+	<select id="getUser" resultType="kr.green.portfolio.vo.UserVO">
+		select * from user where user_email=#{user_email} and isMember='Y'
 	</select>
 
 </mapper>

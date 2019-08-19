@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <link href="<%=request.getContextPath()%>/resources/css/signupPage.css" rel="stylesheet">
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery.validate.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/additional-methods.js"></script>	
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/signupPage.js"></script>
 
 
@@ -14,10 +16,10 @@
 <div id="body">
         <div id="signupForm">
         <h1>회원가입</h1>
-            <form action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
+            <form id="form" action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
                 <div class="tab">정보를 입력해주세요</div>
-                <button type="button" class="tab width usertype">개인사용자</button>
-                <button type="button" class="tab width usertype">기관사용자</button>
+                <button type="button" class="tab width usertype active btn-primary">개인사용자</button>
+                <button type="button" class="tab width usertype btn-primary" >기관사용자</button>
                	
         
                 <div class="input-group mb-3 input-group-lg" style="display:none">
@@ -31,6 +33,7 @@
                 		<span class="input-group-text">E-mail</span>
                 	</div>
                 	<input name="user_email" type="text" class="form-control" required >
+                	<button type="button" id="dup">중복확인버튼</button>
                 	<div class="valid-feedback">Valid.</div>
       				<div class="invalid-feedback">Please fill out this field.</div>
                 </div>
@@ -93,3 +96,4 @@
         </div>
         
     </div>
+    
