@@ -1,5 +1,7 @@
 package kr.green.portfolio.vo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserVO {
@@ -58,6 +60,14 @@ public class UserVO {
 	}
 	public void setUser_birth(Date user_birth) {
 		this.user_birth = user_birth;
+	}
+	public void setUser_birth(String user_birth) {
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			this.user_birth = transFormat.parse(user_birth);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 	}
 	public String getConfirmFile() {
 		return confirmFile;

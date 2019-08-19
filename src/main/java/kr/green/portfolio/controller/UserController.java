@@ -32,14 +32,21 @@ public class UserController {
 	    return mv;
 	}
 	
-	@RequestMapping(value="/main/signup")
+	@RequestMapping(value="/main/signup", method=RequestMethod.GET)
 	public ModelAndView openTilesView2(ModelAndView mv,UserVO uVO, String user_email) throws Exception{
 		System.out.println(uVO);
 		
 	    mv.setViewName("/main/signup");
 	    return mv;
 	}
-	
+	@RequestMapping(value="/main/signup", method=RequestMethod.POST)
+	public ModelAndView openTilesView3(ModelAndView mv, String user_birth2, UserVO uVO) throws Exception{
+		uVO.setUser_birth(user_birth2);
+		System.out.println(uVO);
+		
+	    mv.setViewName("/main/signup");
+	    return mv;
+	}
 	
 	
 	@RequestMapping(value="/main/login", method=RequestMethod.GET)

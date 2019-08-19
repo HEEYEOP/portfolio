@@ -1,0 +1,47 @@
+@charset "EUC-KR";
+#body{
+        border: 1px solid black;
+        min-height: 900px;
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 50px;
+    }
+    h1{
+    	text-align:center;
+    	margin:20px;
+    }
+    .tab{
+        background-color: #2f2f2f;
+        color: white;
+        display: block;
+        font-size: 13px;
+        text-align: center;
+        line-height: 50px;
+        margin: 5px;
+        margin-bottom:20px;
+        position: relative;
+        border-radius: 10px;
+    }
+    #signupForm{
+        border: 1px solid deeppink;
+        height: 800px;
+    }
+    .form{
+        border: 1px solid darkgreen;
+        width: 800px;
+        margin: 0 auto;
+    }
+    .width{
+    	width: 20%;
+    }
+    .usertype{
+    	width: 50%;
+    	margin:0;
+    	margin-bottom: 20px;
+    	display:inline-block;
+    	background-color:#e9ecef;
+    	color: #495057;
+    	float:left;
+    	border: 1px solid #ced4da;
+  
+    }

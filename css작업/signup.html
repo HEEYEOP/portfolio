@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-3.3.1.js"></script>
-    <title>회원가입페이지</title>
+    <title>css회원가입페이지</title>
     <script>
         $(document).ready(function(){
 
@@ -32,12 +32,26 @@
             function addDay(month){
                 var str = '';               //str은 뒤에서 문자열이 이어서 추가되기때문에 ''로 초기화한다
                 for(var i=1; i<=day[month-1]; i++){
-                    str += '<option value="'+ i +'">'+ i +'일</option>'
+                	if(i < 10){
+                		str += '<option value="0'+ i +'">'+ '0'+ i +'일</option>'
+
+                	}else{
+                        str += '<option value="'+ i +'">'+ i +'일</option>'
+                	}
                 }
-                $('#day').html(str);
+                $('#date').html(str);
             }
-            
             //생년월일 셀렉트박스 끝-----------------------------------
+
+            //---
+            $('#submitButton').click(function(){
+                var year = $('#year').val();
+                var month = $('#month').val();
+                var date = $('#date').val();
+                
+                $('#test').val(year+month+date);
+            })
+
         });
     
     </script>
@@ -248,21 +262,21 @@
                     </select>
                     <select id="month">
                         <option value="0" selected>선택</option>
-                        <option value="1">1월</option>
-                        <option value="2">2월</option>
-                        <option value="3">3월</option>
-                        <option value="4">4월</option>
-                        <option value="5">5월</option>
-                        <option value="6">6월</option>
-                        <option value="7">7월</option>
-                        <option value="8">8월</option>
-                        <option value="9">9월</option>
+                        <option value="01">1월</option>
+                        <option value="02">2월</option>
+                        <option value="03">3월</option>
+                        <option value="04">4월</option>
+                        <option value="05">5월</option>
+                        <option value="06">6월</option>
+                        <option value="07">7월</option>
+                        <option value="08">8월</option>
+                        <option value="09">9월</option>
                         <option value="10">10월</option>
                         <option value="11">11월</option>
                         <option value="12">12월</option>
                     </select>
                 
-                    <select id="day">
+                    <select id="date">
                         <option value="0" selected>선택</option>
                     </select>
                 </div>
@@ -270,7 +284,9 @@
                     <input type="checkbox">남성
                     <input type="checkbox">여성   
                 </div>
-                <button type="submit" class="btn btn-success">회원가입</button>
+                <input type="text" value="" id="test">
+                <button type="button" id="submitButton">테스트버튼</button>
+                <button type="submit" class="btn btn-success" >회원가입</button>
 
             </form>
         </div>
