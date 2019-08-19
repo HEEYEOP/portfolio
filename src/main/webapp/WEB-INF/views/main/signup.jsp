@@ -13,11 +13,13 @@
 </head>
 <div id="body">
         <div id="signupForm">
+        <h1>회원가입</h1>
             <form action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
-                <h1>회원가입</h1>
                 <div class="tab">정보를 입력해주세요</div>
                 <button type="button" class="tab width usertype">개인사용자</button>
                 <button type="button" class="tab width usertype">기관사용자</button>
+               	
+        
                 <div class="input-group mb-3 input-group-lg" style="display:none">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">첨부파일</span>

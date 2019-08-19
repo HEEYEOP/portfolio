@@ -27,20 +27,21 @@ public class UserController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	@RequestMapping(value="/main/home")
-	public ModelAndView openTilesView(ModelAndView mv) throws Exception{
+	public ModelAndView main(ModelAndView mv) throws Exception{
+		logger.info("메인페이지 실행");
 	    mv.setViewName("/main/home");
 	    return mv;
 	}
 	
 	@RequestMapping(value="/main/signup", method=RequestMethod.GET)
-	public ModelAndView openTilesView2(ModelAndView mv,UserVO uVO, String user_email) throws Exception{
-		System.out.println(uVO);
-		
+	public ModelAndView signupGet(ModelAndView mv) throws Exception{
+		logger.info("회원가입페이지 실행");
+
 	    mv.setViewName("/main/signup");
 	    return mv;
 	}
 	@RequestMapping(value="/main/signup", method=RequestMethod.POST)
-	public ModelAndView openTilesView3(ModelAndView mv, String user_birth2, UserVO uVO) throws Exception{
+	public ModelAndView signupPost(ModelAndView mv,UserVO uVO, String user_birth2) throws Exception{
 		uVO.setUser_birth(user_birth2);
 		System.out.println(uVO);
 		
