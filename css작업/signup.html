@@ -57,7 +57,14 @@
 		        $('button[name=typeButton]').removeClass('active');
                 $(this).addClass('active')
                 
+                if($('#typeValue').val() == 'GroupUser'){
+                    $('#confirmFileBox').removeAttr('style');
+                }else{
+                    $('#confirmFileBox').attr('style','display:none')
+                }
 	        });
+
+            
 
 
 
@@ -212,6 +219,8 @@
     </style>
 </head>
 <body>
+
+    <img src="" alt="">
     <!-- header시작 -->
     <div id=header>
         <div id=headerContents>

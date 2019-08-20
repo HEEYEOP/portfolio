@@ -22,7 +22,7 @@
                 <button name="typeButton" type="button" class="tab width usertype btn-primary" value="GroupUser">기관사용자</button>
                	<input id="typeValue" type="hidden" name="userType">
         
-                <div class="input-group mb-3 input-group-lg" style="display:none">
+                <div id="confirmFileBox" class="input-group mb-3 input-group-lg" style="display:none">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">첨부파일</span>
                 	</div>

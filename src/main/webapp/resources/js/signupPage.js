@@ -4,6 +4,24 @@
  */
 var isCheck = false;
 $(document).ready(function(){
+		
+	//user_type 버튼 동작 시작----------------------------------
+	
+	$('button[name=typeButton]').click(function(){
+        $('button[name=typeButton]').removeClass('active');
+        $(this).addClass('active');
+        $('#typeValue').val($(this).attr('value'));
+        
+        //userType이 값이 GroupUser일때, 파일첨부란 보여주기
+        if($('#typeValue').val() == 'GroupUser'){
+            $('#confirmFileBox').removeAttr('style');
+        }else{
+        	$('#confirmFileBox').attr('style','display:none')
+        }
+        
+    });
+	
+	
 
     //생년월일 셀렉트박스 옵션 추가기능 시작-----------------------------------
     var today = new Date();
@@ -48,15 +66,7 @@ $(document).ready(function(){
         $('input[name=userBirth2]').val(''+year+'-'+month+'-'+date);
     });
     
-    //user_type 버튼 동작 시작----------------------------------
-	
-	$('button[name=typeButton]').click(function(){
-        $('button[name=typeButton]').removeClass('active');
-        $(this).addClass('active');
-        $('#typeValue').val($(this).attr('value'));
-        
-        
-    });
+    
 	
 	
 	
