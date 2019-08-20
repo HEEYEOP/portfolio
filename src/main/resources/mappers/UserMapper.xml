@@ -4,10 +4,10 @@
 <mapper namespace="kr.green.portfolio.dao.UserDAO">
 	
 	<select id="getEmail" resultType="String">
-		select user_email from user
+		select userEmail from user
 	</select>	
 	<select id="getUser" resultType="kr.green.portfolio.vo.UserVO">
-		select * from user where user_email=#{user_email} and isMember='Y'
+		select * from user where userEmail=#{userEmail} and isMember='Y'
 	</select>
 
 </mapper>

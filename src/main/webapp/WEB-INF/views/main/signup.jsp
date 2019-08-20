@@ -20,7 +20,7 @@
                 <div class="tab">정보를 입력해주세요</div>
                 <button name="typeButton" type="button" class="tab width usertype btn-primary" value="IndividualUser">개인사용자</button>
                 <button name="typeButton" type="button" class="tab width usertype btn-primary" value="GroupUser">기관사용자</button>
-               	<input id="typeValue" type="hidden" name="user_type">
+               	<input id="typeValue" type="hidden" name="userType">
         
                 <div class="input-group mb-3 input-group-lg" style="display:none">
                 	<div class="input-group-prepend">
@@ -33,7 +33,7 @@
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">E-mail</span>
                 	</div>
-                	<input id="user_email" name="user_email" type="email" class="form-control" required >
+                	<input id="userEmail" name="userEmail" type="email" class="form-control" required >
                 	<button type="button" id="dup" class="input-group-text">중복체크</button>
                 	<div class="valid-feedback">Valid.</div>
       				<div class="invalid-feedback">e-mail을 입력해주시기 바랍니다</div>
@@ -43,7 +43,7 @@
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">비밀번호</span>
                 	</div>
-                    <input id="user_pw" name="user_pw" type="text" class="form-control">
+                    <input id="userPw" name="userPw" type="text" class="form-control">
                 </div>
                 
                 <div class="input-group mb-3 input-group-lg">
@@ -57,7 +57,7 @@
                     <div class="input-group-prepend">
                     	<span class="input-group-text">이름</span>
                     </div>
-                    <input id="user_name" name="user_name" type="text" class="form-control">
+                    <input id="userName" name="userName" type="text" class="form-control">
                 </div>
                 
                 <div class="input-group mb-3 input-group-lg">
@@ -86,14 +86,14 @@
                     <select id="date" class="width" name="birth">
                         <option value="0" selected>선택</option>
                     </select>
-                    <input type="hidden" name="user_birth2" id="user_birth">
+                    <input type="hidden" name="userBirth2" id="userBirth">
                 </div>
                 <div class="input-group mb-3 input-group-lg">
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">성별</span>
                 	</div>
-                    <input name="user_gender" type="checkbox"  value="M" class="form-control">남성
-                    <input name="user_gender" type="checkbox" Value="F" class="form-control">여성
+                    <input name="userGender" type="checkbox"  value="M" class="form-control">남성
+                    <input name="userGender" type="checkbox" Value="F" class="form-control">여성
                 </div>
                 <button type="submit" class="btn btn-success tab">회원가입</button>
 

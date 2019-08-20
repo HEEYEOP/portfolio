@@ -11,11 +11,11 @@ public class UserServiceImp implements UserService{
 	UserDAO userDao;
 
 	@Override
-	public boolean repetitionCheck(String user_email) {
-		if(user_email == null) {
+	public boolean repetitionCheck(String userEmail) {
+		if(userEmail == null) {
 			return false;
 		}else {
-			if(userDao.getUser(user_email) == null) {
+			if(userDao.getUser(userEmail) == null) {
 				return false;
 			}else {
 				return true;

@@ -47,8 +47,8 @@ public class UserController {
 	    return mv;
 	}
 	@RequestMapping(value="/main/signup", method=RequestMethod.POST)
-	public String signupPost(ModelAndView mv,UserVO uVO, String user_birth2) throws Exception{
-		uVO.setUser_birth(user_birth2);
+	public String signupPost(ModelAndView mv,UserVO uVO, String userBirth2) throws Exception{
+		uVO.setUserBirth(userBirth2);
 		System.out.println(uVO);
 		
 	    return "redirect:/main/signup";
@@ -57,9 +57,9 @@ public class UserController {
 	
 	@RequestMapping(value ="/dup")
 	@ResponseBody
-	public boolean emailcheck(@RequestBody String user_email){
+	public boolean emailcheck(@RequestBody String userEmail){
 		logger.info("e-mail중복검사 중");
-		boolean repetitionCheck = userService.repetitionCheck(user_email);
+		boolean repetitionCheck = userService.repetitionCheck(userEmail);
 		return repetitionCheck;	
 	}
 	

@@ -45,7 +45,7 @@ $(document).ready(function(){
         var month = $('#month').val();
         var date = $('#date').val();
         
-        $('input[name=user_birth2]').val(''+year+'-'+month+'-'+date);
+        $('input[name=userBirth2]').val(''+year+'-'+month+'-'+date);
     });
     
     //user_type 버튼 동작 시작----------------------------------
@@ -76,16 +76,16 @@ $(document).ready(function(){
 	});	
 	
 	$('#dup').click(function(){
-		var user_email = $('input[name=user_email]').val();
-		if(user_email == ""){
-			alert('사용하실 e-mail을 입력해주세요')
+		var userEmail = $('input[name=userEmail]').val();
+		if(userEmail == ""){
+			alert('사용하실 Email을 입력해주세요')
 			
 		}else{	
 			var url = "/portfolio/dup";
 			$.ajax({
 		        async:true,
 		        type:'POST',
-		        data:user_email,
+		        data:userEmail,
 		        url:url,
 		        dataType:"json",
 		        contentType:"application/json; charset=UTF-8",
@@ -102,19 +102,19 @@ $(document).ready(function(){
 		    })
 		}
 	});
-	$('input[name=user_email]').change(function(){
+	$('input[name=userEmail]').change(function(){
 		isCheck = false;
 	});
 	
 	//유효성 검사 시작------------------------------------------
 	$("form").validate({
         rules: {
-            user_email: {
+            userEmail: {
                 required : true,
                 minlength : 8,
                 maxlength : 45
             },
-            user_pw: {
+            userPw: {
                 required : true,
                 minlength : 8,
                 maxlength : 20,
@@ -122,9 +122,9 @@ $(document).ready(function(){
             },
             pwCheck: {
                 required : true,
-                equalTo : user_pw
+                equalTo : userPw
             },
-            user_name: {
+            userName: {
                 required : true,
                 minlength : 2,
                 maxlength : 20
@@ -133,12 +133,12 @@ $(document).ready(function(){
         },
         //규칙체크 실패시 출력될 메시지
         messages : {
-            user_email: {
+            userEmail: {
                 required : "필수로입력하세요",
                 minlength : "최소 {0}글자이상이어야 합니다",
                 maxlength : "최대 {0}글자이하이어야 합니다"
             },
-            user_pw: {
+            userPw: {
                 required : "필수로입력하세요",
                 minlength : "최소 {0}글자이상이어야 합니다",
                 maxlength : "최대 {0}글자이하이어야 합니다",
@@ -148,7 +148,7 @@ $(document).ready(function(){
                 required : "필수로입력하세요",
                 equalTo : "비밀번호가 일치하지 않습니다."
             },
-            user_name: {
+            userName: {
                 required : "필수로 입력하세요",
                 minlength : "최소 {0}글자이상이어야 합니다",
                 maxlength : "최대 {0}글자이하이어야 합니다", 

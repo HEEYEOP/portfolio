@@ -5,13 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserVO {
-	private String user_email;
-	private String user_type;
-	private String user_name;
-	private String user_pw;
-	private String user_phone;
-	private String user_gender;
-	private Date user_birth;
+	private String userEmail;
+	private String userType;
+	private String userName;
+	private String userPw;
+	private String userPhone;
+	private String userGender;
+	private Date userBirth;
 	private String confirmFile;
 	private int writeBoardCount;
 	private int writeCommentCount;
@@ -19,52 +19,52 @@ public class UserVO {
 	private String isMember;
 	
 	
-	public String getUser_email() {
-		return user_email;
+	public String getUserEmail() {
+		return userEmail;
 	}
-	public void setUser_email(String user_email) {
-		this.user_email = user_email;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
-	public String getUser_type() {
-		return user_type;
+	public String getUserType() {
+		return userType;
 	}
-	public void setUser_type(String user_type) {
-		this.user_type = user_type;
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
-	public String getUser_name() {
-		return user_name;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	public String getUser_pw() {
-		return user_pw;
+	public String getUserPw() {
+		return userPw;
 	}
-	public void setUser_pw(String user_pw) {
-		this.user_pw = user_pw;
+	public void setUserPw(String userPw) {
+		this.userPw = userPw;
 	}
-	public String getUser_phone() {
-		return user_phone;
+	public String getUserPhone() {
+		return userPhone;
 	}
-	public void setUser_phone(String user_phone) {
-		this.user_phone = user_phone;
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
 	}
-	public String getUser_gender() {
-		return user_gender;
+	public String getUserGender() {
+		return userGender;
 	}
-	public void setUser_gender(String user_gender) {
-		this.user_gender = user_gender;
+	public void setUserGender(String userGender) {
+		this.userGender = userGender;
 	}
-	public Date getUser_birth() {
-		return user_birth;
+	public Date getUserBirth() {
+		return userBirth;
 	}
-	public void setUser_birth(Date user_birth) {
-		this.user_birth = user_birth;
+	public void setUserBirth(Date userBirth) {
+		this.userBirth = userBirth;
 	}
-	public void setUser_birth(String user_birth) {
+	public void setUserBirth(String userBirth) {
 		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
 		try {
-			this.user_birth = transFormat.parse(user_birth);
+			this.userBirth = transFormat.parse(userBirth);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -100,15 +100,14 @@ public class UserVO {
 		this.isMember = isMember;
 	}
 	
-	
 	@Override
 	public String toString() {
-		return "UserVO [user_email=" + user_email + ", user_type=" + user_type + ", user_name=" + user_name
-				+ ", user_pw=" + user_pw + ", user_phone=" + user_phone + ", user_gender=" + user_gender
-				+ ", user_birth=" + user_birth + ", confirmFile=" + confirmFile + ", writeBoardCount=" + writeBoardCount
-				+ ", writeCommentCount=" + writeCommentCount + ", likesBoardCount=" + likesBoardCount + ", isMember="
-				+ isMember + "]";
+		return "UserVO [userEmail=" + userEmail + ", userType=" + userType + ", userName=" + userName + ", userPw="
+				+ userPw + ", userPhone=" + userPhone + ", userGender=" + userGender + ", userBirth=" + userBirth
+				+ ", confirmFile=" + confirmFile + ", writeBoardCount=" + writeBoardCount + ", writeCommentCount="
+				+ writeCommentCount + ", likesBoardCount=" + likesBoardCount + ", isMember=" + isMember + "]";
 	}
+	
 	
 	
 	
