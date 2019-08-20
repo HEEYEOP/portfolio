@@ -112,7 +112,7 @@ $(document).ready(function(){
             user_email: {
                 required : true,
                 minlength : 8,
-                maxlength : 20
+                maxlength : 45
             },
             user_pw: {
                 required : true,
@@ -155,7 +155,15 @@ $(document).ready(function(){
                 
             }
         }
-    });
+    }); //$(document)꺼----------------------------
+	$.validator.addMethod(
+	    "regex",
+	    function(value, element, regexp) {
+	        var re = new RegExp(regexp);
+	        return this.optional(element) || re.test(value);
+	    },
+	    "Please check your input."
+		);
 	
 
 	
