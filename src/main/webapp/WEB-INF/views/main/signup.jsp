@@ -19,8 +19,8 @@
             <form id="form" action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
                 <div class="tab">정보를 입력해주세요</div>
                 <button name="typeButton" type="button" class="tab width usertype btn-primary" value="IndividualUser">개인사용자</button>
-                <button name="typeButton" type="button" class="tab width usertype btn-primary" value="GroupUser">기관사용자</button>
-               	<input id="typeValue" type="hidden" name="userType">
+                <button name="typeButton" type="button" class="tab width usertype btn-primary" value="GroupUserTmp">기관사용자</button>
+               	<input id="typeValue" type="text" name="userType">
         
                 <div id="confirmFileBox" class="input-group mb-3 input-group-lg" style="display:none">
                 	<div class="input-group-prepend">
