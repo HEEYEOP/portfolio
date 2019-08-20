@@ -116,7 +116,7 @@ $(document).ready(function(){
             },
             userPw: {
                 required : true,
-                minlength : 8,
+                minlength : 4,
                 maxlength : 20,
                 regex: /^\w*(\d[A-z]|[A-z]\d)\w*$/
             },
@@ -156,6 +156,7 @@ $(document).ready(function(){
             }
         }
     }); //$(document)꺼----------------------------
+	
 	$.validator.addMethod(
 	    "regex",
 	    function(value, element, regexp) {

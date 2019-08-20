@@ -25,8 +25,6 @@ import kr.green.portfolio.vo.UserVO;
 @Controller
 public class UserController {
 	@Autowired
-	UserDAO userDao;
-	@Autowired
 	UserService userService;
 	
 	
@@ -46,22 +44,29 @@ public class UserController {
 	    mv.setViewName("/main/signup");
 	    return mv;
 	}
-	@RequestMapping(value="/main/signup", method=RequestMethod.POST)
-	public String signupPost(ModelAndView mv,UserVO uVO, String userBirth2) throws Exception{
-		uVO.setUserBirth(userBirth2);
-		System.out.println(uVO);
-		
-	    return "redirect:/main/signup";
-	}
 	
-	
-	@RequestMapping(value ="/dup")
+	@RequestMapping(value ="/dup") //Ajax중복검사 메소드
 	@ResponseBody
 	public boolean emailcheck(@RequestBody String userEmail){
 		logger.info("e-mail중복검사 중");
 		boolean repetitionCheck = userService.repetitionCheck(userEmail);
 		return repetitionCheck;	
 	}
+	
+	
+	@RequestMapping(value="/main/signup", method=RequestMethod.POST)
+	public String signupPost(ModelAndView mv,UserVO uVO, String userBirth2) throws Exception{
+		uVO.setUserBirth(userBirth2);
+		//System.out.println(uVO); 입력받은 uVO 잘넘어오는것 확인함
+		
+		userService.enrollUser(uVO);
+		
+		
+	    return "redirect:/main/signup";
+	}
+	
+	
+	
 	
 	
 	@RequestMapping(value="/main/login", method=RequestMethod.GET)

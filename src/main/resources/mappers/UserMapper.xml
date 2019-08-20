@@ -9,5 +9,9 @@
 	<select id="getUser" resultType="kr.green.portfolio.vo.UserVO">
 		select * from user where userEmail=#{userEmail} and isMember='Y'
 	</select>
+	
+	<insert id="insertUser">
+		insert into user(userEmail,userType,userName,userPw) values(#{userEmail},#{userType},#{userName},#{userPw})
+	</insert>
 
 </mapper>
