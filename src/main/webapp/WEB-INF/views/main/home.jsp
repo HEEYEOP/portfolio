@@ -3,31 +3,14 @@
     pageEncoding="UTF-8"%>
 <head>
 <title>메인화면</title>
-
+<link href="<%=request.getContextPath()%>/resources/css/header.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/mainPage.css" rel="stylesheet">
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/mainPage.js"></script>
 
 </head>
 
 <!-- body시작---------------------------------------------------------------------------------------- -->
-<div id="searchWrap" ></div>
-<div id="searchBox">검색어를 입력하세요<img src="" alt=""></div>
-<div id="fieldBox">
-    <ul>
-        <li class="field">필드1</li>
-        <li class="field">필드2</li>
-        <li class="field">필드3</li>
-        <li class="field">필드4</li>
-        <li class="field">필드5</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
+
 <div id="body" style="min-height: 800px">
     <div id="mainImg">
         <div id="mainImgContents">

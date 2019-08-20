@@ -64,7 +64,7 @@ public class UserController {
 		userService.enrollUser(uVO);
 		
 		
-	    return "redirect:/main/signup";
+	    return "redirect:/main/login";
 	}
 	
 	

@@ -1,0 +1,19 @@
+@charset "EUC-KR";
+	*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
+/* 메인footer스타일 시작---------------------------------------------------------------------------- */
+	#footer{
+        border: 1px solid navy;
+        position: relative;
+        height: 200px;
+    }
+    #footerContents{
+        border: 1px solid chartreuse;
+        max-width: 1050px;
+        margin: 0 auto;
+        height: 198px;
+    }
+    
