@@ -1,6 +1,7 @@
 package kr.green.portfolio.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import kr.green.portfolio.dao.UserDAO;
@@ -10,6 +11,8 @@ import kr.green.portfolio.vo.UserVO;
 public class UserServiceImp implements UserService{
 	@Autowired
 	UserDAO userDao;
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
 
 	@Override
 	public boolean repetitionCheck(String userEmail) {
@@ -27,6 +30,8 @@ public class UserServiceImp implements UserService{
 
 	@Override
 	public void enrollUser(UserVO uVO) {
+		String encodePw = passwordEncoder.encode(uVO.getUserPw());
+		uVO.setUserPw(encodePw);
 		userDao.insertUser(uVO);
 		
 	}
