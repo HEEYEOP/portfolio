@@ -15,20 +15,20 @@
         <div id="loginImg">이미지</div>
         <div id="loginBox">
             <h1>로그인</h1>
-            <form>
+            <form action="<%=request.getContextPath()%>/main/login" method="POST">
                 <div class="input-group mb-3 input-group-lg">
                     <div class="input-group-prepend">
                     <span class="input-group-text" style="width: 113.98px;">E-mail</span>
                     </div>
-                    <input type="text" class="form-control">
+                    <input name="userEmail" type="text" class="form-control">
                 </div>
                 <div class="input-group mb-3 input-group-lg">
                     <div class="input-group-prepend">
                     <span class="input-group-text">비밀번호</span>
                     </div>
-                    <input type="text" class="form-control">
+                    <input name="userPw" type="text" class="form-control">
                 </div>
-                <button type="button" class="btn btn-success" style="width:478px;">로그인</button>
+                <button type="submit" class="btn btn-success" style="width:478px;">로그인</button>
             </form>
             <ul id="searchInfoBox">
                 <li>

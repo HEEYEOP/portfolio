@@ -77,14 +77,23 @@ public class UserController {
 	}
 	
 	
-	
-	
-	
 	@RequestMapping(value="/main/login", method=RequestMethod.GET)
 	public ModelAndView loginGet(ModelAndView mv) throws Exception{
 		
 	    mv.setViewName("/main/login");
 	    return mv;
+	}
+	@RequestMapping(value="/main/login", method=RequestMethod.POST)
+	public String loginPost(UserVO uVO){
+		System.out.println("로그인시도한 정보"+uVO);
+		boolean loginOK = userService.login(uVO);
+		if(loginOK) {
+			System.out.println("로그인성공");
+			return "redirect:/main/home";
+		}else {
+			System.out.println("로그인실패");
+			return "redirect:/main/login";
+		}
 	}
 	
 	

@@ -8,4 +8,6 @@ public interface UserService {
 
 	void enrollUser(UserVO uVO);
 
+	boolean login(UserVO uVO);
+
 }

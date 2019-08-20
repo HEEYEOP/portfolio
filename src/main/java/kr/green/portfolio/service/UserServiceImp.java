@@ -14,7 +14,7 @@ public class UserServiceImp implements UserService{
 	@Autowired
 	BCryptPasswordEncoder passwordEncoder;
 
-	@Override
+	@Override //회원가입시, 중복확인메소드
 	public boolean repetitionCheck(String userEmail) {
 		if(userEmail == null) {
 			return false;
@@ -25,10 +25,9 @@ public class UserServiceImp implements UserService{
 				return true;
 			}
 		}
-		
 	}
 
-	@Override
+	@Override //회원가입메소드
 	public void enrollUser(UserVO uVO) {
 		String encodePw = passwordEncoder.encode(uVO.getUserPw());
 		uVO.setUserPw(encodePw);
@@ -36,4 +35,18 @@ public class UserServiceImp implements UserService{
 		
 	}
 
+	@Override
+	public boolean login(UserVO uVO) {
+		UserVO getUser= userDao.getUser(uVO.getUserEmail());
+				
+		if(uVO == null){
+			return false;
+		}else if(getUser == null) {
+			return false;
+		}else if(!passwordEncoder.matches(uVO.getUserPw(), getUser.getUserPw())) {
+			return false;
+		}
+		return true;
+		
+	}
 }
