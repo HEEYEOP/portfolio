@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +16,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.green.portfolio.dao.UserDAO;
 import kr.green.portfolio.service.UserService;
+import kr.green.portfolio.utils.UploadFileUtils;
 import kr.green.portfolio.vo.UserVO;
 
 /**
@@ -27,6 +31,9 @@ import kr.green.portfolio.vo.UserVO;
 public class UserController {
 	@Autowired
 	UserService userService;
+	
+	@Resource
+	private String uploadPath;
 	
 	
 	
@@ -57,12 +64,14 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/main/signup", method=RequestMethod.POST)
-	public String signupPost(ModelAndView mv,UserVO uVO, String userBirth2) throws Exception{
+	public String signupPost(ModelAndView mv,UserVO uVO, String userBirth2, MultipartFile confirmFile2) throws Exception{
 		uVO.setUserBirth(userBirth2);
-		//System.out.println(uVO); 입력받은 uVO 잘넘어오는것 확인함
 		
+		String confirmFile = UploadFileUtils.uploadFile(uploadPath, confirmFile2.getOriginalFilename(),confirmFile2.getBytes());
+		uVO.setConfirmFile(confirmFile);
+		
+		System.out.println("등록할 회원정보" + uVO);
 		userService.enrollUser(uVO);
-		
 		
 	    return "redirect:/main/login";
 	}

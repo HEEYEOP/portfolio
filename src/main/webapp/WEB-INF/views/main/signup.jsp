@@ -16,7 +16,7 @@
 <div id="body">
         <div id="signupForm">
         <h1>회원가입</h1>
-            <form id="form" action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated">
+            <form id="form" action="<%=request.getContextPath()%>/main/signup" method="post" class="form was-validated" enctype="multipart/form-data">
                 <div class="tab">정보를 입력해주세요</div>
                 <button name="typeButton" type="button" class="tab width usertype btn-primary" value="IndividualUser">개인사용자</button>
                 <button name="typeButton" type="button" class="tab width usertype btn-primary" value="GroupUserTmp">기관사용자</button>
@@ -26,7 +26,7 @@
                 	<div class="input-group-prepend">
                 		<span class="input-group-text">첨부파일</span>
                 	</div>
-                	<input name="confirmFile" type="file" class="form-control">
+                	<input name="confirmFile2" type="file" class="form-control">
                 </div>
                 
                 <div class="input-group mb-3 input-group-lg">

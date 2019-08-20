@@ -11,7 +11,7 @@
 	</select>
 	
 	<insert id="insertUser">
-		insert into user(userEmail,userType,userName,userPw) values(#{userEmail},#{userType},#{userName},#{userPw})
+		insert into user(userEmail,userType,userName,userPw,confirmFile) values(#{userEmail},#{userType},#{userName},#{userPw},#{confirmFile})
 	</insert>
 
 </mapper>
