@@ -31,8 +31,11 @@ public class UserServiceImp implements UserService{
 	public void enrollUser(UserVO uVO) {
 		String encodePw = passwordEncoder.encode(uVO.getUserPw());
 		uVO.setUserPw(encodePw);
-		userDao.insertUser(uVO);
 		
+		if(uVO.getUserType().equals("GroupUser")) {
+			uVO.setIsMember("N");
+		}
+		userDao.insertUser(uVO);
 	}
 
 	@Override

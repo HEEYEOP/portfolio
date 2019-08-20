@@ -13,7 +13,7 @@ $(document).ready(function(){
         $('#typeValue').val($(this).attr('value'));
         
         //userType이 값이 GroupUser일때, 파일첨부란 보여주기
-        if($('#typeValue').val() == 'GroupUserTmp'){
+        if($('#typeValue').val() == 'GroupUser'){
             $('#confirmFileBox').removeAttr('style');
         }else{
         	$('#confirmFileBox').attr('style','display:none')
