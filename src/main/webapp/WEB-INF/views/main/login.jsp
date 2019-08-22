@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <link href="<%=request.getContextPath()%>/resources/css/loginPage.css" rel="stylesheet">
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/loginPage.js"></script>
+
 
 <title>로그인화면</title>
 
@@ -35,16 +37,16 @@
              <span>홈페이지가 처음이신가요?</span><a href="<%=request.getContextPath()%>/main/signup" style="float: right;">회원가입하기</a>
          </li>
          <li>
-             <span>E-amil을 잊으셨나요?</span><a href="" style="float: right;">가입E-mail찾기</a>
+             <span>E-amil을 잊으셨나요?</span><a href="#" style="float: right;">가입E-mail찾기</a>
          </li>
          <li>
-             <span>비밀번호를 잊으셨나요?</span><a href="" style="float: right;">비밀번호찾기</a>
-            </li>
-        </ul>
+             <span>비밀번호를 잊으셨나요?</span><a name="searchPw" href="#" style="float: right;">비밀번호찾기</a>
+         </li>
+      </ul>
     </div>
 </div>
-<div id="sendingBox"></div>
-	<div class="loginBox sendingEmailBox">
+<div id="sendingBox" class="displayNone"></div>
+	<div id="sendingEmailBox" class="loginBox displayNone">
 		<div class="textBox">
 	     	<h3>임시 비밀번호발송</h3>
 	    </div>
