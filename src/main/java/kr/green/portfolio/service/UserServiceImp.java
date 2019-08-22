@@ -16,15 +16,14 @@ public class UserServiceImp implements UserService{
 
 	@Override //회원가입시, 중복확인메소드
 	public boolean repetitionCheck(String userEmail) {
-		if(userEmail == null) {
-			return false;
-		}else {
-			if(userDao.getUser(userEmail) == null) {
+		if(userEmail == "") {
+			return true;
+		}else if(userDao.getUser(userEmail) == null) {
 				return false;
-			}else {
+		}else {
 				return true;
-			}
 		}
+		
 	}
 
 	@Override //회원가입메소드

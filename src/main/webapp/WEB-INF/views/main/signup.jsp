@@ -33,9 +33,8 @@
 	        	<div class="input-group-prepend">
 	        		<span class="input-group-text">E-mail</span>
 	        	</div>
-	        	<input id="userEmail" name="userEmail" type="email" class="form-control" style="background-color:white;" readonly >
-	            	<button type="button" class="input-group-text">인증</button>
-	            	<button type="button" id="dup" class="input-group-text">중복체크</button>
+	        	<input id="userEmail" name="userEmail" type="email" class="form-control" style="background-color:white;" readonly value="${userEmail}" >
+	            <button type="button" class="input-group-text">인증</button>
 			</div>
 	            
             <div class="input-group mb-3 input-group-lg">
@@ -99,4 +98,25 @@
 		</form>
 	</div>
 </div>
+
+
+<div id="emailConfirmBox"></div>
+<div>
+	<div class="emailDupCheck">
+		<h3>이메일 인증하기</h3>
+		
+		<div class="input-group mb-3 input-group-lg">
+		    <input name="sendingUserEmail" type="email" class="form-control" >
+		    <button type="button" id="dup" class="input-group-text">인증번호받기</button>
+		</div>
+		
+		<div class="input-group mb-3 input-group-lg">
+		    <input name="confirmNum" type="email" class="form-control" placeholder="인증번호">
+		    <button type="button" id="dup" class="input-group-text">확인</button>
+		</div>
+		
+		
+	</div>
+</div>
+
     

@@ -70,7 +70,7 @@ $(document).ready(function(){
 	
 	
 	
-    //아이디 중복 검사 시작----------------------------------
+    //email 중복 검사 시작----------------------------------
             
     $('#form').submit(function(){
     	if($('#typeValue').val() == ''){
@@ -86,7 +86,7 @@ $(document).ready(function(){
 	});	
 	
 	$('#dup').click(function(){
-		var userEmail = $('input[name=userEmail]').val();
+		var userEmail = $('input[name=sendingUserEmail]').val();
 		if(userEmail == ""){
 			alert('사용하실 Email을 입력해주세요')
 			
@@ -101,10 +101,10 @@ $(document).ready(function(){
 		        contentType:"application/json; charset=UTF-8",
 		        success : function(data){
 		            if(!data){
-		            	alert('회원 가입이 가능한 아이디입니다');
+		            	alert('회원 가입이 가능한 아이디로 인증번호를 발송했습니다.');
 		            	isCheck = true;     	
 		            }else{
-		            	alert('해당 아이디는 이미 존재합니다');
+		            	alert('해당 아이디는 이미 존재합니다. 인증번호를 받을 수 없습니다.');
 		            	isCheck = false;
 		            }
 		        }

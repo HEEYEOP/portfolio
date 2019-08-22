@@ -64,8 +64,28 @@ public class UserController {
 	@RequestMapping(value ="/dup") //Ajax중복검사 메소드
 	@ResponseBody
 	public boolean emailcheck(@RequestBody String userEmail){
-		logger.info("e-mail중복검사 중");
+		logger.info("e-mail중복검사 및 이메일 인증번호 발송");
 		boolean repetitionCheck = userService.repetitionCheck(userEmail);
+		
+		if(repetitionCheck == false) {
+			String setfrom = "jyihyo1321@gmail.com";      
+			String title = "이메일 인증번호 입니다";
+		    String recipient  = userEmail;     // 받는 사람 이메일
+		    System.out.println("인증번호를 받을 이메일 주소 = "+recipient);
+		    
+		    try { 
+				MimeMessage message = mailSender.createMimeMessage(); 
+			  	MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+			  
+			  	messageHelper.setFrom(setfrom); // 보내는사람 생략하거나 하면 정상작동을 안함
+			  	messageHelper.setTo(recipient); // 받는사람 이메일 
+			  	messageHelper.setSubject(title);// 메일제목은 생략이 가능하다 
+			  	messageHelper.setText("이메일인증번호 xxx 입니다."); // 메일 내용
+		
+			  	mailSender.send(message); 
+			}catch(Exception e){ System.out.println(e); }
+		    
+		}
 		return repetitionCheck;	
 	}
 	
@@ -111,7 +131,7 @@ public class UserController {
 	public String mailSending(HttpServletRequest request) {
 		logger.info("임시 비밀번호 발송");
 		
-		String setfrom = "stajun@naver.com";      
+		String setfrom = "yjihyo1321@gmail.com";      
 		String title = "임시비밀번호 입니다";
 		String userType = request.getParameter("userType");
 		System.out.println("선택한 userType값 =" + userType);
@@ -133,6 +153,7 @@ public class UserController {
 		  
 		  	mailSender.send(message); 
 		  	}catch(Exception e){ System.out.println(e); }
+		  
 		  	System.out.println("성공!! 임시비밀번호 발송에 성공하였습니다.");
 		  	return "redirect:/main/login";
 		  	
