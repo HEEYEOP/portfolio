@@ -104,5 +104,11 @@ public class UserServiceImp implements UserService{
 	    } catch(Exception e){ 
 	        System.out.println(e); 
 	    } 
+	}
+
+	@Override
+	public void updateConfirmNum(String recipient, String confirmNum) { //회원가입 이메일 인증시, 인증번호를 업데이트하는 메소드
+		userDao.insertConfirmNum(recipient,confirmNum);
+		
 	} 
 }
