@@ -66,25 +66,18 @@ $(document).ready(function(){
         $('input[name=userBirth2]').val(''+year+'-'+month+'-'+date);
     });
     
+    //email인증버튼-> 전송받을 이메일 창 띄우기
+    $('button[name=confirmButton]').click(function(){
+    	 $('#emailConfirmBox').removeClass('displayNone');
+    	 $('.emailDupCheck').removeClass('displayNone');
+    });
+	
+	
+	
     
-	
-	
-	
-    //email 중복 검사 시작----------------------------------
             
-    $('#form').submit(function(){
-    	if($('#typeValue').val() == ''){
-    		alert('사용자타입을 선택해주세요')
-    		return false;
-    	}
-		if(!isCheck){ 
-			alert('E-mail 중복 체크를 해주세요')
-			return false;
-		}
-		
-		
-	});	
-	
+    
+  //email 중복 검사 시작----------------------------------
 	$('#dup').click(function(){
 		var userEmail = $('input[name=sendingUserEmail]').val();
 		if(userEmail == ""){
@@ -112,11 +105,27 @@ $(document).ready(function(){
 		    })
 		}
 	});
+	
+	
+	
+	//유효성 검사 시작------------------------------------------
 	$('input[name=userEmail]').change(function(){
 		isCheck = false;
 	});
 	
-	//유효성 검사 시작------------------------------------------
+	$('#form').submit(function(){
+    	if($('#typeValue').val() == ''){
+    		alert('사용자타입을 선택해주세요')
+    		return false;
+    	}
+		if(!isCheck){ 
+			alert('E-mail 중복 체크를 해주세요')
+			return false;
+		}
+		
+		
+	});	
+	
 	$("form").validate({
         rules: {
             userEmail: {

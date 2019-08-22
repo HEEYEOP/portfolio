@@ -34,7 +34,7 @@
 	        		<span class="input-group-text">E-mail</span>
 	        	</div>
 	        	<input id="userEmail" name="userEmail" type="email" class="form-control" style="background-color:white;" readonly value="${userEmail}" >
-	            <button type="button" class="input-group-text">인증</button>
+	            <button name="confirmButton" type="button" class="input-group-text">인증</button>
 			</div>
 	            
             <div class="input-group mb-3 input-group-lg">
@@ -100,9 +100,9 @@
 </div>
 
 
-<div id="emailConfirmBox"></div>
+<div id="emailConfirmBox" class="displayNone"></div>
 <div>
-	<div class="emailDupCheck">
+	<div class="emailDupCheck displayNone" >
 		<h3>이메일 인증하기</h3>
 		
 		<div class="input-group mb-3 input-group-lg">
