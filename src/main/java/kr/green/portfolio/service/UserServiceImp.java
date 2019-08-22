@@ -55,4 +55,17 @@ public class UserServiceImp implements UserService{
 		return true;
 		
 	}
+
+	@Override
+	public boolean matchEmailandType(String userType, String userEmail) {
+		UserVO getUser = userDao.getUser(userEmail);
+		if(userType == ""|| userEmail == "") {
+			return false;
+		}else if(getUser == null) {
+			return false;
+		}if(!getUser.getUserType().equals(userType)) {
+			return false;
+		}
+		return true;
+	}
 }

@@ -50,13 +50,13 @@
 		<div class="textBox">
 	     	<h3>임시 비밀번호발송</h3>
 	    </div>
-	     <form>
+	     <form action="<%=request.getContextPath()%>/mail/mailSending" method="post">
 		     <div class="input-group mb-3 input-group-lg">
             	 <div class="input-group-prepend">
             		<span class="input-group-text">사용자구분</span>
             	 </div>
-                 <input name="userGender" type="radio"  value="IndividualUser" class="form-control">개인
-                 <input name="userGender" type="radio" Value="GroupUser" class="form-control">기관
+                 <input name="userType" type="radio"  value="IndividualUser" class="form-control">개인
+                 <input name="userType" type="radio" Value="GroupUser" class="form-control">기관
             </div>
 	         <div class="input-group mb-3 input-group-lg">
 	             <div class="input-group-prepend">

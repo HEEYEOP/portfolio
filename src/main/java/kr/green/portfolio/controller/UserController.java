@@ -5,10 +5,14 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.annotation.Resource;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,6 +38,9 @@ public class UserController {
 	
 	@Resource
 	private String uploadPath;
+	
+	@Autowired
+	private JavaMailSender mailSender;
 	
 	
 	
@@ -97,14 +104,45 @@ public class UserController {
 		}
 	}
 	
+  
+
+	// mailSending 코드
+	@RequestMapping(value = "/mail/mailSending")
+	public String mailSending(HttpServletRequest request) {
+		logger.info("임시 비밀번호 발송");
+		
+		String setfrom = "stajun@naver.com";      
+		String title = "임시비밀번호 입니다";
+		String userType = request.getParameter("userType");
+		System.out.println("선택한 userType값 =" + userType);
+	    String userEmail  = request.getParameter("userEmail");     // 받는 사람 이메일
+	    System.out.println("작성한 userEmail값 = "+userEmail);
+	    
+	    boolean matchRes = userService.matchEmailandType(userType,userEmail);
+	    System.out.println("존재하는 작성자인가?"+ matchRes);
+	    
+	   if(matchRes) {
+		  try { 
+			MimeMessage message = mailSender.createMimeMessage(); 
+		  	MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+		  
+		  	messageHelper.setFrom(setfrom); // 보내는사람 생략하거나 하면 정상작동을 안함
+		  	messageHelper.setTo(userEmail); // 받는사람 이메일 
+		  	messageHelper.setSubject(title);// 메일제목은 생략이 가능하다 
+		  	messageHelper.setText("임시E-mail발송입니다."); // 메일 내용
+		  
+		  	mailSender.send(message); 
+		  	}catch(Exception e){ System.out.println(e); }
+		  	System.out.println("성공!! 임시비밀번호 발송에 성공하였습니다.");
+		  	return "redirect:/main/login";
+		  	
+	      }else {
+	    	  System.out.println("실패!! 임시비밀번호 발송에 실패하였습니다.");
+	    	  return "redirect:/main/home";
+	      }
+	   
+	 }
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 }

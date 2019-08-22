@@ -10,4 +10,6 @@ public interface UserService {
 
 	boolean login(UserVO uVO);
 
+	boolean matchEmailandType(String userType, String userEmail);
+
 }
