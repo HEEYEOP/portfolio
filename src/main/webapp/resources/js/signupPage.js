@@ -78,7 +78,7 @@ $(document).ready(function(){
     		return false;
     	}
 		if(!isCheck){ 
-			alert('아이디 중복 체크를 해주세요')
+			alert('E-mail 중복 체크를 해주세요')
 			return false;
 		}
 		
