@@ -3,7 +3,8 @@
  */
 $(document).ready(function(){
 	//비밀번호찾기->임시 이메일 발송 박스
-	$('a[name=searchPw]').click(function(){
+	
+	$('span[name=searchPw]').click(function(){
         $('#sendingBox').removeClass('displayNone');
         $('#sendingEmailBox').removeClass('displayNone');
         

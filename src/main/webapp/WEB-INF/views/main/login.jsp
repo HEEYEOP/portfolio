@@ -40,7 +40,7 @@
              <span>E-amil을 잊으셨나요?</span><a href="#" style="float: right;">가입E-mail찾기</a>
          </li>
          <li>
-             <span>비밀번호를 잊으셨나요?</span><a name="searchPw" href="#" style="float: right;">비밀번호찾기</a>
+             <span>비밀번호를 잊으셨나요?</span><span name="searchPw" style="float: right;">비밀번호찾기</span>
          </li>
       </ul>
     </div>
