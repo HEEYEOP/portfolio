@@ -83,6 +83,7 @@ public class UserController {
 	    mv.setViewName("/main/login");
 	    return mv;
 	}
+	
 	@RequestMapping(value="/main/login", method=RequestMethod.POST)
 	public String loginPost(UserVO uVO){
 		System.out.println("로그인시도한 정보"+uVO);

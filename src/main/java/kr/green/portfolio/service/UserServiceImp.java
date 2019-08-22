@@ -34,7 +34,10 @@ public class UserServiceImp implements UserService{
 		
 		if(uVO.getUserType().equals("GroupUser")) {
 			uVO.setIsMember("N");
+		}else{
+			uVO.setIsMember("Y");
 		}
+		
 		userDao.insertUser(uVO);
 	}
 
