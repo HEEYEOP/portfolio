@@ -68,22 +68,15 @@ public class UserController {
 		boolean repetitionCheck = userService.repetitionCheck(userEmail);
 		
 		if(repetitionCheck == false) {
-			String setfrom = "jyihyo1321@gmail.com";      
-			String title = "이메일 인증번호 입니다";
+
 		    String recipient  = userEmail;     // 받는 사람 이메일
-		    System.out.println("인증번호를 받을 이메일 주소 = "+recipient);
+		    String title = "이메일 인증번호 입니다";
+		    String confirmNum = userService.createPw();
+			System.out.println("이메일 인증 번호 : "+ confirmNum);
+			String contents = ("이메일 인증 번호는  " + confirmNum + " 입니다");
+		   
+		    userService.sendMail(recipient, title, contents);
 		    
-		    try { 
-				MimeMessage message = mailSender.createMimeMessage(); 
-			  	MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
-			  
-			  	messageHelper.setFrom(setfrom); // 보내는사람 생략하거나 하면 정상작동을 안함
-			  	messageHelper.setTo(recipient); // 받는사람 이메일 
-			  	messageHelper.setSubject(title);// 메일제목은 생략이 가능하다 
-			  	messageHelper.setText("이메일인증번호 xxx 입니다."); // 메일 내용
-		
-			  	mailSender.send(message); 
-			}catch(Exception e){ System.out.println(e); }
 		    
 		}
 		return repetitionCheck;	
@@ -131,8 +124,6 @@ public class UserController {
 	public String mailSending(HttpServletRequest request) {
 		logger.info("임시 비밀번호 발송");
 		
-		String setfrom = "yjihyo1321@gmail.com";      
-		String title = "임시비밀번호 입니다";
 		String userType = request.getParameter("userType");
 		System.out.println("선택한 userType값 =" + userType);
 	    String userEmail  = request.getParameter("userEmail");     // 받는 사람 이메일
@@ -142,20 +133,14 @@ public class UserController {
 	    System.out.println("존재하는 작성자인가?"+ matchRes);
 	    
 	   if(matchRes) {
-		  try { 
-			MimeMessage message = mailSender.createMimeMessage(); 
-		  	MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+		   String title = "임시비밀번호 입니다";
+		   String tmpPw = userService.createPw();
+		   System.out.println("임시비밀번호 : "+ tmpPw);
+		   String contents = ("임시 비밀번호는 " + tmpPw + "입니다");
+		   userService.sendMail(userEmail, title, contents);
 		  
-		  	messageHelper.setFrom(setfrom); // 보내는사람 생략하거나 하면 정상작동을 안함
-		  	messageHelper.setTo(userEmail); // 받는사람 이메일 
-		  	messageHelper.setSubject(title);// 메일제목은 생략이 가능하다 
-		  	messageHelper.setText("임시E-mail발송입니다."); // 메일 내용
-		  
-		  	mailSender.send(message); 
-		  	}catch(Exception e){ System.out.println(e); }
-		  
-		  	System.out.println("성공!! 임시비밀번호 발송에 성공하였습니다.");
-		  	return "redirect:/main/login";
+		   System.out.println("성공!! 임시비밀번호 발송에 성공하였습니다.");
+		   return "redirect:/main/login";
 		  	
 	      }else {
 	    	  System.out.println("실패!! 임시비밀번호 발송에 실패하였습니다.");

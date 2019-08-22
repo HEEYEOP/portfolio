@@ -11,5 +11,11 @@ public interface UserService {
 	boolean login(UserVO uVO);
 
 	boolean matchEmailandType(String userType, String userEmail);
+	
+	public String createPw();
+	
+	public void sendMail(String email, String title, String contents);
+	
+	
 
 }
