@@ -116,6 +116,10 @@
 			    <input name="sendingNum" type="email" class="form-control" placeholder="인증번호">
 			    <button type="button" id="matchSendingNum" class="input-group-text">확인</button>
 			</div>
+			
+			<div id="timerBox">
+				남은 시간 : 
+			</div>
 		</div>
 	</div>
 	

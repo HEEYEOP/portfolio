@@ -70,8 +70,15 @@
     }
     h6{
     	float:right;
-    	
+    	/* 여기에 마우스호버했을때 css 더 추가해야함 */
     }
+    
+    #timerBox{
+    	border-top: 1px solid gray;
+    	padding-top : 10px;
+    	text-align: center;
+    }
+   
     
     
     
