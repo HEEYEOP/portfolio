@@ -18,8 +18,7 @@
 		insert into user(userEmail,userType,userName,userPw,confirmFile,isMember) values(#{userEmail},#{userType},#{userName},#{userPw},#{confirmFile},#{isMember})
 	</insert>
 	
-	<insert id="insertConfirmNum">
-		<!-- 이거 insert기능 제대로 동작안함 -->
+	<insert id="insertSendingNum">
 		insert into confirm(confirmUserEmail, sendingNum) values(#{recipient}, #{sendingNum}) 
 	</insert>
 	

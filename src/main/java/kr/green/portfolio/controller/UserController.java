@@ -71,11 +71,11 @@ public class UserController {
 
 		    String recipient  = userEmail;     // 받는 사람 이메일
 		    String title = "이메일 인증번호 입니다";
-		    String confirmNum = userService.createPw();
-			String contents = ("이메일 인증 번호는  " + confirmNum + " 입니다");
+		    String sendingNum = userService.createPw();
+			String contents = ("이메일 인증 번호는  " + sendingNum + " 입니다");
 		   
 		    userService.sendMail(recipient, title, contents);
-		    userService.updateConfirmNum(recipient, confirmNum);
+		    userService.updateSendingNum(recipient, sendingNum);
 		    
 		}
 		return repetitionCheck;	

@@ -100,8 +100,9 @@ $(document).ready(function(){
 		            	alert('해당 아이디는 이미 존재합니다. 인증번호를 받을 수 없습니다.');
 		            	isCheck = false;
 		            }
-		        }
-	
+		        },error:function(request,status,error){
+		            console.log( request.responseText); // 실패 시 처리
+		        }	
 		    })
 		}
 	});

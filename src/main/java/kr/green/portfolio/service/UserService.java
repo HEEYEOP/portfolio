@@ -16,7 +16,7 @@ public interface UserService {
 	
 	public void sendMail(String email, String title, String contents);
 
-	void updateConfirmNum(String recipient, String confirmNum);
+	void updateSendingNum(String recipient, String sendingNum);
 	
 	
 

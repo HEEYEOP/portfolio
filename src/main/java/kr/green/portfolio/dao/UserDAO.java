@@ -13,6 +13,6 @@ public interface UserDAO {
 
 	public UserVO getConfirmUser(String recipient);
 
-	public void insertConfirmNum(@Param("recipient") String recipient, @Param("confirmNum") String confirmNum);
+	public void insertSendingNum(@Param("recipient") String recipient, @Param("sendingNum") String sendingNum);
 
 }
