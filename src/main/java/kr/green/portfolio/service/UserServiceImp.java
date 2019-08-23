@@ -40,7 +40,7 @@ public class UserServiceImp implements UserService{
 		uVO.setUserPw(encodePw);
 		
 		if(uVO.getUserType().equals("GroupUser")) {
-			uVO.setIsMember("N");
+			uVO.setIsMember("N");	
 		}else{
 			uVO.setIsMember("Y");
 		}

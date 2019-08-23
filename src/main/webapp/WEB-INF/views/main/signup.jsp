@@ -102,22 +102,23 @@
 
 
 <div id="emailConfirmBox" class="displayNone"></div>
-<div>
 	<div class="emailDupCheck displayNone" >
-		<h3>이메일 인증하기</h3>
-		
-		<div class="input-group mb-3 input-group-lg">
-		    <input name="sendingUserEmail" type="email" class="form-control" >
-		    <button type="button" id="dup" class="input-group-text">인증번호받기</button>
+		<div>
+			<h3 style="display:inline-block;">이메일 인증하기</h3>
+			<h6>창닫기</h6>
+			
+			<div class="input-group mb-3 input-group-lg">
+			    <input name="sendingUserEmail" type="email" class="form-control" >
+			    <button type="button" id="dup" class="input-group-text">인증번호받기</button>
+			</div>
+			
+			<div class="input-group mb-3 input-group-lg">
+			    <input name="sendingNum" type="email" class="form-control" placeholder="인증번호">
+			    <button type="button" id="matchSendingNum" class="input-group-text">확인</button>
+			</div>
 		</div>
-		
-		<div class="input-group mb-3 input-group-lg">
-		    <input name="confirmSendingNum" type="email" class="form-control" placeholder="인증번호">
-		    <button type="button" id="matchSendingNum" class="input-group-text">확인</button>
-		</div>
-		
-		
 	</div>
-</div>
+	
+
 
     
