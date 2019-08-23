@@ -63,22 +63,21 @@ public class UserController {
 	
 	@RequestMapping(value ="/dup") //Ajax중복검사 메소드
 	@ResponseBody
-	public boolean emailcheck(@RequestBody String userEmail){
+	public String emailcheck(@RequestBody String userEmail){
 		logger.info("e-mail중복검사 및 이메일 인증번호 발송");
 		boolean repetitionCheck = userService.repetitionCheck(userEmail);
-		
+		String sendingNum = ""; 
 		if(repetitionCheck == false) { //중복이 false, 즉 중복되지 않았다면, 기존 회원이 아니라면
 
 		    String recipient  = userEmail;     // 받는 사람 이메일
 		    String title = "이메일 인증번호 입니다";
-		    String sendingNum = userService.createPw();
+		    sendingNum = userService.createPw();
 			String contents = ("이메일 인증 번호는  " + sendingNum + " 입니다");
 		   
 		    userService.sendMail(recipient, title, contents);
-		    userService.updateSendingNum(recipient, sendingNum);
 		    
 		}
-		return repetitionCheck;	
+		return sendingNum;	//중복이 되었다면 빈문자열을 넘길테고, 중복되지 않았다면 인증번호를 보냄
 	}
 	
 	

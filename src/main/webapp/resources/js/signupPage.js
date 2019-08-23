@@ -78,7 +78,8 @@ $(document).ready(function(){
             
     
   //email 중복 검사 시작----------------------------------
-	$('#dup').click(function(){
+	var sendingNum;
+    $('#dup').click(function(){
 		var userEmail = $('input[name=sendingUserEmail]').val();
 		if(userEmail == ""){
 			alert('사용하실 Email을 입력해주세요')
@@ -93,16 +94,15 @@ $(document).ready(function(){
 		        dataType:"json",
 		        contentType:"application/json; charset=UTF-8",
 		        success : function(data){
-		            if(!data){
+		            if(data.length() != 0){
 		            	alert('회원 가입이 가능한 아이디로 인증번호를 발송했습니다.');
+		            	sendingNum = data;
 		            	isCheck = true;     	
 		            }else{
 		            	alert('해당 아이디는 이미 존재합니다. 인증번호를 받을 수 없습니다.');
 		            	isCheck = false;
 		            }
-		        },error:function(request,status,error){
-		            console.log( request.responseText); // 실패 시 처리
-		        }	
+		        }
 		    })
 		}
 	});
