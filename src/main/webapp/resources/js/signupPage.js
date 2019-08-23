@@ -5,6 +5,8 @@
 var isCheck = false;
 var sendingNum = "";
 var userEmail ="";
+var timer = null;
+var time = 0;
 $(document).ready(function(){
 		
 	//user_type 버튼 동작 시작----------------------------------
@@ -79,9 +81,10 @@ $(document).ready(function(){
     
             
     
+    
   //email 중복 검사 시작----------------------------------
     
-    $('#dup').click(function(){
+    $('#dup').click(function(){ //인증번호받기 버튼 클릭시
     	
 		userEmail = $('input[name=sendingUserEmail]').val();
 		if(userEmail == ""){
@@ -102,9 +105,11 @@ $(document).ready(function(){
 		            	console.log(data);
 		            	alert('회원 가입이 가능한 아이디로 인증번호를 발송했습니다.');
 		            	sendingNum = data.sending;
-		        
-		            	
-		        
+		            	time = 0;
+		            	timer = setInterval(() => {
+							time += 1;
+							console.log(time);
+						}, 1000);
 		            }else{
 		            	alert('해당 아이디는 이미 존재합니다. 인증번호를 받을 수 없습니다.');
 		            	sendingNum=""
@@ -115,13 +120,20 @@ $(document).ready(function(){
 		}
 	});
     
-    $('#matchSendingNum').click(function(){
-    	var inputSendingNum = $('input[name=confirmSendingNum]').val();
+    $('#matchSendingNum').click(function(){ //확인버튼 클릭 시
+    	var inputSendingNum = $('input[name=sendingNum]').val();
+    	
+    	if(time > 10){
+    		console.log(' 10초 초과');
+    		return;
+    	}
     	if(sendingNum.length != 0 && inputSendingNum == sendingNum){
     		isCheck = true;
     		$('input[name=userEmail]').val(userEmail);
     		$('#emailConfirmBox').addClass('displayNone');
        	 	$('.emailDupCheck').addClass('displayNone');
+       	 	clearInterval(timer);
+       	 	time = 0;
        	 	alert('Email이 확인되었습니다.')
         }else{
         	isCheck = false;
@@ -152,6 +164,11 @@ $(document).ready(function(){
 	
 	$("form").validate({
         rules: {
+        		confirmFile: { //기관사용자일때만 이 조건이 필요함. 어떻게할까?
+                required : true,
+                minlength : 8,
+                maxlength : 255
+            },
             userEmail: {
                 required : true,
                 minlength : 8,
