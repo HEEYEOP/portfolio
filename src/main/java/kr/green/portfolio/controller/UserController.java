@@ -1,21 +1,16 @@
 package kr.green.portfolio.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.green.portfolio.dao.UserDAO;
 import kr.green.portfolio.service.UserService;
 import kr.green.portfolio.utils.UploadFileUtils;
 import kr.green.portfolio.vo.UserVO;
@@ -63,7 +57,7 @@ public class UserController {
 	
 	@RequestMapping(value ="/dup") //Ajax중복검사 메소드
 	@ResponseBody
-	public String emailcheck(@RequestBody String userEmail){
+	public Map<String,String> emailcheck(@RequestBody String userEmail){
 		logger.info("e-mail중복검사 및 이메일 인증번호 발송");
 		boolean repetitionCheck = userService.repetitionCheck(userEmail);
 		String sendingNum = ""; 
@@ -77,7 +71,9 @@ public class UserController {
 		    userService.sendMail(recipient, title, contents);
 		    
 		}
-		return sendingNum;	//중복이 되었다면 빈문자열을 넘길테고, 중복되지 않았다면 인증번호를 보냄
+		Map map = new HashMap<String, String>();
+		map.put("sending", sendingNum);
+		return map;	//중복이 되었다면 빈문자열을 넘길테고, 중복되지 않았다면 인증번호를 보냄
 	}
 	
 	

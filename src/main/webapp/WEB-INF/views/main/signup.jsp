@@ -113,7 +113,7 @@
 		
 		<div class="input-group mb-3 input-group-lg">
 		    <input name="confirmNum" type="email" class="form-control" placeholder="인증번호">
-		    <button type="button" id="dup" class="input-group-text">확인</button>
+		    <button type="button" class="input-group-text">확인</button>
 		</div>
 		
 		
