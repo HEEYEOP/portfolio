@@ -31,8 +31,24 @@
         	</div>
         </div>
         <div class="totalContentsBox">
-        	<ul class="contents"></ul>
-        	<ul class="contents"></ul>
+        	<ul class="contents borderBottom">
+        		<li class="fieldName"><a>분야1</a></li>
+        		<li class="fieldName"><a>분야2</a></li>
+        		<li class="fieldName"><a>분야3</a></li>
+        		<li class="fieldName"><a>분야4</a></li>
+        		<li class="fieldName"><a>분야5</a></li>
+        		<li class="fieldName"><a>분야6</a></li>
+        		<li class="fieldName"><a>분야7</a></li>
+        	</ul>
+        	<ul class="contents">
+        		<li class="fieldName"><a>분야8</a></li>
+        		<li class="fieldName"><a>분야9</a></li>
+        		<li class="fieldName"><a>분야10</a></li>
+        		<li class="fieldName"><a>분야11</a></li>
+        		<li class="fieldName"><a>분야12</a></li>
+        		<li class="fieldName"><a>분야13</a></li>
+        		<li class="fieldName"><a>분야14</a></li>
+        	</ul>
         	<div class="totalCount"></div>
         	     	
         </div>
