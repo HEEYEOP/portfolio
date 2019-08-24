@@ -13,17 +13,17 @@
         </h1>
         <div id="textMenu">
             <ul>
-                <li><a href="#">주제별생각</a></li>
-                <li><a href="#">주제별생각</a></li>
-                <li><a href="#">주제별생각</a></li>
-                <li><a href="#">주제별생각</a></li>
+                <li><a href="#">페이지소개</a></li>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">FAQ 및 문의하기</a></li>
+                <li><a href="#">마이페이지</a></li>
             </ul>
         </div>
         <div id="imgMenu">
             <ul>
-                <li id="imgMenuSearch"><a href="#" >검색</a></li>
+                <li><a href="#" >검색</a></li>
                 <li><a href="">생각쓰기</a></li>
-                <li><a href="<%=request.getContextPath()%>/main/login">로그인</a></li>
+                <li class="bigbig"><a href="<%=request.getContextPath()%>/main/login"><i class="fas fa-user"></i></a></li>
             </ul>
         </div>
     </div>

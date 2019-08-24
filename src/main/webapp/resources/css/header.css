@@ -46,15 +46,18 @@
         border: 1px solid green;
          position: absolute;
          right: 20px;
-         top: 27px;
+         top: 10px;
      }
      #imgMenu ul li{
          float: left;
          text-align: center;
          margin-right: 10px;
          text-decoration: none;
-         
      }
+     .bigbig{
+     	font-size : 30px;
+     }
+     
      /* --- */
      
      #searchWrap{
