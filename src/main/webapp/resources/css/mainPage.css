@@ -61,6 +61,12 @@
 	    font-weight: bold;
 	    color : lightslategray;
     }
+    .divBar{
+    	width:1px;
+    	height : 60%;
+    	background-color : #ebeef3;
+    	display : inline-block;
+    }
     
     .totalContentsBox{
         border: 1px solid darkmagenta;

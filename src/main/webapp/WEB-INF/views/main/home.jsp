@@ -26,6 +26,7 @@
         	<div class="noticeButtonBox">
         		<span class="noticeButtons">
         			<i class="fas fa-angle-left"></i>
+        			<div class="divBar"></div>
         			<i class="fas fa-angle-right"></i>
         		</span>
         	</div>
@@ -49,7 +50,7 @@
         		<li class="fieldName"><a>분야13</a></li>
         		<li class="fieldName"><a>분야14</a></li>
         	</ul>
-        	<div class="totalCount"></div>
+        	<div class="totalCount">총 게시물수</div>
         	     	
         </div>
         <div id="menuBox">
