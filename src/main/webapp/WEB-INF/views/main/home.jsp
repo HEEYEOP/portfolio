@@ -15,12 +15,27 @@
     <div id="mainImg">
         <div id="mainImgContents">
             <div id="mainImgServeyList"></div>
+            <img src="<%=request.getContextPath()%>/resources/image/20160503_064803-706x354.jpg" alt="">
         </div>
     </div>
 
     <div id="mainContents">
-        <div id="noticeBox"></div>
-        <div id="totalContentsBox"></div>
+        <div id="noticeBox">
+        	<div>공지</div>
+        	<div></div>
+        	<div class="noticeButtonBox">
+        		<span class="noticeButtons">
+        			<i class="fas fa-angle-left"></i>
+        			<i class="fas fa-angle-right"></i>
+        		</span>
+        	</div>
+        </div>
+        <div class="totalContentsBox">
+        	<ul class="contents"></ul>
+        	<ul class="contents"></ul>
+        	<div class="totalCount"></div>
+        	     	
+        </div>
         <div id="menuBox">
             <div class="menuBoxs"></div>
             <div class="menuBoxs"></div>
