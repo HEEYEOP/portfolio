@@ -21,7 +21,7 @@
 
     <div id="mainContents">
         <div id="noticeBox">
-        	<div>공지</div>
+        	<div class="noticeText"><i class="far fa-flag fa-2x"></i>공지</div>
         	<div></div>
         	<div class="noticeButtonBox">
         		<span class="noticeButtons">
@@ -54,10 +54,10 @@
         	     	
         </div>
         <div id="menuBox">
-            <div class="menuBoxs"></div>
-            <div class="menuBoxs"></div>
-            <div class="menuBoxs"></div>
-            <div class="menuBoxs"></div>
+            <div class="menuBoxs"><i class="fas fa-list fa-6x"></i><br><span>주제별설문보기</span></div>
+            <div class="menuBoxs"><i class="fas fa-battery-quarter fa-6x"></i><br><span>진행중설문보기</span></div>
+            <div class="menuBoxs"><i class="fas fa-battery-full fa-6x"></i><br><span>완료된설문보기</span></div>
+            <div class="menuBoxs"><i class="far fa-comment-dots fa-6x"></i><br><span>대화설문보기</span></div>
         </div>
         <div id="rankBox">
             <div id="hotRank">

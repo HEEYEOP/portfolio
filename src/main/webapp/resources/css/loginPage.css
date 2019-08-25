@@ -11,12 +11,15 @@
         margin: 0 auto;
         
     }
-   #loginImg{
-        border: 1px solid darkgreen;
+   .loginImg{
+        /* border: 1px solid darkgreen; */
+        background-color : gray;
         height: 200px;
     }
     .loginBox{
         border: 1px solid navy;
+        border-left :none;
+        border-right :none;
         max-width: 930px;
         margin: 0 auto;
         width: 500px;
@@ -26,6 +29,12 @@
         padding: 10px;
     }
     
+    .loginTitle{
+        border-bottom: 1px solid gray;
+    	margin-bottom: 30px;
+    	padding-bottom: 10px;
+}
+    }
     .textBox{
     	border-bottom:2px solid black;
     	margin:3px;
@@ -61,13 +70,19 @@
         opacity: 0.7;
     }
     #sendingEmailBox{
-    	margin-top:100px;
+    	border : 2px solid gray;
     	z-index:2;
     	position: absolute;
     	top: 200px;
     	left:545px;
     	background-color:white;
-    	height: 400px;
+    	height: 500px;
+    	padding: 30px;
+    }
+    .tmpPwTitle{ 
+    	border-bottom :1px solid #ced4da;
+    	padding-bottom : 10px;
+    	margin-bottom: 20px;
     }
     .displayNone{
     	display:none;

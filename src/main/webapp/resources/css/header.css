@@ -28,7 +28,7 @@
      }
      #textMenu{
          border: 1px solid green;
-         width: 484px;
+         width: 500px;
          position: absolute;
          left: 170px;
          top: 27px;
@@ -51,12 +51,11 @@
      #imgMenu ul li{
          float: left;
          text-align: center;
-         margin-right: 10px;
+         margin-left: 40px;
          text-decoration: none;
+         font-size : 30px;
      }
-     .bigbig{
-     	font-size : 30px;
-     }
+    
      
      /* --- */
      

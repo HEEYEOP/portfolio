@@ -12,11 +12,11 @@
 <title>로그인화면</title>
 
 </head>
-
+<div style="background-color : #f8f8f8;">
 <div class="body">
- <div id="loginImg">이미지</div>
+ <div class="loginImg"><span>우리의 목소리가 세상을 바꾸는 힘이 됩니다</span></div>
  <div class="loginBox">
-     <h1>로그인</h1>
+     <h1 class="loginTitle">로그인</h1>
      <form action="<%=request.getContextPath()%>/main/login" method="POST">
          <div class="input-group mb-3 input-group-lg">
              <div class="input-group-prepend">
@@ -45,11 +45,11 @@
       </ul>
     </div>
 </div>
+</div>
 <div id="sendingBox" class="displayNone"></div>
 	<div id="sendingEmailBox" class="loginBox displayNone">
-		<div class="textBox">
-	     	<h3>임시 비밀번호발송</h3>
-	    </div>
+		<h6 style="float:right;">창닫기</h6>
+	     <h3 class="tmpPwTitle">임시 비밀번호발송</h3>
 	     <form action="<%=request.getContextPath()%>/mail/mailSending" method="post">
 		     <div class="input-group mb-3 input-group-lg">
             	 <div class="input-group-prepend">
@@ -65,8 +65,8 @@
 	             <input name="userEmail" type="text" class="form-control">
 	         </div>
 
-	         <button type="submit" class="btn btn-success" style="width:478px;">Email전송하기</button>
-	         <button type="button" class="btn btn-success" style="width:478px; margin-top:20px;">닫기</button>
+	         <button type="submit" class="btn btn-success" style="float:right;">Email전송하기</button>
+	         <button type="button" class="btn btn-success" style="margin-top:20px;">닫기</button>
 	     </form>
 	     
      </div>

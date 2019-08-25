@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
 	
 	//임시 이메일발송 박스, 닫기버튼 누른 동작
-	$('#sendingEmailBox form button[type=button]').click(function(){
+	$('#sendingEmailBox h6').click(function(){
 		$('#sendingBox').addClass('displayNone');
         $('#sendingEmailBox').addClass('displayNone');	
 	});
