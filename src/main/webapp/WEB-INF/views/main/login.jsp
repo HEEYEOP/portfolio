@@ -66,7 +66,7 @@
 	         </div>
 
 	         <button type="submit" class="btn btn-success" style="float:right;">Email전송하기</button>
-	         <button type="button" class="btn btn-success" style="margin-top:20px;">닫기</button>
+	        
 	     </form>
 	     
      </div>
