@@ -14,7 +14,7 @@
    .loginImg{
         /* border: 1px solid darkgreen; */
         background-color : gray;
-        height: 200px;
+        height: 100px;
     }
     .loginBox{
         border: 5px solid navy;
@@ -84,9 +84,27 @@
     	padding-bottom : 10px;
     	margin-bottom: 20px;
     }
+    
+    /* 아이디찾기 */
+    #sendingIdSearch{ 
+    /* 얘는 #sendingEmailBox소스랑같아서 class로 설정하려했는데 */
+    	border : 5px solid navy;
+    	z-index:2;
+    	position: absolute;
+    	top: 200px;
+    	left:545px;
+    	background-color:white;
+    	height: 500px;
+    	padding: 30px;
+    }
+    .idSearchNotice{
+    	color : red;
+    	margin-bottom : 10px;
+    	font-size : 0.8rem;
+    }
+    
     .displayNone{
     	display:none;
-    
     }
     
     

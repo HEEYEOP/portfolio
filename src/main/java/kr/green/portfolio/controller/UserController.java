@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -78,7 +79,7 @@ public class UserController {
 	
 	
 	@RequestMapping(value="/main/signup", method=RequestMethod.POST)
-	public String signupPost(ModelAndView mv,UserVO uVO, String userBirth2, MultipartFile confirmFile2) throws Exception{
+	public String signupPost(UserVO uVO, String userBirth2, MultipartFile confirmFile2) throws Exception{
 		uVO.setUserBirth(userBirth2);
 		
 		String confirmFile = UploadFileUtils.uploadFile(uploadPath, confirmFile2.getOriginalFilename(),confirmFile2.getBytes());
@@ -142,6 +143,12 @@ public class UserController {
 	      }
 	   
 	 }
+	
+	//아이디 찾기(ajax를 통해서)
+	
+	
+	
+	
 	
 
 	

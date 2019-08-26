@@ -17,6 +17,18 @@ $(document).ready(function(){
 	});
 	
 	
+	//아이디찾기->아이디 찾기 박스
+	$('span[name=searchId]').click(function(){
+        $('#sendingBox').removeClass('displayNone');
+        $('#sendingIdSearch').removeClass('displayNone');
+        
+    });
+	
+	//아이디 찾기 박스, 닫기버튼 누른 동작
+	$('#sendingIdSearch h6').click(function(){
+		$('#sendingBox').addClass('displayNone');
+        $('#sendingIdSearch').addClass('displayNone');	
+	});
 	
 	
 	

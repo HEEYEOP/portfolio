@@ -15,7 +15,7 @@
 	</select>
 	
 	<insert id="insertUser">
-		insert into user(userEmail,userType,userName,userPw,confirmFile,isMember) values(#{userEmail},#{userType},#{userName},#{userPw},#{confirmFile},#{isMember})
+		insert into user(userEmail,userType,userName,userPw,userGender,userBirth,confirmFile,isMember) values(#{userEmail},#{userType},#{userName},#{userPw},#{userGender},#{userBirth},#{confirmFile},#{isMember})
 	</insert>
 	
 	
