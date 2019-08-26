@@ -37,10 +37,10 @@
              <span>홈페이지가 처음이신가요?</span><a href="<%=request.getContextPath()%>/main/signup" style="float: right;">회원가입하기</a>
          </li>
          <li>
-             <span>E-amil을 잊으셨나요?</span><span name="searchId" style="float: right;">가입E-mail찾기</span>
+             <span>E-amil을 잊으셨나요?</span><span name="searchId" style="float: right; display:inline-block;">가입E-mail찾기</span>
          </li>
          <li>
-             <span>비밀번호를 잊으셨나요?</span><span name="searchPw" style="float: right;">비밀번호찾기</span>
+             <span>비밀번호를 잊으셨나요?</span><span name="searchPw" style="float: right; display:inline-block;">비밀번호찾기</span>
          </li>
       </ul>
     </div>
@@ -89,10 +89,10 @@
            	</div>
            	<input name="userName" type="text" class="form-control">
         	</div>
-        	<button type="submit" class="btn btn-success" style="float:right;">아이디찾기</button><br>	
+        	<button type="button" class="btn btn-success" style="float:right;">아이디찾기</button><br>	
    	
-   	
-    	<div>해당 정보를 찾을 수 없습니다.</div>
+   		<div id="idSearchRes"></div>
+    	
     	
     </div>
      

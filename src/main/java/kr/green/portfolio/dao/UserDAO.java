@@ -13,6 +13,7 @@ public interface UserDAO {
 
 	public UserVO getConfirmUser(String recipient);
 
+	public UserVO getUserThroughPhone(String userPhone);
 
-
+	
 }

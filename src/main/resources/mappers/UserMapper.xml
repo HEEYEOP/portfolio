@@ -5,10 +5,17 @@
 	
 	<select id="getEmail" resultType="String">
 		select userEmail from user where userEmail=#{userEmail} and isMember='Y'
-	</select>	
+	</select>
+		
 	<select id="getUser" resultType="kr.green.portfolio.vo.UserVO">
 		select * from user where userEmail=#{userEmail} and isMember='Y'
 	</select>
+	
+	<select id="getUserThroughPhone" resultType="kr.green.portfolio.vo.UserVO">
+		select * from user where userPhone=#{userPhone} and isMember='Y'
+	</select>
+	
+	
 	
 	<select id="getConfirmUser" resultType="kr.green.portfolio.vo.UserVO">
 		select * from confirm where confirmUserEmail = #{recipient} and isConfirm = 'Y'

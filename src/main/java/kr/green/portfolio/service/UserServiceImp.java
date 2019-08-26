@@ -106,5 +106,22 @@ public class UserServiceImp implements UserService{
 	    } 
 	}
 
+	@Override
+	public String matchPhoneandName(String str) {
+		String [] arr = str.split("&");
+		if(arr.length == 2) {
+			String [] phoneArr = arr[0].split("=");
+			UserVO user = userDao.getUserThroughPhone(phoneArr[1]);
+			
+			if(user != null) {
+				String [] nameArr = arr[1].split("=");
+				if(user.getUserName().equals(nameArr[1])) {
+					return user.getUserEmail();
+				}
+			}
+		}
+		return null;
+	}
+
 
 }

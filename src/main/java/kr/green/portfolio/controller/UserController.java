@@ -145,7 +145,17 @@ public class UserController {
 	 }
 	
 	//아이디 찾기(ajax를 통해서)
-	
+	@RequestMapping(value ="/idSearch")
+	@ResponseBody
+	public Map<String, String> idSearch(@RequestBody String str){
+		/* System.out.println("아이디 찾을때, 넘겨받은 정보 : "+str); */
+		String userEmail = userService.matchPhoneandName(str);
+		System.out.println(userEmail);
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("userEmail", userEmail);
+		
+	    return map;
+	}
 	
 	
 	

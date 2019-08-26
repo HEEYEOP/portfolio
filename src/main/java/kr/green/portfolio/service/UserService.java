@@ -16,6 +16,8 @@ public interface UserService {
 	
 	public void sendMail(String email, String title, String contents);
 
+	String matchPhoneandName(String str);
+
 	
 	
 	
