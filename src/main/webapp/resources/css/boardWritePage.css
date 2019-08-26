@@ -1,0 +1,125 @@
+@charset "EUC-KR";
+	*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
+     #writeBody{
+     	border : 1px solid hotpink;
+     	min-height : 800px;
+     	background-color : #f8f8f8;
+     }
+     .innerBody{
+     	border : 1px solid green;
+     	width : 100%;
+     	max-width: 1050px;
+     	margin : 0 auto;
+     	height : 100%;
+     }
+     .bigBox{
+     	border : 1px solid black;
+     	background-color : white;
+     	width : 800px;
+     	margin : 0 auto;
+     	height : 100%;
+     }
+     .boxHD{
+     	border : 1px solid red;
+     	border-bottom: 5px solid gainsboro;
+    	padding: 10px 15px 25px 15px;
+    	text-align: center;
+     }
+     .boxMD{
+     	border : 1px solid green;
+     	padding : 30px 100px;
+     	
+     }
+     .typeSelect{
+	    border: 1px solid gainsboro;
+	    background-color: whitesmoke;
+	    padding: 25px;
+	    border-radius: 10px;
+	    margin-bottom: 20px;
+	    position: relative;
+	    min-height: 200px;
+     }
+     .typeImg{
+     	width: 150px;
+    	height: 150px;
+    	border-radius: 50%;
+    	position: absolute;
+    	left: 25px;
+    	top: 25px;
+    	overflow: hidden;
+    	background-repeat: no-repeat;
+    	background-size: 150px auto;
+     }
+     .img1{
+     	background-color: #f9ca02;
+    	background-image: url("https://idea.epeople.go.kr/img/thumb_talk.png");
+    	
+	  }
+	  .img2{
+	  	background-color: #7ac5e5;
+    	background-image: url("https://idea.epeople.go.kr/img/thumb_poll.png");
+	  }
+	  .img2 h2{
+	  	font-size: 30px;
+    	color: #2f2f2f;
+    	margin-bottom: 5px;
+	  }
+	  .selectButton{
+	    width: 50px;
+    	height: 50px;
+    	position: absolute;
+   	 	right: 25px;
+    	top: 75px;
+	  
+	  }
+	  .label{
+	  cursor: pointer;
+    	position: relative;
+    	width: 50px;
+    	height: 50px;
+    	display: inline-block;
+    	border-radius: 50%;
+    	background-color: #ff5f4d;
+    	text-align: center;
+	  }
+	  .typeSelect i{
+	  	font-size : 30px;
+	  	color : white;
+	  	line-height : 50px;
+	  	
+	  }
+	  .buttonsBox{
+	    border-top: 1px solid gainsboro;
+    	padding-top: 12px;
+    	width: 100%;
+    	text-align: center;
+    	padding-bottom: 10px;
+	  }
+	  .btn{
+	    height: 60px;
+    	line-height: 60px;
+    	font-size: 21px;
+    	text-decoration: none;
+    	border-radius: 5px;
+    	display: inline-block;
+    	margin: 0 5px;
+	  }
+	  .cancel{
+	  	padding: 0 50px;
+    	color: #2f2f2f;
+    	border: 1px solid gainsboro;
+	  }
+	  .next{
+	  	padding: 0 30px;
+    	color: white;   			/* 이거하얀색 왜 적용안되는걸까? */
+    	background-color: #ff5f4d;
+	  }
+
+     
+     
+     }
+     
