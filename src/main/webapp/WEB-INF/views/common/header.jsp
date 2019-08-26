@@ -21,7 +21,7 @@
         </div>
         <div id="imgMenu">
             <ul>
-                <li><a href="#" ><i class="fas fa-search"></i></a></li>
+                <li><i class="fas fa-search"></i></li>
                 <li><a href="#"><i class="fas fa-pen"></i></a></li>
                 <li><a href="<%=request.getContextPath()%>/main/login"><i class="fas fa-user"></i></a></li>
             </ul>
