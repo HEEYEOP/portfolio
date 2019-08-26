@@ -9,21 +9,21 @@
 <div id=header>
     <div id=headerContents>
         <h1 id="logoBox">
-            <a href="<%=request.getContextPath()%>/main/home"><div>logoBox</div></a>
+            <a href="<%=request.getContextPath()%>/main/home"><div><i class="fas fa-paper-plane"></i>logo</div></a>
         </h1>
         <div id="textMenu">
             <ul>
-                <li><a href="#">주제별생각</a></li>
-                <li><a href="#">주제별생각</a></li>
-                <li><a href="#">주제별생각</a></li>
-                <li><a href="#">주제별생각</a></li>
+                <li><a href="#"><i class="fas fa-paper-plane"></i>페이지소개</a></li>
+                <li><a href="#"><i class="fas fa-paper-plane"></i>공지사항</a></li>
+                <li><a href="#"><i class="fas fa-paper-plane"></i>FAQ 및 문의하기</a></li>
+                <li><a href="#"><i class="fas fa-paper-plane"></i>마이페이지</a></li>
             </ul>
         </div>
         <div id="imgMenu">
             <ul>
-                <li id="imgMenuSearch"><a href="#" >검색</a></li>
-                <li><a href="">생각쓰기</a></li>
-                <li><a href="<%=request.getContextPath()%>/main/login">로그인</a></li>
+                <li><a href="#" ><i class="fas fa-search"></i></a></li>
+                <li><a href="#"><i class="fas fa-pen"></i></a></li>
+                <li><a href="<%=request.getContextPath()%>/main/login"><i class="fas fa-user"></i></a></li>
             </ul>
         </div>
     </div>

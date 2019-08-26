@@ -28,7 +28,7 @@
      }
      #textMenu{
          border: 1px solid green;
-         width: 484px;
+         width: 500px;
          position: absolute;
          left: 170px;
          top: 27px;
@@ -46,15 +46,17 @@
         border: 1px solid green;
          position: absolute;
          right: 20px;
-         top: 27px;
+         top: 10px;
      }
      #imgMenu ul li{
          float: left;
          text-align: center;
-         margin-right: 10px;
+         margin-left: 40px;
          text-decoration: none;
-         
+         font-size : 30px;
      }
+    
+     
      /* --- */
      
      #searchWrap{
@@ -79,7 +81,7 @@
         z-index: 3;
         display: none;
         
-        /*±ÛÀÚcss*/
+        /*ï¿½ï¿½ï¿½ï¿½css*/
         font-size: 40px;
         color: white;
         text-align: center;
@@ -109,5 +111,5 @@
         height: 30px;
         float: left;
         
-        /* --------------------------------------ÇÊµå ¹Ú½º ¸¸µé´Ù°¡ ¸ØÃã */
+        /* --------------------------------------ï¿½Êµï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½ */
     }
