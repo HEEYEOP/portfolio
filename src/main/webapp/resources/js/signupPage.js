@@ -211,7 +211,12 @@ $(document).ready(function(){
                 required : true,
                 minlength : 2,
                 maxlength : 20
-            }
+            },
+            userPhone: {
+                required : true,
+                minlength : 11,
+                maxlength : 11
+            },
             
         },
         //규칙체크 실패시 출력될 메시지
@@ -235,6 +240,12 @@ $(document).ready(function(){
                 required : "필수로 입력하세요",
                 minlength : "최소 {0}글자이상이어야 합니다",
                 maxlength : "최대 {0}글자이하이어야 합니다", 
+                
+            },
+            userPhone: {
+                required : "필수로 입력하세요",
+                minlength : "핸드폰번호를 확인하세요",
+                maxlength : "핸드폰번호를 확인하세요", 
                 
             }
         }

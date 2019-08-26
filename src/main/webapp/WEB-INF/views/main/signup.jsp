@@ -89,6 +89,13 @@
             </div>
             
             <div class="input-group mb-3 input-group-lg">
+                <div class="input-group-prepend">
+                	<span class="input-group-text">전화번호</span>
+                </div>
+                <input id="userPhone" name="userPhone" type="text" class="form-control">
+            </div>
+            
+            <div class="input-group mb-3 input-group-lg">
             	<div class="input-group-prepend">
             		<span class="input-group-text">성별</span>
             	</div>
