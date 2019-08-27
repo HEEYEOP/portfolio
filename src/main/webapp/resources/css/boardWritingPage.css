@@ -1,0 +1,105 @@
+@charset "EUC-KR";
+	*{
+	    margin: 0;
+	    padding: 0;
+	    box-sizing: border-box;
+  	 }
+  	 #writingBody{
+  	 	border: 1px solid hotpink;
+    	min-height: 800px;
+    	background-color: #f8f8f8;
+  	 }
+  	 
+  	 /* boxMD πÿ¿∏∑Œ */
+  	 .title{
+  	 	width: 100%;
+    	height: 40px;
+    	line-height: 40px;
+    	padding: 0 10px;
+    	color: #2f2f2f;
+    	font-size: 16px;
+    	border: 1px solid gainsboro;
+    	background-color: white;
+    	margin: 0px 0px 10px 0px;
+  	 }
+  	 .font{
+  	 	width: 100%;
+    	margin : 5px;
+    	color: #3fa6d2;
+    	font-size: 15px;
+  	 }
+  	 
+  	 .fileList{
+  	 	margin: 0px;
+    	padding: 15px 5px 0px 10px;
+    	font-size: 12px;
+    	background-color: rgb(235, 233, 179);
+    	display: block;
+    	border: 1px solid gainsboro;
+    	position: relative;
+  	 }
+  	 .fileBox{
+  	 	width: 100%;
+    	margin: 20px auto 0 auto;
+    	position: relative;
+    	text-align: center;
+  	 }
+  	 .addFile{
+  	 	color: #fff;
+    	background-color: #288fb4;
+    	border-color: #288fb4;
+    	display: inline-block;
+    	padding: .5em .75em;
+    	font-size: inherit;
+    	line-height: normal;
+    	vertical-align: middle;
+    	cursor: pointer;
+    	border: 1px solid #ebebeb;
+    	border-radius: .25em;
+  	 
+  	 }
+  	 .subType{
+  	    width: 100%;
+    	margin-bottom: 20px;
+   	 	overflow: hidden;
+  	 }
+  	 .subType ul li{
+  	    border: 1px solid gainsboro;
+    	border-radius: 10px;
+    	padding: 20px;
+    	float: left;
+    	width: 48%;
+    	margin: 1%;
+    	min-height: 240px;
+	 }
+	 
+	 .typeImg{
+	 	width: 100px;
+    	height: 100px;
+    	margin : 0 auto;
+    	background-size: 100px auto;
+    	border-radius: 100%;
+    	overflow: hidden;
+   	 	background-repeat: no-repeat;
+   	 	background-image: url("https://idea.epeople.go.kr/img/poll_type.png");
+	 }
+	 .img1{
+	 	background-color: #7ac5e5;
+    	background-position: 0 0;
+	 }
+	 .ttl{
+	    margin-top: 10px;
+    	font-size: 18px;
+    	color: #2f2f2f;
+
+	 }
+	 .subType ul li p{
+	    font-size: 14px;
+    	color: #666666;
+    	margin-top: 10px;
+    	line-height: 1.3em;
+	 }
+	 
+  	 
+  	 
+  	 

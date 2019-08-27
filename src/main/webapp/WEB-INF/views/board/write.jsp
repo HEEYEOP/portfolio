@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시판 작성 페이지</title>
+<title>게시물 타입 설정 페이지</title>
 <link href="<%=request.getContextPath()%>/resources/css/boardWritePage.css" rel="stylesheet">
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/boardWritePage.js"></script>
 </head>
@@ -49,7 +49,7 @@
 				<input type="hidden" name="boardType">
 				<div class="buttonsBox">
 					<a class="btn cancel">취소하기</a>
-					<a class="btn next">다음단계로
+					<a class="btn next" href="<%=request.getContextPath()%>/board/writing">다음단계로
 						<i class="fa fa-chevron-right"></i>
 					</a>
 				</div>

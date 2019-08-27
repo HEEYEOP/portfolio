@@ -12,8 +12,15 @@ public class BoardController {
 	
 	@RequestMapping(value="/board/write")
 	public ModelAndView boardWrite(ModelAndView mv) throws Exception{
-		logger.info("설문 작성 페이지 실행");
+		logger.info("설문 타입 설정 페이지 실행");
 	    mv.setViewName("/board/write");
+	    return mv;
+	}
+	
+	@RequestMapping(value="/board/writing")
+	public ModelAndView boardWriting(ModelAndView mv) throws Exception{
+		logger.info("설문 작성 페이지 실행");
+	    mv.setViewName("/board/writing");
 	    return mv;
 	}
 
