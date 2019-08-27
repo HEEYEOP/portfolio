@@ -26,9 +26,9 @@
 							<p>제안, 토론 등을 하고 싶을 때 </p>
 						</div>
 						<div class="selectButton">
-							<input id="sel1" checked="checked" type="radio" style="display:none;">
+							<input id="sel1" checked="checked" type="radio" style="display:none;" value="vsType">
 							<label class="label" for="sel1">
-								<i class="fa fa-check"></i>
+								<i class="fa fa-check" style="display:none;"></i>
 							</label>
 						</div>
 					</li>
@@ -39,17 +39,16 @@
 							<p>찬반, 선호도 등을 알고 싶을 때 </p>
 						</div>
 						<div class="selectButton">
-							<input id="sel2" checked="checked" type="radio" style="display:none;">
+							<input id="sel2" checked="checked" type="radio" style="display:none;" value="surveyType">
 							<label class="label" for="sel2">
-								<i class="fa fa-check"></i>
+								<i class="fa fa-check" style="display:none;"></i>
 							</label>
 						</div>
 					</li>
 				</ul>
-				<input type="hidden" name="boardType">
 				<div class="buttonsBox">
 					<a class="btn cancel">취소하기</a>
-					<a class="btn next" href="<%=request.getContextPath()%>/board/writing">다음단계로
+					<a class="btn next" href="">다음단계로
 						<i class="fa fa-chevron-right"></i>
 					</a>
 				</div>

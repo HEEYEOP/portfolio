@@ -118,7 +118,6 @@
 								<option>선택</option>
 							</select>
 						</div>
-					
 					</div>	
 				</div>
 			</div>
