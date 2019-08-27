@@ -14,14 +14,14 @@
      	width : 100%;
      	max-width: 1050px;
      	margin : 0 auto;
-     	height : 100%;
+     	
      }
      .bigBox{
      	border : 1px solid black;
      	background-color : white;
      	width : 800px;
      	margin : 0 auto;
-     	height : 100%;
+     	
      }
      .boxHD{
      	border : 1px solid red;
