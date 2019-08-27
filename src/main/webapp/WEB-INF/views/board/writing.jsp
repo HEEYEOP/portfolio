@@ -30,23 +30,97 @@
 				<div class="subType">
 					<ul style="list-style : none;">
 						<li>
-							<div class="typeImg img1"></div>
-							<div class="ttl">VS형</div>
+							<div class="subTypeImg img1"></div>
+							<div class="ttl">
+								<div class="checkIcon">
+									<input id="vs" type="radio" style="display:none;">
+									<label for="vs" class="forTypeCheck"></label>
+								</div>
+								VS형
+							</div>
 							<p>두 가지 중 하나를 고르는 투표</p>
 						</li>
 						<li>
-							<div class="typeImg img2"></div>
-							<div class="ttl">설문형</div>
+							<div class="subTypeImg img2"></div>
+							<div class="ttl">
+								<div class="checkIcon">
+									<input id="survey" type="radio" style="display:none;">
+									<label for="survey" class="forTypeCheck"></label>
+								</div>
+								설문형
+							</div>
 							<p>여러 항목으로 물어보는 설문조사</p>
 						</li>
 					</ul>
 				</div>
 				<!-- 서브타입 VS형 -->
-				<div class="type1">
+				<div class="typeVS" style="display:none;">
+					<p>찬성/반대 의견을 제시해주세요</p>
+					<div class="typeVS_text">
+						<ul style="list-style:none;">
+							<li style="padding-bottom:20px; border-bottom :1px dashed #d1d1d1;">
+								<div>
+									<input type="text" placeholder="'찬성'의견을 제시해주세요." class="text">
+								</div>
+								<p>내용을 적지 않으면 '찬성'단어가 자동으로 입력됩니다.</p>
+							</li>
+							<li style="padding-top : 36px;">
+								<div>
+									<input type="text" placeholder="'반대'의견을 제시해주세요." class="text">
+								</div>
+								<p>내용을 적지 않으면 '반대'단어가 자동으로 입력됩니다.</p>
+							</li>
+							<span class="iconVS">VS</span>
+						</ul>
+						
+					</div>
+				
 				</div>
-				
-				
 				<!-- 서브타입 설문형 -->
+				<!-- ------ -->
+				<div>
+					<div class="lowInfo">
+						<P>참여기간</P>
+						<div style="display:inline-block; margin-right:20px;">
+							<input class="periodSelect">
+							-
+							<input class="periodSelect">
+						</div>
+						<div style="display:inline-block;">
+							<div class="sel1">
+								<div class="checkIcon">
+									<input id="aWeek" type="radio" style="display:none;">
+									<label for="aWeek" class="forTypeCheck"></label>
+								</div>
+								1주일
+							</div>
+							<div class="sel1">
+								<div class="checkIcon">
+									<input id="twoWeek" type="radio" style="display:none;">
+									<label for="aWeek" class="forTypeCheck"></label>
+								</div>
+								2주일
+							</div>
+							<div class="sel1">
+								<div class="checkIcon">
+									<input id="aMonth" type="radio" style="display:none;">
+									<label for="aWeek" class="forTypeCheck"></label>
+								</div>
+								1개월
+							</div>
+						</div>
+					</div>
+					
+					<div class="lowInfo">
+						<P>관련주제</P>
+						<div>
+							<select>
+								<option>선택</option>
+							</select>
+						</div>
+					
+					</div>	
+				</div>
 			</div>
 		</div>
 	</div>
