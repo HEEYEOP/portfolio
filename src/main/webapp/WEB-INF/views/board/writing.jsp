@@ -104,8 +104,44 @@
 						</em>
 					</div>
 					
+					<div class="QplusAddButton">
+						<div class="Qs">
+							<div class="QBox">
+								
+								<div class="que">
+									<label>질문1</label>
+									<input type="text" class="Qtext QtextDeco ">
+									<a class="QdeleteButton">
+										삭제
+										<i class="fa fa-times-circle"></i>
+									</a>
+								</div>
+								
+								<div class="queTypeBox">
+									<select class="queType">
+										<option>질문형태</option>
+										<option>객관식(단일선택)</option>
+										<option>객관식(복수선택)</option>
+										<option>분기형(하위질문)</option>
+										<option>척도형</option>
+									</select>
+									<select class="queType">
+										<option>필수여부</option>
+										<option>필수</option>
+										<option>필수아님</option>
+									</select>
+								</div>
+								
+							</div>
+						
+						
+						</div>
+					</div>
+					
 				</div>
-				<!-- ------ -->
+				
+				
+				<!-- 하위박스정보들------ -->
 				<div>
 				
 					<!-- 게시물 설문에 참여할 수 있는 기간을 설정 -->
