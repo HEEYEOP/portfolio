@@ -26,7 +26,7 @@
 							<p>제안, 토론 등을 하고 싶을 때 </p>
 						</div>
 						<div class="selectButton">
-							<input id="sel1" checked="checked" type="radio" style="display:none;" value="vsType">
+							<input id="sel1" checked="checked" type="radio" style="display:none;" value="talkType">
 							<label class="label" for="sel1">
 								<i class="fa fa-check" style="display:none;"></i>
 							</label>
