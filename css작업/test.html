@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+
     <title>Document</title>
     <style>
         .displayNone{
@@ -13,12 +15,16 @@
     </style>
     <script>
         $(document).ready(function(){
-            
-            if($('input[name=boardSubtype]').val(val).eq('VS')){
-			$('.typeVS').removeClass('displayNone');
-			
-		}
-          
+            function nextWeek() {
+                var today = new Date()
+                var date = today.getDate()
+                date.setDate(date + 7);
+                return getDateStr(date);
+            }
+            $('button').click(function(){
+                alert(nextWeek());
+            });
+    
 
 
 
@@ -27,10 +33,7 @@
     </script>
 </head>
 <body>
-    <label>
-        라벨라벨
-        <i>아이아이</i>
-    </label>
+    <button>버튼버튼</button>
     
 </body>
 </html>
