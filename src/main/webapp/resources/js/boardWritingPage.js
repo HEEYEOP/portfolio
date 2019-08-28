@@ -57,7 +57,7 @@ $(document).ready(function(){
 		$('input[name=boardSubtype]').change();
 	});
 	
-    
+    /*기간 설정버튼에 대한 함수들과 기간설정 기능*/
     function getDateStr(myDate){
     	return (myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate())
     }
@@ -82,15 +82,15 @@ $(document).ready(function(){
   	}
  
     $('input[name=startDate]').val(today());
-    $('input[name=endDate]').val(nextWeek());
+    $('input[name=deadline]').val(nextWeek());
     
     $('input[name=boardSubtype]').change(function(){
     	if($(this).val() == 'twoWeek'){
-    		$('input[name=endDate]').val(nextTwoWeek());
+    		$('input[name=deadline]').val(nextTwoWeek());
     	}else if($(this).val() == 'aMonth'){
-    		$('input[name=endDate]').val(nextMonth());
+    		$('input[name=deadline]').val(nextMonth());
     	}else{
-    		$('input[name=endDate]').val(nextWeek());
+    		$('input[name=deadline]').val(nextWeek());
     	}
     	
     	

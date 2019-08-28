@@ -114,7 +114,7 @@
 						<div style="display:inline-block; margin-right:20px;">
 							<input class="periodSelect" name="startDate">
 							-
-							<input class="periodSelect" name="endDate">
+							<input class="periodSelect" name="deadline">
 						</div>
 						<div style="display:inline-block;">
 							<div class="sel1">
