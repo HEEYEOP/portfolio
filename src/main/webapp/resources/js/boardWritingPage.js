@@ -2,6 +2,10 @@
  * 
  */
 $(document).ready(function(){
+	if($('input[name=boardType]').val() == 'talkType'){
+		$('.subType').addClass('displayNone');
+		$('.joinPeriod').addClass('displayNone');
+	}
 	
 	/*써머노트*/
 	$('#summernote').summernote({ 
@@ -35,6 +39,8 @@ $(document).ready(function(){
 		}
 		
     });
+	
+	
 	
 	
 	

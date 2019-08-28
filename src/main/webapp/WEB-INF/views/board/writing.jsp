@@ -18,6 +18,7 @@
 				<h3>새로운 생각을 등록해주세요</h3>
 				<p>다양한 사람들의 의견을 들어보고싶은 주제를 작성해주세요</p>
 			</div>
+			<input name="boardType" type="hidden" value="${boardType}">
 			<div class="boxMD">
 				<input name="boardTitle" class="title" type="text" placeholder="제목을 적어주세요(100자 미만)">
 				<p class="font">글과 사진으로 상세내용을 작성해주세요.</p>
@@ -108,7 +109,7 @@
 				<div>
 				
 					<!-- 게시물 설문에 참여할 수 있는 기간을 설정 -->
-					<div class="lowInfo">
+					<div class="lowInfo joinPeriod">
 						<P>참여기간</P>
 						<div style="display:inline-block; margin-right:20px;">
 							<input class="periodSelect">
