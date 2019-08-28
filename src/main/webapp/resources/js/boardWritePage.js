@@ -13,5 +13,6 @@ $(document).ready(function(){
 	    
 	    $('.btn.next').attr('href','/portfolio/board/writing?boardType='+val)
 	});
+
 	
 });

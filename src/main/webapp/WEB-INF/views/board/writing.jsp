@@ -33,8 +33,10 @@
 							<div class="subTypeImg img1"></div>
 							<div class="ttl">
 								<div class="checkIcon">
-									<input id="vs" type="radio" style="display:none;">
-									<label for="vs" class="forTypeCheck"></label>
+									<input id="vs" type="radio" class="displayNone" value="VS" >
+									<label for="vs" class="forTypeCheck">
+										<i class="fa fa-check displayNone"></i>
+									</label>
 								</div>
 								VS형
 							</div>
@@ -44,8 +46,10 @@
 							<div class="subTypeImg img2"></div>
 							<div class="ttl">
 								<div class="checkIcon">
-									<input id="survey" type="radio" style="display:none;">
-									<label for="survey" class="forTypeCheck"></label>
+									<input id="survey" type="radio" class="displayNone" value="SURVEY">
+									<label for="survey" class="forTypeCheck">
+										<i class="fa fa-check displayNone"></i>
+									</label>
 								</div>
 								설문형
 							</div>
@@ -53,8 +57,9 @@
 						</li>
 					</ul>
 				</div>
+				<input type="text" name="boardSubtype">
 				<!-- 서브타입 VS형 -->
-				<div class="typeVS" style="display:none;">
+				<div class="typeVS displayNone" >
 					<p>찬성/반대 의견을 제시해주세요</p>
 					<div class="typeVS_text">
 						<ul style="list-style:none;">
@@ -79,6 +84,8 @@
 				<!-- 서브타입 설문형 -->
 				<!-- ------ -->
 				<div>
+				
+					<!-- 게시물 설문에 참여할 수 있는 기간을 설정 -->
 					<div class="lowInfo">
 						<P>참여기간</P>
 						<div style="display:inline-block; margin-right:20px;">
@@ -89,21 +96,21 @@
 						<div style="display:inline-block;">
 							<div class="sel1">
 								<div class="checkIcon">
-									<input id="aWeek" type="radio" style="display:none;">
+									<input id="aWeek" type="radio" class="displayNone">
 									<label for="aWeek" class="forTypeCheck"></label>
 								</div>
 								1주일
 							</div>
 							<div class="sel1">
 								<div class="checkIcon">
-									<input id="twoWeek" type="radio" style="display:none;">
+									<input id="twoWeek" type="radio" class="displayNone">
 									<label for="aWeek" class="forTypeCheck"></label>
 								</div>
 								2주일
 							</div>
 							<div class="sel1">
 								<div class="checkIcon">
-									<input id="aMonth" type="radio" style="display:none;">
+									<input id="aMonth" type="radio" class="displayNone">
 									<label for="aWeek" class="forTypeCheck"></label>
 								</div>
 								1개월
@@ -111,6 +118,7 @@
 						</div>
 					</div>
 					
+					<!-- 게시물 관련 분야 설정 -->
 					<div class="lowInfo">
 						<P>관련주제</P>
 						<div>
@@ -118,7 +126,25 @@
 								<option>선택</option>
 							</select>
 						</div>
+					</div>
+					
+					<!-- 게시물 작성자란 -->
+					<div class="lowInfo">
+						<P>작성자</P>
+						<div>여기에 작성자 이름 넣을꺼야(이름 또는 이메일)</div>
+					</div>
+					
+					<!-- 이전단계/작성하기 버튼란 -->
+					<div class="buttonsBox" style="border-top :none; margin-top : 30px;">
+						<a class="btn cancel" href="<%=request.getContextPath()%>/board/write">이전단계로</a>
+						<a class="btn next" href="">다음단계로
+							<i class="fa fa-chevron-right"></i>
+						</a>
 					</div>	
+					
+					
+					
+					
 				</div>
 			</div>
 		</div>

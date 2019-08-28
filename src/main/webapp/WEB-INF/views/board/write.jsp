@@ -47,7 +47,7 @@
 					</li>
 				</ul>
 				<div class="buttonsBox">
-					<a class="btn cancel">취소하기</a>
+					<a class="btn cancel" href="<%=request.getContextPath()%>/main/home">취소하기</a>
 					<a class="btn next" href="">다음단계로
 						<i class="fa fa-chevron-right"></i>
 					</a>

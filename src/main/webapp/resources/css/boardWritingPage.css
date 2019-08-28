@@ -121,7 +121,18 @@
     	border-radius: 100%;
     	background-color: #e5e5e5;
     	text-align: center;
-	 
+	 }
+	 .forTypeCheck i{
+	    font-size: 15px;
+    	color: white;
+    	line-height: 25px;
+    	position: absolute;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	bottom: 0;
+    	
 	 }
 	
 	/* 서브타입 VS형 */
@@ -220,6 +231,11 @@
     	margin-bottom: 5px;
 	}
 	
-  	 
+	/* 공통부분 클래스로 빼기 */
+	.displayNone{
+		display : none;
+	}
+	
+	
   	 
   	 
