@@ -112,9 +112,9 @@
 					<div class="lowInfo joinPeriod">
 						<P>참여기간</P>
 						<div style="display:inline-block; margin-right:20px;">
-							<input class="periodSelect">
+							<input class="periodSelect" name="startDate">
 							-
-							<input class="periodSelect">
+							<input class="periodSelect" name="endDate">
 						</div>
 						<div style="display:inline-block;">
 							<div class="sel1">

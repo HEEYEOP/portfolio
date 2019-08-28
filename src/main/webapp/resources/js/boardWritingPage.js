@@ -53,9 +53,53 @@ $(document).ready(function(){
 		$(this).attr('style','background-color: #ff5f4d');
 		$(this).find('i').removeClass('displayNone');
 		var val = $(this).prev().val();
-		$('input[name=boardSubtype]').attr('value',val);
-		
+		$('input[name=boardSubtype]').val(val);
+		$('input[name=boardSubtype]').change();
 	});
+	
+    
+    function getDateStr(myDate){
+    	return (myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate())
+    }
+    function today(){
+    	var today = new Date();
+    	return getDateStr(today);
+    }
+    function nextWeek() {
+	  var today = new Date()
+	  today.setDate(today.getDate()+7);
+	  return getDateStr(today);
+	}
+    function nextTwoWeek() {
+  	  var today = new Date()
+  	  today.setDate(today.getDate()+14);
+  	  return getDateStr(today);
+  	}
+    function nextMonth() {
+  	  var today = new Date()
+  	  today.setDate(today.getDate()+30);
+  	  return getDateStr(today);
+  	}
+ 
+    $('input[name=startDate]').val(today());
+    $('input[name=endDate]').val(nextWeek());
+    
+    $('input[name=boardSubtype]').change(function(){
+    	if($(this).val() == 'twoWeek'){
+    		$('input[name=endDate]').val(nextTwoWeek());
+    	}else if($(this).val() == 'aMonth'){
+    		$('input[name=endDate]').val(nextMonth());
+    	}else{
+    		$('input[name=endDate]').val(nextWeek());
+    	}
+    	
+    	
+    	
+    });
+    
+    
+	
+	
 	
 	
 	

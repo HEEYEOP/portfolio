@@ -20,7 +20,7 @@ public class BoardController {
 	@RequestMapping(value="/board/writing")
 	public ModelAndView boardWriting(ModelAndView mv, String boardType) throws Exception{
 		logger.info("설문 작성 페이지 실행");
-		System.out.println("보드타입 가져올꺼야" + boardType);
+	
 		mv.addObject("boardType", boardType);
 	    mv.setViewName("/board/writing");
 	    return mv;
