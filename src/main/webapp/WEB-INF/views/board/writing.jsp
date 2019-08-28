@@ -146,7 +146,7 @@
 							</div>
 						</div>
 					</div>
-					<input type="text" name="boardSubtype" value="aWeek">
+					<input type="hidden" name="periodValue" value="aWeek">
 					
 					<!-- 게시물 관련 분야 설정 -->
 					<div class="lowInfo">

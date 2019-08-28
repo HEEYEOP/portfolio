@@ -53,8 +53,8 @@ $(document).ready(function(){
 		$(this).attr('style','background-color: #ff5f4d');
 		$(this).find('i').removeClass('displayNone');
 		var val = $(this).prev().val();
-		$('input[name=boardSubtype]').val(val);
-		$('input[name=boardSubtype]').change();
+		$('input[name=periodValue]').val(val);
+		$('input[name=periodValue]').change();
 	});
 	
     /*기간 설정버튼에 대한 함수들과 기간설정 기능*/
@@ -84,7 +84,7 @@ $(document).ready(function(){
     $('input[name=startDate]').val(today());
     $('input[name=deadline]').val(nextWeek());
     
-    $('input[name=boardSubtype]').change(function(){
+    $('input[name=periodValue]').change(function(){
     	if($(this).val() == 'twoWeek'){
     		$('input[name=deadline]').val(nextTwoWeek());
     	}else if($(this).val() == 'aMonth'){
@@ -98,13 +98,5 @@ $(document).ready(function(){
     });
     
     
-	
-	
-	
-	
-	
-	
-	
-	
 	
 });
