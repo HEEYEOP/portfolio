@@ -139,6 +139,7 @@
 	.typeVS{
 		width: 100%;
     	margin-top: 5px;
+    	margin-bottom: 20px;
     	border: 1px solid gainsboro;
     	border-radius: 10px;
     	padding: 10px 20px 10px 20px;
@@ -182,6 +183,24 @@
 	
 	}
 	/* 서브타입 설문형 */
+	.surInfo{
+		width: 100%;
+    	margin-bottom: 20px;
+    	border: 1px solid gainsboro;
+    	border-radius: 10px;
+    	padding: 20px;
+	}
+	.emBold{
+	    color: #3fa6d2;
+    	font-weight: bold;
+    	font-style: normal;
+	}
+	.emText{
+	    color: #666666;
+	    font-style: normal;
+	}
+	
+	
 	
 	
 	

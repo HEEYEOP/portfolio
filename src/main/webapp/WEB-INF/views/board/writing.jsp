@@ -57,7 +57,7 @@
 						</li>
 					</ul>
 				</div>
-				<input type="text" name="boardSubtype">
+				<input type="hidden" name="boardSubtype">
 				<!-- 서브타입 VS형 -->
 				<div class="typeVS displayNone" >
 					<p>찬성/반대 의견을 제시해주세요</p>
@@ -82,6 +82,28 @@
 				
 				</div>
 				<!-- 서브타입 설문형 -->
+				<div class="typeSurvey displayNone">
+					<div class="surInfo">
+						<em class="emBold">분기형: </em>
+						<em class="emText">
+							참여자의 답변 항목에 따라 다음 질문 문항이 달라지는 형태<br>
+							ex. 1번) 우리 홈페이지를 이용해 보신 적이 있나요?(예->2번질문)<br>
+						</em>
+						<br>
+						<em class="emBold">척도형: </em>
+						<em class="emText">
+							답변에서 참여자의 호감*성향 등의 정도를 구분해서 묻는 형태<br>
+							ex. Q) 우리 서비스에 만족하시나요?<br>
+							A)매우만족-만족-보통-나쁨-매우나쁨<br>
+						</em>
+						<br>
+						<em class="emBold">객관식: </em>
+						<em class="emText">
+							질문에 여러가지 보기를 제공하여 답변을 받을 수 있음(단일선택 또는 중복선택을 할 수 있음)<br>
+						</em>
+					</div>
+					
+				</div>
 				<!-- ------ -->
 				<div>
 				

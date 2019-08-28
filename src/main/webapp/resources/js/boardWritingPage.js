@@ -22,6 +22,18 @@ $(document).ready(function(){
 		
 		var val = $(this).prev().val();
 		$('input[name=boardSubtype]').val(val);
+		
+		if(val == 'VS'){
+			$('.typeSurvey').addClass('displayNone');
+			$('.typeVS').removeClass('displayNone');
+		}else if(val == 'SURVEY'){
+			$('.typeVS').addClass('displayNone');
+			$('.typeSurvey').removeClass('displayNone');
+		}else{
+			$('.typeSurvey').addClass('displayNone');
+			$('.typeVS').addClass('displayNone');
+		}
+		
     });
 	
 	
