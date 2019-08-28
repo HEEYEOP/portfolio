@@ -14,10 +14,10 @@
     <script>
         $(document).ready(function(){
             
-            $('label').click(function(){
-		        $(this).next('i').addClass('displayNone');
-	        });
-	
+            if($('input[name=boardSubtype]').val(val).eq('VS')){
+			$('.typeVS').removeClass('displayNone');
+			
+		}
           
 
 

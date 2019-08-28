@@ -119,27 +119,34 @@
 						<div style="display:inline-block;">
 							<div class="sel1">
 								<div class="checkIcon">
-									<input id="aWeek" type="radio" class="displayNone">
-									<label for="aWeek" class="forTypeCheck"></label>
+									<input id="aWeek" type="radio" class="displayNone" value="aWeek">
+									<label for="aWeek" class="forTypeCheck" style="background-color: #ff5f4d;">
+										<i class="fa fa-check"></i>
+									</label>
 								</div>
 								1주일
 							</div>
 							<div class="sel1">
 								<div class="checkIcon">
-									<input id="twoWeek" type="radio" class="displayNone">
-									<label for="aWeek" class="forTypeCheck"></label>
+									<input id="twoWeek" type="radio" class="displayNone" value="twoWeek">
+									<label for="aWeek" class="forTypeCheck">
+										<i class="fa fa-check displayNone"></i>
+									</label>
 								</div>
 								2주일
 							</div>
 							<div class="sel1">
 								<div class="checkIcon">
-									<input id="aMonth" type="radio" class="displayNone">
-									<label for="aWeek" class="forTypeCheck"></label>
+									<input id="aMonth" type="radio" class="displayNone" value="aMonth">
+									<label for="aWeek" class="forTypeCheck">
+										<i class="fa fa-check displayNone"></i>
+									</label>
 								</div>
 								1개월
 							</div>
 						</div>
 					</div>
+					<input type="text" name="boardSubtype" value="aWeek">
 					
 					<!-- 게시물 관련 분야 설정 -->
 					<div class="lowInfo">
