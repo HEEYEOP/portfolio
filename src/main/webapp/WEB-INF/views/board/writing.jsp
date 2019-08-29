@@ -125,21 +125,22 @@
 										<option>분기형(하위질문)</option>
 										<option>척도형</option>
 									</select>
-									<select class="queType isRequired">
+									<select class="queType isRequired" onchange="addA2(0,this.value)">
 										<option value="is">필수여부</option>
 										<option value="required">필수</option>
 										<option value="NotRequired">필수아님</option>
 									</select>
-									<div class="addQueButton displayNone">
+									<div class="addQueButton displayNone" onclick="addAnswerBox2(0)">
 										질문1의 보기추가
 										<i class="fa fa-plus-circle"></i>
 									</div>
 								</div>
 								
-								<div class="answerBoxSpot"></div>
+								<div class="answerBoxSpot">
+									<!-- 여기에 추가한다고 생각하고 -->
+								</div>
 							
 							</div>
-							<div class="QBoxSpot"></div>
 						</div>
 						
 						

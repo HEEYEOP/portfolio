@@ -96,30 +96,74 @@ $(document).ready(function(){
     });
     
     
-    /*필수여부를 선택했을때, 보기추가 버튼 띄우기*/
-    $('.isRequired').change(function(){
-    	if($(this).val() == 'is'){
-    		$('.addQueButton').addClass('displayNone');
-    	}else{
-    		$('.addQueButton').removeClass('displayNone');
-    	}
-    });
     
-    
-    //추가버튼 클릭 시 그에 따른 박스 띄우기
-	function answerCode() {
-		var index = $('.answerBoxSpot .answerBox').length+1;
-        var html = ('<div class="answerBox">'+'<div class="answer">'+
-        '<label class="redLabel">'+index+'</label>'+'<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">'+
-        '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'</div>')
-        return html;
-    }
-	
-	/*보기추가버튼을 클릭했을 때, 보기박스 띄우기*/
-    $('.addQueButton').click(function(){
-    	$('.answerBoxSpot').append(answerCode());
-    });
+    //addA();
+    //addAnswerBox();
     
     
 	
-});
+    /*질문추가버튼 클랙했을 때, 질문 추가하기*/
+    $('.addButton').click(function(){
+    	$('.Qs').append(Qcode());
+    	//addA();
+    	//addAnswerBox();
+    });
+    
+    
+    
+	
+}); //document.ready()--------------------------------------
+
+
+//추가버튼 클릭 시 그에 따른 박스 띄우기
+function answerCode(obj) {
+	var index = obj.find('.answerBox').length+1;
+	var html = ('<div class="answerBox">'+'<div class="answer">'+
+    '<label class="redLabel">'+(index)+'</label>'+'<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">'+
+    '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'</div>')
+    return html;
+}
+
+function Qcode(){
+	var index =$('.Qs .QBox').length+1;
+    var html = ('<div class="QBox">'+'<div class="que">'+'<label class="redLabel">질문'+index+'</label>'+'<input type="text" class="Qtext QtextDeco ">'+
+    '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'<div class="queTypeBox">'+
+    '<select class="queType">'+'<option>질문형태</option>'+'<option>객관식(단일선택)</option>'+'<option>객관식(복수선택)</option>'+
+    '<option>분기형(하위질문)</option>'+'<option>척도형</option>'+'</select>'+'<select class="queType isRequired" onchange="addA2('+(index-1)+',this.value)">'+
+    '<option value="is">필수여부</option>'+'<option value="required">필수</option>'+'<option value="NotRequired">필수아님</option>'+
+    '</select>'+'<div class="addQueButton displayNone" onclick="addAnswerBox2('+(index-1)+')">'+'질문'+index+'의 보기추가'+'<i class="fa fa-plus-circle"></i>'+
+    '</div>'+'</div>'+'<div class="answerBoxSpot"></div>'+'</div>');
+
+    return html;
+}
+
+//function addA(){
+//	/*필수여부를 선택했을때, 보기추가 버튼 띄우기*/
+//    $('.isRequired').change(function(){
+//    	if($(this).val() == 'is'){
+//    		$(this).siblings('div .addQueButton').addClass('displayNone');
+//    	}else{
+//    		$(this).siblings('div .addQueButton').removeClass('displayNone');
+//    	}
+//    });   
+//}
+//var count = 0;
+//function addAnswerBox (){
+//	/*보기추가버튼을 클릭했을 때, 보기란 추가하기*/
+//    $('.addQueButton').click(function(){
+//    	$(this).parent().siblings('.answerBoxSpot').append(answerCode($(this)));
+//    	//$('.answerBoxSpot').append(answerCode());
+//    });
+//}
+function addAnswerBox2 (index){
+
+	$('.addQueButton').eq(index).parent().siblings('.answerBoxSpot').append(answerCode($('.QBox').eq(index).find('.answerBoxSpot')));
+}
+function addA2(index, val){
+	if(val == 'is'){
+		$('.addQueButton').eq(index).addClass('displayNone');
+	}else{
+		$('.addQueButton').eq(index).removeClass('displayNone');
+	}
+
+}
