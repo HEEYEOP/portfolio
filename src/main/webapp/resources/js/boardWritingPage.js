@@ -105,12 +105,21 @@ $(document).ready(function(){
     	}
     });
     
-    /*보기추가버튼을 클릭했을 때, 보기박스 띄우기*/
     
-    function answer() {
-    	return
-		
-	}
+    //추가버튼 클릭 시 그에 따른 박스 띄우기
+	function answerCode() {
+		var index = $('.answerBoxSpot .answerBox').length+1;
+        var html = ('<div class="answerBox">'+'<div class="answer">'+
+        '<label class="redLabel">'+index+'</label>'+'<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">'+
+        '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'</div>')
+        return html;
+    }
+	
+	/*보기추가버튼을 클릭했을 때, 보기박스 띄우기*/
+    $('.addQueButton').click(function(){
+    	$('.answerBoxSpot').append(answerCode());
+    });
+    
     
 	
 });

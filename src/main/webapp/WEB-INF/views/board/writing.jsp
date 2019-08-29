@@ -137,20 +137,9 @@
 								</div>
 								
 								<div class="answerBoxSpot"></div>
-								<!-- 요거 밑에꺼 js로 옮길꺼얌 -->
-								<div class="answerBox">
-									<div class="answer">
-										<label class="redLabel">1</label>
-										<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">
-										<a class="QdeleteButton">
-											삭제
-											<i class="fa fa-times-circle"></i>
-										</a>
-									</div>
-								</div>
-								
-								
+							
 							</div>
+							<div class="QBoxSpot"></div>
 						</div>
 						
 						
