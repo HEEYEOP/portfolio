@@ -130,7 +130,7 @@
 										<option value="required">필수</option>
 										<option value="NotRequired">필수아님</option>
 									</select>
-									<div class="addQueButton displayNone" onclick="addAnswerBox2(0)">
+									<div class="addQueButton displayNone" onclick="addAnswerBox(0)">
 										질문1의 보기추가
 										<i class="fa fa-plus-circle"></i>
 									</div>

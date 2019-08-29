@@ -15,18 +15,53 @@
     </style>
     <script>
         $(document).ready(function(){
-            function nextWeek() {
-                var today = new Date()
-                var date = today.getDate()
-                date.setDate(date + 7);
-                return getDateStr(date);
-            }
-            $('button').click(function(){
-                alert(nextWeek());
-            });
-    
+            function Qcode(){
+                var html = ('<div class="QBox">'+'<div class="que">'+'<label class="redLabel">질문1</label>'+'<input type="text" class="Qtext QtextDeco ">'+
+                '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'<div class="queTypeBox">'+
+                '<select class="queType">'+'<option>질문형태</option>'+'<option>객관식(단일선택)</option>'+'<option>객관식(복수선택)</option>'+
+                '<option>분기형(하위질문)</option>'+'<option>척도형</option>'+'</select>'+'<select class="queType isRequired">'+
+                '<option value="is">필수여부</option>'+'<option value="required">필수</option>'+'<option value="NotRequired">필수아님</option>'+
+                '</select>'+'<div class="addQueButton displayNone">'+'질문1의 보기추가'+'<i class="fa fa-plus-circle"></i>'+
+                '</div>'+'</div>'+'<div class="answerBoxSpot"></div>'+'</div>');
+
+                return html;
 
 
+                
+								
+								
+									
+									
+									
+										
+										
+									
+								
+								
+								
+									
+										
+										
+										
+										
+										
+									
+									
+										
+										
+										
+									
+									
+										
+										
+									
+								
+								
+								
+							
+							
+		
+	        }
 
         });
    
@@ -37,3 +72,14 @@
     
 </body>
 </html>
+
+<div class="answerBox">
+    <div class="answer">
+        <label class="redLabel">1</label>
+        <input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">
+        <a class="QdeleteButton">
+            삭제
+            <i class="fa fa-times-circle"></i>
+        </a>
+    </div>
+</div>
