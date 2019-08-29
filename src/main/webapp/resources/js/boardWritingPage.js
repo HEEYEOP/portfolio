@@ -93,10 +93,24 @@ $(document).ready(function(){
     		$('input[name=deadline]').val(nextWeek());
     	}
     	
-    	
-    	
     });
     
+    
+    /*필수여부를 선택했을때, 보기추가 버튼 띄우기*/
+    $('.isRequired').change(function(){
+    	if($(this).val() == 'is'){
+    		$('.addQueButton').addClass('displayNone');
+    	}else{
+    		$('.addQueButton').removeClass('displayNone');
+    	}
+    });
+    
+    /*보기추가버튼을 클릭했을 때, 보기박스 띄우기*/
+    
+    function answer() {
+    	return
+		
+	}
     
 	
 });

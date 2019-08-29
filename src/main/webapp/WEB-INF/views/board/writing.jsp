@@ -109,7 +109,7 @@
 							<div class="QBox">
 								
 								<div class="que">
-									<label>질문1</label>
+									<label class="redLabel">질문1</label>
 									<input type="text" class="Qtext QtextDeco ">
 									<a class="QdeleteButton">
 										삭제
@@ -125,17 +125,42 @@
 										<option>분기형(하위질문)</option>
 										<option>척도형</option>
 									</select>
-									<select class="queType">
-										<option>필수여부</option>
-										<option>필수</option>
-										<option>필수아님</option>
+									<select class="queType isRequired">
+										<option value="is">필수여부</option>
+										<option value="required">필수</option>
+										<option value="NotRequired">필수아님</option>
 									</select>
+									<div class="addQueButton displayNone">
+										질문1의 보기추가
+										<i class="fa fa-plus-circle"></i>
+									</div>
 								</div>
 								
+								<div class="answerBoxSpot"></div>
+								<!-- 요거 밑에꺼 js로 옮길꺼얌 -->
+								<div class="answerBox">
+									<div class="answer">
+										<label class="redLabel">1</label>
+										<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">
+										<a class="QdeleteButton">
+											삭제
+											<i class="fa fa-times-circle"></i>
+										</a>
+									</div>
+								</div>
+								
+								
 							</div>
-						
-						
 						</div>
+						
+						
+						<div class="addButton">
+							<a style="text-decoration:none; color:black;">
+								질문추가
+								<i class="fa fa-plus-circle"></i>
+							</a>
+						</div>
+						
 					</div>
 					
 				</div>
