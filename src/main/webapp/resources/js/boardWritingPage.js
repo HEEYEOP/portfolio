@@ -116,7 +116,7 @@ function Qcode(){ //큰 질문박스
     '<select class="queType">'+'<option>질문형태</option>'+'<option>객관식(단일선택)</option>'+'<option>객관식(복수선택)</option>'+
     '<option>분기형(하위질문)</option>'+'<option>척도형</option>'+'</select>'+'<select class="queType isRequired" onchange="addA2('+(index-1)+',this.value)">'+
     '<option value="is">필수여부</option>'+'<option value="required">필수</option>'+'<option value="NotRequired">필수아님</option>'+
-    '</select>'+'<div class="addQueButton displayNone" onclick="addAnswerBox2('+(index-1)+')">'+'질문'+index+'의 보기추가'+'<i class="fa fa-plus-circle"></i>'+
+    '</select>'+'<div class="addQueButton displayNone" onclick="addAnswerBox('+(index-1)+')">'+'질문'+index+'의 보기추가'+'<i class="fa fa-plus-circle"></i>'+
     '</div>'+'</div>'+'<div class="answerBoxSpot"></div>'+'</div>');
 
     return html;
