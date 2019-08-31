@@ -24,7 +24,7 @@
 				<p class="font">글과 사진으로 상세내용을 작성해주세요.</p>
 				<P class="font">플랫폼 취지와 맞지않는 게시물을 삭제될 수 있습니다.</P>
 				<textarea id="summernote"></textarea>
-				<div class="fileList">여기에 첨부된 파일들이 들어가는구얌</div>
+				<div class="fileList"></div>
 				<div class="fileBox">
 					<label class="addFile">파일첨부</label>
 				</div>
@@ -236,8 +236,8 @@
 </div>
 
 <!-- 여기다가 파일첨부를 구현해보겠따! -->
-<section class="baseScreen"></section>
-<section class="addFileWindow">
+<section class="baseScreen displayNone"></section>
+<section class="addFileWindow displayNone">
 	<div class="windowContents">
 		<h2>
 			<i class="fa fa-file fcolor"></i>
@@ -247,9 +247,9 @@
 			<div class="contentsArea">
 				<div class="file_w">
 					<form action="" enctype="multipart/form-data">
-						<input placeholder="첨부할 파일을 선택해주세요" class="fileInput">
+						<input placeholder="첨부할 파일을 선택해주세요" class="fileInput" readonly>
 						<label for="file" class="button_Search">찾기</label>
-						<input type="file" name="fileTitle">
+						<input type="file" id="file" name="fileTitle">
 					</form>
 				</div>
 				<div style="margin-top :5px;">* 첨부파일 용량은 10MB로 제한합니다</div>
@@ -260,7 +260,7 @@
 			</div>
 		</div>
 	</div>
-	<a class="colseBtn">
+	<a class="closeBtn">
 		창닫기
 		<i class="fa fa-times"></i>
 	</a>

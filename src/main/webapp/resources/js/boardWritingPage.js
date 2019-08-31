@@ -19,7 +19,35 @@ $(document).ready(function(){
 		  lang: 'ko-KR' 
 	});
 	
-	//파일첨부 버튼 클릭했을 때, 팝업창 띄우기
+	//파일첨부 팝업창 띄우기
+	$('.addFile').click(function(){
+		$('.fileInput').val('');
+		$('.baseScreen').removeClass('displayNone');
+		$('.addFileWindow').removeClass('displayNone');
+	});
+	
+	//파일첨부 팝업창 닫기
+	$('.closeBtn').click(function(){
+		$('.baseScreen').addClass('displayNone');
+		$('.addFileWindow').addClass('displayNone');
+	});
+	
+	//파일첨부시 첨부파일명 보여주기
+	$('input[name=fileTitle]').change(function(){	
+		var fileName = $(this).val();
+		$('.fileInput').val(fileName);
+	});
+	
+	//파일첨부 확인을 누르면 첨부파일 리스트란에 파일명을 띄움.
+	$('.button_Complete').click(function(){
+		var fileName = $('.fileInput').val();
+		if(fileName !=''){
+			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
+			$('.fileList').append(fileName+'<br>');
+		}
+		$('.closeBtn').click();
+		
+	});
 	
 	
 	
