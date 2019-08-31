@@ -58,6 +58,7 @@
     	border-radius: .25em;
   	 
   	 }
+  	 
   	 .subType{
   	    width: 100%;
     	margin-bottom: 20px;
@@ -371,6 +372,170 @@
     	margin-right: 5px;
     	margin-bottom: 5px;
 	}
+	
+/* 	--------------------------------------*/
+	/* 파일첨부 팝업창 섹션 */
+	.baseScreen{
+	    display: block;
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	min-height: 100%;
+    	background: rgba(0, 0, 0, 0.7);
+    	z-index: 997;
+    	cursor: pointer;
+	
+	}
+	.addFileWindow{
+		display : block;
+		position: fixed;
+	    left: 51%;
+	    top: 22%;
+	    margin-left: -250px;
+	    z-index: 999 !important;
+	    width: 100%;
+	    max-width: 600px;
+	    background-color: white;
+	    min-height: 100px;
+	    height: 300px;
+	}
+	.windowContents{
+		margin: 30px;
+	    padding: 10px;
+	    line-height: 20px !important;
+	    position: relative;
+	    text-align: left;
+	}
+	.windowContents h2{
+		font-weight: 600;
+    	text-align: left;
+    	margin: 10px 0px 10px 5px;
+        margin-bottom: 20px;
+    	color: #288fb4;
+    	font-size: 20px;
+    	line-height: 1.4em;
+	
+	}
+	.contentsArea{
+		/* border : 1px solid red; */
+	    overflow: hidden;
+    	width: 434px;
+    	margin: 0 auto;
+	
+	}
+	.file_w{
+	    width: 100%;
+	    margin: 20px auto 0 auto;
+	    position: relative;
+	    text-align: left;
+	}
+	.fileInput{
+		display: inline-block;
+	    padding: .5em .75em;
+	    font-size: inherit;
+	    line-height: normal;
+	    vertical-align: middle;
+	    background-color: #FFFFFF;
+	    border: 1px solid #ebebeb;
+	    border-bottom-color: #e2e2e2;
+	    border-radius: .25em;
+	    webkit-appearance: none;
+	    moz-appearance: none;
+	    appearance: none;
+	    width: 86%;
+	    color: #3b3b3b;
+	
+	}
+	.contentsArea label{
+		display: inline-block;
+	    padding: .5em .75em;
+	    color: #999;
+	    font-size: inherit;
+	    line-height: normal;
+	    vertical-align: middle;
+	    background-color: #fdfdfd;
+	    cursor: pointer;
+	    border: 1px solid #ebebeb;
+	    border-bottom-color: #e2e2e2;
+	    border-radius: .25em;
+	}
+	.contentsArea .button_Search{
+	    float: right;
+	    color: #fff;
+	    background-color: #288fb4;
+	    border-color: #288fb4;
+	}
+	.contentsArea input[type="file"]{
+	    position: absolute;
+	    width: 1px;
+	    height: 1px;
+	    padding: 0;
+	    margin: -1px;
+	    overflow: hidden;
+	    clip: rect(0,0,0,0);
+	    border: 0;
+	
+	}
+	.row1{
+	    width: 387px;
+    	margin: 43px 0px 0px 0px;
+    	text-align: center;
+	
+	}
+	.row1 button{
+		padding: 0;
+	    margin: 0;
+	    border: 0;
+	    cursor: pointer;
+	    line-height: 0;
+	    vertical-align: top;
+	    overflow: visible;
+	    background: transparent;
+	    outline: none;
+	}
+	.row1 .button_Cancel{
+		height: 40px;
+	    display: inline-block;
+	    font-size: 13px;
+	    border-radius: 5px;
+	    text-align: center;
+	    line-height: 40px;
+	    letter-spacing: -1px;
+	    text-decoration: none;
+	    padding: 0 20px;
+	    color: white;
+	    background-color: #cccccc;
+	}
+	.row1 .button_Complete{
+		height: 40px;
+	    display: inline-block;
+	    font-size: 13px;
+	    border-radius: 5px;
+	    color: white;
+	    text-align: center;
+	    line-height: 40px;
+	    letter-spacing: -1px;
+	    background-color: #ff5f4d;
+	    text-decoration: none;
+	    padding: 0 20px;
+	    margin-left: 3px;
+	
+	}
+	.colseBtn{
+	    text-decoration: none;
+	    color: #000000;
+	    position: absolute;
+	    right: 20px;
+	    top: 20px;
+	    cursor: pointer;
+	
+	}
+	
+	
+	
+	
+	
 	
 	/* 공통부분 클래스로 빼기 */
 	.displayNone{

@@ -28,6 +28,8 @@
 				<div class="fileBox">
 					<label class="addFile">파일첨부</label>
 				</div>
+				
+				
 				<div class="subType">
 					<ul style="list-style : none;">
 						<li>
@@ -232,6 +234,37 @@
 	</div>
 
 </div>
+
+<!-- 여기다가 파일첨부를 구현해보겠따! -->
+<section class="baseScreen"></section>
+<section class="addFileWindow">
+	<div class="windowContents">
+		<h2>
+			<i class="fa fa-file fcolor"></i>
+			파일첨부
+		</h2>
+		<div style="min-height:200px;">
+			<div class="contentsArea">
+				<div class="file_w">
+					<form action="" enctype="multipart/form-data">
+						<input placeholder="첨부할 파일을 선택해주세요" class="fileInput">
+						<label for="file" class="button_Search">찾기</label>
+						<input type="file" name="fileTitle">
+					</form>
+				</div>
+				<div style="margin-top :5px;">* 첨부파일 용량은 10MB로 제한합니다</div>
+				<div class="row1">
+					<button type="button" class="button_Cancel">취소</button>
+					<button type="button" class="button_Complete">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="colseBtn">
+		창닫기
+		<i class="fa fa-times"></i>
+	</a>
+</section>
 
 
 

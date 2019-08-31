@@ -19,6 +19,32 @@ $(document).ready(function(){
 		  lang: 'ko-KR' 
 	});
 	
+	//파일첨부 버튼 클릭했을 때, 팝업창 띄우기
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*서브타입 클릭했을 때,  버튼에 체크표시 띄우기*/
 	$('.ttl .forTypeCheck').click(function(){
 		$('.ttl .forTypeCheck').find('i').each(function(){
