@@ -109,12 +109,13 @@ $(document).ready(function(){
 	
 }); //document.ready()--------------------------------------
 
+//--------------------------------------------함수---------------------------------------------//
 function Qcode(){ //큰 질문박스
 	var index =$('.Qs .QBox').length+1;
     var html = ('<div class="QBox">'+'<div class="que">'+'<label class="redLabel">질문'+index+'</label>'+'<input type="text" class="Qtext QtextDeco ">'+
     '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'<div class="queTypeBox">'+
     '<select class="queType">'+'<option>질문형태</option>'+'<option>객관식(단일선택)</option>'+'<option>객관식(복수선택)</option>'+
-    '<option>분기형(하위질문)</option>'+'<option>척도형</option>'+'</select>'+'<select class="queType isRequired" onchange="addA2('+(index-1)+',this.value)">'+
+    '<option>분기형(하위질문)</option>'+'<option>척도형</option>'+'</select>'+'<select class="queType isRequired" onchange="addAnswerButton('+(index-1)+',this.value)">'+
     '<option value="is">필수여부</option>'+'<option value="required">필수</option>'+'<option value="NotRequired">필수아님</option>'+
     '</select>'+'<div class="addQueButton displayNone" onclick="addAnswerBox('+(index-1)+')">'+'질문'+index+'의 보기추가'+'<i class="fa fa-plus-circle"></i>'+
     '</div>'+'</div>'+'<div class="answerBoxSpot"></div>'+'</div>');
@@ -122,6 +123,18 @@ function Qcode(){ //큰 질문박스
     return html;
 }
 
+function addAnswerButton(index, value){
+	if(value == 'is'){
+		$('.addQueButton').eq(index).addClass('displayNone'); //이해가 갈랑말랑 하는데, index를 꼭 0부터 시작해야하는 이유가 있을까? 그냥 Qcode()추가할때 그 속에 index와 동일하면 더 편하지 않을까?
+	}else{
+		$('.addQueButton').eq(index).removeClass('displayNone');
+	}
+
+}
+
+function addAnswerBox(index){ //eq(index)가 index와 동일한 곳에 인가 if처럼 사용되는것인가?
+	$('.addQueButton').eq(index).parent().siblings('.answerBoxSpot').append(answerCode($('.QBox').eq(index).find('.answerBoxSpot'))); //여기도 잘 이해가 안감.answerCode()안에 매개변수를 꼭 저렇게 설정해줘야하는가? 앞에서 경로를 다 설정했음에도?
+}
 
 function answerCode(obj) { //질문에 대한 보기박스
 	var index = obj.find('.answerBox').length+1;
@@ -131,14 +144,5 @@ function answerCode(obj) { //질문에 대한 보기박스
     return html;
 }
 
-function addAnswerBox(index){
-	$('.addQueButton').eq(index).parent().siblings('.answerBoxSpot').append(answerCode($('.QBox').eq(index).find('.answerBoxSpot')));
-}
-function addA2(index, val){
-	if(val == 'is'){
-		$('.addQueButton').eq(index).addClass('displayNone');
-	}else{
-		$('.addQueButton').eq(index).removeClass('displayNone');
-	}
 
-}
+

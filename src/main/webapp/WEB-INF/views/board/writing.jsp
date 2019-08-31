@@ -125,7 +125,7 @@
 										<option>분기형(하위질문)</option>
 										<option>척도형</option>
 									</select>
-									<select class="queType isRequired" onchange="addA2(0,this.value)">
+									<select class="queType isRequired" onchange="addAnswerButton(0,this.value)">
 										<option value="is">필수여부</option>
 										<option value="required">필수</option>
 										<option value="NotRequired">필수아님</option>
