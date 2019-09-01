@@ -49,6 +49,8 @@ $(document).ready(function(){
 		
 	});
 	
+	//파일첨부 취소 버튼을 누르면 파일명
+	
 	
 	
 	

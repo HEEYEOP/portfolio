@@ -388,6 +388,7 @@
 	
 	}
 	.addFileWindow{
+		border: 5px solid #288fb4;
 		display : block;
 		position: fixed;
 	    left: 51%;
