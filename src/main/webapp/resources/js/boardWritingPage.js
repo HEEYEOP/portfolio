@@ -43,17 +43,15 @@ $(document).ready(function(){
 		var fileName = $('.fileInput').val();
 		if(fileName !=''){
 			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
-			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
+			var index = $('.fileList div').length;
+			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;" onclick="unwrap('+index+')"></i>'+'</div>');
 		}
 		$('.closeBtn').click();
 		
+		
 	});
 	
-	
-	
-	
-	
-	
+	//파일첨부 취소 버튼을 누르면 파일명 없애기
 	
 	
 	
@@ -200,5 +198,8 @@ function answerCode(obj) { //질문에 대한 보기박스
     return html;
 }
 
+function unwrap(index){
+	$('.fa-times-circle').eq(index).parent('div').remove();	//이거 파일 세개 첨부했을 때, 왜 마지막 파일은 삭제가 안되는지 모르겠네
+}
 
 
