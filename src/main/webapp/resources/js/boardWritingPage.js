@@ -43,13 +43,13 @@ $(document).ready(function(){
 		var fileName = $('.fileInput').val();
 		if(fileName !=''){
 			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
-			$('.fileList').append(fileName+'<br>');
+			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
 		}
 		$('.closeBtn').click();
 		
 	});
 	
-	//파일첨부 취소 버튼을 누르면 파일명
+	
 	
 	
 	

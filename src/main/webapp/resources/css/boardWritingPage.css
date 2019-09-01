@@ -37,6 +37,7 @@
     	display: block;
     	border: 1px solid gainsboro;
     	position: relative;
+    	line-height: 2;
   	 }
   	 .fileBox{
   	 	width: 100%;
