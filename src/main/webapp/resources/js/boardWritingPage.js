@@ -61,30 +61,8 @@ $(document).ready(function(){
 	//동일파일 이어서 등록안됌. 어떠한 알람창도 띄우지 않았음. 이거해결할 것
 	
 	
-	//달력 플러그인
-	$('#testDatepicker').datepicker({
-		minDate: 0
-	});
-
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	/*서브타입 클릭했을 때,  버튼에 체크표시 띄우기*/
 	$('.ttl .forTypeCheck').click(function(){
@@ -125,6 +103,12 @@ $(document).ready(function(){
 	});
 	
     /*기간 설정버튼에 대한 함수들과 기간설정 기능*/
+	
+	//달력 플러그인
+	$('#testDatepicker').datepicker({
+		minDate: 0
+	});
+	
     function getDateStr(myDate){
     	return (myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate())
     }
@@ -169,8 +153,11 @@ $(document).ready(function(){
     /*질문추가버튼 클랙했을 때, 질문 추가하기*/
     $('.addButton').click(function(){
     	$('.Qs').append(Qcode());
+    	deleteQBox();
     });
-    
+
+    //질문 삭제버튼 처리 이벤트 등록 함수 추가
+    deleteQBox();
     
     
 	
@@ -217,4 +204,34 @@ function unwrap(){
 	});
 }
 
+function deleteQBox(){
+	//$('.QdeleteButton').eq(index).parents('.QBox').remove();
+	$('.QdeleteButton').click(function(){
+		if($('.QdeleteButton').length > 1){
+			$(this).parents('.QBox').remove();
+		}else{
+			alert('질문은 1개이상 존재하여야 합니다');
+			
+		}
+	})
+	updateQuestionNumber();
+}
+function updateQuestionNumber(){
+	var cnt = 1;
+	$('.que>label').each(function(){
+		$(this).html('질문'+cnt++);
+	})
+}
+
+
+
+
+
+//질문에 대한 삭제버튼 클릭 시, 질문박스 삭제하기
+/*var cnt = $('.QBox').length;
+console.log(cnt);
+if(cnt > 1)
+	deleteQBox();
+else
+	alert('최소1개의 질문박스를 유지하여야 합니다.');*/
 
