@@ -44,7 +44,9 @@ $(document).ready(function(){
 		if(fileName !=''){
 			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
 			var index = $('.fileList div').length;
-			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;" onclick="unwrap('+index+')"></i>'+'</div>');
+			/*$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;" onclick="unwrap('+index+')"></i>'+'</div>');*/
+			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
+			unwrap();
 		}
 		$('.closeBtn').click();
 		
@@ -54,7 +56,9 @@ $(document).ready(function(){
 	//파일첨부 취소 버튼을 누르면 파일명 없애기
 	$('.button_Cancel').click(function(){
 		$('.fileInput').val('');
-	});
+		$('#file').val('');
+	}); //근데 이거 취소버튼 누르고 같은 파일 재등록하려면 등록안되는데 이건 왜?? ==> 이거 #file에 값이 남아있어서 구랩
+	
 	
 	
 	
@@ -183,14 +187,14 @@ function Qcode(){ //큰 질문박스
 
 function addAnswerButton(index, value){
 	if(value == 'is'){
-		$('.addQueButton').eq(index).addClass('displayNone'); //이해가 갈랑말랑 하는데, index를 꼭 0부터 시작해야하는 이유가 있을까? 그냥 Qcode()추가할때 그 속에 index와 동일하면 더 편하지 않을까?
+		$('.addQueButton').eq(index).addClass('displayNone');
 	}else{
 		$('.addQueButton').eq(index).removeClass('displayNone');
 	}
 
 }
 
-function addAnswerBox(index){ //eq(index)가 index와 동일한 곳에 인가 if처럼 사용되는것인가?
+function addAnswerBox(index){ //eq(index)가 index와 동일한 곳에 인가 if처럼 사용되는것인가? =>아니 index와 같은번째
 	$('.addQueButton').eq(index).parent().siblings('.answerBoxSpot').append(answerCode($('.QBox').eq(index).find('.answerBoxSpot'))); //여기도 잘 이해가 안감.answerCode()안에 매개변수를 꼭 저렇게 설정해줘야하는가? 앞에서 경로를 다 설정했음에도?
 }
 
@@ -202,8 +206,10 @@ function answerCode(obj) { //질문에 대한 보기박스
     return html;
 }
 
-function unwrap(index){
-	$('.fa-times-circle').eq(index).parent('div').remove();	//이거 파일 세개 첨부했을 때, 왜 마지막 파일은 삭제가 안되는지 모르겠네
+function unwrap(){
+	$('.fa.fa-times-circle').click(function(){
+			$(this).parent('div').remove();	
+	})
 }
 
 
