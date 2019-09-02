@@ -33,7 +33,6 @@
 					<label class="addFile">파일첨부</label>
 				</div>
 				
-				
 				<div class="subType">
 					<ul style="list-style : none;">
 						<li>
@@ -84,9 +83,7 @@
 							</li>
 							<span class="iconVS">VS</span>
 						</ul>
-						
 					</div>
-				
 				</div>
 				<!-- 서브타입 설문형 -->
 				<div class="typeSurvey displayNone">

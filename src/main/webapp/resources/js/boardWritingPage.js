@@ -207,19 +207,19 @@ function unwrap(){
 function deleteQBox(){
 	//$('.QdeleteButton').eq(index).parents('.QBox').remove();
 	$('.QdeleteButton').click(function(){
-		if($('.QdeleteButton').length > 1){
+		if($('.Qs .QdeleteButton').length > 1){
 			$(this).parents('.QBox').remove();
 		}else{
-			alert('질문은 1개이상 존재하여야 합니다');
-			
+			alert('질문은 1개이상 존재하여야 합니다.')
 		}
 	})
 	updateQuestionNumber();
 }
+
 function updateQuestionNumber(){
 	var cnt = 1;
 	$('.que>label').each(function(){
-		$(this).html('질문'+cnt++);
+		$(this).html('질문'+ cnt++);
 	})
 }
 
