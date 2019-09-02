@@ -44,7 +44,6 @@ $(document).ready(function(){
 		if(fileName !=''){
 			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
 			var index = $('.fileList div').length;
-			/*$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;" onclick="unwrap('+index+')"></i>'+'</div>');*/
 			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
 			unwrap();
 		}
@@ -57,10 +56,16 @@ $(document).ready(function(){
 	$('.button_Cancel').click(function(){
 		$('.fileInput').val('');
 		$('#file').val('');
-	}); //근데 이거 취소버튼 누르고 같은 파일 재등록하려면 등록안되는데 이건 왜?? ==> 이거 #file에 값이 남아있어서 구랩
+	});
+	
+	//동일파일 이어서 등록안됌. 어떠한 알람창도 띄우지 않았음. 이거해결할 것
 	
 	
-	
+	//달력 플러그인
+	$('#testDatepicker').datepicker({
+		minDate: 0
+	});
+
 	
 	
 	
@@ -194,7 +199,7 @@ function addAnswerButton(index, value){
 
 }
 
-function addAnswerBox(index){ //eq(index)가 index와 동일한 곳에 인가 if처럼 사용되는것인가? =>아니 index와 같은번째
+function addAnswerBox(index){ 
 	$('.addQueButton').eq(index).parent().siblings('.answerBoxSpot').append(answerCode($('.QBox').eq(index).find('.answerBoxSpot'))); //여기도 잘 이해가 안감.answerCode()안에 매개변수를 꼭 저렇게 설정해줘야하는가? 앞에서 경로를 다 설정했음에도?
 }
 
@@ -209,7 +214,7 @@ function answerCode(obj) { //질문에 대한 보기박스
 function unwrap(){
 	$('.fa.fa-times-circle').click(function(){
 			$(this).parent('div').remove();	
-	})
+	});
 }
 
 

@@ -8,7 +8,11 @@
 <title>게시물 작성페이지</title>
 <link href="<%=request.getContextPath()%>/resources/css/boardWritePage.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/boardWritingPage.css" rel="stylesheet">
+
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/boardWritingPage.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/datepicker-ko.js"></script>
+
+
 </head>
 
 <div id="writingBody">
@@ -165,9 +169,10 @@
 					<div class="lowInfo joinPeriod">
 						<P>참여기간</P>
 						<div style="display:inline-block; margin-right:20px;">
-							<input class="periodSelect" name="startDate">
+							<input class="periodSelect" name="startDate" readonly>
 							-
-							<input class="periodSelect" name="deadline">
+							<input class="periodSelect" id="testDatepicker" name="deadline" onclick="$('#testDatepicker').datepicker('show');">
+							
 						</div>
 						<div style="display:inline-block;">
 							<div class="sel1">
