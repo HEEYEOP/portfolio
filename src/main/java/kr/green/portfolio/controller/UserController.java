@@ -115,6 +115,12 @@ public class UserController {
 		}
 	}
 	
+	//로그아웃기능
+	@RequestMapping(value="/logout", method = RequestMethod.GET) //이게 POST면 에러 나던데 이유는 무엇일까?
+	public String logoutPost(HttpServletRequest r) throws Exception {
+		r.getSession().removeAttribute("user");
+		return "redirect:/main/home";
+	}
   
 
 	// mailSending 코드

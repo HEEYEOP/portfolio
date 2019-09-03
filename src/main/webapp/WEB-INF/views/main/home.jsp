@@ -21,7 +21,7 @@
 
     <div id="mainContents">
         <div id="noticeBox">
-        	<div class="noticeText"><i class="far fa-flag fa-2x"></i>공지</div>
+        	<div class="noticeText"><i class="far fa-flag fa-2x"></i>공지${user.userEmail}</div>
         	<div></div>
         	<div class="noticeButtonBox">
         		<span class="noticeButtons">
