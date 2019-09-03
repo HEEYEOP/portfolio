@@ -206,8 +206,8 @@ function unwrap(){
 }
 
 function deleteQBox(){
-	$('.que .QdeleteButton').click(function(){
-		if($('.Qs .QdeleteButton').length > 1){
+	$('.Qs>.QBox').last().find('.que .QdeleteButton').click(function(){
+		if($('.que .QdeleteButton').length > 1){
 			$(this).parents('.QBox').remove();
 			updateQuestionNumber();
 		}else{
