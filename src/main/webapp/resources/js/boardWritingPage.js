@@ -188,6 +188,7 @@ function addAnswerButton(index, value){
 
 function addAnswerBox(index){ 
 	$('.addQueButton').eq(index).parent().siblings('.answerBoxSpot').append(answerCode($('.QBox').eq(index).find('.answerBoxSpot'))); //여기도 잘 이해가 안감.answerCode()안에 매개변수를 꼭 저렇게 설정해줘야하는가? 앞에서 경로를 다 설정했음에도?
+	deleteAnswerBox();
 }
 
 function answerCode(obj) { //질문에 대한 보기박스
@@ -205,33 +206,40 @@ function unwrap(){
 }
 
 function deleteQBox(){
-	//$('.QdeleteButton').eq(index).parents('.QBox').remove();
-	$('.QdeleteButton').click(function(){
+	$('.que .QdeleteButton').click(function(){
 		if($('.Qs .QdeleteButton').length > 1){
 			$(this).parents('.QBox').remove();
+			updateQuestionNumber();
 		}else{
-			alert('질문은 1개이상 존재하여야 합니다.')
+			alert('질문은 1개이상 존재하여야 합니다.'); //오류!! alert창이 여러번 뜸
 		}
-	})
-	updateQuestionNumber();
+	});
 }
 
+function deleteAnswerBox(){
+	$('.answer .QdeleteButton').click(function(){
+		console.log('앤설박스 삭제 테스트중');
+		$(this).parents('.answerBox').remove();
+		updateAnswerNumber();
+	});
+	
+}
+
+//질문1,질문2,질문3 ... 으로 맞추는 함수
 function updateQuestionNumber(){
 	var cnt = 1;
 	$('.que>label').each(function(){
 		$(this).html('질문'+ cnt++);
-	})
+	});
+}
+
+//보기란을 1,2,3 ... 번으로 맞추는 함수
+function updateAnswerNumber(){
+	var cnt = 1;
+	$('.answer>label').each(function(){
+		$(this).html(cnt++);
+	});
 }
 
 
-
-
-
-//질문에 대한 삭제버튼 클릭 시, 질문박스 삭제하기
-/*var cnt = $('.QBox').length;
-console.log(cnt);
-if(cnt > 1)
-	deleteQBox();
-else
-	alert('최소1개의 질문박스를 유지하여야 합니다.');*/
 
