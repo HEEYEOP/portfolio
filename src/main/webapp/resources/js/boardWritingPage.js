@@ -51,6 +51,40 @@ $(document).ready(function(){
 		
 		
 	});
+
+	//---------------------------------------------------요거요거 다중파일 리스트 업로드 하는 기능 아직
+	
+	/*//파일첨부 확인을 누르면 첨부파일 리스트란에 파일명을 띄움.
+	$('.button_Complete').click(function(){
+		var fileName = $('#file').val();
+		var newObj = $('#file').clone();
+		if(fileName !=''){
+			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
+			var index = $('.fileList div').length;
+			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
+			$('.fileList>div').append(newObj);
+			unwrap();
+		}
+		$('.closeBtn').click();
+	});*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//파일첨부 취소 버튼을 누르면 파일명 없애기
 	$('.button_Cancel').click(function(){
@@ -108,7 +142,7 @@ $(document).ready(function(){
 	$('#testDatepicker').datepicker({
 		minDate: 0
 	});
-	
+	//deadline을 단위버튼 클릭으로 변경하기
     function getDateStr(myDate){
     	return (myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate())
     }
