@@ -49,17 +49,18 @@ public class UserServiceImp implements UserService{
 	}
 
 	@Override
-	public boolean login(UserVO uVO) {
+	public UserVO login(UserVO uVO) {
+		if(uVO == null){
+			return null;
+		}
 		UserVO getUser= userDao.getUser(uVO.getUserEmail());
 				
-		if(uVO == null){
-			return false;
-		}else if(getUser == null) {
-			return false;
+		if(getUser == null) {
+			return null;
 		}else if(!passwordEncoder.matches(uVO.getUserPw(), getUser.getUserPw())) {
-			return false;
+			return null;
 		}
-		return true;
+		return getUser;
 		
 	}
 

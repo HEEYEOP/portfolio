@@ -49,6 +49,17 @@
 		-->
 	    <beans:constructor-arg value="C:\\WHY\\git\\uploadfiles"></beans:constructor-arg>
 	</beans:bean>
+	
+	
+	<!-- 인터셉터 추가 -->
+	<beans:bean id="loginInterceptor" class="kr.green.portfolio.interceptor.LoginInterceptor"></beans:bean>
+	
+	<interceptors>
+	    <interceptor>
+	        <mapping path="/main/*"/>
+	        <beans:ref bean="loginInterceptor"/>
+	    </interceptor>
+	</interceptors>
 
 	
 	

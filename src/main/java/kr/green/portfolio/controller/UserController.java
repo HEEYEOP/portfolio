@@ -102,11 +102,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/main/login", method=RequestMethod.POST)
-	public String loginPost(UserVO uVO){
+	public String loginPost(UserVO uVO, Model model){
 		System.out.println("로그인시도한 정보"+uVO);
-		boolean loginOK = userService.login(uVO);
-		if(loginOK) {
+		UserVO loginedUser = userService.login(uVO);
+		if(loginedUser != null) {
 			System.out.println("로그인성공");
+			model.addAttribute("user", loginedUser);
 			return "redirect:/main/home";
 		}else {
 			System.out.println("로그인실패");

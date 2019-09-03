@@ -8,7 +8,7 @@ public interface UserService {
 
 	void enrollUser(UserVO uVO);
 
-	boolean login(UserVO uVO);
+	UserVO login(UserVO uVO);
 
 	boolean matchEmailandType(String userType, String userEmail);
 	
@@ -17,6 +17,8 @@ public interface UserService {
 	public void sendMail(String email, String title, String contents);
 
 	String matchPhoneandName(String str);
+	
+	
 
 	
 	
