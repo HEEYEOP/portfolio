@@ -215,8 +215,8 @@
 					
 					<!-- 게시물 작성자란 -->
 					<div class="lowInfo">
-						<P>작성자</P>
-						<div>여기에 작성자 이름 넣을꺼야(이름 또는 이메일)</div>
+						<P style="line-height: 60px;">작성자</P>
+						<div style="font-weight: 600;">${user.userName}</div>
 					</div>
 					
 					<!-- 이전단계/작성하기 버튼란 -->

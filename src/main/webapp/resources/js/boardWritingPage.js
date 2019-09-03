@@ -218,7 +218,6 @@ function deleteQBox(){
 
 function deleteAnswerBox(){
 	$('.answer .QdeleteButton').click(function(){
-		console.log('앤설박스 삭제 테스트중');
 		$(this).parents('.answerBox').remove();
 		updateAnswerNumber();
 	});
