@@ -49,7 +49,7 @@
         		<li class="fieldName"><a href="<%=request.getContextPath()%>">연예</a></li>
         		<li class="fieldName"><a href="<%=request.getContextPath()%>">기타</a></li>
         	</ul>
-        	<div class="totalCount">총 게시물수</div>
+        	<div class="totalCount"><a href="<%=request.getContextPath()%>/board/totalBoard">총 게시물수</a></div>
         	     	
         </div>
         <div id="menuBox">

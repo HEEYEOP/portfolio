@@ -45,6 +45,13 @@ public class BoardController {
 	    return mv;
 	}
 	
+	//게시물 전체보기 페이지
+	@RequestMapping(value="/board/totalBoard")
+	public ModelAndView totalBoard(ModelAndView mv) throws Exception{
+		logger.info("설문 전체 보기 페이지 실행");
+	    mv.setViewName("/board/totalBoard");
+	    return mv;
+	}
 	
 	
 
