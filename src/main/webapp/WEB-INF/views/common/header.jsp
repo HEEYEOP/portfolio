@@ -14,7 +14,7 @@
         </h1>
         <div id="textMenu">
             <ul>
-                <li><a href="#"><i class="fas fa-paper-plane"></i>페이지소개</a></li>
+                <li><a href="<%=request.getContextPath()%>/main/pageIntro"><i class="fas fa-paper-plane"></i>페이지소개</a></li>
                 <li><a href="#"><i class="fas fa-paper-plane"></i>공지사항</a></li>
                 <li><a href="#"><i class="fas fa-paper-plane"></i>FAQ 및 문의하기</a></li>
             </ul>
