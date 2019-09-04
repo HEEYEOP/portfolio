@@ -37,5 +37,15 @@ public class BoardController {
 		System.out.println("파일이 어떻게 넘어오는지 확인해보게쒀 : " + fileTitle);
 		return "redirect:/main/home";
 	}
+	
+	@RequestMapping(value="/board/fieldBoard")
+	public ModelAndView fieldBoard(ModelAndView mv) throws Exception{
+		logger.info("주제별 설문 페이지 실행");
+	    mv.setViewName("/board/fieldBoard");
+	    return mv;
+	}
+	
+	
+	
 
 }
