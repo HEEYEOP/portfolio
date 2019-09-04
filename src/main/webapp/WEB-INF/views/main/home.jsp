@@ -33,22 +33,22 @@
         </div>
         <div class="totalContentsBox">
         	<ul class="contents borderBottom">
-        		<li class="fieldName"><a>분야1</a></li>
-        		<li class="fieldName"><a>분야2</a></li>
-        		<li class="fieldName"><a>분야3</a></li>
-        		<li class="fieldName"><a>분야4</a></li>
-        		<li class="fieldName"><a>분야5</a></li>
-        		<li class="fieldName"><a>분야6</a></li>
-        		<li class="fieldName"><a>분야7</a></li>
+        		<li class="fieldName"><a>반부패/청렴</a></li>
+        		<li class="fieldName"><a>농림/해양</a></li>
+        		<li class="fieldName"><a>일반행정</a></li>
+        		<li class="fieldName"><a>문화/여가</a></li>
+        		<li class="fieldName"><a>취업/직장</a></li>
+        		<li class="fieldName"><a>통신/과학</a></li>
+        		<li class="fieldName"><a>국방보훈</a></li>
         	</ul>
         	<ul class="contents">
-        		<li class="fieldName"><a>분야8</a></li>
-        		<li class="fieldName"><a>분야9</a></li>
-        		<li class="fieldName"><a>분야10</a></li>
-        		<li class="fieldName"><a>분야11</a></li>
-        		<li class="fieldName"><a>분야12</a></li>
-        		<li class="fieldName"><a>분야13</a></li>
-        		<li class="fieldName"><a>분야14</a></li>
+        		<li class="fieldName"><a>교통</a></li>
+        		<li class="fieldName"><a>교육</a></li>
+        		<li class="fieldName"><a>환경</a></li>
+        		<li class="fieldName"><a>건강/복지</a></li>
+        		<li class="fieldName"><a>경제/산업</a></li>
+        		<li class="fieldName"><a>연예</a></li>
+        		<li class="fieldName"><a>기타</a></li>
         	</ul>
         	<div class="totalCount">총 게시물수</div>
         	     	
