@@ -40,17 +40,13 @@ $(document).ready(function(){
 	
 	//파일첨부 확인을 누르면 첨부파일 리스트란에 파일명을 띄움.
 	$('.button_Complete').click(function(){
-		var fileName = $('.fileInput').val();
-		if(fileName !=''){
-			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
-			var index = $('.fileList div').length;
-			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
-			unwrap();
-		}
+		fileClone();
 		$('.closeBtn').click();
 		
 		
 	});
+	
+	
 
 	//---------------------------------------------------요거요거 다중파일 리스트 업로드 하는 기능 아직
 	
@@ -275,4 +271,31 @@ function updateAnswerNumber(){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//이거 다중첨부파일 관련 함수 나중에 지울꺼
+function fileClone(){
+	var fileName = $('.fileInput').val();
+	var newObj = $('#file').clone();
+	console.log(newObj);
+	if(fileName !=''){
+		$('.fileList').attr('style','padding: 15px 5px 0px 10px');
+		$('.fileList').append('<div>'+newObj+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
+		unwrap();
+	}
+}
 

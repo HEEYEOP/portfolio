@@ -221,6 +221,15 @@
 							<div style="font-weight: 600;">${user.userName}</div>
 						</div>
 						
+						<!-- 게시물 메인이미지 첨부파일란 -->
+						<div class="lowInfo">
+							<P>메인이미지</P>
+							<div>
+								<input type="file" name="fileTitle" style="border: 1px solid gainsboro; "><br>
+								<span style="color:gray;">*해당 첨부파일은 게시물 메인이미지로 사용됩니다</span>
+							</div>
+						</div>
+						
 						<!-- 이전단계/작성하기 버튼란 -->
 						<div class="buttonsBox" style="border-top :none; margin-top : 30px;">
 							<a class="btn cancel" href="<%=request.getContextPath()%>/board/write">이전단계로</a>
