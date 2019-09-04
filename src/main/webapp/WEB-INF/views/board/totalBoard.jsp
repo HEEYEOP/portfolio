@@ -13,12 +13,13 @@
 <div class="body">
 	<div class="bodyContentsBox">
 		<div class="sortBar">전체 게시물 정렬 기능 버튼들</div>
-		<div style="padding : 20px;">
+		<div style="padding : 20px; padding-top:100px; padding-bottom:100px;">
 			<div class="board">
 				<div class="boardBorder">
 					<div class="boardLeft">
 						<div class="titleBox">
-							<h3>게시물번호</h3>
+							<h3>게시물타입</h3>
+							<h3 style="background-color:#767676;">작성자명</h3>
 							<h2>
 								<a href="#">여기에 게시물 제목을 넣을꺼야넣을꺼야 길게길게 제목을 써서 길게길게 넣어줄꺼야</a>
 							</h2>
@@ -144,7 +145,7 @@
 			</div>
 			
 			
-			
+			<!-- 위에서 게시물3개 보여주고 여기에 페이지네이션 구현해야지 -->
 			
 			
 			
