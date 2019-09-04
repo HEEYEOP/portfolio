@@ -9,11 +9,19 @@
 </head>
 
 <!-- body시작---------------------------------------------------------------------------------------- -->
-
 <div id="body" style="min-height: 800px">
     <div id="mainImg">
         <div id="mainImgContents">
             <div id="mainImgServeyList"></div>
+            <ul style="margin:0;">
+            	<li class="mainImgServeyListBox">
+            		<h2>작성자 : sdsd</h2>
+            		<div class="title"></div>
+            	</li>
+            	<li class="mainImgServeyListBox"></li>
+            	<li class="mainImgServeyListBox"></li>
+            	<li class="mainImgServeyListBox"></li>
+            </ul>
             <img src="<%=request.getContextPath()%>/resources/image/20160503_064803-706x354.jpg" alt="">
         </div>
     </div>

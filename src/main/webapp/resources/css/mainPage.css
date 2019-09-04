@@ -33,8 +33,33 @@
         opacity: 0.4;
         position: absolute;
         z-index : 1;
-        
     }
+    .mainImgServeyListBox{
+    	/* background-color:white; */
+        width: 375px;
+        height: 300px;
+        position: absolute;
+        z-index : 2;
+        padding: 20px;
+    }
+    .mainImgServeyListBox h2{
+    	color: #fff;
+    	font-size: 16px;
+    	background-color: #1b2259;
+    	display: inline-block;
+    	padding: 8px 15px;
+    	font-weight: 400;
+    	margin-bottom: 12px;
+    	border-radius: 4px;
+    }
+    .title{
+    	border: 1px solid gray;
+    	margin : 5px;
+    	height : 150px;
+   
+    }
+    
+    
     #mainContents{
         /* border: 1px solid darkblue; */
         overflow: hidden;
