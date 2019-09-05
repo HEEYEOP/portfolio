@@ -210,7 +210,10 @@
 							<P>관련주제</P>
 							<div>
 								<select>
-									<option>선택</option>
+									<option value="0">선택</option>
+									<c:forEach var="field" items="${field}">
+										<option value="${field.fieldNum}">${field.fieldTitle}</option>
+									</c:forEach>
 								</select>
 							</div>
 						</div>
