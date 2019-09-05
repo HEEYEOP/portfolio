@@ -33,54 +33,28 @@ $(document).ready(function(){
 	});
 	
 	//파일첨부시 첨부파일명 보여주기
-	$('input[name=fileTitle]').change(function(){	
+	$('#file').change(function(){	
 		var fileName = $(this).val();
 		$('.fileInput').val(fileName);
 	});
 	
 	//파일첨부 확인을 누르면 첨부파일 리스트란에 파일명을 띄움.
 	$('.button_Complete').click(function(){
-		fileClone();
-		$('.closeBtn').click();
-		
-		
-	});
-	
-	
-
-	//---------------------------------------------------요거요거 다중파일 리스트 업로드 하는 기능 아직
-	
-	/*//파일첨부 확인을 누르면 첨부파일 리스트란에 파일명을 띄움.
-	$('.button_Complete').click(function(){
-		var fileName = $('#file').val();
 		var newObj = $('#file').clone();
-		if(fileName !=''){
+		newObj.attr('id','');
+		
+		if(newObj.val() !=''){
 			$('.fileList').attr('style','padding: 15px 5px 0px 10px');
-			var index = $('.fileList div').length;
-			$('.fileList').append('<div>'+fileName+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
-			$('.fileList>div').append(newObj);
+			$('.fileList').append('<div>'+newObj.val()+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
+			newObj.addClass('displayNone');
+			newObj.attr('name','fileTitle');
+			$('.fileList').append(newObj);
 			unwrap();
 		}
 		$('.closeBtn').click();
-	});*/
+	});
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	//파일첨부 취소 버튼을 누르면 파일명 없애기
 	$('.button_Cancel').click(function(){
@@ -89,7 +63,7 @@ $(document).ready(function(){
 	});
 	
 	//동일파일 이어서 등록안됌. 어떠한 알람창도 띄우지 않았음. 이거해결할 것
-	
+	//근데 동일 파일 이어서 등록되던데, 다시 한번 체크해보기
 	
 	
 		
@@ -236,7 +210,8 @@ function answerCode(obj) { //질문에 대한 보기박스
 
 function unwrap(){
 	$('.fa.fa-times-circle').click(function(){
-			$(this).parent('div').remove();	
+		$(this).parent().next('input[name=fileTitle]').remove();
+		$(this).parent('div').remove();	
 	});
 }
 
@@ -273,38 +248,5 @@ function updateAnswerNumber(){
 	$('.answer>label').each(function(){
 		$(this).html(cnt++);
 	});
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//이거 다중첨부파일 관련 함수 나중에 지울꺼
-function fileClone(){
-	var fileName = $('.fileInput').val();
-	var newObj = $('#file').clone();
-	newObj.attr('id','');
-	console.log(newObj);
-	if(fileName !=''){
-		$('.fileList').attr('style','padding: 15px 5px 0px 10px');
-		$('.fileList').append('<div>'+newObj.val()+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
-		newObj.addClass('displayNone');
-		newObj.attr('name','fileTitle');
-		$('.fileList').append(newObj);
-		unwrap();
-	}
 }
 
