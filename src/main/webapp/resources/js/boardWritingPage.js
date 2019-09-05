@@ -176,6 +176,11 @@ $(document).ready(function(){
     	
     });
     
+    //게시물 관련 분야 설정
+    $('.lowInfo select').change(function(){
+    	var changeVal = $(this).val();
+    	$('input[name=boardFieldNum]').attr('value',changeVal);
+    });
     
     
     //------------------------------설문 추가 기능들-----------------------------
@@ -291,10 +296,14 @@ function updateAnswerNumber(){
 function fileClone(){
 	var fileName = $('.fileInput').val();
 	var newObj = $('#file').clone();
+	newObj.attr('id','');
 	console.log(newObj);
 	if(fileName !=''){
 		$('.fileList').attr('style','padding: 15px 5px 0px 10px');
-		$('.fileList').append('<div>'+newObj+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
+		$('.fileList').append('<div>'+newObj.val()+'<i class="fa fa-times-circle" style="color:red;font-size:12px;margin-left:10px; cursor: pointer;"></i>'+'</div>');
+		newObj.addClass('displayNone');
+		newObj.attr('name','fileTitle');
+		$('.fileList').append(newObj);
 		unwrap();
 	}
 }
