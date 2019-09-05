@@ -215,6 +215,7 @@
 										<option value="${field.fieldNum}">${field.fieldTitle}</option>
 									</c:forEach>
 								</select>
+								<input type="hidden" name="boardFieldNum" >
 							</div>
 						</div>
 						

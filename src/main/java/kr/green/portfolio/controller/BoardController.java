@@ -45,10 +45,11 @@ public class BoardController {
 	@RequestMapping(value="/board/writing", method = RequestMethod.POST)
 	public String boardWritingPost(BoardVO bVO, MultipartFile fileTitle) {
 		logger.info("작성한 게시물 넘기는 중");
-		/*
-		 * System.out.println("내가 작성한 게시물 : "+ bVO);
-		 * System.out.println("파일이 어떻게 넘어오는지 확인해보게쒀 : " + fileTitle);
-		 */return "redirect:/main/home";
+		
+		 System.out.println("내가 작성한 게시물 : "+ bVO);
+		 System.out.println("파일넘어오는거 확인해보게쒀 : " + fileTitle);
+		
+		 return "redirect:/main/home";
 	}
 	
 	@RequestMapping(value="/board/fieldBoard")
