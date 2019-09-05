@@ -1,5 +1,6 @@
 package kr.green.portfolio.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.slf4j.Logger;
@@ -12,14 +13,17 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.green.portfolio.service.BoardService;
+import kr.green.portfolio.utils.UploadFileUtils;
 import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
+import kr.green.portfolio.vo.FileVO;
 
 @Controller
 public class BoardController {
 	@Autowired
 	BoardService boardService;
-	
+	@Autowired
+	private String uploadPath;
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
@@ -43,12 +47,31 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/board/writing", method = RequestMethod.POST)
-	public String boardWritingPost(BoardVO bVO, MultipartFile fileTitle) {
+	public String boardWritingPost(BoardVO bVO, MultipartFile[] fileTitle, MultipartFile mainFile) throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
-		 System.out.println("내가 작성한 게시물 : "+ bVO);
-		 System.out.println("파일넘어오는거 확인해보게쒀 : " + fileTitle);
+		 System.out.println("내가 작성한 게시물 : " + bVO);
+		int boardNum = boardService.addBoard(bVO);
 		
+		if(boardNum != -1) {
+			String mainImg = UploadFileUtils.uploadFile(uploadPath, mainFile.getOriginalFilename(), mainFile.getBytes());
+			System.out.println(mainImg);
+			
+			FileVO file = new FileVO();
+			file.setFileBoardNum(boardNum);
+			file.setFileTitle(mainImg);
+			file.setIsMainImg("Y"); //이건 메인이지 일때만 해주는거
+			boardService.addFile(file);
+		}
+		System.out.println("내가 방금전에 등록한 게시물의 번호는  "+boardNum);
+		
+		
+		 
+		 
+//		 얘가 잘 들어오는건지는 일단 나중에 확인해볼께
+//		 System.out.println("다중0파일넘어오는거 확인해보게쒀 : " + fileTitle);
+//		 System.out.println("메인파일 넘어오는거 확인하게쒀 : " + mainFile);
+//		
 		 return "redirect:/main/home";
 	}
 	

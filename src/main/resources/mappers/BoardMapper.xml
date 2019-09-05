@@ -6,5 +6,18 @@
 	<select id="getFieldList" resultType="kr.green.portfolio.vo.FieldVO">
 		select * from field
 	</select>
+	
+	<insert id="insertBoard">
+		insert into board(boardUserEmail, boardType,boardTitle,boardContents,boardSubtype,answer,boardFieldNum,boardDeadline)
+			values(#{boardUserEmail}, #{boardType},#{boardTitle},#{boardContents},#{boardSubtype},#{answer},#{boardFieldNum},#{boardDeadline})
+	</insert>
 
-</mapper>
+	<select id="getBoardNum" resultType="int">
+		select max(boardNum) from board
+	</select>
+	
+	<insert id="insertFile">
+		insert into file(fileBoardNum, isMainImg, fileTitle) values(#{fileBoardNum},#{isMainImg},#{fileTitle})	
+	</insert>
+	
+</mapper> 

@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.green.portfolio.dao.BoardDAO;
+import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
+import kr.green.portfolio.vo.FileVO;
 
 @Service
 public class BoardServiceImp implements BoardService{
@@ -15,8 +17,25 @@ public class BoardServiceImp implements BoardService{
 
 	@Override
 	public ArrayList<FieldVO> getFieldList() {
-		
 		return boardDao.getFieldList();
+	}
+
+	@Override
+	public int addBoard(BoardVO bVO) {
+		if(bVO == null)
+			return -1;
+		
+		boardDao.insertBoard(bVO);
+		int getBoardNum = boardDao.getBoardNum();
+		return getBoardNum;
+	}
+
+	@Override
+	public void addFile(FileVO file) {
+		if(file == null)
+			return ;
+		
+		boardDao.insertFile(file);
 	}
 	
 

@@ -229,7 +229,7 @@
 						<div class="lowInfo">
 							<P>메인이미지</P>
 							<div>
-								<input type="file" name="fileTitle" style="border: 1px solid gainsboro; "><br>
+								<input type="file" name="mainFile" style="border: 1px solid gainsboro; "><br>
 								<span style="color:gray;">*해당 첨부파일은 게시물 메인이미지로 사용됩니다</span>
 							</div>
 						</div>
@@ -266,7 +266,7 @@
 					<form action="" enctype="multipart/form-data">
 						<input placeholder="첨부할 파일을 선택해주세요" class="fileInput" readonly>
 						<label for="file" class="button_Search">찾기</label>
-						<input type="file" id="file" name="fileTitle">
+						<input type="file" id="file">
 					</form>
 				</div>
 				<div style="margin-top :5px;">* 첨부파일 용량은 10MB로 제한합니다</div>
