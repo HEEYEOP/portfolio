@@ -54,9 +54,22 @@ public class BoardController {
 		int boardNum = boardService.addBoard(bVO);
 		
 		if(boardNum != -1) {
+			
+			//첨부파일(다중파일) 업로드
+			for(MultipartFile tmp : fileTitle) {
+				if(tmp.getOriginalFilename().length() != 0) {
+					String file = UploadFileUtils.uploadFile(uploadPath, tmp.getOriginalFilename(), tmp.getBytes());
+					FileVO files = new FileVO();
+					files.setFileBoardNum(boardNum);
+					files.setFileTitle(file);
+					files.setIsMainImg("N");
+					boardService.addFile(files);
+				}
+			}
+				
+			//게시물메인이미지 첨부파일 업로드
 			String mainImg = UploadFileUtils.uploadFile(uploadPath, mainFile.getOriginalFilename(), mainFile.getBytes());
 			System.out.println(mainImg);
-			
 			FileVO file = new FileVO();
 			file.setFileBoardNum(boardNum);
 			file.setFileTitle(mainImg);
