@@ -42,7 +42,8 @@
         z-index : 2;
         padding: 20px;
     }
-    .mainImgServeyListBox h2{
+    .mainImgServeyListBox h2,
+    .rankText h2{
     	color: #fff;
     	font-size: 16px;
     	background-color: #1b2259;
@@ -173,11 +174,27 @@
         height: 600px;
         display: inline-block;
     }
-    .Ranks{
+    .ranks{
         border: 1px solid gray;
+        background-color:white;
         border-radius: 20px;
         margin: 20px;
         height: 150px;
+    }
+    .rankImg{
+    	border: 1px solid red;
+    	border-radius : 20px;
+    	width: 30%;
+    	height: 100%;
+    	display: inline-block;
+    }
+    .rankText{
+    	border: 1px solid blue;
+    	border-radius: 20px;
+    	width: 70%;
+    	height: 100%;
+    	float: right;
+    	padding: 10px;
     }
 
     

@@ -73,15 +73,45 @@
         <div id="rankBox">
             <div id="hotRank">
                 <h1>HotRank3</h1>
-                <div class="Ranks">TOP1</div>
-                <div class="Ranks">TOP2</div>
-                <div class="Ranks">TOP3</div>
+                <div class="ranks">
+                	<div class="rankImg"></div>
+                	<div class="rankText">
+                		<h2 style="font-size: 12px; background-color: darkorange">설문타입</h2>
+                	</div>
+                </div>
+                <div class="ranks">
+                	<div class="rankImg"></div>
+                	<div class="rankText">
+                		<h2 style="font-size: 12px; background-color: darkorange">설문타입</h2>
+                	</div>
+                </div>
+                <div class="ranks">
+                	<div class="rankImg"></div>
+                	<div class="rankText">
+                		<h2 style="font-size: 12px; background-color: darkorange">설문타입</h2>
+                	</div>
+                </div>
             </div>
             <div id="newRank">
                 <h1>NewRank3</h1>
-                <div class="Ranks">TOP1</div>
-                <div class="Ranks">TOP2</div>
-                <div class="Ranks">TOP3</div>
+                <div class="ranks">
+                	<div class="rankImg"></div>
+                	<div class="rankText">
+                		<h2 style="font-size: 12px; background-color: darkorange">설문타입</h2>
+                	</div>
+                </div>
+                <div class="ranks">
+                	<div class="rankImg"></div>
+                	<div class="rankText">
+                		<h2 style="font-size: 12px; background-color: darkorange">설문타입</h2>
+                	</div>
+                </div>
+                <div class="ranks">
+                	<div class="rankImg"></div>
+                	<div class="rankText">
+                		<h2 style="font-size: 12px; background-color: darkorange">설문타입</h2>
+                	</div>
+                </div>
             </div>
         </div>
     </div>

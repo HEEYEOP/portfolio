@@ -4,11 +4,11 @@
         padding: 0;
         box-sizing: border-box;
      }
- #header{
-         border: 1px solid red;
+	 #header{
+         /* border: 1px solid red; */
      }
      #headerContents{
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         height: 72px;
         margin: 0 auto;
         position: relative;
@@ -27,8 +27,8 @@
          border: 1px solid gray;
      }
      #textMenu{
-         border: 1px solid green;
-         width: 500px;
+         /* border: 1px solid green; */
+         /* width: 500px; */
          position: absolute;
          left: 170px;
          top: 27px;

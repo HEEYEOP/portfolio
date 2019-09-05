@@ -38,9 +38,10 @@ public class BoardController {
 	public ModelAndView boardWriting(ModelAndView mv, String boardType) throws Exception{
 		logger.info("설문 작성 페이지 실행");
 		
-		/* 여기에 필드 셀렉 박스 추가하기 위한 일을 시킬꺼야 */
+		
 		ArrayList<FieldVO> fieldList = boardService.getFieldList();
 		mv.addObject("field", fieldList);
+		
 		mv.addObject("boardType", boardType);
 	    mv.setViewName("/board/writing");
 	    return mv;
@@ -50,7 +51,7 @@ public class BoardController {
 	public String boardWritingPost(BoardVO bVO, MultipartFile[] fileTitle, MultipartFile mainFile) throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
-		 System.out.println("내가 작성한 게시물 : " + bVO);
+		/* System.out.println("내가 작성한 게시물 : " + bVO); */
 		int boardNum = boardService.addBoard(bVO);
 		
 		if(boardNum != -1) {
@@ -76,15 +77,8 @@ public class BoardController {
 			file.setIsMainImg("Y"); //이건 메인이지 일때만 해주는거
 			boardService.addFile(file);
 		}
-		System.out.println("내가 방금전에 등록한 게시물의 번호는  "+boardNum);
+		/* System.out.println("내가 방금전에 등록한 게시물의 번호는  "+boardNum); */
 		
-		
-		 
-		 
-//		 얘가 잘 들어오는건지는 일단 나중에 확인해볼께
-//		 System.out.println("다중0파일넘어오는거 확인해보게쒀 : " + fileTitle);
-//		 System.out.println("메인파일 넘어오는거 확인하게쒀 : " + mainFile);
-//		
 		 return "redirect:/main/home";
 	}
 	
