@@ -52,31 +52,12 @@ public class BoardController {
 	public String boardWritingPost(BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile mainFile) throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
-		
-		
-		
-		/*
-		 * if(vsContents != null) { 
-		 * for(String tmp : vsContents) {
-		 * System.out.println(tmp); //일단 찬성의견1, 반대의견1 찍힘 } }
-		 */
-		
-		
-		//내가 고민해야할것은,
-		//얘를 스트링으로 받아서 서비스에서 하나씩 꺼내서 첫번째꺼는 찬성으로 타입지정해주고 DB저장 두번째꺼는 반대로 타입지정하고 DB저장 이렇게해야 할것인가
-		//그러면 서브타입을
-		
-		//아니면 JSP로 부터 vsTypeVO로 받을 수 있는 방법은 없는것인가
-		
 		/* System.out.println("내가 작성한 게시물 : " + bVO); */
 		int boardNum = boardService.addBoard(bVO);
 		
 		if(vsContents != null) {
 			boardService.addVsType(boardNum ,vsContents);
 		}
-		
-		
-		
 		
 		
 		//파일업로드 기능 -----------------이거 서비스로 뺐으면 좋겠는데, 나중에생각해보기 
