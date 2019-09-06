@@ -117,6 +117,7 @@
 							<div class="Qs">
 								<div class="QBox">
 									
+									<input type="text"  name="inputNum" value="1">
 									<div class="que">
 										<label class="redLabel">질문1</label>
 										<input type="text" class="Qtext QtextDeco ">

@@ -99,6 +99,7 @@ $(document).ready(function(){
     /*질문추가버튼 클랙했을 때, 질문 추가하기*/
     $('.addButton').click(function(){
     	$('.Qs').append(Qcode());
+    	updateInputNum();
     	deleteQBox();
     	
     });
@@ -226,14 +227,15 @@ $(document).ready(function(){
 //--------------------------------------------함수---------------------------------------------//
 function Qcode(){ //큰 질문박스
 	var index =$('.Qs .QBox').length+1;
-    var html = ('<div class="QBox">'+'<div class="que">'+'<label class="redLabel">질문'+index+'</label>'+'<input type="text" class="Qtext QtextDeco ">'+
+	 
+    var html = ('<div class="QBox">'+'<input type="text" name="inputNum" value="">'+'<div class="que">'+'<label class="redLabel">질문'+index+'</label>'+'<input type="text" class="Qtext QtextDeco ">'+
     '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'<div class="queTypeBox">'+
     '<select class="queType" onchange="nextSelectChange('+(index-1)+')" >'+'<option>질문형태</option>'+'<option>객관식(단일선택)</option>'+'<option>객관식(복수선택)</option>'+
     '<option>분기형(하위질문)</option>'+'<option>척도형</option>'+'</select>'+'<select class="queType isRequired" onchange="addAnswerButton('+(index-1)+',this.value)">'+
     '<option value="is">필수여부</option>'+'<option value="required">필수</option>'+'<option value="NotRequired">필수아님</option>'+
     '</select>'+'<div class="addQueButton displayNone" onclick="addAnswerBox('+(index-1)+')">'+'질문'+index+'의 보기추가'+'<i class="fa fa-plus-circle"></i>'+
     '</div>'+'</div>'+'<div class="answerBoxSpot"></div>'+'</div>');
-
+   
     return html;
 }
 
@@ -299,7 +301,9 @@ function updateQuestionNumber(){
 	var cnt = 1;
 	$('.que>label').each(function(){
 		$(this).html('질문'+ cnt++);
+		updateInputNum();
 	});
+	
 }
 
 //보기란을 1,2,3 ... 번으로 맞추는 함수
@@ -307,8 +311,24 @@ function updateAnswerNumber(){
 	var cnt = 1;
 	$('.answer>label').each(function(){
 		$(this).html(cnt++);
+		updateInputNum();
+	});
+	
+}
+
+
+function updateInputNum(){
+	var cnt =1;
+	$('.QBox input[name=inputNum]').each(function(){
+		$(this).val(cnt++);
 	});
 }
+
+
+
+
+
+
 
 //설문종류 변경되면 필수여부를 변경하는 함수
 function change(){
