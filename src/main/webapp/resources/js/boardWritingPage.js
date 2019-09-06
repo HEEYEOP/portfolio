@@ -93,7 +93,50 @@ $(document).ready(function(){
 		
     });
 	
-	/*참여기간 버튼을 통해서 값 입력받기*/
+
+	//------------------------------설문 추가 기능들-----------------------------
+    
+    /*질문추가버튼 클랙했을 때, 질문 추가하기*/
+    $('.addButton').click(function(){
+    	$('.Qs').append(Qcode());
+    	deleteQBox();
+    	
+    });
+    
+
+    //질문 삭제버튼 처리 이벤트 등록 함수 추가
+    deleteQBox();
+    
+   	
+
+    	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*참여기간 버튼을 통해서 값 입력받기 */
 	$('.sel1 .forTypeCheck').click(function(){
 		$('.sel1 .forTypeCheck').find('i').each(function(){
 			$('.sel1 .forTypeCheck').attr('style','background-color: #e5e5e5;');
@@ -167,27 +210,25 @@ $(document).ready(function(){
     });
     
     
-    //------------------------------설문 추가 기능들-----------------------------
     
-    /*질문추가버튼 클랙했을 때, 질문 추가하기*/
-    $('.addButton').click(function(){
-    	$('.Qs').append(Qcode());
-    	deleteQBox();
-    });
-
-    //질문 삭제버튼 처리 이벤트 등록 함수 추가
-    deleteQBox();
     
     
 	
 }); //document.ready()--------------------------------------
+
+
+
+
+//질문형태가 변경되면 필수여부를 기본값으로 하기위해서 Qcode 삽입할때 html안에다가 onchange로 넣어주자!!
+
+
 
 //--------------------------------------------함수---------------------------------------------//
 function Qcode(){ //큰 질문박스
 	var index =$('.Qs .QBox').length+1;
     var html = ('<div class="QBox">'+'<div class="que">'+'<label class="redLabel">질문'+index+'</label>'+'<input type="text" class="Qtext QtextDeco ">'+
     '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'<div class="queTypeBox">'+
-    '<select class="queType">'+'<option>질문형태</option>'+'<option>객관식(단일선택)</option>'+'<option>객관식(복수선택)</option>'+
+    '<select class="queType" onchange="nextSelectChange('+(index-1)+')" >'+'<option>질문형태</option>'+'<option>객관식(단일선택)</option>'+'<option>객관식(복수선택)</option>'+
     '<option>분기형(하위질문)</option>'+'<option>척도형</option>'+'</select>'+'<select class="queType isRequired" onchange="addAnswerButton('+(index-1)+',this.value)">'+
     '<option value="is">필수여부</option>'+'<option value="required">필수</option>'+'<option value="NotRequired">필수아님</option>'+
     '</select>'+'<div class="addQueButton displayNone" onclick="addAnswerBox('+(index-1)+')">'+'질문'+index+'의 보기추가'+'<i class="fa fa-plus-circle"></i>'+
@@ -195,6 +236,15 @@ function Qcode(){ //큰 질문박스
 
     return html;
 }
+
+function nextSelectChange(index){
+	console.log(index);
+	$('.queType').eq(index).next('select').val('is');
+	$('.queType').eq(index).next('select').next('.addQueButton').addClass('displayNone');
+	
+}
+
+
 
 function addAnswerButton(index, value){
 	if(value == 'is'){
@@ -258,5 +308,10 @@ function updateAnswerNumber(){
 	$('.answer>label').each(function(){
 		$(this).html(cnt++);
 	});
+}
+
+//설문종류 변경되면 필수여부를 변경하는 함수
+function change(){
+	 
 }
 

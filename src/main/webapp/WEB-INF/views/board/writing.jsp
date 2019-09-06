@@ -127,7 +127,7 @@
 									</div>
 									
 									<div class="queTypeBox">
-										<select class="queType">
+										<select class="queType" onchange="nextSelectChange(0)">   <!-- 여기서index를1로주면얘가 작동을 안하고 0으로 주면 두번째부터 작동을 안함 -->
 											<option>질문형태</option>
 											<option>객관식(단일선택)</option>
 											<option>객관식(복수선택)</option>
