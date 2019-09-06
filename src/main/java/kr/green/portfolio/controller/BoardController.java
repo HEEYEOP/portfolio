@@ -60,6 +60,8 @@ public class BoardController {
 		}
 		
 		
+		
+		
 		//파일업로드 기능 -----------------이거 서비스로 뺐으면 좋겠는데, 나중에생각해보기 
 		if(boardNum != -1) {
 			
