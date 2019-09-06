@@ -112,9 +112,19 @@ $(document).ready(function(){
 	$('#testDatepicker').datepicker({
 		minDate: 0
 	});
-	//deadline을 단위버튼 클릭으로 변경하기
+	//boardDeadline을 단위버튼 클릭으로 변경하기
     function getDateStr(myDate){
-    	return (myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate())
+    	var month = myDate.getMonth() + 1;
+    	var day = myDate.getDate();
+    	
+    	if(month < 10){
+    		month = '0'+month;
+    	}
+    	if(day < 10){
+    		day = '0'+day;
+    	}
+    	
+    	return (myDate.getFullYear() + '-' + month + '-' + day)
     }
     function today(){
     	var today = new Date();
@@ -137,15 +147,15 @@ $(document).ready(function(){
   	}
  
     $('input[name=startDate]').val(today());
-    $('input[name=deadline]').val(nextWeek());
+    $('input[name=boardDeadlineString]').val(nextWeek());
     
     $('input[name=periodValue]').change(function(){
     	if($(this).val() == 'twoWeek'){
-    		$('input[name=deadline]').val(nextTwoWeek());
+    		$('input[name=boardDeadlineString]').val(nextTwoWeek());
     	}else if($(this).val() == 'aMonth'){
-    		$('input[name=deadline]').val(nextMonth());
+    		$('input[name=boardDeadlineString]').val(nextMonth());
     	}else{
-    		$('input[name=deadline]').val(nextWeek());
+    		$('input[name=boardDeadlineString]').val(nextWeek());
     	}
     	
     });

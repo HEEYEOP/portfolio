@@ -170,7 +170,7 @@
 							<div style="display:inline-block; margin-right:20px;">
 								<input class="periodSelect" name="startDate" readonly>
 								-
-								<input class="periodSelect" id="testDatepicker" name="deadline" onclick="$('#testDatepicker').datepicker('show');">
+								<input class="periodSelect" id="testDatepicker" name="boardDeadlineString" onclick="$('#testDatepicker').datepicker('show');">
 								
 							</div>
 							<div style="display:inline-block;">

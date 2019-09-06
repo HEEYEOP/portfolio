@@ -70,7 +70,6 @@ public class BoardController {
 				
 			//게시물메인이미지 첨부파일 업로드
 			String mainImg = UploadFileUtils.uploadFile(uploadPath, mainFile.getOriginalFilename(), mainFile.getBytes());
-			System.out.println(mainImg);
 			FileVO file = new FileVO();
 			file.setFileBoardNum(boardNum);
 			file.setFileTitle(mainImg);

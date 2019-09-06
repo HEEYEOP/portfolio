@@ -1,5 +1,7 @@
 package kr.green.portfolio.vo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BoardVO {
@@ -108,6 +110,16 @@ public class BoardVO {
 	}
 	public void setBoardDeadline(Date boardDeadline) {
 		this.boardDeadline = boardDeadline;
+	}
+	public void setBoardDeadlineString(String boardDeadline) {
+		//여기에 문자열로 들어온 날짜를 date타입으로 변환해주는거야!!
+		/* this.boardDeadline = boardDeadline; */
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			this.boardDeadline = transFormat.parse(boardDeadline);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
