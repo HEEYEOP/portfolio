@@ -65,6 +65,8 @@
 							</li>
 						</ul>
 					</div>
+					
+					
 					<input type="hidden" name="boardSubtype">
 					<!-- 서브타입 VS형 -->
 					<div class="typeVS displayNone" >
@@ -73,13 +75,13 @@
 							<ul style="list-style:none;">
 								<li style="padding-bottom:20px; border-bottom :1px dashed #d1d1d1;">
 									<div>
-										<input type="text" placeholder="'찬성'의견을 제시해주세요." class="text">
+										<input name="vsContents" type="text" placeholder="'찬성'의견을 제시해주세요." class="text">
 									</div>
 									<p>내용을 적지 않으면 '찬성'단어가 자동으로 입력됩니다.</p>
 								</li>
 								<li style="padding-top : 36px;">
 									<div>
-										<input type="text" placeholder="'반대'의견을 제시해주세요." class="text">
+										<input name="vsContents" type="text" placeholder="'반대'의견을 제시해주세요." class="text">
 									</div>
 									<p>내용을 적지 않으면 '반대'단어가 자동으로 입력됩니다.</p>
 								</li>
@@ -87,6 +89,8 @@
 							</ul>
 						</div>
 					</div>
+					
+					
 					<!-- 서브타입 설문형 -->
 					<div class="typeSurvey displayNone">
 						<div class="surInfo">

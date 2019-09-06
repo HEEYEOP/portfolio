@@ -14,4 +14,6 @@ public interface BoardService {
 
 	void addFile(FileVO file);
 
+	void addVsType(int boardNum, String[] vsContents);
+
 }

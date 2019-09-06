@@ -20,4 +20,8 @@
 		insert into file(fileBoardNum, isMainImg, fileTitle) values(#{fileBoardNum},#{isMainImg},#{fileTitle})	
 	</insert>
 	
+	<insert id="insertVsType">
+		insert into vsType(vsTypeBoardNum,yORn,vsContents) values(#{vsTypeBoardNum},#{yORn},#{vsContents})
+	</insert>
+	
 </mapper> 
