@@ -14,10 +14,113 @@
      	border : 1px solid gray;
      	background-color : white;
      	min-height: 800px;
-     	width : 1050px;
+     	max-width : 1500px;
      	margin : 0 auto;
+     	padding: 0 20px 20px 20px;	
      }
      .sortBar{
+     	height: 40px;
+     	border-bottom: 1px solid gray;
+     	margin: 30px;
+     }
+     .boards{
+     	/* 이건 적용시킬지 말지 일단 보류 */
+     }
+     .board{
+     	display: inline-block;
+     	border: 1px solid black;
+     	width: 100%;
+     	
+     	margin-bottom : 30px;
+     	margin-top : 30px;
+     	position: relative;
+     	float: left;
+     	padding : 20px;
+     	border-radius: 20px;
+     }
+     .bottomBorder{
+     	display : inline-block;
+     	border-bottom: 1px dashed gray;
+     	width: 48%;
+     	margin-right: 20px;
+     }
+     .boardLeft{
+     	border: 1px solid red;
+     	width: calc((100% - 40px) - 30%);
+     	display: inline-block;;
+     	
+     }
+     .titleBox{
+     	/* border:1px solid blue; */
+     	width: 95%;
+     }
+     .titleBox h3{
+        color: #fff;
+    	font-size: 15px;
+    	background-color: #1b2259;
+    	display: inline-block;
+    	padding: 8px 15px;
+    	font-weight: 200;
+    	margin-bottom: 12px;
+    	border-radius: 4px;
+     }
+     .titleBox h2{
+     	margin-top: 20px;
+     	font-size: 22px;
+    	margin-bottom: 15px;
+    	overflow: hidden;
+    	min-height: 80px;
+     }
+     .stepBox{
+     	border: 1px solid gray;
+     	border-radius: 20px;
+     	color: #767676;
+    	text-align: center;
+    	display: inline-block;
+     	width: 95%;
+    	font-size: 13px;
+    	margin-bottom: 0;
+    	padding: 10px;
+     }
+     .step{
+     	padding: 0 14px 0 2px;
+    	width: 22%;
+    	float:left;
+     }
+     .step p{
+     	margin: 0;
+     }
+     
+     /* 게시물 오른쪽 이미지란 */
+     .boardRight{
+     	border:1px solid blue;
+     	position : absolute;
+     	width: calc(30% - 20px);
+     	display: inline-block;
+     	float: right;
+     	margin-left: 40px;
+    	height: calc(100% - 40px);
+     }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     /* .sortBar{
      	border:1px solid red;
      	height: 60px;
      }
@@ -79,7 +182,7 @@
      	margin: 0;
      }
      
-     /* 게시물 오른쪽 이미지란 */
+     게시물 오른쪽 이미지란
      .boardRight{
      	position : absolute;
      	height : 80%;
@@ -90,7 +193,7 @@
      	margin-bottom: 20px;
      	margin-top: 20px;
      }
-     
+      */
      
      
      
