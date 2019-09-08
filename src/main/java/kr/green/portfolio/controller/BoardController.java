@@ -106,5 +106,42 @@ public class BoardController {
 	}
 	
 	
+	
+	
+	
+	//게시물 상세보기 페이지
+	@RequestMapping(value="/board/view")
+	public ModelAndView view(ModelAndView mv) throws Exception{
+		logger.info("게시물 상세보기 페이지 실행");
+		mv.setViewName("/board/view");
+		return mv;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
