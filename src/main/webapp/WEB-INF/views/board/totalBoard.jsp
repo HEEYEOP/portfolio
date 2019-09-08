@@ -23,7 +23,7 @@
 						
 						<div class="titleBox">
 							<h3>게시물타입</h3>
-							<h3 style="background-color:#767676;">작성자명</h3>
+							<h3 style="background-color: #1b2259;">작성자명</h3>
 							<h2>
 								<a href="#">여기에 게시물 제목을 넣을꺼야넣을꺼야 길게길게 제목을 써서 길게길게 넣어줄꺼야</a>
 							</h2>
