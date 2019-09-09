@@ -96,41 +96,53 @@ $(document).ready(function(){
 
 	//------------------------------설문 추가 기능들-----------------------------
     
-    /*질문추가버튼 클랙했을 때, 질문 추가하기*/
-    $('.addButton').click(function(){
-    	$('.Qs').append(Qcode());
-    	updateInputNum();
-    	deleteQBox();
     	
-    });
-    
-    
     //질문타입이 변했을떄 보여줘야하는 화면
     $('select[name=queType]').change(function(){
-    	var type = $(this).val();
+    	$('select[name=isRequired]').val('is');
+    	$('select[name=isRequired]').change();	
     	
-    	if(type == 'TypeScale'){
-    		$('select[name=TypeScaleVal]').removeClass('displayNone');
-    		$('select[name=TypeScaleVal]').change();
-    	}
     });
     
-    
-    
+    //필수여부가 변했을때, value가 is면 다 안보여주고, 다른값이면 질문타입에 따른 display
+    $('select[name=isRequired]').change(function(){
+    	$('.answerBoxSpot').html('');
+    	var val = $(this).val();
+    	if(val == 'is'){
+    		$('input[type=number]').addClass('displayNone');
+    		$('select[name=TypeScaleVal]').addClass('displayNone');
+    		$('.addQueButton').addClass('displayNone');
+    	}else{
+    		var type = $('select[name=queType]').val();
+    		if(type == 'TypeChoiceOne'){
+    			$('.addQueButton').removeClass('displayNone');
+    		}else if(type =='TypeChoiceTwo'){
+    			$('input[type=number]').removeClass('displayNone');
+    			$('.addQueButton').removeClass('displayNone');
+    		}else if(type =='TypeBranch'){
+    			$('.addQueButton').removeClass('displayNone');
+    		}else if(type =='TypeScale'){
+    			$('select[name=TypeScaleVal]').removeClass('displayNone');
+    		}
+    		
+    		
+    	}
+    });
     
     //질문타입이 척도형일때 보여줘야하는 기능
     $('select[name=TypeScaleVal]').change(function(){
+    	
     	var cnt = $(this).val(); 
     	var textArr = new Array();
-    	if(cnt ==3){
+    	if(cnt == '3'){
     		textArr =['나쁨','보통','좋음'];
-    	}else if(cnt == 4){
+    	}else if(cnt == '4'){
     		textArr =['매우나쁨','나쁨','좋음','매우좋음'];
-    	}else if(cnt == 5){
+    	}else if(cnt == '5'){
     		textArr =['매우나쁨','나쁨','보통','좋음','매우좋음'];
     	}
     	
-    	var html ='';
+    	var html ="";
     	for(var i=0; i<cnt; i++){
     		html += '<div class="answerBox">';
     		html += '<div class="answer">';
@@ -139,7 +151,9 @@ $(document).ready(function(){
     		html += '</div>';
     		html += '</div>';
     	}
-    	$(this).next().append(html);
+    	console.log(html);
+    	//$(this).parents('.QBox').find('.answerBoxSopt').html(html); 이거는 안됨
+    	$('.answerBoxSpot').html(html); //이건 됨
     	
     	
     });
@@ -147,7 +161,13 @@ $(document).ready(function(){
     
     
     
-    
+    /*질문추가버튼 클랙했을 때, 질문 추가하기*/
+    /*$('.addButton').click(function(){
+    	$('.Qs').append(Qcode());
+    	updateInputNum();
+    	deleteQBox();
+    	
+    });*/
     
     
     
@@ -155,7 +175,7 @@ $(document).ready(function(){
     
     
     //질문 삭제버튼 처리 이벤트 등록 함수 추가
-    deleteQBox();
+    //deleteQBox();
     
    	
 
@@ -274,7 +294,7 @@ $(document).ready(function(){
 
 
 //--------------------------------------------함수---------------------------------------------//
-function Qcode(){ //큰 질문박스
+/*function Qcode(){ //큰 질문박스
 	var index =$('.Qs .QBox').length+1;
 	 
     var html = ('<div class="QBox">'+'<input type="text" name="inputNum" value="">'+'<div class="que">'+'<label class="redLabel">질문'+index+'</label>'+'<input type="text" class="Qtext QtextDeco ">'+
@@ -296,7 +316,7 @@ function answerCode(obj) { //질문에 대한 보기박스
 }
 
 
-/*function TypeScale(cnt){
+function TypeScale(cnt){
 	var html = ('<div class="answerBox">'+
 					'<div class="answer">'+
 						'<label class="redLabel">'+(index)+'</label>'+
@@ -315,7 +335,7 @@ function answerCode(obj) { //질문에 대한 보기박스
 	}else{
 		
 	}
-}*/
+}
 
 
 
@@ -411,4 +431,4 @@ function updateInputNum(){
 function change(){
 	 
 }
-
+*/

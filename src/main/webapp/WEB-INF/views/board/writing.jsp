@@ -9,7 +9,7 @@
 <link href="<%=request.getContextPath()%>/resources/css/boardWritePage.css" rel="stylesheet">
 <link href="<%=request.getContextPath()%>/resources/css/boardWritingPage.css" rel="stylesheet">
 
-<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/boardWritingPage.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/boardWritingPage2.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/datepicker-ko.js"></script>
 
 
@@ -90,6 +90,9 @@
 						</div>
 					</div>
 					
+					<!-- --------------------------------------------------------------------------위로문제없음 -->
+					
+					
 					
 					<!-- 서브타입 설문형 -->
 					<div class="typeSurvey displayNone">
@@ -132,24 +135,27 @@
 									</div>
 									
 									<div class="queTypeBox">
-										<select name="queType" class="queType" onchange="nextSelectChange(0)">   <!-- 여기서index를1로주면얘가 작동을 안하고 0으로 주면 두번째부터 작동을 안함 -->
+										<select name="queType" class="queType">
 											<option>질문형태</option>
 											<option value="TypeChoiceOne">객관식(단일선택)</option>
-											<option value="">객관식(복수선택)</option>
-											<option value="">분기형(하위질문)</option>
+											<option value="TypeChoiceTwo">객관식(복수선택)</option>
+											<option value="TypeBranch">분기형(하위질문)</option>
 											<option value="TypeScale">척도형</option>
 										</select>
 										
 										
 										
-										<select class="queType isRequired" onchange="addAnswerButton(0,this.value)">
+										<select name="isRequired" class="queType isRequired">
 											<option value="is">필수여부</option>
 											<option value="required">필수</option>
 											<option value="NotRequired">필수아님</option>
 										</select>
 										
 										
+										<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">
+										
 										<select name="TypeScaleVal" class="queType displayNone">
+											<option value="-1">항목수선택</option>
 											<option value="3">3</option>
 											<option value="4">4</option>
 											<option value="5">5</option>
@@ -157,7 +163,7 @@
 										
 										
 										
-										<div class="addQueButton displayNone" onclick="addAnswerBox(0)">
+										<div class="addQueButton displayNone">
 											질문1의 보기추가
 											<i class="fa fa-plus-circle"></i>
 										</div>
@@ -165,21 +171,12 @@
 									
 									<div class="answerBoxSpot">
 										<!-- 여기에 추가한다고 생각하고 -->
+										
 									</div>
 									
 								
 								</div>
 								<!-- ------------------------질문 1끝---------------------- -->
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
 							</div>
 							
 							
@@ -232,7 +229,7 @@
 							
 							
 							
-							
+							<!-- 아래로문제없음----------------------------------------------------- -->
 							
 							<!-- 큰질문박스 추가버튼 -->
 							<div class="addButton">
