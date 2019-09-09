@@ -240,14 +240,11 @@ function Qcode(){ //큰 질문박스
 }
 
 function nextSelectChange(index){
-	console.log(index);
-	$('.queType').eq(index).next('select').val('is');
-	$('.queType').eq(index).next('select').next('.addQueButton').addClass('displayNone');
-	
+	$('.isRequired').eq(index).val('is');
+	$('.isRequired').eq(index).next('.addQueButton').addClass('displayNone');
+	//전혀 상관없는 테스트용
+	//console.log($('.isRequired').eq(index).parents('.QBox').find('input[name=inputNum]').val())
 }
-
-
-
 function addAnswerButton(index, value){
 	if(value == 'is'){
 		$('.addQueButton').eq(index).addClass('displayNone');
@@ -283,7 +280,7 @@ function deleteQBox(){
 			$(this).parents('.QBox').remove();
 			updateQuestionNumber();
 		}else{
-			alert('질문은 1개이상 존재하여야 합니다.'); //오류!! alert창이 여러번 뜸
+			alert('질문은 1개이상 존재하여야 합니다.'); 
 		}
 	});
 }
