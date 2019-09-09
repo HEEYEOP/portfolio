@@ -104,7 +104,55 @@ $(document).ready(function(){
     	
     });
     
-
+    $('select[name=queType]').change(function(){
+    	var type = $(this).val();
+    	
+    	if(type == 'TypeScale'){
+    		$('select[name=TypeScaleVal]').removeClass('displayNone');
+    	}
+    });
+    
+    
+    
+    
+    //질문타입이 척도형일때 보여줘야하는 기능
+    $('select[name=TypeScaleVal]').change(function(){
+    	var cnt = $(this).val(); 
+    	var textArr = new Array();
+    	if(cnt ==3){
+    		textArr =['나쁨','보통','좋음'];
+    	}else if(cnt ==4){
+    		textArr =['매우나쁨','나쁨','좋음','매우좋음'];
+    	}else if(cnt == 5){
+    		textArr =['매우나쁨','나쁨','보통','좋음','매우좋음'];
+    	}
+    	
+    	var html ='';
+    	for(var i=0; i<cnt; i++){
+    		html += '<div class="answerBox">';
+    		html += '<div class="answer">';
+    		html += '<label class="redLabel">'+(i+1)+'</label>';
+    		html += '<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="'+textArr[i]+'">';
+    		html += '<a class="QdeleteButton">';
+    		html += '삭제';
+    		html += '<i class="fa fa-times-circle"></i>';
+    		html += '</a>';
+    		html += '</div>';
+    		html += '</div>';
+    	}
+    	
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //질문 삭제버튼 처리 이벤트 등록 함수 추가
     deleteQBox();
     
@@ -238,6 +286,42 @@ function Qcode(){ //큰 질문박스
    
     return html;
 }
+function answerCode(obj) { //질문에 대한 보기박스
+	var index = obj.find('.answerBox').length+1;
+	var html = ('<div class="answerBox">'+'<div class="answer">'+
+    '<label class="redLabel">'+(index)+'</label>'+'<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">'+
+    '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'</div>')
+    return html;
+}
+
+
+/*function TypeScale(cnt){
+	var html = ('<div class="answerBox">'+
+					'<div class="answer">'+
+						'<label class="redLabel">'+(index)+'</label>'+
+						'<input class="Qtext" style="margin: 0px 0px 5px 55px;">'+
+						'<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+
+					'</div>'+
+				'</div>');
+	if(cnt == 5){
+		for(var i=1; i<=5; i++){
+			html += html
+		}
+		
+		
+	}else if(cnt ==4){
+		
+	}else{
+		
+	}
+}*/
+
+
+
+
+
+
+
 
 function nextSelectChange(index){
 	$('.isRequired').eq(index).val('is');
@@ -259,13 +343,8 @@ function addAnswerBox(index){
 	deleteAnswerBox();
 }
 
-function answerCode(obj) { //질문에 대한 보기박스
-	var index = obj.find('.answerBox').length+1;
-	var html = ('<div class="answerBox">'+'<div class="answer">'+
-    '<label class="redLabel">'+(index)+'</label>'+'<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문1에 대한 보기 내용을 적어주세여(100자이내)">'+
-    '<a class="QdeleteButton">'+'삭제'+'<i class="fa fa-times-circle"></i>'+'</a>'+'</div>'+'</div>')
-    return html;
-}
+
+
 
 function unwrap(){
 	$('.fa.fa-times-circle').click(function(){

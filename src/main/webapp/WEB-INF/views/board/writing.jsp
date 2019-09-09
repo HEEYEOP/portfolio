@@ -115,8 +115,12 @@
 						
 						<div class="QplusAddButton">
 							<div class="Qs">
+							
+							
+							
+							
+								<!-- --------------------------질문1 ------------------------->
 								<div class="QBox">
-									
 									<input type="text"  name="inputNum" value="1">
 									<div class="que">
 										<label class="redLabel">질문1</label>
@@ -128,18 +132,31 @@
 									</div>
 									
 									<div class="queTypeBox">
-										<select class="queType" onchange="nextSelectChange(0)">   <!-- 여기서index를1로주면얘가 작동을 안하고 0으로 주면 두번째부터 작동을 안함 -->
+										<select name="queType" class="queType" onchange="nextSelectChange(0)">   <!-- 여기서index를1로주면얘가 작동을 안하고 0으로 주면 두번째부터 작동을 안함 -->
 											<option>질문형태</option>
-											<option>객관식(단일선택)</option>
-											<option>객관식(복수선택)</option>
-											<option>분기형(하위질문)</option>
-											<option>척도형</option>
+											<option value="TypeChoiceOne">객관식(단일선택)</option>
+											<option value="">객관식(복수선택)</option>
+											<option value="">분기형(하위질문)</option>
+											<option value="TypeScale">척도형</option>
 										</select>
+										
+										
+										
 										<select class="queType isRequired" onchange="addAnswerButton(0,this.value)">
 											<option value="is">필수여부</option>
 											<option value="required">필수</option>
 											<option value="NotRequired">필수아님</option>
 										</select>
+										
+										
+										<select name="TypeScaleVal" class="queType displayNone">
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+										
+										
+										
 										<div class="addQueButton displayNone" onclick="addAnswerBox(0)">
 											질문1의 보기추가
 											<i class="fa fa-plus-circle"></i>
@@ -149,11 +166,75 @@
 									<div class="answerBoxSpot">
 										<!-- 여기에 추가한다고 생각하고 -->
 									</div>
+									
 								
 								</div>
+								<!-- ------------------------질문 1끝---------------------- -->
+								
+								
+								
+								
+								
+								
+								
+								
+								
+								
 							</div>
 							
 							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							<!-- 큰질문박스 추가버튼 -->
 							<div class="addButton">
 								<a style="text-decoration:none; color:black;">
 									질문추가
