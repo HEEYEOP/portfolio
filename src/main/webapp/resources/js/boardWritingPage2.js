@@ -165,19 +165,18 @@ $(document).ready(function(){
     	
     });
     
-    //이거 함수 밖으로 나갈꺼야
-    
-    
-    
+   
     $('.addButton').click(function(){
     	$('.Qs').append(Qcode());
+    	
+    	//추가되는 마지막애한테 이벤트 등록해주기
     	deleteQ();
     	queTypeChange();
     	isRequiredChange();
     });
     
     
-    //이벤트 등록//
+    //처음에 만들어져있는 질문을 위한 이벤트 등록//
     deleteQ();
     queTypeChange();
     isRequiredChange();
@@ -365,12 +364,15 @@ function updateInputNum(){
 }
 
 
+
+
+
 function queTypeChange(){
 	$('.Qs').find('.QBox').last().find('select[name=queType]').change(function(){
 		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
 		//console.log(index);
 		$('.QBox').eq(index-1).find('select[name=isRequired]').val('is');
-		isRequiredChange();
+		$('.QBox').eq(index-1).find('select[name=isRequired]').change();
 	});
 	
 }
@@ -379,10 +381,10 @@ function isRequiredChange(){
 	$('.Qs').find('.QBox').last().find('select[name=isRequired]').change(function(){
 		
 		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
-    	console.log(index);
+    	//console.log(index);
     	
 		$('.QBox').eq(index-1).find('.answerBoxSpot').html('');
-		var val = $('.QBox').eq(index-1).find(this).val();
+		var val = $('.QBox').eq(index-1).find('select[name=isRequired]').val();
 		if(val == 'is'){
 			$('.QBox').eq(index-1).find('input[type=number]').addClass('displayNone');
 			$('.QBox').eq(index-1).find('select[name=TypeScaleVal]').addClass('displayNone');
