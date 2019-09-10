@@ -95,47 +95,7 @@ $(document).ready(function(){
 	
 
 	//------------------------------설문 추가 기능들-----------------------------
-    
-	
-    /*	
-    //질문타입이 변했을떄 보여줘야하는 화면
-    $('select[name=queType]').change(function(){
-    	var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
-    	console.log(index);
-    	
-    	$('.QBox').eq(index-1).$('select[name=isRequired]').val('is');
-    	
-    	//이거 함수로 뺀다음에 여기에 함수 등록해줄꺼야$('select[name=isRequired]').change();	
-    });
-    */
-    
-	
-	/*
-    //필수여부가 변했을때, value가 is면 다 안보여주고, 다른값이면 질문타입에 따른 display
-    $('select[name=isRequired]').change(function(){
-    	$('.answerBoxSpot').html('');
-    	var val = $(this).val();
-    	if(val == 'is'){
-    		$('input[type=number]').addClass('displayNone');
-    		$('select[name=TypeScaleVal]').addClass('displayNone');
-    		$('.addQueButton').addClass('displayNone');
-    	}else{
-    		var type = $('select[name=queType]').val();
-    		if(type == 'TypeChoiceOne'){
-    			$('.addQueButton').removeClass('displayNone');
-    		}else if(type =='TypeChoiceTwo'){
-    			$('input[type=number]').removeClass('displayNone');
-    			$('.addQueButton').removeClass('displayNone');
-    		}else if(type =='TypeBranch'){
-    			$('.addQueButton').removeClass('displayNone');
-    		}else if(type =='TypeScale'){
-    			$('select[name=TypeScaleVal]').removeClass('displayNone');
-    		}
-    			
-    	}
-    });
-    */
-    
+   /*
     //질문타입이 척도형일때 보여줘야하는 기능
     $('select[name=TypeScaleVal]').change(function(){
     	
@@ -162,8 +122,9 @@ $(document).ready(function(){
     	$(this).parents('.QBox').find('.answerBoxSopt').html(html); 
     	//$('.answerBoxSpot').html(html); //이건 됨
     	
-    	
     });
+    
+    */
     
    
     $('.addButton').click(function(){
@@ -173,6 +134,7 @@ $(document).ready(function(){
     	deleteQ();
     	queTypeChange();
     	isRequiredChange();
+    	TypeScaleValChange();
     });
     
     
@@ -180,6 +142,7 @@ $(document).ready(function(){
     deleteQ();
     queTypeChange();
     isRequiredChange();
+    TypeScaleValChange();
     
     
 
@@ -384,6 +347,7 @@ function isRequiredChange(){
     	//console.log(index);
     	
 		$('.QBox').eq(index-1).find('.answerBoxSpot').html('');
+		
 		var val = $('.QBox').eq(index-1).find('select[name=isRequired]').val();
 		if(val == 'is'){
 			$('.QBox').eq(index-1).find('input[type=number]').addClass('displayNone');
@@ -405,6 +369,50 @@ function isRequiredChange(){
 		}
 	});
 }
+
+
+function TypeScaleValChange(){
+	$('.Qs').find('.QBox').last().find('select[name=TypeScaleVal]').click(function(){
+		
+		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
+		
+		var cnt = $(this).val();
+		var textArr = new Array(); 
+		
+		if(cnt == '3'){
+			textArr =['나쁨','보통','좋음'];
+		}else if(cnt == '4'){
+			textArr =['매우나쁨','나쁨','좋음','매우좋음'];
+		}else if(cnt == '5'){
+			textArr =['매우나쁨','나쁨','보통','좋음','매우좋음'];
+		}
+		
+		var html ='';
+		for(var i=0; i<cnt; i++){
+			html += '<div class="answerBox">';
+			html += '<div class="answer">';
+			html += '<label class="redLabel">'+(i+1)+'</label>';
+			html += '<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="'+textArr[i]+'">';
+			html += '</div>';
+			html += '</div>';
+		}
+		$('.QBox').eq(index-1).find('.answerBoxSpot').html(html); 
+		
+		
+	});
+	
+	
+}
+
+
+
+//지금부터 내가 해야하는건 필수여부 셀렉박스가 변경되었을 때, 박스 디스플레이 여부도 체크해줘야하지만 척도형 갯수 선택 셀렉박스도 기본값으로 변경해줘야한다.
+//척도형 갯수 셀렉박스를 change말고 click로 변경하고 기본값일때만 처리해주면 다른건 문제가 없을꺼같은데, 체크해봐야함
+
+
+
+
+
 
 
 
