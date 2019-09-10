@@ -127,7 +127,7 @@
 									<input type="text"  name="inputNum" value="1">
 									<div class="que">
 										<label class="redLabel">질문1</label>
-										<input type="text" class="Qtext QtextDeco ">
+										<input type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">
 										<a class="QdeleteButton">
 											삭제
 											<i class="fa fa-times-circle"></i>

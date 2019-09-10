@@ -249,7 +249,7 @@ function Qcode(){
 	html += '	<input type="text"  name="inputNum" value="'+index+'">';
 	html += '	<div class="que">';
 	html += '		<label class="redLabel">질문'+index+'</label>';
-	html += '		<input type="text" class="Qtext QtextDeco">';
+	html += '		<input type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">';
 	html += '		<a class="QdeleteButton">';
 	html += '			삭제';
 	html += '			<i class="fa fa-times-circle"></i>';
@@ -308,6 +308,7 @@ function deleteQ(){
     	}
     	updateQuestionNumber();
     	updateInputNum();
+    	updateAddQueBtnNum();
     });
 }
 //질문1,질문2,질문3 ... 으로 정렬하는 함수
@@ -325,11 +326,18 @@ function updateInputNum(){
 		$(this).val(cnt++);
 	});
 }
+//질문1의보기추가 버튼에 index를 바꿔주는 작업
+function updateAddQueBtnNum(){
+	var cnt = 1;
+	$('.QBox .addQueButton').each(function(){
+		$(this).html('질문'+(cnt++)+'의 보기추가 <i class="fa fa-plus-circle"></i>');
+	});
+}
 
 
 
 
-
+//질문타입이 변경되었을때, 필수여부를 기본값으로 변경하는 기능
 function queTypeChange(){
 	$('.Qs').find('.QBox').last().find('select[name=queType]').change(function(){
 		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
@@ -340,6 +348,7 @@ function queTypeChange(){
 	
 }
 
+//필수여부가 변경되었을때, 그에 따른 박스 띄어주는 기능
 function isRequiredChange(){
 	$('.Qs').find('.QBox').last().find('select[name=isRequired]').change(function(){
 		
@@ -364,13 +373,12 @@ function isRequiredChange(){
 				$('.QBox').eq(index-1).find('.addQueButton').removeClass('displayNone');
 			}else if(type =='TypeScale'){
 				$('.QBox').eq(index-1).find('select[name=TypeScaleVal]').removeClass('displayNone');
-			}
-				
+			}	
 		}
 	});
 }
 
-
+//척도형_항목갯수를 클릭하면 보기란 추가하는 기능
 function TypeScaleValChange(){
 	$('.Qs').find('.QBox').last().find('select[name=TypeScaleVal]').click(function(){
 		
@@ -398,16 +406,10 @@ function TypeScaleValChange(){
 		}
 		$('.QBox').eq(index-1).find('.answerBoxSpot').html(html); 
 		
-		
-	});
-	
-	
+	});	
 }
 
 
-
-//지금부터 내가 해야하는건 필수여부 셀렉박스가 변경되었을 때, 박스 디스플레이 여부도 체크해줘야하지만 척도형 갯수 선택 셀렉박스도 기본값으로 변경해줘야한다.
-//척도형 갯수 셀렉박스를 change말고 click로 변경하고 기본값일때만 처리해주면 다른건 문제가 없을꺼같은데, 체크해봐야함
 
 
 
