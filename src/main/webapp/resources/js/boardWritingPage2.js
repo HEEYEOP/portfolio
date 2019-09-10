@@ -136,6 +136,7 @@ $(document).ready(function(){
     	isRequiredChange();
     	TypeScaleValChange();
     	addAnswer();
+    	
     });
     
     
@@ -145,6 +146,7 @@ $(document).ready(function(){
     isRequiredChange();
     TypeScaleValChange();
     addAnswer();
+    
  
     
     
@@ -341,11 +343,19 @@ function updateAddQueBtnNum(){
 function updateAnswerNum(obj){
 	var cnt = 1;
 	obj.parents('.QBox').find('.answer>label').each(function(){
-		$(this).html(cnt++);
-		//updateInputNum();
+		$(this).parents('.answerBox').find('input[name=AnsNum]').val(cnt);
+		$(this).html(cnt);
+		cnt++;
 	});
-	
 }
+
+
+
+
+
+
+
+
 
 //질문타입이 변경되었을때, 필수여부를 기본값으로 변경하는 기능
 function queTypeChange(){
@@ -426,6 +436,7 @@ function addAnswer(){
 		var html = '';
 		
 		html += '<div class="answerBox">';
+		html += '	<input type="text"  name="AnsNum" value="1">';
 		html += '	<div class="answer">';
 		html += '		<label class="redLabel">'+1+'</label>';
 		html += '		<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문'+index+'에 대한 보기내용을 적어주세요.(300자이내)">';
@@ -435,24 +446,48 @@ function addAnswer(){
 		html += '		</a>';
 		html += '	</div>';
 		html += '</div>';
-			
-			
 		
 		$('.QBox').eq(index-1).find('.answerBoxSpot').append(html);
-		
 		updateAnswerNum($(this));
 		
+	
+	});
+}
+
+
+//지금 얘가 제대로 동작하고 있지 않음
+function deleteAns(){
+	$('.Qs').find('.QBox').last().find('.AnsDeleteButton').click(function(){
+		
+		var parentIndex = $(this).parents('.QBox').find('input[name=inputNum]').val();
+		var index = $(this).parents('.answerBox').find('input[name=AnsNum]').val();
+		console.log(parentIndex);
+		console.log(index);
+		//$('.QBox').eq(parentIndex-1).find('.answerBox').eq(index-1).remove();
 	});
 	
 }
 
+/*
+ * 이건삭제할꺼야
+ * 
+ * function deleteQ(){
+	
+	$('.Qs').find('.QBox').last().find('.QdeleteButton').click(function(){
+    	var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
+    	//console.log(index);
+    	if($('.Qs .QBox').length > 1){
+    		$('.QBox').eq(index-1).remove();
+    	}else{
+    		alert('질문은 1개이상 존재하여야 합니다.');
+    	}
+    	updateQuestionNumber();
+    	updateInputNum();
+    	updateAddQueBtnNum();
+    });
+}
 
-
-
-
-
-
-
+*/
 
 
 
