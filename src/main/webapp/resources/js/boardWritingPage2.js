@@ -96,14 +96,21 @@ $(document).ready(function(){
 
 	//------------------------------설문 추가 기능들-----------------------------
     
-    	
+	
+    /*	
     //질문타입이 변했을떄 보여줘야하는 화면
     $('select[name=queType]').change(function(){
-    	$('select[name=isRequired]').val('is');
-    	$('select[name=isRequired]').change();	
+    	var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
+    	console.log(index);
     	
+    	$('.QBox').eq(index-1).$('select[name=isRequired]').val('is');
+    	
+    	//이거 함수로 뺀다음에 여기에 함수 등록해줄꺼야$('select[name=isRequired]').change();	
     });
+    */
     
+	
+	/*
     //필수여부가 변했을때, value가 is면 다 안보여주고, 다른값이면 질문타입에 따른 display
     $('select[name=isRequired]').change(function(){
     	$('.answerBoxSpot').html('');
@@ -124,10 +131,10 @@ $(document).ready(function(){
     		}else if(type =='TypeScale'){
     			$('select[name=TypeScaleVal]').removeClass('displayNone');
     		}
-    		
-    		
+    			
     	}
     });
+    */
     
     //질문타입이 척도형일때 보여줘야하는 기능
     $('select[name=TypeScaleVal]').change(function(){
@@ -165,11 +172,15 @@ $(document).ready(function(){
     $('.addButton').click(function(){
     	$('.Qs').append(Qcode());
     	deleteQ();
+    	queTypeChange();
+    	isRequiredChange();
     });
     
     
     //이벤트 등록//
     deleteQ();
+    queTypeChange();
+    isRequiredChange();
     
     
 
@@ -327,7 +338,7 @@ function deleteQ(){
 	
 	$('.Qs').find('.QBox').last().find('.QdeleteButton').click(function(){
     	var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
-    	console.log(index);
+    	//console.log(index);
     	if($('.Qs .QBox').length > 1){
     		$('.QBox').eq(index-1).remove();
     	}else{
@@ -352,6 +363,73 @@ function updateInputNum(){
 		$(this).val(cnt++);
 	});
 }
+
+
+function queTypeChange(){
+	$('.Qs').find('.QBox').last().find('select[name=queType]').change(function(){
+		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
+		//console.log(index);
+		$('.QBox').eq(index-1).find('select[name=isRequired]').val('is');
+		isRequiredChange();
+	});
+	
+}
+
+function isRequiredChange(){
+	$('.Qs').find('.QBox').last().find('select[name=isRequired]').change(function(){
+		
+		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
+    	console.log(index);
+    	
+		$('.QBox').eq(index-1).find('.answerBoxSpot').html('');
+		var val = $('.QBox').eq(index-1).find(this).val();
+		if(val == 'is'){
+			$('.QBox').eq(index-1).find('input[type=number]').addClass('displayNone');
+			$('.QBox').eq(index-1).find('select[name=TypeScaleVal]').addClass('displayNone');
+			$('.QBox').eq(index-1).find('.addQueButton').addClass('displayNone');
+		}else{
+			var type = $('.QBox').eq(index-1).find('select[name=queType]').val();
+			if(type == 'TypeChoiceOne'){
+				$('.QBox').eq(index-1).find('.addQueButton').removeClass('displayNone');
+			}else if(type =='TypeChoiceTwo'){
+				$('.QBox').eq(index-1).find('input[type=number]').removeClass('displayNone');
+				$('.QBox').eq(index-1).find('.addQueButton').removeClass('displayNone');
+			}else if(type =='TypeBranch'){
+				$('.QBox').eq(index-1).find('.addQueButton').removeClass('displayNone');
+			}else if(type =='TypeScale'){
+				$('.QBox').eq(index-1).find('select[name=TypeScaleVal]').removeClass('displayNone');
+			}
+				
+		}
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //--------------------------------------------함수---------------------------------------------//
