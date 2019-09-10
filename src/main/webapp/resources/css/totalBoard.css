@@ -46,7 +46,7 @@
      }
      .boardLeft{
      	/* border: 1px solid red; */
-     	width: calc((100% - 40px) - 30%);
+     	width: calc((100% - 5px) - 30%);
      	display: inline-block;;
      	
      }
@@ -98,10 +98,10 @@
      .boardRight{
      	border:1px solid blue;
      	position : absolute;
-     	width: calc(30% - 20px);
+     	width: calc(30% - 10px);
      	display: inline-block;
      	float: right;
-     	margin-left: 40px;
+     	margin-left: 5px;
     	height: calc(100% - 40px);
      }
      
@@ -122,81 +122,6 @@
      
      
      
-     
-     /* .sortBar{
-     	border:1px solid red;
-     	height: 60px;
-     }
-     
-     .board{
-     	display: inline-block;
-    	width: 100%;
-    	position: relative;
-    	margin-bottom: 50px;
-    	padding-bottom: 50px;
-    	border-bottom: 1px dashed #ccc;
-     }
-     .boardBorder{
-     	border: 1px solid gray;
-     	border-radius : 20px;
-     	padding: 10px;
-     	position: relative;
-     }
-     .boardLeft{
-     	width: 60%;
-     	display: inline-block;
-     }
-     .titleBox{
-     	width: 90%;
-     }
-     .titleBox h3{
-         color: #fff;
-    	font-size: 16px;
-    	background-color: #1b2259;
-    	display: inline-block;
-    	padding: 8px 15px;
-    	font-weight: 400;
-    	margin-bottom: 12px;
-    	border-radius: 4px;
-     }
-     .titleBox h2{
-     	font-size: 22px;
-    	line-height: 29px;
-    	margin-bottom: 15px;
-     }
-     .stepBox{
-     	border: 1px solid gray;
-     	border-radius: 20px;
-     	color: #767676;
-    	text-align: center;
-    	display: inline-block;
-     	width: 90%;
-    	font-size: 13px;
-    	margin-bottom: 20px;
-    	padding: 10px;
-     }
-     .step{
-
-     	padding: 0 14px 0 2px;
-    	width: 22%;
-    	float:left;
-     }
-     .step p{
-     	margin: 0;
-     }
-     
-     게시물 오른쪽 이미지란
-     .boardRight{
-     	position : absolute;
-     	height : 80%;
-     	border: 3px solid red;
-     	width: 38%;
-     	display: inline-block;
-     	float: right;
-     	margin-bottom: 20px;
-     	margin-top: 20px;
-     }
-      */
      
      
      

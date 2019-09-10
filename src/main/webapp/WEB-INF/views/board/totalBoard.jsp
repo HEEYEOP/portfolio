@@ -31,7 +31,7 @@
 								</c:if>
 								<h3 style="background-color: #1b2259;">${board.boardUserEmail}</h3>
 								<h2>
-									<a href="#">${board.boardTitle}</a>
+									<a href="<%=request.getContextPath()%>/board/view?boardNum=${board.boardNum}">${board.boardTitle}</a>
 								</h2>
 							</div>
 							
@@ -41,7 +41,6 @@
 									<p>설문시작일</p>
 									<p>[${board.registrationDate}]</p>
 								</li>
-								
 								<li class="step">
 									<img src="https://www1.president.go.kr/img/ans_icon2.png">
 									<p>설문종료일</p>
@@ -50,8 +49,8 @@
 								
 								<li class="step">
 									<img src="https://www1.president.go.kr/img/ans_icon3.png">
-									<p>참여인원</p>
-									<p>[참여인원수]</p>
+									<p>공감수</p>
+									<p>[${board.likesCount}]</p>
 								</li>
 								
 								<li class="step">

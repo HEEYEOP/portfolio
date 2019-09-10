@@ -102,7 +102,7 @@ public class BoardController {
 	public ModelAndView totalBoard(ModelAndView mv) throws Exception{
 		logger.info("설문 전체 보기 페이지 실행");
 		ArrayList<BoardVO> boardList = boardService.getBoardList();
-		System.out.println(boardList);
+		//System.out.println(boardList);
 		mv.addObject("boardList", boardList);
 		
 		
