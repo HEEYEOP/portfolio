@@ -152,116 +152,37 @@ $(document).ready(function(){
     		html += '</div>';
     	}
     	console.log(html);
-    	//$(this).parents('.QBox').find('.answerBoxSopt').html(html); 이거는 안됨
-    	$('.answerBoxSpot').html(html); //이건 됨
+    	$(this).parents('.QBox').find('.answerBoxSopt').html(html); 
+    	//$('.answerBoxSpot').html(html); //이건 됨
     	
     	
     });
     
+    //이거 함수 밖으로 나갈꺼야
     
     
     
-    /*질문추가버튼 클랙했을 때, 질문 추가하기*/
-    /*$('.addButton').click(function(){
+    $('.addButton').click(function(){
     	$('.Qs').append(Qcode());
-    	updateInputNum();
-    	deleteQBox();
-    	
-    });*/
-    
-    function Qcode(){
-    	var index = $('.Qs .QBox').length + 1;
-    	var html ='';
-    	html += '<div class="QBox">';
-    	html += '	<input type="text"  name="inputNum" value="1">';
-    	html += '	<div class="que">';
-    	html += '		<label class="redLabel">질문1</label>';
-    	html += '		<input type="text" class="Qtext QtextDeco">';
-    	html += '		<a class="QdeleteButton">';
-    	html += '			삭제';
-    	html += '			<i class="fa fa-times-circle"></i>';
-    	html += '		</a>';
-    	html += '	</div>';
-    	
-    	html += '	<div class="queTypeBox">';
-    	html += '		<select name="queType" class="queType">';
-    	html += '			<option>질문형태</option>';
-    	html += '			<option value="TypeChoiceOne">객관식(단일선택)</option>';
-    	html += '			<option value="TypeChoiceTwo">객관식(복수선택)</option>';
-    	html += '			<option value="TypeBranch">분기형(하위질문)</option>';
-    	html += '			<option value="TypeScale">척도형</option>';
-    	html += '		</select>';
-    	
-    	html += '		<select name="isRequired" class="queType isRequired">';
-    	html += '			<option value="is">필수여부</option>';
-    	html += '			<option value="required">필수</option>';
-    	html += '			<option value="NotRequired">필수아님</option>';
-    	html += '		</select>';
-    	
-    	html += '		<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">';
-    	
-    	html += '		<select name="TypeScaleVal" class="queType displayNone">';
-    	html += '			<option value="-1">항목수선택</option>';
-    	html += '			<option value="3">3</option>';
-    	html += '			<option value="4">4</option>';
-    	html += '			<option value="5">5</option>';
-    	html += '		</select>';
-    	
-    	html += '		<div class="addQueButton displayNone">';
-    	html += '			질문1의 보기추가';
-    	html += '			<i class="fa fa-plus-circle"></i>';
-    	html += '		</div>';
-    	html += '	</div>';
-    	
-    	html += '	<div class="answerBoxSpot">';
-    	html += '	</div>';
-    	html += '</div>';
-    	html += '';
-    	html += '';
-    	
-    	return html;
-    }
+    	deleteQ();
+    });
     
     
+    //이벤트 등록//
+    deleteQ();
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //질문 삭제버튼 처리 이벤트 등록 함수 추가
-    //deleteQBox();
-    
-   	
+/*    
+    $('.Qs>.QBox').last().find('.que .QdeleteButton').click(function(){
+		if($('.que .QdeleteButton').length > 1){
+			$(this).parents('.QBox').remove();
+			updateQuestionNumber();
+		}else{
+			alert('질문은 1개이상 존재하여야 합니다.'); 
+		}
+	});
 
-
+*/
 	
 	
 	
@@ -357,12 +278,183 @@ $(document).ready(function(){
 
 
 
+function Qcode(){
+	var index = $('.Qs .QBox').length + 1;
+	var html ='';
+	
+	html += '<div class="QBox">';
+	html += '	<input type="text"  name="inputNum" value="'+index+'">';
+	html += '	<div class="que">';
+	html += '		<label class="redLabel">질문'+index+'</label>';
+	html += '		<input type="text" class="Qtext QtextDeco">';
+	html += '		<a class="QdeleteButton">';
+	html += '			삭제';
+	html += '			<i class="fa fa-times-circle"></i>';
+	html += '		</a>';
+	html += '	</div>';
+	
+	html += '	<div class="queTypeBox">';
+	html += '		<select name="queType" class="queType">';
+	html += '			<option>질문형태</option>';
+	html += '			<option value="TypeChoiceOne">객관식(단일선택)</option>';
+	html += '			<option value="TypeChoiceTwo">객관식(복수선택)</option>';
+	html += '			<option value="TypeBranch">분기형(하위질문)</option>';
+	html += '			<option value="TypeScale">척도형</option>';
+	html += '		</select>';
+	
+	html += '		<select name="isRequired" class="queType isRequired">';
+	html += '			<option value="is">필수여부</option>';
+	html += '			<option value="required">필수</option>';
+	html += '			<option value="NotRequired">필수아님</option>';
+	html += '		</select>';
+	
+	html += '		<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">';
+	
+	html += '		<select name="TypeScaleVal" class="queType displayNone">';
+	html += '			<option value="-1">항목수선택</option>';
+	html += '			<option value="3">3</option>';
+	html += '			<option value="4">4</option>';
+	html += '			<option value="5">5</option>';
+	html += '		</select>';
+	
+	html += '		<div class="addQueButton displayNone">';
+	html += '			질문'+index+'의 보기추가';
+	html += '			<i class="fa fa-plus-circle"></i>';
+	html += '		</div>';
+	html += '	</div>';
+	
+	html += '	<div class="answerBoxSpot">';
+	html += '	</div>';
+	html += '</div>';
+	
+	return html;
+}
 
-//질문형태가 변경되면 필수여부를 기본값으로 하기위해서 Qcode 삽입할때 html안에다가 onchange로 넣어주자!!
-
+function deleteQ(){
+	
+	$('.Qs').find('.QBox').last().find('.QdeleteButton').click(function(){
+    	var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
+    	console.log(index);
+    	$('.QBox').eq(index-1).remove();
+    	updateQuestionNumber();
+    	updateInputNum();
+    });
+}
+//질문1,질문2,질문3 ... 으로 정렬하는 함수
+function updateQuestionNumber(){
+	var cnt = 1;
+	$('.que>label').each(function(){
+		$(this).html('질문'+ cnt++);
+	});
+	
+}
+//inputNum을 1,2,3 ... 으로 정렬하는 함수
+function updateInputNum(){
+	var cnt =1;
+	$('.QBox input[name=inputNum]').each(function(){
+		$(this).val(cnt++);
+	});
+}
 
 
 //--------------------------------------------함수---------------------------------------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*function Qcode(){ //큰 질문박스
 	var index =$('.Qs .QBox').length+1;
 	 
