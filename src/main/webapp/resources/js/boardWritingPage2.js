@@ -135,7 +135,7 @@ $(document).ready(function(){
     	queTypeChange();
     	isRequiredChange();
     	TypeScaleValChange();
-    	addAnswer()
+    	addAnswer();
     });
     
     
@@ -145,6 +145,7 @@ $(document).ready(function(){
     isRequiredChange();
     TypeScaleValChange();
     addAnswer();
+ 
     
     
 
@@ -337,16 +338,14 @@ function updateAddQueBtnNum(){
 }
 
 //보기란을 1,2,3 ... 번으로 맞추는 함수
-function updateAnswerNum(){
+function updateAnswerNum(obj){
 	var cnt = 1;
-	$('.answer>label').each(function(){
+	obj.parents('.QBox').find('.answer>label').each(function(){
 		$(this).html(cnt++);
-		updateInputNum();
+		//updateInputNum();
 	});
 	
 }
-
-
 
 //질문타입이 변경되었을때, 필수여부를 기본값으로 변경하는 기능
 function queTypeChange(){
@@ -441,7 +440,7 @@ function addAnswer(){
 		
 		$('.QBox').eq(index-1).find('.answerBoxSpot').append(html);
 		
-		updateAnswerNum();
+		updateAnswerNum($(this));
 		
 	});
 	
