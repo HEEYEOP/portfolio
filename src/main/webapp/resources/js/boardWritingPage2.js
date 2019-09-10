@@ -172,17 +172,7 @@ $(document).ready(function(){
     deleteQ();
     
     
-/*    
-    $('.Qs>.QBox').last().find('.que .QdeleteButton').click(function(){
-		if($('.que .QdeleteButton').length > 1){
-			$(this).parents('.QBox').remove();
-			updateQuestionNumber();
-		}else{
-			alert('질문은 1개이상 존재하여야 합니다.'); 
-		}
-	});
 
-*/
 	
 	
 	
@@ -330,12 +320,19 @@ function Qcode(){
 	return html;
 }
 
+
+
+//질문삭제 함수 (질문클릭버튼을 누를 때 질문박스(마지막 질문박스에)에 이벤트를 등록함)
 function deleteQ(){
 	
 	$('.Qs').find('.QBox').last().find('.QdeleteButton').click(function(){
     	var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
     	console.log(index);
-    	$('.QBox').eq(index-1).remove();
+    	if($('.Qs .QBox').length > 1){
+    		$('.QBox').eq(index-1).remove();
+    	}else{
+    		alert('질문은 1개이상 존재하여야 합니다.');
+    	}
     	updateQuestionNumber();
     	updateInputNum();
     });
