@@ -322,7 +322,18 @@
 	    width: 100%;
     	padding: 20px 110px 10px 10px;
     	position: relative;
-	
+	}
+	.AnsDeleteButton{
+		border: 1px solid gainsboro;
+	    padding: 5px 5px;
+	    background-color: white;
+	    font-size: 12px;
+	    color: #2f2f2f;
+	    display: inline-block;
+	    position: absolute;
+	    right: 0;
+	    top: 22px;
+	    cursor: pointer;
 	}
 	
 	

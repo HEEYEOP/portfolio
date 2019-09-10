@@ -135,6 +135,7 @@ $(document).ready(function(){
     	queTypeChange();
     	isRequiredChange();
     	TypeScaleValChange();
+    	addAnswer()
     });
     
     
@@ -143,6 +144,7 @@ $(document).ready(function(){
     queTypeChange();
     isRequiredChange();
     TypeScaleValChange();
+    addAnswer();
     
     
 
@@ -334,6 +336,15 @@ function updateAddQueBtnNum(){
 	});
 }
 
+//보기란을 1,2,3 ... 번으로 맞추는 함수
+function updateAnswerNum(){
+	var cnt = 1;
+	$('.answer>label').each(function(){
+		$(this).html(cnt++);
+		updateInputNum();
+	});
+	
+}
 
 
 
@@ -409,13 +420,32 @@ function TypeScaleValChange(){
 	});	
 }
 
-
-
-
-
-
-
-
+function addAnswer(){
+	$('.Qs').find('.QBox').last().find('.addQueButton').click(function(){
+		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
+		
+		var html = '';
+		
+		html += '<div class="answerBox">';
+		html += '	<div class="answer">';
+		html += '		<label class="redLabel">'+1+'</label>';
+		html += '		<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문'+index+'에 대한 보기내용을 적어주세요.(300자이내)">';
+		html += '		<a class="AnsDeleteButton">';
+		html += '			삭제';
+		html += '			<i class="fa fa-times-circle"></i>';
+		html += '		</a>';
+		html += '	</div>';
+		html += '</div>';
+			
+			
+		
+		$('.QBox').eq(index-1).find('.answerBoxSpot').append(html);
+		
+		updateAnswerNum();
+		
+	});
+	
+}
 
 
 
