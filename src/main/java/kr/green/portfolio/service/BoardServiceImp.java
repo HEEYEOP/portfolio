@@ -62,6 +62,11 @@ public class BoardServiceImp implements BoardService{
 			boardDao.insertVsType(vsVO);
 		}
 	}
+
+	@Override
+	public ArrayList<BoardVO> getBoardList() {
+		return boardDao.getBoardList();
+	}
 	
 
 }

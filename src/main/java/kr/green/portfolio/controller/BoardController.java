@@ -98,15 +98,18 @@ public class BoardController {
 	}
 	
 	//게시물 전체보기 페이지
-	@RequestMapping(value="/board/totalBoard")
+	@RequestMapping(value="/board/totalBoard", method = RequestMethod.GET )
 	public ModelAndView totalBoard(ModelAndView mv) throws Exception{
 		logger.info("설문 전체 보기 페이지 실행");
+		ArrayList<BoardVO> boardList = boardService.getBoardList();
+		System.out.println(boardList);
+		mv.addObject("boardList", boardList);
+		
+		
+		
 	    mv.setViewName("/board/totalBoard");
 	    return mv;
 	}
-	
-	
-	
 	
 	
 	//게시물 상세보기 페이지

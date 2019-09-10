@@ -24,4 +24,7 @@
 		insert into vsType(vsTypeBoardNum,yORn,vsContents) values(#{vsTypeBoardNum},#{yORn},#{vsContents})
 	</insert>
 	
+	<select id="getBoardList" resultType="kr.green.portfolio.vo.BoardVO">
+		select * from board where display ='Y';
+	</select>
 </mapper> 

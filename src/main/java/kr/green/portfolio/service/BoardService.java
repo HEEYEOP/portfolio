@@ -16,4 +16,6 @@ public interface BoardService {
 
 	void addVsType(int boardNum, String[] vsContents);
 
+	ArrayList<BoardVO> getBoardList();
+
 }

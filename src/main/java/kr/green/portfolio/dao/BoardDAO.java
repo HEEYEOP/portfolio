@@ -21,4 +21,6 @@ public interface BoardDAO {
 
 	void insertVsType(vsTypeVO vsVO);
 
+	ArrayList<BoardVO> getBoardList();
+
 }
