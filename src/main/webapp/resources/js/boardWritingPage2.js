@@ -142,7 +142,7 @@ $(document).ready(function(){
     		textArr =['매우나쁨','나쁨','보통','좋음','매우좋음'];
     	}
     	
-    	var html ="";
+    	var html ='';
     	for(var i=0; i<cnt; i++){
     		html += '<div class="answerBox">';
     		html += '<div class="answer">';
@@ -169,6 +169,88 @@ $(document).ready(function(){
     	
     });*/
     
+    function Qcode(){
+    	var index = $('.Qs .QBox').length + 1;
+    	var html ='';
+    	html += '<div class="QBox">';
+    	html += '	<input type="text"  name="inputNum" value="1">';
+    	html += '	<div class="que">';
+    	html += '		<label class="redLabel">질문1</label>';
+    	html += '		<input type="text" class="Qtext QtextDeco">';
+    	html += '		<a class="QdeleteButton">';
+    	html += '			삭제';
+    	html += '			<i class="fa fa-times-circle"></i>';
+    	html += '		</a>';
+    	html += '	</div>';
+    	
+    	html += '	<div class="queTypeBox">';
+    	html += '		<select name="queType" class="queType">';
+    	html += '			<option>질문형태</option>';
+    	html += '			<option value="TypeChoiceOne">객관식(단일선택)</option>';
+    	html += '			<option value="TypeChoiceTwo">객관식(복수선택)</option>';
+    	html += '			<option value="TypeBranch">분기형(하위질문)</option>';
+    	html += '			<option value="TypeScale">척도형</option>';
+    	html += '		</select>';
+    	
+    	html += '		<select name="isRequired" class="queType isRequired">';
+    	html += '			<option value="is">필수여부</option>';
+    	html += '			<option value="required">필수</option>';
+    	html += '			<option value="NotRequired">필수아님</option>';
+    	html += '		</select>';
+    	
+    	html += '		<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">';
+    	
+    	html += '		<select name="TypeScaleVal" class="queType displayNone">';
+    	html += '			<option value="-1">항목수선택</option>';
+    	html += '			<option value="3">3</option>';
+    	html += '			<option value="4">4</option>';
+    	html += '			<option value="5">5</option>';
+    	html += '		</select>';
+    	
+    	html += '		<div class="addQueButton displayNone">';
+    	html += '			질문1의 보기추가';
+    	html += '			<i class="fa fa-plus-circle"></i>';
+    	html += '		</div>';
+    	html += '	</div>';
+    	
+    	html += '	<div class="answerBoxSpot">';
+    	html += '	</div>';
+    	html += '</div>';
+    	html += '';
+    	html += '';
+    	
+    	return html;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -179,20 +261,7 @@ $(document).ready(function(){
     
    	
 
-    	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	
