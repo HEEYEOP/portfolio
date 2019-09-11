@@ -115,7 +115,7 @@ public class BoardController {
 	
 	//게시물 상세보기 페이지
 	@RequestMapping(value="/board/view", method = RequestMethod.GET)
-	public ModelAndView view(ModelAndView mv, int boardNum) throws Exception{
+	public ModelAndView viewGet(ModelAndView mv, int boardNum) throws Exception{
 		logger.info("게시물 상세보기 페이지 실행");
 		
 		BoardVO getBoard = boardService.getBoard(boardNum);
@@ -144,6 +144,13 @@ public class BoardController {
 		return mv;
 	}
 	
+	
+	@RequestMapping(value="/board/view", method = RequestMethod.POST)
+	public String viewPost() {
+		logger.info("");
+		
+		return "redirect:/board/view";
+	}
 	
 	
 	

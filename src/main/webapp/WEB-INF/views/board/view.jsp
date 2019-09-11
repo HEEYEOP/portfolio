@@ -49,7 +49,7 @@
 			</div>
 			
 			<c:if test="${board.boardSubtype eq 'VS'}">
-				<form name="vsForm">
+				<form action="<%=request.getContextPath() %>/board/view?boardNum=${board.boardNum}" method="post" name="vsForm">
 					<!-- VS타입인경우 -->
 					<div class="viewVS">
 						<div class="viewVsTitle">
