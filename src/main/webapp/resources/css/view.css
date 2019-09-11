@@ -20,7 +20,8 @@
      	padding: 30px;
      }
      .boardHeader,
-     .boardMiddle{
+     .boardMiddle,
+     .boardBottom{
      	border-bottom: 1px solid gray;
      	padding-top: 15px;
      

@@ -26,6 +26,7 @@
 			</div>
 		</div>
 		
+		
 		<div class="boardMiddle">
 			<div class="text">
 				여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나
@@ -46,7 +47,20 @@
 					<span>3</span>
 				</div>
 			</div>
-			
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="boardBottom">
+		
 			<!-- 댓글작성란 -->
 			<div class="commentWrite">
 				<textarea rows="" cols=""></textarea>
@@ -57,6 +71,7 @@
 					</form>
 				</div>
 			</div>
+			
 			<!-- 댓글들란 -->
 			<div class="commentsBox">
 				<div class="commentsHeader">
@@ -84,13 +99,9 @@
 						</div>
 					</li>
 				</ul>
-			
 			</div>
 			
-			
-			
 		</div>
-		
 		
 		
 		
