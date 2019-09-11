@@ -49,39 +49,42 @@
 			</div>
 			
 			<c:if test="${board.boardSubtype eq 'VS'}">
-			
-				<!-- VS타입인경우 -->
-				<div class="viewVS">
-					<div class="viewVsTitle">
-						<i></i>
-						투표에 참여해주세요
-					</div>
-					<div class="viewVsDeadline">
-						<i class="fa fa-clock-o">${board.boardDeadline}</i>까지
-					</div>
-					
-					<div class="viewVsSelectBox">
-						<div class="vsSelect vsYes">
-							${yes.vsContents}
-							<a></a>
-							<div class="vsMark">
-								<span>VS</span>
+				<form>
+					<!-- VS타입인경우 -->
+					<div class="viewVS">
+						<div class="viewVsTitle">
+							<i></i>
+							투표에 참여해주세요
+						</div>
+						<div class="viewVsDeadline">
+							<i class="fa fa-clock-o">${board.boardDeadline}</i>까지
+						</div>
+						
+						<div class="viewVsSelectBox">
+							<div class="vsSelect vsYes">
+								${yes.vsContents}
+								<a value="${yes.vsTypeNum}" style="background-position: 0 -60px;"></a>
+								<input type="hidden" value="${yes.vsTypeNum}">
+								<div class="vsMark">
+									<span>VS</span>
+								</div>
+							</div>
+							<div class="vsSelect vsNo">
+								${no.vsContents}
+								<a  style="background-position: 0 -60px;"></a>
+								<input type="hidden" value="${no.vsTypeNum}">
 							</div>
 						</div>
-						<div class="vsSelect vsNo">
-							${no.vsContents}
-							<a></a>
+						
+						<input type="text" value="" name="participationVsTypeNum">
+						<div class="submitBtnBox">
+							<a>
+								제출하기
+								<i class="fa fa-check"></i>
+							</a>
 						</div>
 					</div>
-				
-					<div class="submitBtnBox">
-						<a>
-							제출하기
-							<i class="fa fa-check"></i>
-						</a>
-					</div>
-				</div>
-			
+				</form>
 			</c:if>
 			
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">
