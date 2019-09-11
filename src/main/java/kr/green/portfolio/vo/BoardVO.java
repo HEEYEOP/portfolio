@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class BoardVO {
+public class BoardVO extends FieldVO {
 	private int boardNum;
 	private String boardUserEmail;
 	private String boardType;

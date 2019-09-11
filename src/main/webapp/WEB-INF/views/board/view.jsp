@@ -15,13 +15,17 @@
 	<div class="bodyContetns">
 	
 		<div class="boardHeader">
-			<h3 class="type">설문형</h3>
-			<h3 class="type">관련분야주제</h3>
+			<c:if test="${board.boardSubtype eq 'VS'}">
+				<h3 class="type">찬/반형</h3>
+			</c:if>
+			<c:if test="${board.boardSubtype eq 'SURVEY'}">
+				<h3 class="type">설문형</h3>
+			</c:if>
 			<h3 class="date">[yyyy-mm-dd ~ yyyy-mm-dd]</h3>
-			<h1 class="title">여기에는 설문조사 제목이 들어갈꺼에요 예를들면 어떻게하는게 좋을까요? 이렇게 </h1>
+			<h1 class="title">${board.boardTitle}</h1>
 			<div class="userInfo">
-				<p style="margin: 0;">[ @#%$^@%# ]님의 생각</p>
-				<p style="margin: 0;">게시물 등록일 : yyyy-mm-dd</p>
+				<p style="margin: 0;">[ ${board.boardUserEmail} ]님의 생각</p>
+				<p style="margin: 0;">게시물 등록일 : ${board.registrationDate}</p>
 				<p>작성게시물 수 [4 개] / 작성댓글 수 [15 개]</p>
 			</div>
 		</div>
@@ -29,108 +33,97 @@
 		
 		<div class="boardMiddle">
 			<div class="text">
-				여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나
-				여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나
-				여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나
-				여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나여기에 줄줄이 내용이 들어가는건가 화면에 어떻게 보이려나
-				줄줄이 소세지 줄줄이 소세지 줄줄이 소세지 줄줄이 소세지 줄줄이 소세지 줄줄이 소세지
+				${board.boardContents}
 			</div>
 			<div style="marin-top:20px; margin-bottom:20px;">
 				<span>관련분야 :</span>
-				<span class="type">abc/def</span>
+				<span class="type">${board.fieldTitle}</span>
 			</div>
 			<div>
 				<div class="likeBtn">
 					<i class="far fa-heart"></i>
 					<i class="fas fa-heart" style="color:red;"></i>
 					<span>공감해요</span>
-					<span>3</span>
+					<span>${board.likesCount}</span>
 				</div>
 			</div>
 			
-			<!-- VS타입인경우 -->
-			<div class="viewVS displayNone">
-				<div class="viewVsTitle">
-					<i></i>
-					투표에 참여해주세요
-				</div>
-				<div class="viewVsDeadline">
-					<i class="fa fa-clock-o"></i>까지
-				</div>
-				
-				<div class="viewVsSelectBox">
-					<div class="vsSelect vsYes">
-						찬성
-						<a></a>
-						<div class="vsMark">
-							<span>VS</span>
-						</div>
-					</div>
-					<div class="vsSelect vsNo">
-						반대
-						<a></a>
-					</div>
-				</div>
+			<c:if test="${board.boardSubtype eq 'VS'}">
 			
-				<div class="submitBtnBox">
-					<a>
-						제출하기
-						<i class="fa fa-check"></i>
-					</a>
-				</div>
-			</div>
-			
-			<!-- SURVEY타입인경우 -->
-			<div class="viewSurvey">
-				<div class="viewSurveyTitle" >
-					<i style="background-position: 0 -170px;"></i>
-					설문에 참여해주세요
-				</div>
-				<div class="totalNum">
-					총 참여인원<strong>@@</strong>명
-				</div>
-				<div class="viewSurveyDeadline" style="top:150px;">
-					<i class="fa fa-clock-o"></i>까지
-				</div>
-				<div style="margin-top:40px;"></div>
-				<div class="surveyList">
-					<div class="sur">
-						<div class="surQ">
-							<span>1</span>
-							귀하의 개인정보가 안전하게 보호되고 있다고 생각하십니까?
-							<div class="needBox" style="width: 50px; float: right;">
-								<p>필수</p>
+				<!-- VS타입인경우 -->
+				<div class="viewVS">
+					<div class="viewVsTitle">
+						<i></i>
+						투표에 참여해주세요
+					</div>
+					<div class="viewVsDeadline">
+						<i class="fa fa-clock-o">${board.boardDeadline}</i>까지
+					</div>
+					
+					<div class="viewVsSelectBox">
+						<div class="vsSelect vsYes">
+							${yes.vsContents}
+							<a></a>
+							<div class="vsMark">
+								<span>VS</span>
 							</div>
 						</div>
-						<div class="surA" style="padding-left: 40px;">
-							<ul>
-								<li>
-									<div class="selBtn"><label></label></div>
-									매우그렇다
-								</li>
-							
-							</ul>
+						<div class="vsSelect vsNo">
+							${yes.vsContents}
+							<a></a>
 						</div>
-						
-						
-						
+					</div>
+				
+					<div class="submitBtnBox">
+						<a>
+							제출하기
+							<i class="fa fa-check"></i>
+						</a>
 					</div>
 				</div>
-				
-				
-					
 			
-			</div>
+			</c:if>
+			
+			<c:if test="${board.boardSubtype eq 'SURVEY'}">
+				<!-- SURVEY타입인경우 -->
+				<div class="viewSurvey">
+					<div class="viewSurveyTitle" >
+						<i style="background-position: 0 -170px;"></i>
+						설문에 참여해주세요
+					</div>
+					<div class="totalNum">
+						총 참여인원<strong>@@</strong>명
+					</div>
+					<div class="viewSurveyDeadline" style="top:150px;">
+						<i class="fa fa-clock-o"></i>까지
+					</div>
+					<div style="margin-top:40px;"></div>
+					<div class="surveyList">
+						<div class="sur">
+							<div class="surQ">
+								<span>1</span>
+								귀하의 개인정보가 안전하게 보호되고 있다고 생각하십니까?
+								<div class="needBox" style="width: 50px; float: right;">
+									<p>필수</p>
+								</div>
+							</div>
+							<div class="surA" style="padding-left: 40px;">
+								<ul>
+									<li>
+										<div class="selBtn"><label></label></div>
+										매우그렇다
+									</li>
+								
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</c:if>
 		
 		
 		</div>
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		

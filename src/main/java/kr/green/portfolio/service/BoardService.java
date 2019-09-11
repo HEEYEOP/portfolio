@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.vsTypeVO;
 
 public interface BoardService {
 
@@ -17,5 +18,9 @@ public interface BoardService {
 	void addVsType(int boardNum, String[] vsContents);
 
 	ArrayList<BoardVO> getBoardList();
+
+	BoardVO getBoard(int boardNum);
+
+	ArrayList<vsTypeVO> getSubVS(int boardNum);
 
 }

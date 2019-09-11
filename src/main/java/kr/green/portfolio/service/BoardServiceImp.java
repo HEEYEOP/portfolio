@@ -25,7 +25,9 @@ public class BoardServiceImp implements BoardService{
 	public int addBoard(BoardVO bVO) {
 		if(bVO == null)
 			return -1;
-		
+		if(bVO.getBoardSubtype() == null) {
+			bVO.setBoardSubtype("NONE");
+		}
 		boardDao.insertBoard(bVO);
 		int getBoardNum = boardDao.getBoardNum();
 		return getBoardNum;
@@ -66,6 +68,18 @@ public class BoardServiceImp implements BoardService{
 	@Override
 	public ArrayList<BoardVO> getBoardList() {
 		return boardDao.getBoardList();
+	}
+
+	@Override
+	public BoardVO getBoard(int boardNum) {
+		BoardVO getBoard = boardDao.getBoard(boardNum);
+		return getBoard;
+	}
+
+	@Override
+	public ArrayList<vsTypeVO> getSubVS(int boardNum) {
+		ArrayList<vsTypeVO> sub = boardDao.getSubVS(boardNum);
+		return sub;
 	}
 	
 

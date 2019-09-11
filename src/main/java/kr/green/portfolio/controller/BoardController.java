@@ -17,6 +17,7 @@ import kr.green.portfolio.utils.UploadFileUtils;
 import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.surveyTypeVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
 @Controller
@@ -113,12 +114,36 @@ public class BoardController {
 	
 	
 	//게시물 상세보기 페이지
-	@RequestMapping(value="/board/view")
-	public ModelAndView view(ModelAndView mv) throws Exception{
+	@RequestMapping(value="/board/view", method = RequestMethod.GET)
+	public ModelAndView view(ModelAndView mv, int boardNum) throws Exception{
 		logger.info("게시물 상세보기 페이지 실행");
+		
+		BoardVO getBoard = boardService.getBoard(boardNum);
+		String subType = getBoard.getBoardSubtype();
+
+		if(subType.equals("VS")) { //서브타입이 VS일때
+			ArrayList<vsTypeVO> vs = boardService.getSubVS(getBoard.getBoardNum());
+			for(vsTypeVO tmp : vs) {
+				if(tmp.getyORn().equals("Y")) {
+					vsTypeVO yes = tmp;
+					mv.addObject("yes", yes);
+				}else {
+					vsTypeVO no = tmp;
+					mv.addObject("no", no);
+				}
+			}
+			
+			
+		}else if(subType.equals("SURVEY")) { //서브타입이 SURVEY일때
+			//surveyTypeVO sub = boardService.getSubSURVEY(getBoard.getBoardNum());
+		}
+		
+	
+		mv.addObject("board", getBoard);
 		mv.setViewName("/board/view");
 		return mv;
 	}
+	
 	
 	
 	

@@ -23,4 +23,8 @@ public interface BoardDAO {
 
 	ArrayList<BoardVO> getBoardList();
 
+	BoardVO getBoard(int boardNum);
+
+	ArrayList<vsTypeVO> getSubVS(int boardNum);
+
 }

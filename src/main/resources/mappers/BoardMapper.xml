@@ -27,4 +27,33 @@
 	<select id="getBoardList" resultType="kr.green.portfolio.vo.BoardVO">
 		select * from board where display ='Y';
 	</select>
+	
+	<select id="getBoard" resultType="kr.green.portfolio.vo.BoardVO">
+		select * 
+		from board 
+		join field on board.boardFieldNum = field.fieldNum 
+		where boardNum=#{boardNum} and display ='Y';
+	</select>
+	
+	<select id="getSubVS" resultType="kr.green.portfolio.vo.vsTypeVO">
+		select * from vstype where vsTypeBoardNum =#{boardNum}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper> 
