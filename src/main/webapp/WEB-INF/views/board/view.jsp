@@ -47,6 +47,81 @@
 					<span>3</span>
 				</div>
 			</div>
+			
+			<!-- VS타입인경우 -->
+			<div class="viewVS displayNone">
+				<div class="viewVsTitle">
+					<i></i>
+					투표에 참여해주세요
+				</div>
+				<div class="viewVsDeadline">
+					<i class="fa fa-clock-o"></i>까지
+				</div>
+				
+				<div class="viewVsSelectBox">
+					<div class="vsSelect vsYes">
+						찬성
+						<a></a>
+						<div class="vsMark">
+							<span>VS</span>
+						</div>
+					</div>
+					<div class="vsSelect vsNo">
+						반대
+						<a></a>
+					</div>
+				</div>
+			
+				<div class="submitBtnBox">
+					<a>
+						제출하기
+						<i class="fa fa-check"></i>
+					</a>
+				</div>
+			</div>
+			
+			<!-- SURVEY타입인경우 -->
+			<div class="viewSurvey">
+				<div class="viewSurveyTitle" >
+					<i style="background-position: 0 -170px;"></i>
+					설문에 참여해주세요
+				</div>
+				<div class="totalNum">
+					총 참여인원<strong>@@</strong>명
+				</div>
+				<div class="viewSurveyDeadline" style="top:150px;">
+					<i class="fa fa-clock-o"></i>까지
+				</div>
+				<div style="margin-top:40px;"></div>
+				<div class="surveyList">
+					<div class="sur">
+						<div class="surQ">
+							<span>1</span>
+							귀하의 개인정보가 안전하게 보호되고 있다고 생각하십니까?
+							<div class="needBox" style="width: 50px; float: right;">
+								<p>필수</p>
+							</div>
+						</div>
+						<div class="surA" style="padding-left: 40px;">
+							<ul>
+								<li>
+									<div class="selBtn"><label></label></div>
+									매우그렇다
+								</li>
+							
+							</ul>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+				
+				
+					
+			
+			</div>
+		
 		
 		</div>
 		
