@@ -16,10 +16,10 @@
 	
 		<div class="boardHeader">
 			<c:if test="${board.boardSubtype eq 'VS'}">
-				<h3 class="type">찬/반형</h3>
+				<h3 class="type">설문_찬/반형</h3>
 			</c:if>
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">
-				<h3 class="type">설문형</h3>
+				<h3 class="type">설문_설문형</h3>
 			</c:if>
 			<h3 class="date">[yyyy-mm-dd ~ yyyy-mm-dd]</h3>
 			<h1 class="title">${board.boardTitle}</h1>
@@ -69,7 +69,7 @@
 							</div>
 						</div>
 						<div class="vsSelect vsNo">
-							${yes.vsContents}
+							${no.vsContents}
 							<a></a>
 						</div>
 					</div>
