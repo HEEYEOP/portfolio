@@ -49,7 +49,7 @@
 			</div>
 			
 			<c:if test="${board.boardSubtype eq 'VS'}">
-				<form>
+				<form name="vsForm">
 					<!-- VS타입인경우 -->
 					<div class="viewVS">
 						<div class="viewVsTitle">
@@ -78,7 +78,7 @@
 						
 						<input type="text" value="" name="participationVsTypeNum">
 						<div class="submitBtnBox">
-							<a>
+							<a id="vsSubmitBtn">
 								제출하기
 								<i class="fa fa-check"></i>
 							</a>
