@@ -30,10 +30,13 @@ CREATE TABLE `participation` (
   `boardSubtype` varchar(45) NOT NULL,
   `participationVsTypeNum` int(11) DEFAULT '0',
   `participationSurveyTypeNum` int(11) DEFAULT '0',
+  `participationBoardNum` int(11) DEFAULT NULL,
   PRIMARY KEY (`participationNum`),
   KEY `user_email_idx` (`participationUserEmail`),
   KEY `vsType_num_idx` (`participationVsTypeNum`),
   KEY `surveyType_num_idx` (`participationSurveyTypeNum`),
+  KEY `participationBoardNum_idx` (`participationBoardNum`),
+  CONSTRAINT `participationBoardNum` FOREIGN KEY (`participationBoardNum`) REFERENCES `board` (`boardNum`),
   CONSTRAINT `participationSurveyTypeNum` FOREIGN KEY (`participationSurveyTypeNum`) REFERENCES `surveytype` (`surveyTypeNum`),
   CONSTRAINT `participationUserEmail` FOREIGN KEY (`participationUserEmail`) REFERENCES `user` (`userEmail`),
   CONSTRAINT `participationVsTypeNum` FOREIGN KEY (`participationVsTypeNum`) REFERENCES `vstype` (`vsTypeNum`)
@@ -58,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-06 18:19:49
+-- Dump completed on 2019-09-11 18:48:10

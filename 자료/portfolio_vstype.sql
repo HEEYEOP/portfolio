@@ -32,7 +32,7 @@ CREATE TABLE `vstype` (
   PRIMARY KEY (`vsTypeNum`),
   KEY `board_num_idx` (`vsTypeBoardNum`),
   CONSTRAINT `vsTypeBoardNum` FOREIGN KEY (`vsTypeBoardNum`) REFERENCES `board` (`boardNum`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `vstype` (
 
 LOCK TABLES `vstype` WRITE;
 /*!40000 ALTER TABLE `vstype` DISABLE KEYS */;
-INSERT INTO `vstype` VALUES (1,27,'Y','지효'),(2,27,'N','반대');
+INSERT INTO `vstype` VALUES (1,27,'Y','지효'),(2,27,'N','반대'),(3,28,'Y','찬성하겠습니다'),(4,28,'N','반대하겠습니다');
 /*!40000 ALTER TABLE `vstype` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-06 18:19:49
+-- Dump completed on 2019-09-11 18:48:11
