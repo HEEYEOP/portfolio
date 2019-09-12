@@ -147,9 +147,9 @@ public class BoardController {
 	
 	@RequestMapping(value="/board/view", method = RequestMethod.POST)
 	public String viewPost() {
-		logger.info("");
+		logger.info("설문참여하는중");
 		
-		return "redirect:/board/view";
+		return "redirect:/main/home";
 	}
 	
 	

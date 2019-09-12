@@ -12,7 +12,8 @@ $(document).ready(function(){
 	});
 	
 	$('#vsSubmitBtn').click(function(){
-		if($('input[participationVsTypeNum]').val() == ''){
+		
+		if($('input[name=participationVsTypeNum]').val() == ''){
 			alert('찬/반 의견을 선택해 주세요');
 		}else{
 			$('form[name=vsForm]').submit();
