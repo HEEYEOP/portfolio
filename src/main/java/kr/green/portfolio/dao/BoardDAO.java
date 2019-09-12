@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.ParticipationVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
 public interface BoardDAO {
@@ -26,5 +27,9 @@ public interface BoardDAO {
 	BoardVO getBoard(int boardNum);
 
 	ArrayList<vsTypeVO> getSubVS(int boardNum);
+
+	void addSubRes_vs(ParticipationVO pVO);
+
+	void updateSubRes_vs(int participationVsTypeNum);
 
 }

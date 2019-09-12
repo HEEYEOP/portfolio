@@ -17,6 +17,7 @@ import kr.green.portfolio.utils.UploadFileUtils;
 import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.ParticipationVO;
 import kr.green.portfolio.vo.surveyTypeVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
@@ -146,8 +147,11 @@ public class BoardController {
 	
 	
 	@RequestMapping(value="/board/view", method = RequestMethod.POST)
-	public String viewPost() {
-		logger.info("설문참여하는중");
+	public String viewPost(ParticipationVO pVO) {
+		logger.info("설문결과 DB에 저장하는 중");
+		//System.out.println(pVO);
+		boardService.addSubRes(pVO);
+		
 		
 		return "redirect:/main/home";
 	}

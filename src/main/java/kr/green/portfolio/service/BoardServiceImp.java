@@ -9,6 +9,7 @@ import kr.green.portfolio.dao.BoardDAO;
 import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.ParticipationVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
 @Service
@@ -80,6 +81,21 @@ public class BoardServiceImp implements BoardService{
 	public ArrayList<vsTypeVO> getSubVS(int boardNum) {
 		ArrayList<vsTypeVO> sub = boardDao.getSubVS(boardNum);
 		return sub;
+	}
+
+	@Override
+	public void addSubRes(ParticipationVO pVO) {
+		if(pVO.getBoardSubtype().equals("VS")) {
+			boardDao.addSubRes_vs(pVO);
+			boardDao.updateSubRes_vs(pVO.getParticipationVsTypeNum());
+			
+			
+			//boardDao.plusTotalNum_vs(pVO.getParticipationVsTypeNum())
+		}else {
+			
+		}
+		
+		
 	}
 	
 

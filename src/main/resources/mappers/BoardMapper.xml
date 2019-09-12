@@ -21,7 +21,7 @@
 	</insert>
 	
 	<insert id="insertVsType">
-		insert into vsType(vsTypeBoardNum,yORn,vsContents) values(#{vsTypeBoardNum},#{yORn},#{vsContents})
+		insert into vsType(vsTypeBoardNum,yORn,vsContents,totalNum) values(#{vsTypeBoardNum},#{yORn},#{vsContents},#{totalNum})
 	</insert>
 	
 	<select id="getBoardList" resultType="kr.green.portfolio.vo.BoardVO">
@@ -39,6 +39,14 @@
 		select * from vstype where vsTypeBoardNum =#{boardNum}
 	</select>
 	
+	<insert id="addSubRes_vs">
+		insert into participation(participationUserEmail,boardSubtype,participationVsTypeNum,participationSurveyTypeNum,participationBoardNum)
+			values(#{participationUserEmail},#{boardSubtype},#{participationVsTypeNum},#{participationSurveyTypeNum},#{participationBoardNum})	
+	</insert>
+	
+	<update id="updateSubRes_vs">
+		update vstype set totalNum = totalNum+1 where vsTypeNum=#{participationVsTypeNum}
+	</update>
 	
 	
 	

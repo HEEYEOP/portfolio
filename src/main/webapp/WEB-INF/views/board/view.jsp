@@ -49,7 +49,7 @@
 			</div>
 			
 			<c:if test="${board.boardSubtype eq 'VS'}">
-				<form name="vsForm" action="<%=request.getContextPath()%>/board/view" method="post">
+				<form name="vsForm" action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post">
 					<!-- VS타입인경우 -->
 					<div class="viewVS">
 						<div class="viewVsTitle">
@@ -63,7 +63,7 @@
 						<div class="viewVsSelectBox">
 							<div class="vsSelect vsYes">
 								${yes.vsContents}
-								<a value="${yes.vsTypeNum}" style="background-position: 0 -60px;"></a>
+								<a style="background-position: 0 -60px;"></a>
 								<input type="hidden" value="${yes.vsTypeNum}">
 								<div class="vsMark">
 									<span>VS</span>
@@ -71,12 +71,13 @@
 							</div>
 							<div class="vsSelect vsNo">
 								${no.vsContents}
-								<a  style="background-position: 0 -60px;"></a>
+								<a style="background-position: 0 -60px;"></a>
 								<input type="hidden" value="${no.vsTypeNum}">
 							</div>
 						</div>
 						
 						<input type="text" value="" name="participationVsTypeNum">
+						<input value="${user.userEmail}" name="participationUserEmail">
 						<div class="submitBtnBox">
 							<a id="vsSubmitBtn">
 								제출하기
