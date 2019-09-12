@@ -26,4 +26,6 @@ public interface BoardService {
 
 	void addSubRes(ParticipationVO pVO);
 
+	void updateViewsCount(int boardNum);
+
 }

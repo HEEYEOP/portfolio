@@ -32,4 +32,6 @@ public interface BoardDAO {
 
 	void updateSubRes_vs(int participationVsTypeNum);
 
+	void updateViewsCount(int boardNum);
+
 }

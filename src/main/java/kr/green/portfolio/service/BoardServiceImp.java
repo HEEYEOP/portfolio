@@ -97,6 +97,12 @@ public class BoardServiceImp implements BoardService{
 		
 		
 	}
+
+	@Override
+	public void updateViewsCount(int boardNum) {
+		boardDao.updateViewsCount(boardNum);
+		
+	}
 	
 
 }

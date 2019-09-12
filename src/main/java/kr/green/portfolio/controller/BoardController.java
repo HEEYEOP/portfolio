@@ -118,6 +118,7 @@ public class BoardController {
 	@RequestMapping(value="/board/view", method = RequestMethod.GET)
 	public ModelAndView viewGet(ModelAndView mv, int boardNum) throws Exception{
 		logger.info("게시물 상세보기 페이지 실행");
+		boardService.updateViewsCount(boardNum);
 		
 		BoardVO getBoard = boardService.getBoard(boardNum);
 		String subType = getBoard.getBoardSubtype();

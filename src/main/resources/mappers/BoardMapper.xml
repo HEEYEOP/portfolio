@@ -48,6 +48,9 @@
 		update vstype set totalNum = totalNum+1 where vsTypeNum=#{participationVsTypeNum}
 	</update>
 	
+	<update id="updateViewsCount">
+		update board set viewsCount = viewsCount+1 where boardNum = #{boardNum}
+	</update>
 	
 	
 	
