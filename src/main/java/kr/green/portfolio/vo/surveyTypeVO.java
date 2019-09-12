@@ -9,6 +9,7 @@ public class surveyTypeVO {
 	private String surveyContents;
 	private int depth;
 	private int parentsQ;
+	private int totalNum;
 	
 	
 	public int getSurveyTypeNum() {
@@ -53,15 +54,19 @@ public class surveyTypeVO {
 	public void setParentsQ(int parentsQ) {
 		this.parentsQ = parentsQ;
 	}
-	
-	
-	
+	public int getTotalNum() {
+		return totalNum;
+	}
+	public void setTotalNum(int totalNum) {
+		this.totalNum = totalNum;
+	}
 	@Override
 	public String toString() {
 		return "surveyTypeVO [surveyTypeNum=" + surveyTypeNum + ", surveyTypeBoardNum=" + surveyTypeBoardNum
 				+ ", questionType=" + questionType + ", isEssential=" + isEssential + ", surveyContents="
-				+ surveyContents + ", depth=" + depth + ", parentsQ=" + parentsQ + "]";
+				+ surveyContents + ", depth=" + depth + ", parentsQ=" + parentsQ + ", totalNum=" + totalNum + "]";
 	}
+	
 	
 	
 	

@@ -6,6 +6,7 @@ public class vsTypeVO {
 	private int vsTypeBoardNum;
 	private String yORn;
 	private String vsContents;
+	private int totalNum;
 	
 	
 	
@@ -33,11 +34,22 @@ public class vsTypeVO {
 	public void setVsContents(String vsContents) {
 		this.vsContents = vsContents;
 	}
+	public int getTotalNum() {
+		return totalNum;
+	}
+	public void setTotalNum(int totalNum) {
+		this.totalNum = totalNum;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "vsTypeVO [vsTypeNum=" + vsTypeNum + ", vsTypeBoardNum=" + vsTypeBoardNum + ", yORn=" + yORn
-				+ ", vsContents=" + vsContents + "]";
+				+ ", vsContents=" + vsContents + ", totalNum=" + totalNum + "]";
 	}
+	
+	
+	
 	
 	
 	
