@@ -113,7 +113,6 @@ public class BoardController {
 	    return mv;
 	}
 	
-	
 	//게시물 상세보기 페이지
 	@RequestMapping(value="/board/view", method = RequestMethod.GET)
 	public ModelAndView viewGet(ModelAndView mv, int boardNum) throws Exception{
@@ -123,7 +122,7 @@ public class BoardController {
 		BoardVO getBoard = boardService.getBoard(boardNum);
 		String subType = getBoard.getBoardSubtype();
 
-		if(subType.equals("VS")) { //서브타입이 VS일때
+		if(subType.equals("VS")) { //서브타입이 VS일때 ----->여기 밑에다가 if문으로(내가 이 서브타입에 참여한 경험이 있는지를 체크해서 있다면, 어떤신호를 함께 넘겨서 jsp를 다르게 구성, 또 밑에 yes객체 no객체를 밖에서 선언해서 저걸 가져다 쓸 수 있게 만들자)
 			ArrayList<vsTypeVO> vs = boardService.getSubVS(getBoard.getBoardNum());
 			for(vsTypeVO tmp : vs) {
 				if(tmp.getyORn().equals("Y")) {
@@ -134,7 +133,6 @@ public class BoardController {
 					mv.addObject("no", no);
 				}
 			}
-			
 			
 		}else if(subType.equals("SURVEY")) { //서브타입이 SURVEY일때
 			//surveyTypeVO sub = boardService.getSubSURVEY(getBoard.getBoardNum());
