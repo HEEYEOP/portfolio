@@ -3,6 +3,8 @@ package kr.green.portfolio.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
 import kr.green.portfolio.vo.ParticipationVO;
+import kr.green.portfolio.vo.UserVO;
 import kr.green.portfolio.vo.surveyTypeVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
@@ -115,9 +118,12 @@ public class BoardController {
 	
 	//게시물 상세보기 페이지
 	@RequestMapping(value="/board/view", method = RequestMethod.GET)
-	public ModelAndView viewGet(ModelAndView mv, int boardNum) throws Exception{
+	public ModelAndView viewGet(ModelAndView mv, int boardNum, HttpServletRequest r) throws Exception{
 		logger.info("게시물 상세보기 페이지 실행");
 		boardService.updateViewsCount(boardNum);
+		UserVO uVO = (UserVO)r.getSession().getAttribute("user");
+		System.out.println(uVO);
+		ParticipationVO isParticipation = boardService.isParticipation(uVO.getUserEmail());  
 		
 		BoardVO getBoard = boardService.getBoard(boardNum);
 		String subType = getBoard.getBoardSubtype();

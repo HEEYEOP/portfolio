@@ -60,7 +60,7 @@
 							<div class="viewVS_res_totalNum">
 								총 참여인원
 								<strong>2</strong>
-								<strong>명</strong>
+								<strong>명</strong> 
 							</div>
 							<div class="viewVS_res_date">
 								<i class="fa fa-clock-o"></i>

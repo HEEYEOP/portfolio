@@ -103,6 +103,7 @@ public class BoardServiceImp implements BoardService{
 		boardDao.updateViewsCount(boardNum);
 		
 	}
+
 	
 
 }
