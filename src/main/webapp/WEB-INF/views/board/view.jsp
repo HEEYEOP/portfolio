@@ -49,7 +49,64 @@
 			</div>
 			
 			<c:if test="${board.boardSubtype eq 'VS'}">
-				<form name="vsForm" action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post">
+				<div class="viewVS_res">
+					<div class="viewVS_res_title">
+						<h3>현재까지 투표 결과</h3>
+						<p>투표에 참여해주신 여러분께 감사합니다.</p>
+					</div>
+					
+					<div class="viewVS_res_contents">
+						<div class="viewVS_res_contents_Header">
+							<div class="viewVS_res_totalNum">
+								총 참여인원
+								<strong>2</strong>
+								<strong>명</strong>
+							</div>
+							<div class="viewVS_res_date">
+								<i class="fa fa-clock-o"></i>
+								yyyy-mm-dd까지
+							</div>
+						</div>
+						
+						<div class="viewVS_res_contents_graph">
+							<div class="viewVS_res_graphTitle">
+								<div class="viewVS_res_graphYes">
+									찬성
+								</div>
+								<span class="vs">VS</span>
+								<div class="viewVS_res_graphNO">
+									반대
+								</div>
+							</div>
+							
+							<div class="viewVS_res_graphBox1">
+								<div class="viewVS_res_graphBox2" style="width:50%;"></div>
+								<div class="viewVS_res_myChoice">
+									<i class="fa fa-check"></i>
+								</div>
+							</div>
+							
+							<div class="viewVS_res_graphBoxPartiNum">
+								<div class="partiNum_Yes">1명(50.0%)</div>
+								<div class="partiNum_No">1명(50.0%)</div>
+							</div>
+					
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<form class="displayNone" name="vsForm" action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post">
 					<!-- VS타입인경우 -->
 					<div class="viewVS">
 						<div class="viewVsTitle">

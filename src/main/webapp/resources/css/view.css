@@ -75,6 +75,161 @@
      
      
      /* VS타입에 대한 css */
+     /* 결과 */
+     .viewVS_res{
+     	width: 100%;
+    	border-top: 1px solid gainsboro;
+    	padding: 50px 50px 30px 50px;
+     }
+     .viewVS_res_title{
+     	border-bottom: 2px solid black;
+    	padding-bottom: 5px;
+    	margin-bottom: 10px;
+    	width: 100%;
+    	overflow: hidden;
+     }
+     .viewVS_res_title h3{
+     	float: left;
+    	color: #ff5f4d;
+    	font-size: 20px;
+    	font-weight: 600;
+    	margin-right: 10px;
+     }
+     .viewVS_res_title p{
+     	float: left;
+    	color: #666666;
+    	font-size: 14px;
+    	margin:0;
+    	margin-top: 5px;
+     }
+     
+     .viewVS_res_contents{
+     	margin-bottom: 20px;
+    	width: 100%;
+    	overflow: hidden;
+     }
+     .viewVS_res_contents_Header{
+     	width: 100%;
+    	overflow: hidden;
+    	padding-bottom: 20px;
+     }
+     .viewVS_res_totalNum{
+         width: 50%;
+    	color: #666666;
+    	font-size: 15px;
+    	float: left;
+    	text-align: left;
+     }
+     .viewVS_res_totalNum strong{
+     	color: #ff5f4d;
+    	font-weight: 600;
+     }
+     .viewVS_res_date{
+     	font-size: 14px;
+    	color: #666666;
+    	float: right;
+    	width: 50%;
+    	text-align: right;
+     }
+     
+     .viewVS_res_contents_graph{
+     	position: relative;
+    	width: 100%;
+    	padding: 10px 0;
+     }
+     .viewVS_res_graphTitle{
+     	width: 100%;
+    	margin-bottom: 20px;
+    	position: relative;
+    	min-height: 30px;
+     }
+     .viewVS_res_graphYes{
+     	float: left;
+   	 	margin-top: 10px;
+    	color: #2f2f2f;
+    	font-size: 16px;
+   	 	width: 40%;
+    	text-align: center;
+    	line-height: 1.3em;
+     }
+     .viewVS_res_graphNO{
+     	float: right;
+    	margin-top: 10px;
+    	color: #2f2f2f;
+    	font-size: 16px;
+    	width: 40%;
+    	text-align: center;
+    	line-height: 1.3em;
+     }
+     .vs{
+     	width: 30px;
+    	height: 30px;
+    	display: inline-block;
+    	border-radius: 100%;
+    	background-color: #2f2f2f;
+    	text-align: center;
+    	color: white;
+    	line-height: 30px;
+    	font-size: 12px;
+    	position: absolute;
+    	left: 50%;
+    	top: 50%;
+    	margin: -15px 0 0 -15px;
+     }
+     .viewVS_res_graphBox1{
+     	width: 100%;
+    	background-color: #ff5f4d;
+    	position: relative;
+    	height: 30px;
+     }
+     .viewVS_res_graphBox2{
+        background-color: #288fb4;
+    	z-index: 1;
+        height: 30px;
+     }
+     .viewVS_res_myChoice{
+        top: 6px;
+    	font-size: 18px;
+    	position: absolute;
+    	color: white;
+    	z-index: 10;
+    	right: 10px;
+     }
+     .viewVS_res_graphBoxPartiNum{
+     	width: 100%;
+    	margin-top: 10px;
+    	position: relative;
+    	height: 30px;
+     }
+     .partiNum_Yes{
+    	position: absolute;
+    	left: 0;
+    	top: 0;
+    	color: #288fb4;
+    	font-size: 13px;
+     }
+     .partiNum_No{
+     	position: absolute;
+    	right: 0;
+    	top: 0;
+    	color: #ff5f4d;
+    	font-size: 13px;
+     }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     /* 참여 */
      .viewVS,
      .viewSurvey{
      	width: 100%;
