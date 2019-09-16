@@ -22,7 +22,7 @@
 				<h3 class="type">설문_설문형</h3>
 			</c:if>
 			<c:if test="${board.boardSubtype ne 'SURVEY' && board.boardSubtype ne 'VS'}">
-				<h3 class="type">대화형</h3>
+				<h3 class="type">대화형	</h3>
 			</c:if>
 			
 			<h3 class="date">[yyyy-mm-dd ~ yyyy-mm-dd]</h3>
@@ -86,7 +86,8 @@
 									</div>
 								</div>
 								
-								<div class="viewVS_res_graphBox1">
+								<input name="myChoice" type="text" value="${isParticipation.participationVsTypeNum}">
+								<div class="viewVS_res_graphBox1" style="right:10px;">
 									<div class="viewVS_res_graphBox2" style="width:50%;"></div>
 									<div class="viewVS_res_myChoice">
 										<i class="fa fa-check"></i>
