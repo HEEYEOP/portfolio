@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -29,14 +29,14 @@ CREATE TABLE `comment` (
   `commentBoardNum` int(11) NOT NULL,
   `commentUserEmail` varchar(45) NOT NULL,
   `commentContents` longtext NOT NULL,
-  `registrationDate` datetime NOT NULL,
+  `registrationDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `display` varchar(1) NOT NULL DEFAULT 'Y',
   PRIMARY KEY (`commentNum`),
   KEY `board_num_idx` (`commentBoardNum`),
   KEY `user_email_idx` (`commentUserEmail`),
   CONSTRAINT `commentBoardNum` FOREIGN KEY (`commentBoardNum`) REFERENCES `board` (`boardNum`),
   CONSTRAINT `commentUserEmail` FOREIGN KEY (`commentUserEmail`) REFERENCES `user` (`userEmail`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +45,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+INSERT INTO `comment` VALUES (1,32,'123123@naver.com','지금저는 첫번째 댓글을 작성하고 있습니다','2019-09-16 16:08:06','Y'),(2,32,'123123@naver.com','저는 지금 두번쨰 댓글을 작성하고 있는데 카운트는 1일꺼에요','2019-09-16 16:11:45','Y');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-11 18:48:07
+-- Dump completed on 2019-09-17  0:30:35

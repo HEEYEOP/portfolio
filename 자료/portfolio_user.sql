@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('123123@naver.com','IndividualUser','gmlduq','$2a$10$Ca1yMRqHfa4qdIUTXkqVseanzYc7oa1rsLDCDwWUYqQb8nlvnzJgO','01088533486','M',NULL,'/2019/08/22/fe033827-96a0-45fb-a96c-a1932f655e03_',0,0,0,'Y'),('ADASDA@ASDADAD','GroupUser','ASDASD','$2a$10$H23bUuVVHLr7AYolu92.PuieMXb8MAA4DDP2oGBer3I9KV/PlZQZ.',NULL,'F','1936-09-15 00:00:00','/2019/08/26/c532fbce-1b67-4a2f-a984-ff61fe24079c_',0,0,0,'N'),('dnduq@naver.com','IndividualUser','dnduq','$2a$10$Lku0JkdAmYbnBV4xAK1eEepdGfPk3epu3K4MCsyDF/VGOm04azeX6',NULL,'M',NULL,NULL,0,0,0,'Y'),('dngml@naver.com','IndividualUser','dngml','dngml123',NULL,'M',NULL,NULL,0,0,0,'Y'),('eight@naver.com','IndividualUser','eight123','$2a$10$YWsBvOI2YYGBp8HAWKKdYO12rygesBh131w5SnK19NH9nanzpDbGG',NULL,'M',NULL,'/2019/08/22/935fa2d6-9d41-4741-b045-cdb2a7c319da_',0,0,0,'Y'),('etrete@erwerw','GroupUser','sdfsfst','$2a$10$SlKFXxm9jA5Z7ZtJrk2Sfuxg9wcFm4Kbbl9QSgAcHbXM9MlJ/j6He',NULL,'F',NULL,'/2019/08/26/3fae12bd-448c-4870-aa31-747cae1de6f0_',0,0,0,'N'),('filetest2@naver.com','GroupUser','filetest2','$2a$10$Lhn9rifHe6L06zhMzPCWKOHypVS4Ui.DTDV7Jm3rBJZdsUxG9SVV2',NULL,'M',NULL,NULL,0,0,0,'N'),('filetest@naver.com','GroupUser','dnggml','$2a$10$jYTDzX0LOoi9TbTFzRjAKeB9cicJkxbf801W/ZU.puE.LPVPEWSWa',NULL,'M',NULL,NULL,0,0,0,'N'),('gml@naver.com','IndividualUser','gmlname','abcd1234',NULL,'F',NULL,NULL,0,0,0,'Y'),('kkk@naver.com','GroupUser','kkk123','$2a$10$TOrB8jdhj9nz4oVvppa6geA7bZvkyMI3PfvEsjg40W.6gYfgrSGZe',NULL,'M',NULL,'/2019/08/20/0c44c842-26db-4433-9dda-f42ff67ef794_4번.hwp',0,0,0,'N'),('ttt@naver.com','GroupUser','ttt123','$2a$10$U2rST2uGmNF.wZRzFVgui.QVVfVkET5ktdKa8MsMyQ8zQ9zRoFtCW',NULL,'M',NULL,'/2019/08/20/e073482b-9c02-43da-bfab-b718edddcd81_',0,0,0,'N'),('uuid@naver.com','GroupUser','uuid123','$2a$10$V7ohD.t7OFbL.W3MQw/aluh3W1Qc8Kh65l0vg.nbcOloniGa4aZiS',NULL,'M',NULL,NULL,0,0,0,'N'),('what@naver.com','GroupUser','what123','$2a$10$Z1NOO6nTZWUg68nJIFEl7erWTPGgWB4ceXoOET8OzMMebnq5VQCEW',NULL,'M',NULL,NULL,0,0,0,'N'),('wwhat@naver.com','GroupUser','wwhat123','$2a$10$jC9GE4NqnZFkpye4E2n4H.zBtQzLlta0dyMyrP9BclKdAScj/l.N.',NULL,'M',NULL,'/2019/08/20/a2f3d5d7-bdcd-4f7e-955c-de1e5ba2ca7a_5.2(목).hwp',0,0,0,'N');
+INSERT INTO `user` VALUES ('000999@naver.com','IndividualUser','나다라','$2a$10$oO6jLO.wL2.uzrYJ6KJvxOSArx/chaOonPYcCfACA9SLUxvl3Qeyq',NULL,'M','1935-03-17 00:00:00','/2019/09/16/28896022-b5b3-4e76-8bac-b49baafe5ee2_',0,0,0,'Y'),('123123@naver.com','IndividualUser','gmlduq','$2a$10$Ca1yMRqHfa4qdIUTXkqVseanzYc7oa1rsLDCDwWUYqQb8nlvnzJgO','01088533486','M',NULL,'/2019/08/22/fe033827-96a0-45fb-a96c-a1932f655e03_',1,1,0,'Y');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-11 18:48:08
+-- Dump completed on 2019-09-17  0:30:37

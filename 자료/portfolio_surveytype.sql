@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -32,6 +32,7 @@ CREATE TABLE `surveytype` (
   `surveyContents` varchar(100) NOT NULL,
   `depth` int(11) NOT NULL,
   `parentsQ` int(11) NOT NULL,
+  `totalNum` int(11) DEFAULT '0',
   PRIMARY KEY (`surveyTypeNum`),
   KEY `board_num_idx` (`surveyTypeBoardNum`),
   CONSTRAINT `surveyBoardNum` FOREIGN KEY (`surveyTypeBoardNum`) REFERENCES `board` (`boardNum`)
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-11 18:48:08
+-- Dump completed on 2019-09-17  0:30:37
