@@ -123,14 +123,18 @@ public class BoardServiceImp implements BoardService{
 	
 	//댓글관련 기능---------------------------------------------------------------
 	@Override
-	public void addComent(CommentVO cVO) {
+	public void addComment(CommentVO cVO) {
 		if(cVO == null)
 			return ;
 		boardDao.insertComment(cVO);
 		boardDao.updateWriteCommentCount(cVO.getCommentUserEmail());
 		
+	}
 
+	@Override
+	public ArrayList<CommentVO> getCommentList(int boardNum) {
 		
+		return boardDao.getCommentList(boardNum);
 	}
 
 	

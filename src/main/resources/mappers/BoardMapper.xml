@@ -69,6 +69,9 @@
 		update user set writeCommentCount = writeCommentCount+1 where userEmail = #{commentUserEmail}
 	</update>
 	
+	<select id="getCommentList" resultType="kr.green.portfolio.vo.CommentVO">
+		select * from comment where commentBoardNum = #{boardNum} and display="Y";
+	</select>
 	
 	
 	

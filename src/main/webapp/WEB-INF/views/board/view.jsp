@@ -206,7 +206,7 @@
 			</div>
 			
 			<!-- ´ñ±Ûµé¶õ -->
-			<div class="commentsBox">
+			<div class="commentsBox"> 
 				<div class="commentsHeader">
 					<span>ÃÑ X°ÇÀÇ ´ñ±Û</span>
 				</div>

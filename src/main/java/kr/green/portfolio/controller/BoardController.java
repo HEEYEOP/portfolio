@@ -151,6 +151,10 @@ public class BoardController {
 			//surveyTypeVO sub = boardService.getSubSURVEY(getBoard.getBoardNum());
 		}
 		
+		
+		//댓글관련
+		ArrayList<CommentVO> commentList = boardService.getCommentList(boardNum);
+		mv.addObject("commentList", commentList);
 	
 		mv.addObject("board", getBoard);
 		mv.setViewName("/board/view");
@@ -175,7 +179,7 @@ public class BoardController {
 	public String commentPost(CommentVO cVO) {
 		logger.info("댓글 DB에 저정하는 중");
 		System.out.println(cVO);
-		boardService.addComent(cVO);
+		boardService.addComment(cVO);
 	    
 	    return "redirect:/board/totalBoard";
 	}

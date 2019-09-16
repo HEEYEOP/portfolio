@@ -44,6 +44,8 @@ public interface BoardDAO {
 
 	void updateWriteCommentCount(String commentUserEmail);
 
+	ArrayList<CommentVO> getCommentList(int boardNum);
+
 	
 
 }

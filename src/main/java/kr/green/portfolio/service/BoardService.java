@@ -31,7 +31,9 @@ public interface BoardService {
 
 	ParticipationVO isParticipation(int boardNum, String userEmail);
 
-	void addComent(CommentVO cVO);
+	void addComment(CommentVO cVO);
+
+	ArrayList<CommentVO> getCommentList(int boardNum);
 
 
 	
