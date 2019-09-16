@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.green.portfolio.dao.BoardDAO;
 import kr.green.portfolio.vo.BoardVO;
+import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
 import kr.green.portfolio.vo.ParticipationVO;
@@ -62,7 +63,7 @@ public class BoardServiceImp implements BoardService{
 				}
 				vsVO.setyORn("N");
 			}
-			System.out.println(vsVO);
+			/* System.out.println(vsVO); */
 			boardDao.insertVsType(vsVO);
 		}
 	}
@@ -115,6 +116,20 @@ public class BoardServiceImp implements BoardService{
 			return null;
 		else
 			return isParticipation;
+		
+	}
+
+	
+	
+	//댓글관련 기능---------------------------------------------------------------
+	@Override
+	public void addComent(CommentVO cVO) {
+		if(cVO == null)
+			return ;
+		boardDao.insertComment(cVO);
+		boardDao.updateWriteCommentCount(cVO.getCommentUserEmail());
+		
+
 		
 	}
 

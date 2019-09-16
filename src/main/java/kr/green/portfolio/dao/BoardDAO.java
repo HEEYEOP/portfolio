@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.annotations.Param;
 
 import kr.green.portfolio.vo.BoardVO;
+import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
 import kr.green.portfolio.vo.ParticipationVO;
@@ -37,6 +38,11 @@ public interface BoardDAO {
 	void updateViewsCount(int boardNum);
 
 	ParticipationVO isParticipation(@Param("boardNum")int boardNum,@Param("userEmail")String userEmail);
+
+	//댓글 관련----------------------------------
+	void insertComment(CommentVO cVO);
+
+	void updateWriteCommentCount(String commentUserEmail);
 
 	
 

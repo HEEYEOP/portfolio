@@ -3,6 +3,7 @@ package kr.green.portfolio.service;
 import java.util.ArrayList;
 
 import kr.green.portfolio.vo.BoardVO;
+import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
 import kr.green.portfolio.vo.ParticipationVO;
@@ -29,6 +30,8 @@ public interface BoardService {
 	void updateViewsCount(int boardNum);
 
 	ParticipationVO isParticipation(int boardNum, String userEmail);
+
+	void addComent(CommentVO cVO);
 
 
 	

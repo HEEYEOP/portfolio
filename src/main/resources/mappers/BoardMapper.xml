@@ -60,7 +60,14 @@
 		select * from participation where participationUserEmail=#{userEmail} and participationBoardNum=#{boardNum}
 	</select>
 	
+	<!-- 댓글관련 -->
+	<insert id="insertComment">
+		insert into comment(commentBoardNum, commentUserEmail, commentContents) values(#{commentBoardNum}, #{commentUserEmail}, #{commentContents})
+	</insert>
 	
+	<update id="updateWriteCommentCount">
+		update user set writeCommentCount = writeCommentCount+1 where userEmail = #{commentUserEmail}
+	</update>
 	
 	
 	

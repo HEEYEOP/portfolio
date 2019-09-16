@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.green.portfolio.service.BoardService;
 import kr.green.portfolio.utils.UploadFileUtils;
 import kr.green.portfolio.vo.BoardVO;
+import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
 import kr.green.portfolio.vo.ParticipationVO;
@@ -168,7 +169,16 @@ public class BoardController {
 	}
 	
 	
+	//댓글 관련 컨트롤러
 	
+	@RequestMapping(value="/board/comment", method = RequestMethod.POST)
+	public String commentPost(CommentVO cVO) {
+		logger.info("댓글 DB에 저정하는 중");
+		System.out.println(cVO);
+		boardService.addComent(cVO);
+	    
+	    return "redirect:/board/totalBoard";
+	}
 	
 	
 	
