@@ -21,6 +21,10 @@
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">
 				<h3 class="type">설문_설문형</h3>
 			</c:if>
+			<c:if test="${board.boardSubtype ne 'SURVEY' && board.boardSubtype ne 'VS'}">
+				<h3 class="type">대화형</h3>
+			</c:if>
+			
 			<h3 class="date">[yyyy-mm-dd ~ yyyy-mm-dd]</h3>
 			<h1 class="title">${board.boardTitle}</h1>
 			<div class="userInfo">

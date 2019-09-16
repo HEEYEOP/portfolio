@@ -133,7 +133,7 @@ public class BoardController {
 		
 		String subType = getBoard.getBoardSubtype();
 
-		if(subType.equals("VS")) { //서브타입이 VS일때 ----->여기 밑에다가 if문으로(내가 이 서브타입에 참여한 경험이 있는지를 체크해서 있다면, 어떤신호를 함께 넘겨서 jsp를 다르게 구성, 또 밑에 yes객체 no객체를 밖에서 선언해서 저걸 가져다 쓸 수 있게 만들자)
+		if(subType.equals("VS")) { //서브타입이 VS일때 
 			ArrayList<vsTypeVO> vs = boardService.getSubVS(getBoard.getBoardNum());
 			for(vsTypeVO tmp : vs) {
 				if(tmp.getyORn().equals("Y")) {
