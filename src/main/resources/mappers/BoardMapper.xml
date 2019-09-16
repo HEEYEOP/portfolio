@@ -11,6 +11,10 @@
 		insert into board(boardUserEmail, boardType,boardTitle,boardContents,boardSubtype,answer,boardFieldNum,boardDeadline)
 			values(#{boardUserEmail}, #{boardType},#{boardTitle},#{boardContents},#{boardSubtype},#{answer},#{boardFieldNum},#{boardDeadline})
 	</insert>
+	
+	<update id="updateWriteBoardCount">
+		update user set writeBoardCount = writeBoardCount+1 where userEmail = #{boardUserEmail}
+	</update>
 
 	<select id="getBoardNum" resultType="int">
 		select max(boardNum) from board

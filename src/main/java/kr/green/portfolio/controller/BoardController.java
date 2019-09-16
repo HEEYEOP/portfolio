@@ -127,7 +127,6 @@ public class BoardController {
 		UserVO uVO = (UserVO)r.getSession().getAttribute("user"); //여기서문제는 세션에 유저가 없을때도 게시물은 볼 수 있어야 하는데, 세션에 유저가 없을때 페이지 실행을 하면 nullpoint에러 남
 		
 		ParticipationVO isParticipation = boardService.isParticipation(boardNum, uVO.getUserEmail());  //참여내역 넘기기
-		System.out.println("참여여부 가져온거 찍어보기"+isParticipation);
 		mv.addObject("isParticipation",isParticipation);
 		
 		
@@ -165,7 +164,7 @@ public class BoardController {
 		boardService.addSubRes(pVO);
 		
 		
-		return "redirect:/main/home";
+		return "redirect:/main/home"; //문제문제!!!!!!!1 나는 이걸 /board/view의 get방식으로 보내고싶은데 그러면 boardNum에 널포인트 에러가 남
 	}
 	
 	

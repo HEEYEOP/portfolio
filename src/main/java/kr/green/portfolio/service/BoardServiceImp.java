@@ -27,9 +27,10 @@ public class BoardServiceImp implements BoardService{
 		if(bVO == null)
 			return -1;
 		if(bVO.getBoardSubtype() == null) {
-			bVO.setBoardSubtype("NONE");
+			bVO.setBoardSubtype("NONE"); //이거 제대로 동작 안함	
 		}
 		boardDao.insertBoard(bVO);
+		boardDao.updateWriteBoardCount(bVO.getBoardUserEmail());
 		int getBoardNum = boardDao.getBoardNum();
 		return getBoardNum;
 	}

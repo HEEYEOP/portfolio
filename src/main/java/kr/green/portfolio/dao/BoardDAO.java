@@ -16,6 +16,8 @@ public interface BoardDAO {
 
 	void insertBoard(BoardVO bVO);
 	
+	void updateWriteBoardCount(String boardUserEmail);
+	
 	int getBoardNum();
 
 	void insertFile(FileVO file);
@@ -35,5 +37,7 @@ public interface BoardDAO {
 	void updateViewsCount(int boardNum);
 
 	ParticipationVO isParticipation(@Param("boardNum")int boardNum,@Param("userEmail")String userEmail);
+
+	
 
 }
