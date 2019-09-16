@@ -33,6 +33,18 @@ $(document).ready(function(){
 		}
 	});
 	
+	$('#commentSubmitBtn').click(function(){
+		if($('input[name=commentUserEmail]').val() ==''){
+			alert('로그인 후 댓글을 작성할 수 있습니다.')
+		}else if($('form[name=commentForm] textarea').val()==''){
+			alert('댓글을 작성해주세요.');
+		}else{
+			$('form[name=commentForm]').submit();
+		}
+			
+	});
+	
+	
 	
 	
 });

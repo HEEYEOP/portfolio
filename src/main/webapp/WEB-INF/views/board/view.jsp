@@ -86,7 +86,7 @@
 									</div>
 								</div>
 								
-								<input name="myChoice" type="text" value="${isParticipation.participationVsTypeNum}">
+								<input name="myChoice" type="hidden" value="${isParticipation.participationVsTypeNum}">
 								<div class="viewVS_res_graphBox1" style="right:10px;">
 									<div class="viewVS_res_graphBox2" style="width:50%;"></div>
 									<div class="viewVS_res_myChoice">
@@ -195,13 +195,14 @@
 		
 			<!-- 댓글작성란 -->
 			<div class="commentWrite">
-				<textarea rows="" cols=""></textarea>
-				<div style="margin-top: 10px;">
-					<form action="">
-					
-						<div style="height: 20px;"><button class="commentEnrollBtn">등록</button></div>
-					</form>
-				</div>
+				<form name="commentForm" action="<%=request.getContextPath()%>/board/comment" method="post">
+					<input name="commentBoardNum" value="${board.boardNum}">
+					<input name="commentUserEmail" value="${user.userEmail}">
+					<textarea name="commentContents"></textarea>
+					<div style="margin-top: 10px;">
+							<div style="height: 20px;"><button id="commentSubmitBtn" type="button" class="commentEnrollBtn">등록</button></div>		
+					</div>
+				</form>	
 			</div>
 			
 			<!-- 댓글들란 -->
