@@ -34,4 +34,6 @@ public interface BoardDAO {
 
 	void updateViewsCount(int boardNum);
 
+	ParticipationVO isParticipation(@Param("boardNum")int boardNum,@Param("userEmail")String userEmail);
+
 }

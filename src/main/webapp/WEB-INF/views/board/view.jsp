@@ -30,7 +30,6 @@
 			</div>
 		</div>
 		
-		
 		<div class="boardMiddle">
 			<div class="text">
 				${board.boardContents}
@@ -48,101 +47,100 @@
 				</div>
 			</div>
 			
+			
+			
+			
 			<c:if test="${board.boardSubtype eq 'VS'}">
-				<div class="viewVS_res">
-					<div class="viewVS_res_title">
-						<h3>현재까지 투표 결과</h3>
-						<p>투표에 참여해주신 여러분께 감사합니다.</p>
-					</div>
-					
-					<div class="viewVS_res_contents">
-						<div class="viewVS_res_contents_Header">
-							<div class="viewVS_res_totalNum">
-								총 참여인원
-								<strong>2</strong>
-								<strong>명</strong> 
-							</div>
-							<div class="viewVS_res_date">
-								<i class="fa fa-clock-o"></i>
-								yyyy-mm-dd까지
-							</div>
+				<c:if test="${isParticipation ne null}">
+					<div class="viewVS_res">
+						<div class="viewVS_res_title">
+							<h3>현재까지 투표 결과</h3>
+							<p>투표에 참여해주신 여러분께 감사합니다.</p>
 						</div>
 						
-						<div class="viewVS_res_contents_graph">
-							<div class="viewVS_res_graphTitle">
-								<div class="viewVS_res_graphYes">
-									찬성
+						<div class="viewVS_res_contents">
+							<div class="viewVS_res_contents_Header">
+								<div class="viewVS_res_totalNum">
+									총 참여인원
+									<strong>${yes.totalNum + no.totalNum}</strong>
+									<strong>명</strong> 
 								</div>
-								<span class="vs">VS</span>
-								<div class="viewVS_res_graphNO">
-									반대
+								<div class="viewVS_res_date">
+									<i class="fa fa-clock-o"></i>
+									yyyy-mm-dd까지
 								</div>
 							</div>
 							
-							<div class="viewVS_res_graphBox1">
-								<div class="viewVS_res_graphBox2" style="width:50%;"></div>
-								<div class="viewVS_res_myChoice">
+							<div class="viewVS_res_contents_graph">
+								<div class="viewVS_res_graphTitle">
+									<div class="viewVS_res_graphYes">
+										찬성
+									</div>
+									<span class="vs">VS</span>
+									<div class="viewVS_res_graphNO">
+										반대
+									</div>
+								</div>
+								
+								<div class="viewVS_res_graphBox1">
+									<div class="viewVS_res_graphBox2" style="width:50%;"></div>
+									<div class="viewVS_res_myChoice">
+										<i class="fa fa-check"></i>
+									</div>
+								</div>
+								
+								<div class="viewVS_res_graphBoxPartiNum">
+									<div class="partiNum_Yes">${yes.totalNum}명(50.0%)</div>
+									<div class="partiNum_No">${no.totalNum}명(50.0%)</div>
+								</div>
+						
+							</div>
+							
+						</div>
+						
+					</div>
+				</c:if>
+				
+				
+				<c:if test="${isParticipation eq null}">
+					<form class="" name="vsForm" action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post">
+						<!-- VS타입인경우 -->
+						<div class="viewVS">
+							<div class="viewVsTitle">
+								<i></i>
+								투표에 참여해주세요
+							</div>
+							<div class="viewVsDeadline">
+								<i class="fa fa-clock-o">${board.boardDeadline}</i>까지
+							</div>
+							
+							<div class="viewVsSelectBox">
+								<div class="vsSelect vsYes">
+									${yes.vsContents}
+									<a style="background-position: 0 -60px;"></a>
+									<input type="hidden" value="${yes.vsTypeNum}">
+									<div class="vsMark">
+										<span>VS</span>
+									</div>
+								</div>
+								<div class="vsSelect vsNo">
+									${no.vsContents}
+									<a style="background-position: 0 -60px;"></a>
+									<input type="hidden" value="${no.vsTypeNum}">
+								</div>
+							</div>
+							
+							<input type="text" value="" name="participationVsTypeNum">
+							<input value="${user.userEmail}" name="participationUserEmail">
+							<div class="submitBtnBox">
+								<a id="vsSubmitBtn">
+									제출하기
 									<i class="fa fa-check"></i>
-								</div>
-							</div>
-							
-							<div class="viewVS_res_graphBoxPartiNum">
-								<div class="partiNum_Yes">1명(50.0%)</div>
-								<div class="partiNum_No">1명(50.0%)</div>
-							</div>
-					
-						</div>
-						
-					</div>
-					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				<form class="displayNone" name="vsForm" action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post">
-					<!-- VS타입인경우 -->
-					<div class="viewVS">
-						<div class="viewVsTitle">
-							<i></i>
-							투표에 참여해주세요
-						</div>
-						<div class="viewVsDeadline">
-							<i class="fa fa-clock-o">${board.boardDeadline}</i>까지
-						</div>
-						
-						<div class="viewVsSelectBox">
-							<div class="vsSelect vsYes">
-								${yes.vsContents}
-								<a style="background-position: 0 -60px;"></a>
-								<input type="hidden" value="${yes.vsTypeNum}">
-								<div class="vsMark">
-									<span>VS</span>
-								</div>
-							</div>
-							<div class="vsSelect vsNo">
-								${no.vsContents}
-								<a style="background-position: 0 -60px;"></a>
-								<input type="hidden" value="${no.vsTypeNum}">
+								</a>
 							</div>
 						</div>
-						
-						<input type="text" value="" name="participationVsTypeNum">
-						<input value="${user.userEmail}" name="participationUserEmail">
-						<div class="submitBtnBox">
-							<a id="vsSubmitBtn">
-								제출하기
-								<i class="fa fa-check"></i>
-							</a>
-						</div>
-					</div>
-				</form>
+					</form>
+				</c:if>
 			</c:if>
 			
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">

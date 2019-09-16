@@ -101,6 +101,19 @@ public class BoardServiceImp implements BoardService{
 	@Override
 	public void updateViewsCount(int boardNum) {
 		boardDao.updateViewsCount(boardNum);
+	}
+
+	@Override
+	public ParticipationVO isParticipation(int boardNum, String userEmail) {
+		if(userEmail == null)
+			return null;
+		
+		ParticipationVO isParticipation = boardDao.isParticipation(boardNum,userEmail);
+		
+		if(isParticipation == null)
+			return null;
+		else
+			return isParticipation;
 		
 	}
 

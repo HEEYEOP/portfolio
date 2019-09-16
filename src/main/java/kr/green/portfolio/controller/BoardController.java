@@ -120,12 +120,17 @@ public class BoardController {
 	@RequestMapping(value="/board/view", method = RequestMethod.GET)
 	public ModelAndView viewGet(ModelAndView mv, int boardNum, HttpServletRequest r) throws Exception{
 		logger.info("게시물 상세보기 페이지 실행");
-		boardService.updateViewsCount(boardNum);
-		UserVO uVO = (UserVO)r.getSession().getAttribute("user");
-		System.out.println(uVO);
-		ParticipationVO isParticipation = boardService.isParticipation(uVO.getUserEmail());  
+		boardService.updateViewsCount(boardNum); //게시물 조회수 증가
 		
 		BoardVO getBoard = boardService.getBoard(boardNum);
+		
+		UserVO uVO = (UserVO)r.getSession().getAttribute("user"); //여기서문제는 세션에 유저가 없을때도 게시물은 볼 수 있어야 하는데, 세션에 유저가 없을때 페이지 실행을 하면 nullpoint에러 남
+		
+		ParticipationVO isParticipation = boardService.isParticipation(boardNum, uVO.getUserEmail());  //참여내역 넘기기
+		System.out.println("참여여부 가져온거 찍어보기"+isParticipation);
+		mv.addObject("isParticipation",isParticipation);
+		
+		
 		String subType = getBoard.getBoardSubtype();
 
 		if(subType.equals("VS")) { //서브타입이 VS일때 ----->여기 밑에다가 if문으로(내가 이 서브타입에 참여한 경험이 있는지를 체크해서 있다면, 어떤신호를 함께 넘겨서 jsp를 다르게 구성, 또 밑에 yes객체 no객체를 밖에서 선언해서 저걸 가져다 쓸 수 있게 만들자)
@@ -134,9 +139,11 @@ public class BoardController {
 				if(tmp.getyORn().equals("Y")) {
 					vsTypeVO yes = tmp;
 					mv.addObject("yes", yes);
+					
 				}else {
 					vsTypeVO no = tmp;
 					mv.addObject("no", no);
+					
 				}
 			}
 			

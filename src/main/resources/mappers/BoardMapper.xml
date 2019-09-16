@@ -52,7 +52,9 @@
 		update board set viewsCount = viewsCount+1 where boardNum = #{boardNum}
 	</update>
 	
-	
+	<select id="isParticipation" resultType="kr.green.portfolio.vo.ParticipationVO">
+		select * from participation where participationUserEmail=#{userEmail} and participationBoardNum=#{boardNum}
+	</select>
 	
 	
 	

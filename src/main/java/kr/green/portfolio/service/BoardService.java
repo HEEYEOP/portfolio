@@ -28,6 +28,9 @@ public interface BoardService {
 
 	void updateViewsCount(int boardNum);
 
+	ParticipationVO isParticipation(int boardNum, String userEmail);
+
+
 	
 
 }
