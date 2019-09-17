@@ -8,6 +8,7 @@ import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.LikeVO;
 import kr.green.portfolio.vo.ParticipationVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
@@ -45,6 +46,14 @@ public interface BoardDAO {
 	void updateWriteCommentCount(String commentUserEmail);
 
 	ArrayList<CommentVO> getCommentList(int boardNum);
+
+	
+	//공감 관련-----------------------------------------------
+	LikeVO getLike(@Param("likeBoardNum")int likeBoardNum, @Param("likeUserEmail")String likeUserEmail);
+
+	void addLike(LikeVO lVO);
+
+	void updateLike(@Param("likeNum")int likeNum, @Param("isLike")String isLike);
 
 	
 

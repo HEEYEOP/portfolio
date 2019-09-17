@@ -2,6 +2,8 @@ package kr.green.portfolio.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,8 +12,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,6 +25,7 @@ import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.LikeVO;
 import kr.green.portfolio.vo.ParticipationVO;
 import kr.green.portfolio.vo.UserVO;
 import kr.green.portfolio.vo.surveyTypeVO;
@@ -191,8 +196,16 @@ public class BoardController {
 	}
 	
 	
+	// 공감버튼 관련 컨트롤러
 	
-	
+	@RequestMapping(value ="/board/like", method = RequestMethod.POST)
+	@ResponseBody
+	public int likePost(LikeVO lVO){
+	    System.out.println("lVO는 요거요거"+lVO);
+	    boardService.addLike(lVO);
+	    
+	    return 0;
+	}
 	
 	
 	

@@ -70,10 +70,22 @@
 	</update>
 	
 	<select id="getCommentList" resultType="kr.green.portfolio.vo.CommentVO">
-		select * from comment where commentBoardNum = #{boardNum} and display="Y" order by registrationDate desc;
+		select * from comment where commentBoardNum = #{boardNum} and display="Y" order by registrationDate desc
 	</select>
 	
 	
+	<!-- 공감버튼 관련 -->
+	<select id="getLike" resultType="kr.green.portfolio.vo.LikeVO">
+		select * from portfolio.like where likeBoardNum = #{likeBoardNum} and likeUserEmail = #{likeUserEmail}
+	</select>
+	
+	<insert id="addLike">
+		insert into portfolio.like(likeBoardNum, likeUserEmail,isLike) values(#{likeBoardNum}, #{likeUserEmail},#{isLike})
+	</insert>
+	
+	<update id="updateLike">
+		update portfolio.like set isLike=#{isLike} where likeNum =#{likeNum}
+	</update>
 	
 	
 	

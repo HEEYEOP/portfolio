@@ -10,6 +10,7 @@ import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.LikeVO;
 import kr.green.portfolio.vo.ParticipationVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
@@ -135,6 +136,26 @@ public class BoardServiceImp implements BoardService{
 	public ArrayList<CommentVO> getCommentList(int boardNum) {
 		
 		return boardDao.getCommentList(boardNum);
+	}
+
+	
+	
+	//공김버튼 관련 기능-----------------------------------------------------------
+	@Override
+	public void addLike(LikeVO lVO) {
+		
+		if(lVO == null) 
+			return ;
+		
+		LikeVO oldLike = boardDao.getLike(lVO.getLikeBoardNum(),lVO.getLikeUserEmail());
+		
+		if(oldLike == null) { 
+			boardDao.addLike(lVO); 
+		}else {
+			boardDao.updateLike(oldLike.getLikeNum(),lVO.getIsLike()); }
+		 
+		 
+		
 	}
 
 	

@@ -6,6 +6,7 @@ import kr.green.portfolio.vo.BoardVO;
 import kr.green.portfolio.vo.CommentVO;
 import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
+import kr.green.portfolio.vo.LikeVO;
 import kr.green.portfolio.vo.ParticipationVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
@@ -34,6 +35,8 @@ public interface BoardService {
 	void addComment(CommentVO cVO);
 
 	ArrayList<CommentVO> getCommentList(int boardNum);
+
+	void addLike(LikeVO lVO);
 
 
 	

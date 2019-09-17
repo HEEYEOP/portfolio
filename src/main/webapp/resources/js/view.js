@@ -48,30 +48,38 @@ $(document).ready(function(){
 	//게시물공감 버튼 눌렀을 때,
 	var val = parseInt($('#likeCount').html());
 	$('.likeBtn').click(function(){
+		var isLike = 'N';
+		var likeUserEmail = $('input[name=likeUserEmail]').val();
+		var likeBoardNum = $('input[name=likeBoardNum]').val();
+		console.log(isLike);
+		console.log(likeUserEmail);
+		console.log(likeBoardNum);
 		
-		if($('input[name=likeUserEmail]').val() == ''){
+		
+		if( likeUserEmail == ''){
 			alert('공감_은 로그인 후 이용 가능합니다.');
 		}else{
 			$(this).toggleClass('likeBtnActive');
 			
 			if($(this).hasClass('likeBtnActive') == true){
-				val = val+1;
+				val = val+1
+				isLike = 'Y';
 			}else{
 				val = val-1;
 			}
 			$('#likeCount').html(val);
 			
-			/*$.ajax({
-		        async:true,
+			$.ajax({
+		        async:false,
 		        type:'POST',
-		        data:id,
-		        url:"test",
+		        data:{'likeBoardNum':likeBoardNum ,'likeUserEmail':likeUserEmail, 'isLike':isLike},
+		        url:"/portfolio/board/like",
 		        dataType:"json",
-		        contentType:"application/json; charset=UTF-8",
 		        success : function(data){
 		            console.log(data);
 		        }
-		    });*/
+
+		    });
 		}
 		
 	});
