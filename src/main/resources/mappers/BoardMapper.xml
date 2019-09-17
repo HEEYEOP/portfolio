@@ -29,7 +29,7 @@
 	</insert>
 	
 	<select id="getBoardList" resultType="kr.green.portfolio.vo.BoardVO">
-		select * from board where display ='Y';
+		select * from board where display ='Y' order by registrationDate desc;
 	</select>
 	
 	<select id="getBoard" resultType="kr.green.portfolio.vo.BoardVO">

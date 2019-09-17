@@ -5,7 +5,7 @@ $(document).ready(function(){
 	
 	//내가 선택한 결과를 결과그래프에 체크표시
 	if($('input[name=myChoice]').val() % 2 != 0){
-		console.log($('input[name=myChoice]').val() % 2);
+		//console.log($('input[name=myChoice]').val() % 2);
 		$('.viewVS_res_myChoice').attr('style','left:15px');
 	}else{
 		console.log($('input[name=myChoice]').val() % 2);
@@ -46,9 +46,37 @@ $(document).ready(function(){
 	});
 	
 	//게시물공감 버튼 눌렀을 때,
+	var val = parseInt($('#likeCount').html());
 	$('.likeBtn').click(function(){
-		$(this).toggleClass('likeBtnActive');
-		var val = $('#likeCount').html();
+		
+		if($('input[name=likeUserEmail]').val() == ''){
+			alert('공감_은 로그인 후 이용 가능합니다.');
+		}else{
+			$(this).toggleClass('likeBtnActive');
+			
+			if($(this).hasClass('likeBtnActive') == true){
+				val = val+1;
+			}else{
+				val = val-1;
+			}
+			$('#likeCount').html(val);
+			
+			/*$.ajax({
+		        async:true,
+		        type:'POST',
+		        data:id,
+		        url:"test",
+		        dataType:"json",
+		        contentType:"application/json; charset=UTF-8",
+		        success : function(data){
+		            console.log(data);
+		        }
+		    });*/
+		}
+		
+		//
+		
+		
 		
 		
 	});

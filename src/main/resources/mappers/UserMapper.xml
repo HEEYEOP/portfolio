@@ -22,7 +22,7 @@
 	</select>
 	
 	<insert id="insertUser">
-		insert into user(userEmail,userType,userName,userPw,userGender,userBirth,confirmFile,isMember) values(#{userEmail},#{userType},#{userName},#{userPw},#{userGender},#{userBirth},#{confirmFile},#{isMember})
+		insert into user(userEmail,userType,userName,userPw,userPhone,userGender,userBirth,confirmFile,isMember) values(#{userEmail},#{userType},#{userName},#{userPw},#{userPhone},#{userGender},#{userBirth},#{confirmFile},#{isMember})
 	</insert>
 	
 	
