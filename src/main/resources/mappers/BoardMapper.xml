@@ -87,6 +87,15 @@
 		update portfolio.like set isLike=#{isLike} where likeNum =#{likeNum}
 	</update>
 	
+	<update id="updateLikesCount">
+		update board set likesCount = likesCount+1 where boardNum=#{likeBoardNum}
+	</update>
+	
+	<update id="updateLikesBoardCount">
+		update user set likesBoardCount = likesBoardCount+1 where userEmail=#{likeUserEmail}
+	</update>
+	
+	
 	
 	
 	

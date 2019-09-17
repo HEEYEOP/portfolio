@@ -151,6 +151,8 @@ public class BoardServiceImp implements BoardService{
 		
 		if(oldLike == null) { 
 			boardDao.addLike(lVO); 
+			boardDao.updateLikesCount(lVO.getLikeBoardNum()); //게시물에 1증가
+			boardDao.updateLikesBoardCount(lVO.getLikeUserEmail()); //사용자에 1증가
 		}else {
 			boardDao.updateLike(oldLike.getLikeNum(),lVO.getIsLike()); }
 		 

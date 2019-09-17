@@ -55,6 +55,10 @@ public interface BoardDAO {
 
 	void updateLike(@Param("likeNum")int likeNum, @Param("isLike")String isLike);
 
+	void updateLikesCount(int likeBoardNum);
+
+	void updateLikesBoardCount(String likeUserEmail);
+
 	
 
 }
