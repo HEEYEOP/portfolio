@@ -54,6 +54,10 @@ public class BoardVO extends FieldVO {
 	public Date getRegistrationDate() {
 		return registrationDate;
 	}
+	public String getRegistrationDate2() {
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+		return f.format(registrationDate);
+	}
 	public void setRegistrationDate(Date registrationDate) {
 		this.registrationDate = registrationDate;
 	}
@@ -107,6 +111,11 @@ public class BoardVO extends FieldVO {
 	}
 	public Date getBoardDeadline() {
 		return boardDeadline;
+	}
+	public String getBoardDeadline2() {
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+		return f.format(boardDeadline);
+		
 	}
 	public void setBoardDeadline(Date boardDeadline) {
 		this.boardDeadline = boardDeadline;

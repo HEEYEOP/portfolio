@@ -494,7 +494,7 @@
 	}
     .commentText{
     	width: 100%;
-    	padding: 0 10px;
+    	padding: 20px 10px;
     	font-size: 14px;
     	color: #000;
     	line-height: 1.4em;
@@ -510,6 +510,7 @@
     .writerName{
     	font-size: 14px;
     	padding: 0 10px;
+    	margin-left: 5px;
     }
     .commentVsBox{
     	height:30px;

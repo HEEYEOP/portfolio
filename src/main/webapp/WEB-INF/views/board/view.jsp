@@ -25,11 +25,11 @@
 				<h3 class="type">대화형	</h3>
 			</c:if>
 			
-			<h3 class="date">[yyyy-mm-dd ~ yyyy-mm-dd]</h3>
+			<h3 class="date">[ ${board.registrationDate2} ~ ${board.boardDeadline2} ]</h3>
 			<h1 class="title">${board.boardTitle}</h1>
 			<div class="userInfo">
 				<p style="margin: 0;">[ ${board.boardUserEmail} ]님의 생각</p>
-				<p style="margin: 0;">게시물 등록일 : ${board.registrationDate}</p>
+				<p style="margin: 0;">게시물 등록일 : ${board.registrationDate2}</p>
 				<p>작성게시물 수 [4 개] / 작성댓글 수 [15 개]</p>
 			</div>
 		</div>
@@ -71,7 +71,7 @@
 								</div>
 								<div class="viewVS_res_date">
 									<i class="fa fa-clock-o"></i>
-									yyyy-mm-dd까지
+									${board.boardDeadline2}까지
 								</div>
 							</div>
 							
