@@ -33,6 +33,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	//댓글등록 버튼 눌렀을 때, 체크
 	$('#commentSubmitBtn').click(function(){
 		if($('input[name=commentUserEmail]').val() ==''){
 			alert('로그인 후 댓글을 작성할 수 있습니다.')
@@ -43,6 +44,15 @@ $(document).ready(function(){
 		}
 			
 	});
+	
+	//게시물공감 버튼 눌렀을 때,
+	$('.likeBtn').click(function(){
+		$(this).toggleClass('likeBtnActive');
+		var val = $('#likeCount').html();
+		
+		
+	});
+	
 	
 	
 	

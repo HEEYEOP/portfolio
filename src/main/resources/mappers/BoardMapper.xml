@@ -70,7 +70,7 @@
 	</update>
 	
 	<select id="getCommentList" resultType="kr.green.portfolio.vo.CommentVO">
-		select * from comment where commentBoardNum = #{boardNum} and display="Y";
+		select * from comment where commentBoardNum = #{boardNum} and display="Y" order by registrationDate desc;
 	</select>
 	
 	

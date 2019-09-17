@@ -69,10 +69,14 @@
     	display: inline-block;
     	height: 42px;
     	width: 100%;
-    	line-height: 2.4;
+    	line-height: 1.8;
     	text-align: center;
+    	cursor: pointer;
      }
-     
+     .likeBtnActive{
+     	border-color:red;
+     	color:red;
+     }
      
      /* VS타입에 대한 css */
      /* 결과 */

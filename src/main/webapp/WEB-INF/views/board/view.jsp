@@ -45,9 +45,8 @@
 			<div>
 				<div class="likeBtn">
 					<i class="far fa-heart"></i>
-					<i class="fas fa-heart" style="color:red;"></i>
 					<span>공감해요</span>
-					<span>${board.likesCount}</span>
+					<span id="likeCount" style="color: #ff5f4d; font-size: x-large;">${board.likesCount}</span>
 				</div>
 			</div>
 			

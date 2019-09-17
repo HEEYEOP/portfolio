@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -126,8 +127,10 @@ public class BoardController {
 		BoardVO getBoard = boardService.getBoard(boardNum);
 		
 		UserVO uVO = (UserVO)r.getSession().getAttribute("user"); //여기서문제는 세션에 유저가 없을때도 게시물은 볼 수 있어야 하는데, 세션에 유저가 없을때 페이지 실행을 하면 nullpoint에러 남
-		
-		ParticipationVO isParticipation = boardService.isParticipation(boardNum, uVO.getUserEmail());  //참여내역 넘기기
+		ParticipationVO isParticipation = null;
+		if(uVO != null) {
+			isParticipation = boardService.isParticipation(boardNum, uVO.getUserEmail());  //참여내역 넘기기
+		}
 		mv.addObject("isParticipation",isParticipation);
 		
 		
@@ -165,25 +168,26 @@ public class BoardController {
 	
 	
 	@RequestMapping(value="/board/view", method = RequestMethod.POST)
-	public String viewPost(ParticipationVO pVO) {
+	public String viewPost(Model model, ParticipationVO pVO) {
 		logger.info("설문결과 DB에 저장하는 중");
 		//System.out.println(pVO);
 		boardService.addSubRes(pVO);
+		model.addAttribute("boardNum", pVO.getParticipationBoardNum());
 		
-		
-		return "redirect:/main/home"; //문제문제!!!!!!!1 나는 이걸 /board/view의 get방식으로 보내고싶은데 그러면 boardNum에 널포인트 에러가 남
+		return "redirect:/board/view";
 	}
 	
 	
 	//댓글 관련 컨트롤러
 	
 	@RequestMapping(value="/board/comment", method = RequestMethod.POST)
-	public String commentPost(CommentVO cVO) {
+	public String commentPost(Model model, CommentVO cVO) {
 		logger.info("댓글 DB에 저정하는 중");
 		System.out.println(cVO);
 		boardService.addComment(cVO);
+		model.addAttribute("boardNum", cVO.getCommentBoardNum());
 	    
-	    return "redirect:/board/totalBoard";
+	    return "redirect:/board/view";
 	}
 	
 	
