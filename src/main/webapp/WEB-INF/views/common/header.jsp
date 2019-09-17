@@ -21,14 +21,14 @@
         </div>
         <div id="imgMenu">
             <ul>
-                <li><i class="fas fa-search"></i></li>
+                <li><div><i class="fas fa-search"></i></div><div style="font-size: 15px;">검색하기</div></li>
                 <c:if test="${user != null}">
-                	<li><a href="<%=request.getContextPath()%>/board/write"><i class="fas fa-pen"></i></a></li>
-                	<li><a href="<%=request.getContextPath()%>/main/userPage"><i class="fas fa-user"></i></a></li>
+                	<li><a href="<%=request.getContextPath()%>/board/write"><div><i class="fas fa-pen"></i></div><div style="font-size: 15px;">설문쓰기</div></a></li>
+                	<li><a href="<%=request.getContextPath()%>/main/userPage"><div><i class="fas fa-user"></i></div><div style="font-size: 15px;">마이페이지</div></a></li>
                 </c:if>
                 <c:if test="${user == null}">
-                	<li><a href="<%=request.getContextPath()%>/main/login"><i class="fas fa-pen"></i></a></li>
-                	<li><a href="<%=request.getContextPath()%>/main/login"><i class="fas fa-user"></i></a></li>
+                	<li><a href="<%=request.getContextPath()%>/main/login"><div><i class="fas fa-pen"></i></div><div style="font-size: 15px;">설문쓰기</div></a></li>
+                	<li><a href="<%=request.getContextPath()%>/main/login"><div><i class="fas fa-user"></i></div><div style="font-size: 15px;">로그인</div></a></li>
                 </c:if>
             </ul>
         </div>
