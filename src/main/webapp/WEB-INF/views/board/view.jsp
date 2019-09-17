@@ -219,7 +219,7 @@
 									<div>
 										<div class="writerInfo">
 											<span>작성일 : </span>
-											<span>${comment.registrationDate}</span><br>
+											<span>${comment.registrationDate2}</span><br>
 											<span>작성자 :</span><span class="type writerName">${comment.commentUserEmail}</span>
 										</div>
 										<div class="commentVsBox">

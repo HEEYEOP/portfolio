@@ -1,5 +1,6 @@
 package kr.green.portfolio.vo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CommentVO {
@@ -39,6 +40,15 @@ public class CommentVO {
 	public Date getRegistrationDate() {
 		return registrationDate;
 	}
+	
+	//수정
+	public String getRegistrationDate2() {
+		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		return f.format(registrationDate);
+		
+	}
+	
 	public void setRegistrationDate(Date registrationDate) {
 		this.registrationDate = registrationDate;
 	}
