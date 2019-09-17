@@ -154,7 +154,9 @@ public class BoardController {
 		
 		//댓글관련
 		ArrayList<CommentVO> commentList = boardService.getCommentList(boardNum);
+		//System.out.println("리스트 길이 알아본다"+commentList.size());
 		mv.addObject("commentList", commentList);
+		mv.addObject("commentListSize", commentList.size());
 	
 		mv.addObject("board", getBoard);
 		mv.setViewName("/board/view");

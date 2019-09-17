@@ -196,8 +196,8 @@
 			<!-- 댓글작성란 -->
 			<div class="commentWrite">
 				<form name="commentForm" action="<%=request.getContextPath()%>/board/comment" method="post">
-					<input name="commentBoardNum" value="${board.boardNum}">
-					<input name="commentUserEmail" value="${user.userEmail}">
+					<input type="hidden" name="commentBoardNum" value="${board.boardNum}">
+					<input type="hidden" name="commentUserEmail" value="${user.userEmail}">
 					<textarea name="commentContents"></textarea>
 					<div style="margin-top: 10px;">
 							<div style="height: 20px;"><button id="commentSubmitBtn" type="button" class="commentEnrollBtn">등록</button></div>		
@@ -205,34 +205,38 @@
 				</form>	
 			</div>
 			
-			<!-- 댓글들란 -->
-			<div class="commentsBox"> 
-				<div class="commentsHeader">
-					<span>총 X건의 댓글</span>
+			
+				<!-- 댓글들란 -->
+				<div class="commentsBox"> 
+					<div class="commentsHeader">
+						<span>총 ${commentListSize}건의 댓글</span>
+					</div>
+					<ul style="list-style: none;">
+						<li>
+							<c:forEach var="comment" items="${commentList}">
+								<div class="comment">
+									<div class="commentText">${comment.commentContents}</div>
+									<div>
+										<div class="writerInfo">
+											<span>작성일 : </span>
+											<span>${comment.registrationDate}</span><br>
+											<span>작성자 :</span><span class="type writerName">${comment.commentUserEmail}</span>
+										</div>
+										<div class="commentVsBox">
+											<div class="commentVs" style="margin-left: 10px; margin-right: 30px;">
+												<i class="fa fa-thumbs-down"> 0 </i>
+											</div>
+											<div class="commentVs">
+												<i class="fa fa-thumbs-up"> 2 </i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</li>
+					</ul>
 				</div>
-				<ul style="list-style: none;">
-					<li>
-						<div class="comment">
-							<div class="commentText">여기에 댓글이 조로록조로록조로록 쓰여있을꺼야여기에 댓글이 조로록조로록조로록 쓰여있을꺼야</div>
-							<div>
-								<div class="writerInfo">
-									<span>작성일 : </span>
-									<span>yyyy-mm-dd</span><br>
-									<span>작성자 :</span><span class="type writerName">가나다</span>
-								</div>
-								<div class="commentVsBox">
-									<div class="commentVs" style="margin-left: 10px; margin-right: 30px;">
-										<i class="fa fa-thumbs-down"> 0 </i>
-									</div>
-									<div class="commentVs">
-										<i class="fa fa-thumbs-up"> 2 </i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
+			
 			
 		</div>
 		
