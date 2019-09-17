@@ -45,17 +45,19 @@ $(document).ready(function(){
 			
 	});
 	
+	//이전에 공감버튼을 누른적이 있다면, 공감버튼 활성화시켜놓기
+	var oldLike = $('input[name=oldLike]').val();
+	if(oldLike != '' && oldLike != 'N'){
+		$('.likeBtn').addClass('likeBtnActive');
+	}
+	
 	//게시물공감 버튼 눌렀을 때,
 	var val = parseInt($('#likeCount').html());
 	$('.likeBtn').click(function(){
 		var isLike = 'N';
 		var likeUserEmail = $('input[name=likeUserEmail]').val();
 		var likeBoardNum = $('input[name=likeBoardNum]').val();
-		console.log(isLike);
-		console.log(likeUserEmail);
-		console.log(likeBoardNum);
-		
-		
+	
 		if( likeUserEmail == ''){
 			alert('공감_은 로그인 후 이용 가능합니다.');
 		}else{

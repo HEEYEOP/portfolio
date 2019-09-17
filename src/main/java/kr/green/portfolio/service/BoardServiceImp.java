@@ -154,10 +154,24 @@ public class BoardServiceImp implements BoardService{
 			boardDao.updateLikesCount(lVO.getLikeBoardNum()); //게시물에 1증가
 			boardDao.updateLikesBoardCount(lVO.getLikeUserEmail()); //사용자에 1증가
 		}else {
-			boardDao.updateLike(oldLike.getLikeNum(),lVO.getIsLike()); }
+			boardDao.updateLike(oldLike.getLikeNum(),lVO.getIsLike());
+			if(lVO.getIsLike().equals("N")) {
+				boardDao.updateLikesCount2(lVO.getLikeBoardNum()); //게시물에 1감소
+				boardDao.updateLikesBoardCount2(lVO.getLikeUserEmail()); //사용자에 1감소
+			}else {
+				boardDao.updateLikesCount(lVO.getLikeBoardNum()); //게시물에 1증가
+				boardDao.updateLikesBoardCount(lVO.getLikeUserEmail()); //사용자에 1증가
+			}
+		}
 		 
 		 
 		
+	}
+
+	@Override
+	public LikeVO isLike(int boardNum, String userEmail) {
+		
+		return boardDao.getLike(boardNum, userEmail);
 	}
 
 	

@@ -38,6 +38,8 @@ public interface BoardService {
 
 	void addLike(LikeVO lVO);
 
+	LikeVO isLike(int boardNum, String userEmail);
+
 
 	
 

@@ -95,6 +95,14 @@
 		update user set likesBoardCount = likesBoardCount+1 where userEmail=#{likeUserEmail}
 	</update>
 	
+	<update id="updateLikesCount2">
+		update board set likesCount = likesCount-1 where boardNum=#{likeBoardNum}
+	</update>
+	
+	<update id="updateLikesBoardCount2">
+		update user set likesBoardCount = likesBoardCount-1 where userEmail=#{likeUserEmail}
+	</update>
+	
 	
 	
 	

@@ -50,6 +50,7 @@
 					<span>공감해요</span>
 					<span id="likeCount" style="color: #ff5f4d; font-size: x-large;">${board.likesCount}</span>
 				</div>
+				<input type="hidden" name="oldLike" value="${isLike.isLike}">
 			</div>
 			
 			

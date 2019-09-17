@@ -131,11 +131,16 @@ public class BoardController {
 		
 		BoardVO getBoard = boardService.getBoard(boardNum);
 		
+		
 		UserVO uVO = (UserVO)r.getSession().getAttribute("user"); //여기서문제는 세션에 유저가 없을때도 게시물은 볼 수 있어야 하는데, 세션에 유저가 없을때 페이지 실행을 하면 nullpoint에러 남
 		ParticipationVO isParticipation = null;
+		LikeVO isLike = null;
 		if(uVO != null) {
+			isLike = boardService.isLike(boardNum,uVO.getUserEmail());
+			
 			isParticipation = boardService.isParticipation(boardNum, uVO.getUserEmail());  //참여내역 넘기기
 		}
+		mv.addObject("isLike", isLike);
 		mv.addObject("isParticipation",isParticipation);
 		
 		
@@ -200,11 +205,14 @@ public class BoardController {
 	
 	@RequestMapping(value ="/board/like", method = RequestMethod.POST)
 	@ResponseBody
-	public int likePost(LikeVO lVO){
-	    System.out.println("lVO는 요거요거"+lVO);
-	    boardService.addLike(lVO);
-	    
-	    return 0;
+	public Map<String,String> likePost(LikeVO lVO){
+		Map map = new HashMap<String, String>();
+		
+		boardService.addLike(lVO);
+	   
+		
+	    return map;	//보낼것이 없으면 어떻게 해?
+	   
 	}
 	
 	
