@@ -209,9 +209,8 @@ public class BoardController {
 		Map map = new HashMap<String, String>();
 		
 		boardService.addLike(lVO);
-	   
-		
-	    return map;	//보낼것이 없으면 어떻게 해?
+		map.put("data", true);
+	    return map;
 	   
 	}
 	

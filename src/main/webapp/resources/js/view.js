@@ -78,7 +78,7 @@ $(document).ready(function(){
 		        url:"/portfolio/board/like",
 		        dataType:"json",
 		        success : function(data){
-		            console.log(data);
+		            true;
 		        }
 
 		    });
