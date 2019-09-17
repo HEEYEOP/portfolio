@@ -8,7 +8,7 @@ $(document).ready(function(){
 		//console.log($('input[name=myChoice]').val() % 2);
 		$('.viewVS_res_myChoice').attr('style','left:15px');
 	}else{
-		console.log($('input[name=myChoice]').val() % 2);
+		//console.log($('input[name=myChoice]').val() % 2);
 		$('.viewVS_res_myChoice').attr('style','right:10px')
 	}
 	
@@ -74,12 +74,47 @@ $(document).ready(function(){
 		    });*/
 		}
 		
-		//
-		
-		
-		
-		
 	});
+	
+	
+	
+	// 찬/반형 투표결과 %에 따른 결과 보여주기
+	var jointotal = parseInt( $('input[name=calc_Total]').val() );
+	console.log("분모값"+jointotal);
+	var yesNum = parseInt( $('input[name=yesNum]').val() );
+	var noNum = parseInt( $('input[name=noNum]').val() );
+	console.log("찬성값"+yesNum);
+	console.log("반대값"+noNum);
+	
+	var yesWidth = parseFloat((yesNum / jointotal) * 100);
+	var noWidth = 100 - yesWidth;
+	console.log("찬성%"+yesWidth);
+	console.log("반대%"+noWidth);
+	
+	if(yesWidth == 0){
+		$('.viewVS_res_graphBox2').attr('style','width:'+yesWidth+'%; border: 10px solid #288fb4;');
+	}else{
+		$('.viewVS_res_graphBox2').attr('style','width:'+yesWidth+'%;');
+	}
+	
+	$('.partiNum_Yes').html(yesNum+'명'+'('+yesWidth+'%)');
+	$('.partiNum_No').html(noNum+'명'+'('+noWidth+'%)');
+	
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

@@ -67,6 +67,7 @@
 								<div class="viewVS_res_totalNum">
 									ÃÑ Âü¿©ÀÎ¿ø
 									<strong>${yes.totalNum + no.totalNum}</strong>
+									<input type="hidden" name="calc_Total" value="${yes.totalNum + no.totalNum}">
 									<strong>¸í</strong> 
 								</div>
 								<div class="viewVS_res_date">
@@ -96,7 +97,9 @@
 								
 								<div class="viewVS_res_graphBoxPartiNum">
 									<div class="partiNum_Yes">${yes.totalNum}¸í(50.0%)</div>
+									<input type="hidden" name="yesNum" value="${yes.totalNum}">
 									<div class="partiNum_No">${no.totalNum}¸í(50.0%)</div>
+									<input type="hidden" name="noNum" value="${no.totalNum}">
 								</div>
 						
 							</div>
@@ -209,7 +212,7 @@
 				<!-- ´ñ±Ûµé¶õ -->
 				<div class="commentsBox"> 
 					<div class="commentsHeader">
-						<span>ÃÑ ${commentListSize}°ÇÀÇ ´ñ±Û</span>
+						<span style="color: #ff5f4d; font-weight:800">ÃÑ ${commentListSize}°ÇÀÇ ´ñ±Û</span>
 					</div>
 					<ul style="list-style: none;">
 						<li>

@@ -39,12 +39,12 @@
 								<li class="step">
 									<img src="https://www1.president.go.kr/img/ans_icon1.png">
 									<p>설문시작일</p>
-									<p>[${board.registrationDate}]</p>
+									<p>[${board.registrationDate2}]</p>
 								</li>
 								<li class="step">
 									<img src="https://www1.president.go.kr/img/ans_icon2.png">
 									<p>설문종료일</p>
-									<p>[${board.boardDeadline}]</p>
+									<p>[${board.boardDeadline2}]</p>
 								</li>
 								
 								<li class="step">
