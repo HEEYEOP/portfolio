@@ -71,16 +71,14 @@ public class BoardController {
 									 * BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile
 									 * mainFile,
 									 */
-									String[] questionType, String[] isEssential, String[] surveyContents, String[] QcntArray )
+						String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents)
 			throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
 		
-		/*이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐*/
+		/*이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐
 		System.out.println("질문갯수_배열생성");
-		for(String tmp : QcntArray) {
-			System.out.println("["+tmp+"]");
-		}
+		System.out.println(QcntArray); 출력 ---  ex) 2,1
 		
 		System.out.println("질문타입");
 		for(String tmp : questionType) {
@@ -94,6 +92,7 @@ public class BoardController {
 		for(String tmp : surveyContents) {
 			System.out.println("["+tmp+"]");
 		}
+		*/
 		
 		
 		

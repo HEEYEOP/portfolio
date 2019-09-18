@@ -118,16 +118,16 @@
 						
 						<div class="QplusAddButton">
 								<div class="Qs">
+								<input name="QcntArray" type="text" >
 								
-			<!-- 여기 -->				
-								
+							
 								
 									<!-- --------------------------질문1 ------------------------->
 									<div class="QBox">
 										<input type="text"  name="inputNum" value="1">
 										<div class="que">
 											<label class="redLabel">질문1</label> 
-			<!-- 여기 -->						<input name="surveyContents" type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">
+											<input name="surveyContents" type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">
 											<a class="QdeleteButton">
 												삭제
 												<i class="fa fa-times-circle"></i>
@@ -135,7 +135,7 @@
 										</div>
 										
 										<div class="queTypeBox">
-			<!-- 여기 -->						<input name="questionType">
+											<input name="questionType">
 											<select name="queType" class="queType">
 												<option>질문형태</option>
 												<option value="TypeChoiceOne">객관식(단일선택)</option>
@@ -145,7 +145,7 @@
 											</select>
 											
 											
-			<!-- 여기 -->						<input name="isEssential">
+											<input name="isEssential">
 											<select name="isRequired" class="queType isRequired">
 												<option value="is">필수여부</option>
 												<option value="required">필수</option>

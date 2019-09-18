@@ -180,17 +180,8 @@ $(document).ready(function(){
     	}
     	console.log(QcntArray);
     	//잘넘어오는거 확인했고, 제출 버튼 누를 때 같이 넘겨보내줘야겠어!!
-    	$.ajax({
-    	        async:false,
-    	        type:'POST',
-    	        traditional : true, 
-    	        data:{'QcntArray':QcntArray},
-    	        url:"/portfolio/board/writing",
-    	        dataType:"json",
-    	        success : function(data){
-    	            //console.log(data);
-    	        }
-    	 });
+    	
+    	$('input[name=QcntArray]').val(QcntArray);
     	
     	$('form[name=boardForm]').submit();
     	
