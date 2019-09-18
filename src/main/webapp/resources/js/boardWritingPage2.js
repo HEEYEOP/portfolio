@@ -114,8 +114,6 @@ $(document).ready(function(){
     });
     
     
-    
- 
     //배열생성 확인해보기
     $('button[name=aaabbb]').click(function(){
     	var Qcnt = $('.Qs .QBox').length;
@@ -127,7 +125,9 @@ $(document).ready(function(){
     		//console.log("질문갯수"+i+"번째"+Acnt);
     		QcntArray[i] = Acnt;
     	}
-    	//console.log(QcntArray);
+    	console.log(QcntArray);
+    	
+    	//잘넘어오는거 확인했고, 제출 버튼 누를 때 같이 넘겨보내줘야겠어!!
     	
     });
     
@@ -237,6 +237,7 @@ function Qcode(){
 	html += '	</div>';
 	
 	html += '	<div class="queTypeBox">';
+	html += '		<input name="questionType">'
 	html += '		<select name="queType" class="queType">';
 	html += '			<option>질문형태</option>';
 	html += '			<option value="TypeChoiceOne">객관식(단일선택)</option>';
@@ -330,6 +331,8 @@ function queTypeChange(){
 		//console.log(index);
 		$('.QBox').eq(index-1).find('select[name=isRequired]').val('is');
 		$('.QBox').eq(index-1).find('select[name=isRequired]').change();
+		var val = $(this).val();
+		$('.QBox').eq(index-1).find('input[name=questionType]').val(val);
 	});
 	
 }

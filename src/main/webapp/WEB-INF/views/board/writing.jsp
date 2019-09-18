@@ -117,68 +117,71 @@
 						</div>
 						
 						<div class="QplusAddButton">
-							<div class="Qs">
-							
-							
-							
-							
-								<!-- --------------------------질문1 ------------------------->
-								<div class="QBox">
-									<input type="text"  name="inputNum" value="1">
-									<div class="que">
-										<label class="redLabel">질문1</label>
-										<input type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">
-										<a class="QdeleteButton">
-											삭제
-											<i class="fa fa-times-circle"></i>
-										</a>
-									</div>
-									
-									<div class="queTypeBox">
-										<select name="queType" class="queType">
-											<option>질문형태</option>
-											<option value="TypeChoiceOne">객관식(단일선택)</option>
-											<option value="TypeChoiceTwo">객관식(복수선택)</option>
-											<option value="TypeBranch">분기형(하위질문)</option>
-											<option value="TypeScale">척도형</option>
-										</select>
-										
-										
-										
-										<select name="isRequired" class="queType isRequired">
-											<option value="is">필수여부</option>
-											<option value="required">필수</option>
-											<option value="NotRequired">필수아님</option>
-										</select>
-										
-										
-										<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">
-										
-										<select name="TypeScaleVal" class="queType displayNone">
-											<option value="-1">항목수선택</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select>
-										
-										
-										
-										
-										<div class="addQueButton displayNone">
-											질문1의 보기추가
-											<i class="fa fa-plus-circle"></i>
+							<form action="<%=request.getContextPath()%>/board/writing2" method="post">
+								<div class="Qs">
+								
+			<!-- 여기 -->				
+								
+								
+									<!-- --------------------------질문1 ------------------------->
+									<div class="QBox">
+										<input type="text"  name="inputNum" value="1">
+										<div class="que">
+											<label class="redLabel">질문1</label> 
+			<!-- 여기 -->						<input name="surveyContents" type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">
+											<a class="QdeleteButton">
+												삭제
+												<i class="fa fa-times-circle"></i>
+											</a>
 										</div>
-									</div>
-									
-									<div class="answerBoxSpot">
-										<!-- 여기에 추가한다고 생각하고 -->
 										
+										<div class="queTypeBox">
+			<!-- 여기 -->						<input name="questionType">
+											<select name="queType" class="queType">
+												<option>질문형태</option>
+												<option value="TypeChoiceOne">객관식(단일선택)</option>
+												<option value="TypeChoiceTwo">객관식(복수선택)</option>
+												<option value="TypeBranch">분기형(하위질문)</option>
+												<option value="TypeScale">척도형</option>
+											</select>
+											
+											
+			<!-- 여기 -->						<input name="isEssential" value="">
+											<select name="isRequired" class="queType isRequired">
+												<option value="is">필수여부</option>
+												<option value="required">필수</option>
+												<option value="NotRequired">필수아님</option>
+											</select>
+											
+											
+											<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">
+											
+											<select name="TypeScaleVal" class="queType displayNone">
+												<option value="-1">항목수선택</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+											
+											
+											
+											
+											<div class="addQueButton displayNone">
+												질문1의 보기추가
+												<i class="fa fa-plus-circle"></i>
+											</div>
+										</div>
+										
+										<div class="answerBoxSpot">
+											<!-- 여기에 추가한다고 생각하고 -->
+											
+										</div>
+										
+						
 									</div>
-									
-					
+									<!-- ------------------------질문 1끝---------------------- -->
 								</div>
-								<!-- ------------------------질문 1끝---------------------- -->
-							</div>
+							</form>
 							
 							
 							

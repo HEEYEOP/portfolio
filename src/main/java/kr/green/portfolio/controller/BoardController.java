@@ -101,6 +101,38 @@ public class BoardController {
 		
 		 return "redirect:/main/home";
 	}
+	/*
+	 * //하위 추가 질문들 잘 넘어오는지 확인하기 위해 메소드를 하나 더 만들었고, 이게 잘 될 경우 위에 writing 포스트랑 합칠꺼얌
+	 * 
+	 * @RequestMapping(value="/board/writing2", method = RequestMethod.POST) public
+	 * String boardWriting2Post() {
+	 * 
+	 * return "";
+	 * 
+	 * }
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping(value="/board/fieldBoard")
 	public ModelAndView fieldBoard(ModelAndView mv) throws Exception{
