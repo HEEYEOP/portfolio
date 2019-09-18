@@ -67,12 +67,8 @@ public class BoardController {
 	
 
 	@RequestMapping(value = "/board/writing", method = RequestMethod.POST)
-	public String boardWritingPost(/*
-									 * BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile
-									 * mainFile,
-									 */
-						String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents)
-			throws IOException, Exception {
+	public String boardWritingPost(BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile mainFile,
+									 String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents) throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
 		
@@ -95,37 +91,41 @@ public class BoardController {
 		*/
 		
 		
+		/* System.out.println("내가 작성한 게시물 : " + bVO); */
+		int boardNum = boardService.addBoard(bVO);
+		
+		if(vsContents != null) {
+			boardService.addVsType(boardNum ,vsContents);
+		}
+		if(QcntArray != "") {
+			
+		}
 		
 		
-		
-		
-		/*
-		 * System.out.println("내가 작성한 게시물 : " + bVO); int boardNum =
-		 * boardService.addBoard(bVO);
-		 * 
-		 * if(vsContents != null) { boardService.addVsType(boardNum ,vsContents); }
-		 * 
-		 * 
-		 * 
-		 * 
-		 * //파일업로드 기능 -----------------이거 서비스로 뺐으면 좋겠는데, 나중에생각해보기 if(boardNum != -1) {
-		 * 
-		 * //첨부파일(다중파일) 업로드 for(MultipartFile tmp : fileTitle) {
-		 * if(tmp.getOriginalFilename().length() != 0) { String file =
-		 * UploadFileUtils.uploadFile(uploadPath, tmp.getOriginalFilename(),
-		 * tmp.getBytes()); FileVO files = new FileVO();
-		 * files.setFileBoardNum(boardNum); files.setFileTitle(file);
-		 * files.setIsMainImg("N"); boardService.addFile(files); } }
-		 * 
-		 * //게시물메인이미지 첨부파일 업로드 String mainImg = UploadFileUtils.uploadFile(uploadPath,
-		 * mainFile.getOriginalFilename(), mainFile.getBytes()); FileVO file = new
-		 * FileVO(); file.setFileBoardNum(boardNum); file.setFileTitle(mainImg);
-		 * file.setIsMainImg("Y"); //이건 메인이지 일때만 해주는거 boardService.addFile(file); }
-		 * System.out.println("내가 방금전에 등록한 게시물의 번호는  "+boardNum);
-		 * 
-		 */
-
-		// 위에꺼 다 주석처리한다음에 한번에 풀어줄꺼야
+		//파일업로드 기능 -----------------이거 서비스로 뺐으면 좋겠는데, 나중에생각해보기 
+		if(boardNum != -1) {
+			
+			//첨부파일(다중파일) 업로드
+			for(MultipartFile tmp : fileTitle) {
+				if(tmp.getOriginalFilename().length() != 0) {
+					String file = UploadFileUtils.uploadFile(uploadPath, tmp.getOriginalFilename(), tmp.getBytes());
+					FileVO files = new FileVO();
+					files.setFileBoardNum(boardNum);
+					files.setFileTitle(file);
+					files.setIsMainImg("N");
+					boardService.addFile(files);
+				}
+			}
+			
+			//게시물메인이미지 첨부파일 업로드
+			String mainImg = UploadFileUtils.uploadFile(uploadPath, mainFile.getOriginalFilename(), mainFile.getBytes());
+			FileVO file = new FileVO();
+			file.setFileBoardNum(boardNum);
+			file.setFileTitle(mainImg);
+			file.setIsMainImg("Y"); //이건 메인이지 일때만 해주는거
+			boardService.addFile(file);
+		}
+		/* System.out.println("내가 방금전에 등록한 게시물의 번호는  "+boardNum); */
 
 		return "redirect:/main/home";
 	}
