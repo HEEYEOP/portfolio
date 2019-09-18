@@ -9,6 +9,7 @@ public class surveyTypeVO {
 	private String surveyContents;
 	private int depth;
 	private int parentsQ;
+	private int maxSelectNum;
 	private int totalNum;
 	
 	
@@ -54,17 +55,26 @@ public class surveyTypeVO {
 	public void setParentsQ(int parentsQ) {
 		this.parentsQ = parentsQ;
 	}
+	public int getMaxSelectNum() {
+		return maxSelectNum;
+	}
+	public void setMaxSelectNum(int maxSelectNum) {
+		this.maxSelectNum = maxSelectNum;
+	}
 	public int getTotalNum() {
 		return totalNum;
 	}
 	public void setTotalNum(int totalNum) {
 		this.totalNum = totalNum;
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "surveyTypeVO [surveyTypeNum=" + surveyTypeNum + ", surveyTypeBoardNum=" + surveyTypeBoardNum
 				+ ", questionType=" + questionType + ", isEssential=" + isEssential + ", surveyContents="
-				+ surveyContents + ", depth=" + depth + ", parentsQ=" + parentsQ + ", totalNum=" + totalNum + "]";
+				+ surveyContents + ", depth=" + depth + ", parentsQ=" + parentsQ + ", maxSelectNum=" + maxSelectNum
+				+ ", totalNum=" + totalNum + "]";
 	}
 	
 	

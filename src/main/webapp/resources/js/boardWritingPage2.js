@@ -253,7 +253,7 @@ function Qcode(){
 	html += '			<option value="NotRequired">필수아님</option>';
 	html += '		</select>';
 	
-	html += '		<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">';
+	html += '		<input name="maxSelectNum" class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">';
 	
 	html += '		<select name="TypeScaleVal" class="queType displayNone">';
 	html += '			<option value="-1">항목수선택</option>';
@@ -413,7 +413,7 @@ function addAnswer(){
 		html += '	<input type="text"  name="AnsNum" value="1">';
 		html += '	<div class="answer">';
 		html += '		<label class="redLabel">'+1+'</label>';
-		html += '		<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문'+index+'에 대한 보기내용을 적어주세요.(300자이내)">';
+		html += '		<input name="surveyContents" class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="질문'+index+'에 대한 보기내용을 적어주세요.(300자이내)">';
 		html += '		<a class="AnsDeleteButton">';
 		html += '			삭제';
 		html += '			<i class="fa fa-times-circle"></i>';

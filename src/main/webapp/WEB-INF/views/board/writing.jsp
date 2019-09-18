@@ -146,7 +146,7 @@
 											</select>
 											
 											
-			<!-- 여기 -->						<input name="isEssential" value="">
+			<!-- 여기 -->						<input name="isEssential">
 											<select name="isRequired" class="queType isRequired">
 												<option value="is">필수여부</option>
 												<option value="required">필수</option>
@@ -154,8 +154,8 @@
 											</select>
 											
 											
-											<input class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">
-											
+											<input name="maxSelectNum" class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">
+										
 											<select name="TypeScaleVal" class="queType displayNone">
 												<option value="-1">항목수선택</option>
 												<option value="3">3</option>
