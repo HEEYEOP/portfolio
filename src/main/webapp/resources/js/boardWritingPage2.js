@@ -114,8 +114,32 @@ $(document).ready(function(){
     });
     
     
-    //배열생성 확인해보기
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //배열생성 확인해보기
+    /*
     $('button[name=aaabbb]').click(function(){
     	var Qcnt = $('.Qs .QBox').length;
     	//console.log(Qcnt);
@@ -129,17 +153,77 @@ $(document).ready(function(){
     	console.log(QcntArray);
     	//잘넘어오는거 확인했고, 제출 버튼 누를 때 같이 넘겨보내줘야겠어!!
     	$.ajax({
-    	        async:true,
+    	        async:false,
     	        type:'POST',
-    	        data:QcntArray,
+    	        traditional : true, 
+    	        data:{'QcntArray':QcntArray},
     	        url:"/portfolio/board/writing",
     	        dataType:"json",
-    	        contentType:"application/json; charset=UTF-8",
     	        success : function(data){
     	            console.log(data);
     	        }
-    	    });
+    	 });
     });
+    */
+    
+    
+    //게시물 제출버튼 누르면 배열 생성하고 넘기기
+    $('#submitBtn').click(function(){
+    	var Qcnt = $('.Qs .QBox').length;
+    	//console.log(Qcnt);
+    	var QcntArray = new Array(Qcnt);
+    	//console.log(QcntArray);
+    	for(var i=0; i<Qcnt; i++){
+    		var Acnt = $('.QBox .answerBoxSpot').eq(i).find('.answerBox').length;
+    		//console.log("질문갯수"+i+"번째"+Acnt);
+    		QcntArray[i] = Acnt;
+    	}
+    	console.log(QcntArray);
+    	//잘넘어오는거 확인했고, 제출 버튼 누를 때 같이 넘겨보내줘야겠어!!
+    	$.ajax({
+    	        async:false,
+    	        type:'POST',
+    	        traditional : true, 
+    	        data:{'QcntArray':QcntArray},
+    	        url:"/portfolio/board/writing",
+    	        dataType:"json",
+    	        success : function(data){
+    	            //console.log(data);
+    	        }
+    	 });
+    	
+    	$('form[name=boardForm]').submit();
+    	
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

@@ -234,10 +234,6 @@
 							
 							<!-- 아래로문제없음----------------------------------------------------- -->
 							
-							<!-- 지금 이 버튼을 배열 생성을 확인해보이기위해 임시적으로 만든 버튼이야. 삭제할꺼야 -->
-							<button type="button" name="aaabbb">배열 생성을 확인해보기 위한 버튼</button>
-							
-							
 							<!-- 큰질문박스 추가버튼 -->
 							<div class="addButton">
 								<a style="text-decoration:none; color:black;">
@@ -327,7 +323,7 @@
 						<!-- 이전단계/작성하기 버튼란 -->
 						<div class="buttonsBox" style="border-top :none; margin-top : 30px;">
 							<a class="btn cancel" href="<%=request.getContextPath()%>/board/write">이전단계로</a>
-							<button type="submit" style="border:none; background:none;">
+							<button type="button" id="submitBtn" style="border:none; background:none;">
 								<a class="btn next" style="color: white;">다음단계로
 									<i class="fa fa-chevron-right"></i>
 								</a>
