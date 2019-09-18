@@ -65,9 +65,7 @@ $(document).ready(function(){
 	//동일파일 이어서 등록안됌. 어떠한 알람창도 띄우지 않았음. 이거해결할 것
 	//근데 동일 파일 이어서 등록되던데, 다시 한번 체크해보기
 	
-	
-		
-	
+
 	/*서브타입 클릭했을 때,  버튼에 체크표시 띄우기*/
 	$('.ttl .forTypeCheck').click(function(){
 		$('.ttl .forTypeCheck').find('i').each(function(){
@@ -95,38 +93,14 @@ $(document).ready(function(){
 	
 
 	//------------------------------설문 추가 기능들-----------------------------
-   /*
-    //질문타입이 척도형일때 보여줘야하는 기능
-    $('select[name=TypeScaleVal]').change(function(){
-    	
-    	var cnt = $(this).val(); 
-    	var textArr = new Array();
-    	if(cnt == '3'){
-    		textArr =['나쁨','보통','좋음'];
-    	}else if(cnt == '4'){
-    		textArr =['매우나쁨','나쁨','좋음','매우좋음'];
-    	}else if(cnt == '5'){
-    		textArr =['매우나쁨','나쁨','보통','좋음','매우좋음'];
-    	}
-    	
-    	var html ='';
-    	for(var i=0; i<cnt; i++){
-    		html += '<div class="answerBox">';
-    		html += '<div class="answer">';
-    		html += '<label class="redLabel">'+(i+1)+'</label>';
-    		html += '<input class="Qtext" style="margin: 0px 0px 5px 55px;" placeholder="'+textArr[i]+'">';
-    		html += '</div>';
-    		html += '</div>';
-    	}
-    	console.log(html);
-    	$(this).parents('.QBox').find('.answerBoxSopt').html(html); 
-    	//$('.answerBoxSpot').html(html); //이건 됨
-    	
-    });
-    
-    */
-    
-   
+	
+	//처음에 만들어져있는 질문을 위한 이벤트 등록//
+    deleteQ();
+    queTypeChange();
+    isRequiredChange();
+    TypeScaleValChange();
+    addAnswer();
+
     $('.addButton').click(function(){
     	$('.Qs').append(Qcode());
     	
@@ -140,29 +114,23 @@ $(document).ready(function(){
     });
     
     
-    //처음에 만들어져있는 질문을 위한 이벤트 등록//
-    deleteQ();
-    queTypeChange();
-    isRequiredChange();
-    TypeScaleValChange();
-    addAnswer();
     
  
+    //배열생성 확인해보기
+    $('button[name=aaabbb]').click(function(){
+    	var Qcnt = $('.Qs .QBox').length;
+    	//console.log(Qcnt);
+    	var QcntArray = new Array(Qcnt);
+    	//console.log(QcntArray);
+    	for(var i=0; i<Qcnt; i++){
+    		var Acnt = $('.QBox .answerBoxSpot').eq(i).find('.answerBox').length;
+    		//console.log("질문갯수"+i+"번째"+Acnt);
+    		QcntArray[i] = Acnt;
+    	}
+    	//console.log(QcntArray);
+    	
+    });
     
-    
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	/*참여기간 버튼을 통해서 값 입력받기 */
 	$('.sel1 .forTypeCheck').click(function(){
@@ -177,7 +145,14 @@ $(document).ready(function(){
 		$('input[name=periodValue]').change();
 	});
 	
-    /*기간 설정버튼에 대한 함수들과 기간설정 기능*/
+    
+	
+	
+	
+	/*아래로 문제 없음--------------------------------------------*/
+
+	
+	/*기간 설정버튼에 대한 함수들과 기간설정 기능*/
 	
 	//달력 플러그인
 	$('#testDatepicker').datepicker({
@@ -245,7 +220,7 @@ $(document).ready(function(){
 }); //document.ready()--------------------------------------
 
 
-
+/*----------------------------함수들----------------------------*/
 function Qcode(){
 	var index = $('.Qs .QBox').length + 1;
 	var html ='';
@@ -331,14 +306,13 @@ function updateInputNum(){
 		$(this).val(cnt++);
 	});
 }
-//질문1의보기추가 버튼에 index를 바꿔주는 작업
+//'질문1의보기추가' 버튼에 index를 바꿔주는 작업
 function updateAddQueBtnNum(){
 	var cnt = 1;
 	$('.QBox .addQueButton').each(function(){
 		$(this).html('질문'+(cnt++)+'의 보기추가 <i class="fa fa-plus-circle"></i>');
 	});
 }
-
 //보기란을 1,2,3 ... 번으로 맞추는 함수
 function updateAnswerNum(obj){
 	var cnt = 1;
@@ -348,14 +322,6 @@ function updateAnswerNum(obj){
 		cnt++;
 	});
 }
-
-
-
-
-
-
-
-
 
 //질문타입이 변경되었을때, 필수여부를 기본값으로 변경하는 기능
 function queTypeChange(){
@@ -508,7 +474,7 @@ function deleteAns(){
 
 
 
-//--------------------------------------------함수---------------------------------------------//
+//--------------------------------------------함수(밑에꺼 이전에 작업한것으로 다 지울것임)---------------------------------------------//
 
 
 

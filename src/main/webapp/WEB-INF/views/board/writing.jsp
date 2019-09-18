@@ -163,6 +163,7 @@
 										
 										
 										
+										
 										<div class="addQueButton displayNone">
 											질문1의 보기추가
 											<i class="fa fa-plus-circle"></i>
@@ -226,10 +227,12 @@
 							
 							
 							
-							
+							 
 							
 							
 							<!-- 아래로문제없음----------------------------------------------------- -->
+							<!-- 지금 이 버튼을 배열 생성을 확인해보이기위해 임시적으로 만든 버튼이야. 삭제할꺼야 -->
+							<button type="button" name="aaabbb">배열 생성을 확인해보기 위한 버튼</button>
 							
 							<!-- 큰질문박스 추가버튼 -->
 							<div class="addButton">
