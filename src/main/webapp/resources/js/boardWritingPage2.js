@@ -246,6 +246,7 @@ function Qcode(){
 	html += '			<option value="TypeScale">척도형</option>';
 	html += '		</select>';
 	
+	html += '		<input name="isEssential">';
 	html += '		<select name="isRequired" class="queType isRequired">';
 	html += '			<option value="is">필수여부</option>';
 	html += '			<option value="required">필수</option>';
@@ -343,7 +344,11 @@ function isRequiredChange(){
 		
 		var index = $(this).parents('.QBox').find('input[name=inputNum]').val();
     	//console.log(index);
-    	
+		
+		var thisVal =$(this).val();
+		$('.QBox').eq(index-1).find('input[name=isEssential]').val(thisVal);
+		
+		
 		$('.QBox').eq(index-1).find('.answerBoxSpot').html('');
 		
 		var val = $('.QBox').eq(index-1).find('select[name=isRequired]').val();
