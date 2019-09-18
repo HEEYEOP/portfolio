@@ -1,6 +1,7 @@
 package kr.green.portfolio.controller;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -58,18 +59,36 @@ public class BoardController {
 		mv.setViewName("/board/writing");
 		return mv;
 	}
+	//------------------------------------위에꺼 멀쩡함--------------------------
+	
+	
+	
+	
+	
 
 	@RequestMapping(value = "/board/writing", method = RequestMethod.POST)
 	public String boardWritingPost(/*
 									 * BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile
 									 * mainFile,
 									 */
-									String[] questionType)
+									String[] questionType, String[] isEssential, String[] surveyContents)
 			throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
+		
+		
+		/*이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐*/
+		
 		for(String tmp : questionType) {
+			System.out.println("질문타입"+tmp);
+		}
+		for(String tmp : isEssential) {
+			System.out.println("필수여부"+tmp);
+		}
+		for(String tmp : surveyContents) {
 			System.out.println(tmp);
 		}
+		
+		
 		
 		
 		
@@ -104,6 +123,38 @@ public class BoardController {
 
 		return "redirect:/main/home";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//밑에꺼 멀쩡함-----------------------------------------------------
+	
+	
+	
+	
 
 	@RequestMapping(value = "/board/fieldBoard")
 	public ModelAndView fieldBoard(ModelAndView mv) throws Exception {

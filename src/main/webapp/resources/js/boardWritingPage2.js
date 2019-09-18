@@ -115,6 +115,7 @@ $(document).ready(function(){
     
     
     //배열생성 확인해보기
+    
     $('button[name=aaabbb]').click(function(){
     	var Qcnt = $('.Qs .QBox').length;
     	//console.log(Qcnt);
@@ -127,10 +128,28 @@ $(document).ready(function(){
     	}
     	console.log(QcntArray);
     	//잘넘어오는거 확인했고, 제출 버튼 누를 때 같이 넘겨보내줘야겠어!!
-    	
+    	$.ajax({
+    	        async:true,
+    	        type:'POST',
+    	        data:QcntArray,
+    	        url:"/portfolio/board/writing",
+    	        dataType:"json",
+    	        contentType:"application/json; charset=UTF-8",
+    	        success : function(data){
+    	            console.log(data);
+    	        }
+    	    });
     });
     
-	
+    
+    
+    
+    
+    
+    
+    
+    /*아래로 문제 없음--------------------------------------------*/
+    
 	/*참여기간 버튼을 통해서 값 입력받기 */
 	$('.sel1 .forTypeCheck').click(function(){
 		$('.sel1 .forTypeCheck').find('i').each(function(){
@@ -145,11 +164,6 @@ $(document).ready(function(){
 	});
 	
     
-	
-	
-	
-	/*아래로 문제 없음--------------------------------------------*/
-
 	
 	/*기간 설정버튼에 대한 함수들과 기간설정 기능*/
 	
@@ -228,7 +242,7 @@ function Qcode(){
 	html += '	<input type="text"  name="inputNum" value="'+index+'">';
 	html += '	<div class="que">';
 	html += '		<label class="redLabel">질문'+index+'</label>';
-	html += '		<input type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">';
+	html += '		<input name="surveyContents" type="text" class="Qtext QtextDeco" placeholder="질문을 입력해주세요.(300자이내)">';
 	html += '		<a class="QdeleteButton">';
 	html += '			삭제';
 	html += '			<i class="fa fa-times-circle"></i>';

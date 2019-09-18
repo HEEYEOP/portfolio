@@ -18,7 +18,7 @@
 <div id="writingBody">
 	<div class="innerBody">
 		<div class="bigBox">
-			<form action="<%=request.getContextPath()%>/board/writing" method="post" enctype="multipart/form-data">
+			<form action="<%=request.getContextPath()%>/board/writing" method="post" enctype="multipart/form-data" name="boardForm">
 				<div class="boxHD">
 					<h3>새로운 생각을 등록해주세요</h3>
 					<p>다양한 사람들의 의견을 들어보고싶은 주제를 작성해주세요</p>
