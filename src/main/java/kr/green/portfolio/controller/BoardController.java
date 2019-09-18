@@ -68,7 +68,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/board/writing", method = RequestMethod.POST)
 	public String boardWritingPost(BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile mainFile,
-									 String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents) throws IOException, Exception {
+									 String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents, Integer[] maxSelectNum) throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
 		
@@ -98,6 +98,9 @@ public class BoardController {
 			boardService.addVsType(boardNum ,vsContents);
 		}
 		if(QcntArray != "") {
+			//여기 컨트롤러에서는 간단하게 add서비스만 시키고, 매개변수로 넘어온값들을 다 서비스로 넘겨서 서비스에서 기능을 구현하려고 함
+			//boardService.addSurveyType(boardNum,QcntArray,questionType,isEssential,surveyContents);
+			
 			
 		}
 		
