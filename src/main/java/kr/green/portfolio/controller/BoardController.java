@@ -73,7 +73,7 @@ public class BoardController {
 		
 		
 		/* System.out.println("내가 작성한 게시물 : " + bVO); */
-		int boardNum = boardService.addBoard(bVO);
+		int boardNum = boardService.addBoard(bVO);	//게시물 넣을때, 게시물타입에 따라서 deadline을 넣을지 말지 따로 나눠서 생각해줘야함, service에서 타입 나눠서 일 처리하기 
 		
 		if(vsContents != null) {
 			boardService.addVsType(boardNum ,vsContents);

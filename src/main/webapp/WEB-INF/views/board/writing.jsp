@@ -137,7 +137,7 @@
 										<div class="queTypeBox">
 											<input name="questionType">
 											<select name="queType" class="queType">
-												<option>질문형태</option>
+												<option value="">질문형태</option>
 												<option value="TypeChoiceOne">객관식(단일선택)</option>
 												<option value="TypeChoiceTwo">객관식(복수선택)</option>
 												<option value="TypeBranch">분기형(하위질문)</option>
