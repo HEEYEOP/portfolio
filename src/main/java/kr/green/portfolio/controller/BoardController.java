@@ -72,25 +72,6 @@ public class BoardController {
 		logger.info("작성한 게시물 넘기는 중");
 		
 		
-		/*이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐
-		System.out.println("질문갯수_배열생성");
-		System.out.println(QcntArray); 출력 ---  ex) 2,1
-		
-		System.out.println("질문타입");
-		for(String tmp : questionType) {
-			System.out.println("["+tmp+"]");
-		}
-		System.out.println("필수여부");
-		for(String tmp : isEssential) {
-			System.out.println("["+tmp+"]");
-		}
-		System.out.println("질문및보기내용");
-		for(String tmp : surveyContents) {
-			System.out.println("["+tmp+"]");
-		}
-		*/
-		
-		
 		/* System.out.println("내가 작성한 게시물 : " + bVO); */
 		int boardNum = boardService.addBoard(bVO);
 		
@@ -98,9 +79,28 @@ public class BoardController {
 			boardService.addVsType(boardNum ,vsContents);
 		}
 		if(QcntArray != "") {
+			
+			
+			/*이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐
+			System.out.println("질문갯수_배열생성");
+			System.out.println(QcntArray); 출력 ---  ex) 2,1
+			
+			System.out.println("질문타입");
+			for(String tmp : questionType) {
+				System.out.println("["+tmp+"]");
+			}
+			System.out.println("필수여부");
+			for(String tmp : isEssential) {
+				System.out.println("["+tmp+"]");
+			}
+			System.out.println("질문및보기내용");
+			for(String tmp : surveyContents) {
+				System.out.println("["+tmp+"]");
+			}
+			*/
+			
 			//여기 컨트롤러에서는 간단하게 add서비스만 시키고, 매개변수로 넘어온값들을 다 서비스로 넘겨서 서비스에서 기능을 구현하려고 함
 			//boardService.addSurveyType(boardNum,QcntArray,questionType,isEssential,surveyContents);
-			
 			
 		}
 		

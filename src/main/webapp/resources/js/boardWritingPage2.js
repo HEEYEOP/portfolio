@@ -115,7 +115,7 @@ $(document).ready(function(){
     
     
     
-    
+    //위로 문제 없음-------------------------------------------------
     
     
     
@@ -167,22 +167,43 @@ $(document).ready(function(){
     */
     
     
-    //게시물 제출버튼 누르면 배열 생성하고 넘기기
+    //게시물 제출버튼 누르면 제출하기전 유효성 검사 및 질문갯수 배열 생성하고 넘기기
     $('#submitBtn').click(function(){
+    	if($('input[name=boardTitle]').val() == ''){
+    		alert('제목을 입력해주세요');
+    		return;
+    	}
+    	if($('textarea[name=boardContents]').val() == ''){
+    		alert('내용을 입력해주세요');
+    		return;
+    	}
+    	if($('#vs i').hasClass('displayNone')== true && $('#survey i').hasClass('displayNone')== true ){
+    		alert('서브타입을 선택해주세요(!서브타입이 필요하지 않을 경우, 게시물 타입 선택에서 대화형_을 선택해주세요. )');
+    		return;
+    	}
+    	if($('input[name=boardFieldNum]').val() =='' ){
+    		alert('관련분야를 선택해주세요');
+    		return;
+    	}
+    	
+    	
+    	
+    	
+    	
+    	//질문 갯수에 따른 배열 생성
     	var Qcnt = $('.Qs .QBox').length;
-    	//console.log(Qcnt);
     	var QcntArray = new Array(Qcnt);
-    	//console.log(QcntArray);
     	for(var i=0; i<Qcnt; i++){
     		var Acnt = $('.QBox .answerBoxSpot').eq(i).find('.answerBox').length;
-    		//console.log("질문갯수"+i+"번째"+Acnt);
     		QcntArray[i] = Acnt;
     	}
-    	console.log(QcntArray);
-    	//잘넘어오는거 확인했고, 제출 버튼 누를 때 같이 넘겨보내줘야겠어!!
-    	
+    	console.log(QcntArray); //잘넘어오는거 확인했고, 제출 버튼 누를 때 같이 넘겨보내줘야겠어!!
     	$('input[name=QcntArray]').val(QcntArray);
     	
+    	
+    	
+    	
+    	//마지막에 검사를 모두 통과했을 경우, form 제출
     	$('form[name=boardForm]').submit();
     	
     });
