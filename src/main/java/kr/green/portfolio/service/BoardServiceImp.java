@@ -129,6 +129,7 @@ public class BoardServiceImp implements BoardService{
 			return ;
 		boardDao.insertComment(cVO);
 		boardDao.updateWriteCommentCount(cVO.getCommentUserEmail());
+		boardDao.updateCommentsCount(cVO.getCommentBoardNum());
 		
 	}
 

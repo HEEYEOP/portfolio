@@ -45,8 +45,10 @@ public interface BoardDAO {
 
 	void updateWriteCommentCount(String commentUserEmail);
 
+	void updateCommentsCount(int commentBoardNum);
+	
 	ArrayList<CommentVO> getCommentList(int boardNum);
-
+	
 	
 	//공감 관련-----------------------------------------------
 	LikeVO getLike(@Param("likeBoardNum")int likeBoardNum, @Param("likeUserEmail")String likeUserEmail);
@@ -62,6 +64,8 @@ public interface BoardDAO {
 	void updateLikesCount2(int likeBoardNum);
 
 	void updateLikesBoardCount2(String likeUserEmail);
+
+	
 
 	
 

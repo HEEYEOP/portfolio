@@ -69,6 +69,10 @@
 		update user set writeCommentCount = writeCommentCount+1 where userEmail = #{commentUserEmail}
 	</update>
 	
+	<update id="updateCommentsCount">
+		update board set updateCommentsCount = updateCommentsCount+1 where boardNum = #{commentBoardNum}
+	</update>
+	
 	<select id="getCommentList" resultType="kr.green.portfolio.vo.CommentVO">
 		select * from comment where commentBoardNum = #{boardNum} and display="Y" order by registrationDate desc
 	</select>
