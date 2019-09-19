@@ -230,23 +230,30 @@ public class BoardServiceImp implements BoardService{
 			
 			boardDao.insertSurveyType(sVO);
 			int parentsNum = boardDao.getParentsNum();
-			surveyTypeVO parentSurvey = boardDao.getParentSurvey(parentsNum); //가장 마지막에 삽입된 얘를 가져오면 그게 직전에 추가 시킨 부모질문.
-			System.out.println("방금 삽입한 부모의 객체를 가져와서 찍어보겠어"+ parentSurvey);
+			surveyTypeVO parentSurvey = boardDao.getParentSurvey(parentsNum); 
+			//System.out.println("직전에 DB에 저장한 부모질문 가져오기 "+ parentSurvey); //잘가져와짐
 			
 			
-			/*
 			if(cntArr[i] != null) {
 				int val = Integer.parseInt(cntArr[i]);
 				for(int j=0; j<val; j++) {
-					surveyTypeVO ssvo = new surveyTypeVO();
-					ssvo.set	//여기에다가 방금 직전에 추가한 부모 객체 가져와서 그 값들을 넣어줄 생각
+					
+					surveyTypeVO ssVO = new surveyTypeVO();
+					ssVO.setSurveyTypeBoardNum(parentSurvey.getSurveyTypeBoardNum());
+					ssVO.setQuestionType(parentSurvey.getQuestionType());
+					ssVO.setIsEssential(parentSurvey.getIsEssential());
+					ssVO.setSurveyContents(surveyContents[index++]); //여기 index++이 어떻게 동작하는지 생각해보기 //얘 잘넘어오는것 확인함
+					ssVO.setDepth(2);
+					ssVO.setParentsQ(parentSurvey.getSurveyTypeNum());
+					ssVO.setMaxSelectNum(parentSurvey.getMaxSelectNum());
+					
 					
 					
 				}
 				
 			}
 			
-			*/
+			
 			
 			
 			
