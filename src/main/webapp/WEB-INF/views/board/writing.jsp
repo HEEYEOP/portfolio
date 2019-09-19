@@ -153,7 +153,7 @@
 											</select>
 											
 											
-											<input name="maxSelectNum" class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">
+											<input name="maxSelectNum" class="queType displayNone" type="number" value="0" min="1" max="5" placeholder="복수선택갯수">
 										
 											<select name="TypeScaleVal" class="queType displayNone">
 												<option value="-1">항목수선택</option>

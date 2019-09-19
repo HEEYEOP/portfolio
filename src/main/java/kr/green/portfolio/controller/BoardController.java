@@ -68,11 +68,12 @@ public class BoardController {
 
 	@RequestMapping(value = "/board/writing", method = RequestMethod.POST)
 	public String boardWritingPost(BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile mainFile,
-									 String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents, Integer[] maxSelectNum) throws IOException, Exception {
+									 String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents, int[] maxSelectNum) throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
 		
 		/* System.out.println("내가 작성한 게시물 : " + bVO); */
+		
 		int boardNum = boardService.addBoard(bVO);	//게시물 넣을때, 게시물타입에 따라서 deadline을 넣을지 말지 따로 나눠서 생각해줘야함, service에서 타입 나눠서 일 처리하기 
 		
 		if(vsContents != null) {
@@ -80,53 +81,43 @@ public class BoardController {
 		}
 		if(QcntArray != "") {
 			
-			
-			/*이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐
-			System.out.println("질문갯수_배열생성");
-			System.out.println(QcntArray); 출력 ---  ex) 2,1
-			
-			System.out.println("질문타입");
-			for(String tmp : questionType) {
-				System.out.println("["+tmp+"]");
-			}
-			System.out.println("필수여부");
-			for(String tmp : isEssential) {
-				System.out.println("["+tmp+"]");
-			}
-			System.out.println("질문및보기내용");
-			for(String tmp : surveyContents) {
-				System.out.println("["+tmp+"]");
-			}
-			*/
-			
 			//여기 컨트롤러에서는 간단하게 add서비스만 시키고, 매개변수로 넘어온값들을 다 서비스로 넘겨서 서비스에서 기능을 구현하려고 함
-			//boardService.addSurveyType(boardNum,QcntArray,questionType,isEssential,surveyContents);
+			boardService.addSurveyType(boardNum,QcntArray,questionType,isEssential,surveyContents,maxSelectNum);
 			
 		}
 		
 		
 		//파일업로드 기능 -----------------이거 서비스로 뺐으면 좋겠는데, 나중에생각해보기 
 		if(boardNum != -1) {
-			
-			//첨부파일(다중파일) 업로드
-			for(MultipartFile tmp : fileTitle) {
-				if(tmp.getOriginalFilename().length() != 0) {
-					String file = UploadFileUtils.uploadFile(uploadPath, tmp.getOriginalFilename(), tmp.getBytes());
-					FileVO files = new FileVO();
-					files.setFileBoardNum(boardNum);
-					files.setFileTitle(file);
-					files.setIsMainImg("N");
-					boardService.addFile(files);
+			if(fileTitle != null) {
+				
+				
+				
+				//첨부파일(다중파일) 업로드
+				for(MultipartFile tmp : fileTitle) {
+					if(tmp.getOriginalFilename().length() != 0) {
+						String file = UploadFileUtils.uploadFile(uploadPath, tmp.getOriginalFilename(), tmp.getBytes());
+						FileVO files = new FileVO();
+						files.setFileBoardNum(boardNum);
+						files.setFileTitle(file);
+						files.setIsMainImg("N");
+						boardService.addFile(files);
+					}
 				}
+				
 			}
 			
-			//게시물메인이미지 첨부파일 업로드
-			String mainImg = UploadFileUtils.uploadFile(uploadPath, mainFile.getOriginalFilename(), mainFile.getBytes());
-			FileVO file = new FileVO();
-			file.setFileBoardNum(boardNum);
-			file.setFileTitle(mainImg);
-			file.setIsMainImg("Y"); //이건 메인이지 일때만 해주는거
-			boardService.addFile(file);
+			if(mainFile != null) {
+					
+				
+				//게시물메인이미지 첨부파일 업로드
+				String mainImg = UploadFileUtils.uploadFile(uploadPath, mainFile.getOriginalFilename(), mainFile.getBytes());
+				FileVO file = new FileVO();
+				file.setFileBoardNum(boardNum);
+				file.setFileTitle(mainImg);
+				file.setIsMainImg("Y"); //이건 메인이지 일때만 해주는거
+				boardService.addFile(file);
+			}
 		}
 		/* System.out.println("내가 방금전에 등록한 게시물의 번호는  "+boardNum); */
 

@@ -10,6 +10,7 @@ import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
 import kr.green.portfolio.vo.LikeVO;
 import kr.green.portfolio.vo.ParticipationVO;
+import kr.green.portfolio.vo.surveyTypeVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
 public interface BoardDAO {
@@ -66,7 +67,14 @@ public interface BoardDAO {
 	void updateLikesBoardCount2(String likeUserEmail);
 
 	
+	//서브타입_ 설문형 관련--------------------------------------
+	void insertSurveyType(surveyTypeVO sVO);
 
+	surveyTypeVO getParentSurvey();
+
+	
+
+	
 	
 
 }

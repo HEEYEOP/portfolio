@@ -228,17 +228,11 @@ $(document).ready(function(){
     	
     	}
     	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+    	//문제가 있음, 설문형 질문이 여러개 있을때는 체크되지 못함, 이거 value값 각각을 검사하면 되나, each로??
     	
     	
     	//마지막에 검사를 모두 통과했을 경우, form 제출
-    	//$('form[name=boardForm]').submit();
+    	$('form[name=boardForm]').submit();
     	
     });
     
