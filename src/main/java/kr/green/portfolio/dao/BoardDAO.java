@@ -70,7 +70,9 @@ public interface BoardDAO {
 	//서브타입_ 설문형 관련--------------------------------------
 	void insertSurveyType(surveyTypeVO sVO);
 
-	surveyTypeVO getParentSurvey();
+	int getParentsNum();
+
+	surveyTypeVO getParentSurvey(int parentsNum);
 
 	
 

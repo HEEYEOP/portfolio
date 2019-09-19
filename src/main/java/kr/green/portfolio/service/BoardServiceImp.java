@@ -204,12 +204,11 @@ public class BoardServiceImp implements BoardService{
 		for(String tmp : surveyContents) {
 			System.out.println("["+tmp+"]");
 		}
-		*/
-		
 		System.out.println("복수선택갯수");
 		for(Integer tmp : maxSelectNum) {
 			System.out.println("["+tmp+"]");
 		}
+		*/
 		
 		
 		
@@ -222,17 +221,19 @@ public class BoardServiceImp implements BoardService{
 			sVO.setSurveyTypeBoardNum(boardNum);
 			sVO.setQuestionType(questionType[i]);
 			sVO.setIsEssential(isEssential[i]);
-			sVO.setSurveyContents(surveyContents[index++]); // 여기는 단순히 i가 아니야. 왜냐면 첫번쨰는i가 맞을 수 있지만, 두번째 돌때는 i+1이 아니니까
+			sVO.setSurveyContents(surveyContents[index++]);
 			sVO.setDepth(1);
 			sVO.setParentsQ(0);
 			sVO.setMaxSelectNum(maxSelectNum[i]);
 		
-			
-			System.out.println("이거 일단 부모로 넣을 얘의 정보"+ sVO);
+			//System.out.println("이거 일단 부모로 넣을 얘의 정보"+ sVO);
 			
 			boardDao.insertSurveyType(sVO);
+			int parentsNum = boardDao.getParentsNum();
+			surveyTypeVO parentSurvey = boardDao.getParentSurvey(parentsNum); //가장 마지막에 삽입된 얘를 가져오면 그게 직전에 추가 시킨 부모질문.
+			System.out.println("방금 삽입한 부모의 객체를 가져와서 찍어보겠어"+ parentSurvey);
 			
-			//surveyTypeVO parentSurvey = boardDao.getParentSurvey(); //가장 마지막에 삽입된 얘를 가져오면 그게 직전에 추가 시킨 부모질문.
+			
 			/*
 			if(cntArr[i] != null) {
 				int val = Integer.parseInt(cntArr[i]);
