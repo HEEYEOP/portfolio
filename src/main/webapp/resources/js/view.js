@@ -90,16 +90,16 @@ $(document).ready(function(){
 	
 	// 찬/반형 투표결과 %에 따른 결과 보여주기
 	var jointotal = parseInt( $('input[name=calc_Total]').val() );
-	console.log("분모값"+jointotal);
+	//console.log("분모값"+jointotal);
 	var yesNum = parseInt( $('input[name=yesNum]').val() );
 	var noNum = parseInt( $('input[name=noNum]').val() );
-	console.log("찬성값"+yesNum);
-	console.log("반대값"+noNum);
+	//console.log("찬성값"+yesNum);
+	//console.log("반대값"+noNum);
 	
 	var yesWidth = parseFloat((yesNum / jointotal) * 100);
 	var noWidth = 100 - yesWidth;
-	console.log("찬성%"+yesWidth);
-	console.log("반대%"+noWidth);
+	//console.log("찬성%"+yesWidth);
+	//console.log("반대%"+noWidth);
 	
 	if(yesWidth == 0){
 		$('.viewVS_res_graphBox2').attr('style','width:'+yesWidth+'%; border: 10px solid #288fb4;');
@@ -114,15 +114,20 @@ $(document).ready(function(){
 	
 	
 	
+	//---------------------------------------------------------위로문제없음
 	
+	//설문형 참여시, 선택했을때
+	$('.selBtn').click(function(){
+		console.log('버튼 테스트중');
+		$(this).find('i').toggleClass('displayNone');
 	
-	
-	
-	
-	
-	
-	
-	
+		if($(this).find('i').hasClass('displayNone') == false){
+			$(this).find('label').attr('style','background-color: #ff5f4d;');
+		}else{
+			$(this).find('label').attr('style','background-color: #e5e5e5;');
+		}
+		
+	});
 	
 	
 	

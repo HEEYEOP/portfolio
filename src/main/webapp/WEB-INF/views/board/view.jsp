@@ -173,7 +173,7 @@
 						<div class="sur">
 							
 							<div class="surQ">
-								<span>${index.count }</span>
+								<span>${index.count}</span>
 								${Psurvey.surveyContents}
 								<div class="needBox" style="width: 50px; float: right;">
 									<p>ÇÊ¼ö</p>
@@ -187,7 +187,11 @@
 									<c:forEach var="Asurvey" items="${Asurvey}">
 										<c:if test="${Psurvey.surveyTypeNum == Asurvey.parentsQ}">
 											<li>
-												<div class="selBtn"><label></label></div>
+												<div class="selBtn">
+													<label>
+														<i class="fa fa-check displayNone" style="font-size: 13px;color: white;line-height: 20px;"></i>
+													</label>
+												</div>
 												${Asurvey.surveyContents}
 											</li>
 										</c:if>
