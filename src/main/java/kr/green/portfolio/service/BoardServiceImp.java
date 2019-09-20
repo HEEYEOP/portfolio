@@ -239,6 +239,7 @@ public class BoardServiceImp implements BoardService{
 				for(int j=0; j<val; j++) {
 					
 					surveyTypeVO ssVO = new surveyTypeVO();
+					
 					ssVO.setSurveyTypeBoardNum(parentSurvey.getSurveyTypeBoardNum());
 					ssVO.setQuestionType(parentSurvey.getQuestionType());
 					ssVO.setIsEssential(parentSurvey.getIsEssential());
@@ -247,7 +248,7 @@ public class BoardServiceImp implements BoardService{
 					ssVO.setParentsQ(parentSurvey.getSurveyTypeNum());
 					ssVO.setMaxSelectNum(parentSurvey.getMaxSelectNum());
 					
-					
+					boardDao.insertSurveyType(ssVO);
 					
 				}
 				
