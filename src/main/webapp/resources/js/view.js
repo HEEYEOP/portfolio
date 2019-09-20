@@ -123,14 +123,13 @@ $(document).ready(function(){
 	
 		if($(this).find('i').hasClass('displayNone') == false){
 			$(this).find('label').attr('style','background-color: #ff5f4d;');
+			$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", true);
 		}else{
 			$(this).find('label').attr('style','background-color: #e5e5e5;');
+			$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", false);
 		}
 		
 	});
-	
-	
-	
 	
 	
 	

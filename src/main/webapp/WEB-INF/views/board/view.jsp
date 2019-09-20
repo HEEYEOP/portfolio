@@ -55,7 +55,7 @@
 			
 			
 			
-			
+			<!-- VS타입인경우 -->
 			<c:if test="${board.boardSubtype eq 'VS'}">
 				<c:if test="${isParticipation ne null}">
 					<div class="viewVS_res">
@@ -114,7 +114,7 @@
 				
 				<c:if test="${isParticipation eq null}">
 					<form class="" name="vsForm" action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post">
-						<!-- VS타입인경우 -->
+						
 						<div class="viewVS">
 							<div class="viewVsTitle">
 								<i></i>
@@ -152,82 +152,92 @@
 					</form>
 				</c:if>
 			</c:if>
-			
+			<!-- ---------------------------------------------------------------------------- -->
+			<!-- SURVEY타입인경우 -->
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">
-				<!-- SURVEY타입인경우 -->
-				<div class="viewSurvey">
-					<div class="viewSurveyTitle" >
-						<i style="background-position: 0 -170px;"></i>
-						설문에 참여해주세요
-					</div>
-					<div class="totalNum">
-						총 참여인원<strong>@@</strong>명
-					</div>
-					<div class="viewSurveyDeadline" style="top:150px;">
-						<i class="fa fa-clock-o"></i>까지
-					</div>
-					<div style="margin-top:40px;"></div>
-					<div class="surveyList">
-						<!-- 여기에 FOREACH써서 돌리면 됨 -->
-						<c:forEach varStatus="index" var="Psurvey" items="${Psurvey}">
-						<div class="sur">
+				<c:if test="${isParticipation eq null}">
+					<form>
+						<div class="viewSurvey">
+							<div class="viewSurveyTitle" >
+								<i style="background-position: 0 -170px;"></i>
+								설문에 참여해주세요
+							</div>
+							<div class="totalNum">
+								총 참여인원<strong>@@</strong>명
+							</div>
+							<div class="viewSurveyDeadline" style="top:150px;">
+								<i class="fa fa-clock-o"></i>까지
+							</div>
+							<div style="margin-top:40px;"></div>
+							<div class="surveyList">
 							
-							<div class="surQ">
-								<span>${index.count}</span>
-								${Psurvey.surveyContents}
-								<div class="needBox" style="width: 50px; float: right;">
-									<c:if test="${Psurvey.isEssential eq 'required'}">
-										<p>필수</p>
-									</c:if>
-								</div>
-								<div class="typeInfo">
-									<c:if test="${Psurvey.questionType eq 'TypeChoiceOne' || Psurvey.questionType eq 'TypeScale'}">
-										[객관식 설문 - 단일선택만 가능]
-									</c:if>
-									<c:if test="${Psurvey.questionType eq 'TypeChoiceTwo' }">
-										[객관식 설문 - 복수선택 ${Psurvey.maxSelectNum}개 까지 가능]
-									</c:if>
-									<c:if test="${Psurvey.questionType eq 'TypeBranch'}">
-										[객관식 설문 - 단일선택만 가능]
-									</c:if>
-									
-								</div>
+								<!-- 여기에 FOREACH써서 돌리면 됨 -->
+								<c:forEach varStatus="index" var="Psurvey" items="${Psurvey}">
+									<div class="sur">
+										<div class="surQ">
+											<span>${index.count}</span>
+											${Psurvey.surveyContents}
+											<div class="needBox" style="width: 50px; float: right;">
+												<c:if test="${Psurvey.isEssential eq 'required'}">
+													<p>필수</p>
+												</c:if>
+											</div>
+											<div class="typeInfo">
+												<c:if test="${Psurvey.questionType eq 'TypeChoiceOne' || Psurvey.questionType eq 'TypeScale'}">
+													[객관식 설문 - 단일선택만 가능]
+												</c:if>
+												<c:if test="${Psurvey.questionType eq 'TypeChoiceTwo' }">
+													[객관식 설문 - 복수선택 ${Psurvey.maxSelectNum}개 까지 가능]
+												</c:if>
+												<c:if test="${Psurvey.questionType eq 'TypeBranch'}">
+													[객관식 설문 - 단일선택만 가능]
+												</c:if>
+												
+											</div>
+										</div>
+										
+										<div class="surA" style="padding-left: 40px;">
+											<ul>
+												<c:forEach var="Asurvey" items="${Asurvey}">
+													<c:if test="${Psurvey.surveyTypeNum == Asurvey.parentsQ}">
+														<li>
+															<div class="selBtn">
+																<label>
+																	<i class="fa fa-check displayNone" style="font-size: 13px;color: white;line-height: 20px;"></i>
+																</label>
+															</div>
+															${Asurvey.surveyContents}
+															<div class="selectValChecked">
+																<input name="participationSurveyTypeNum" type="checkbox"  value="${Asurvey.surveyTypeNum}">
+															</div>
+														</li>
+													</c:if>
+												</c:forEach>
+												
+											</ul>
+										</div>
+									</div>
+								</c:forEach>
+								
+								
+								
 								
 								
 								
 							</div>
-							
-							<div class="surA" style="padding-left: 40px;">
-			
-								<ul>
-									
-									<c:forEach var="Asurvey" items="${Asurvey}">
-										<c:if test="${Psurvey.surveyTypeNum == Asurvey.parentsQ}">
-											<li>
-												<div class="selBtn">
-													<label>
-														<i class="fa fa-check displayNone" style="font-size: 13px;color: white;line-height: 20px;"></i>
-													</label>
-												</div>
-												${Asurvey.surveyContents}
-											</li>
-										</c:if>
-									</c:forEach>
-									
-								
-								</ul>
+							<div class="submitBtnBox">
+								<a id="surveySubmitBtn">
+									제출하기
+									<i class="fa fa-check"></i>
+								</a>
 							</div>
-							
 						</div>
-						</c:forEach>
-						
-						
-						
-						
-						
-						
-					</div>
-				</div>
+					</form>
+					
+					
+					
+					
+				</c:if>	
 			</c:if>
 		
 		
