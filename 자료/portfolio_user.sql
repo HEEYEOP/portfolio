@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -47,7 +47,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('000999@naver.com','IndividualUser','나다라','$2a$10$oO6jLO.wL2.uzrYJ6KJvxOSArx/chaOonPYcCfACA9SLUxvl3Qeyq',NULL,'M','1935-03-17 00:00:00','/2019/09/16/28896022-b5b3-4e76-8bac-b49baafe5ee2_',0,0,0,'Y'),('123123@naver.com','IndividualUser','gmlduq','$2a$10$Ca1yMRqHfa4qdIUTXkqVseanzYc7oa1rsLDCDwWUYqQb8nlvnzJgO','01088533486','M',NULL,'/2019/08/22/fe033827-96a0-45fb-a96c-a1932f655e03_',1,1,0,'Y');
+INSERT INTO `user` VALUES ('000999@naver.com','IndividualUser','나다라','$2a$10$oO6jLO.wL2.uzrYJ6KJvxOSArx/chaOonPYcCfACA9SLUxvl3Qeyq',NULL,'M','1935-03-17 00:00:00','/2019/09/16/28896022-b5b3-4e76-8bac-b49baafe5ee2_',1,0,0,'Y'),('123123@naver.com','IndividualUser','gmlduq','$2a$10$Ca1yMRqHfa4qdIUTXkqVseanzYc7oa1rsLDCDwWUYqQb8nlvnzJgO','01088533486','M',NULL,'/2019/08/22/fe033827-96a0-45fb-a96c-a1932f655e03_',48,7,1,'Y');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17  0:30:37
+-- Dump completed on 2019-09-20 18:26:58

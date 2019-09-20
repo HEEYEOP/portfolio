@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -28,15 +28,16 @@ CREATE TABLE `surveytype` (
   `surveyTypeNum` int(11) NOT NULL AUTO_INCREMENT,
   `surveyTypeBoardNum` int(11) NOT NULL,
   `questionType` varchar(45) NOT NULL,
-  `isEssential` varchar(1) NOT NULL,
+  `isEssential` varchar(15) NOT NULL,
   `surveyContents` varchar(100) NOT NULL,
   `depth` int(11) NOT NULL,
   `parentsQ` int(11) NOT NULL,
   `totalNum` int(11) DEFAULT '0',
+  `maxSelectNum` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`surveyTypeNum`),
   KEY `board_num_idx` (`surveyTypeBoardNum`),
   CONSTRAINT `surveyBoardNum` FOREIGN KEY (`surveyTypeBoardNum`) REFERENCES `board` (`boardNum`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17  0:30:37
+-- Dump completed on 2019-09-20 18:26:58

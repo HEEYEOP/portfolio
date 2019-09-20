@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -28,13 +28,13 @@ CREATE TABLE `like` (
   `likeNum` int(11) NOT NULL AUTO_INCREMENT,
   `likeBoardNum` int(11) NOT NULL,
   `likeUserEmail` varchar(45) NOT NULL,
-  `isLike` varchar(1) NOT NULL DEFAULT 'Y',
+  `isLike` varchar(1) NOT NULL,
   PRIMARY KEY (`likeNum`),
   KEY `board_num_idx` (`likeBoardNum`),
   KEY `user_email_idx` (`likeUserEmail`),
   CONSTRAINT `likeBoardNum` FOREIGN KEY (`likeBoardNum`) REFERENCES `board` (`boardNum`),
   CONSTRAINT `likeUserEmail` FOREIGN KEY (`likeUserEmail`) REFERENCES `user` (`userEmail`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17  0:30:36
+-- Dump completed on 2019-09-20 18:26:57

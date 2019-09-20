@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -36,7 +36,7 @@ CREATE TABLE `participation` (
   KEY `participationBoardNum_idx` (`participationBoardNum`),
   CONSTRAINT `participationBoardNum` FOREIGN KEY (`participationBoardNum`) REFERENCES `board` (`boardNum`),
   CONSTRAINT `participationUserEmail` FOREIGN KEY (`participationUserEmail`) REFERENCES `user` (`userEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,6 @@ CREATE TABLE `participation` (
 
 LOCK TABLES `participation` WRITE;
 /*!40000 ALTER TABLE `participation` DISABLE KEYS */;
-INSERT INTO `participation` VALUES (3,'123123@naver.com','VS',4,0,28),(4,'123123@naver.com','VS',11,0,32),(5,'123123@naver.com','VS',10,0,31);
 /*!40000 ALTER TABLE `participation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17  0:30:40
+-- Dump completed on 2019-09-20 18:27:00

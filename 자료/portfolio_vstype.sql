@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `portfolio` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `portfolio`;
--- MySQL dump 10.13  Distrib 8.0.16, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: portfolio
 -- ------------------------------------------------------
@@ -33,7 +33,7 @@ CREATE TABLE `vstype` (
   PRIMARY KEY (`vsTypeNum`),
   KEY `board_num_idx` (`vsTypeBoardNum`),
   CONSTRAINT `vsTypeBoardNum` FOREIGN KEY (`vsTypeBoardNum`) REFERENCES `board` (`boardNum`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `vstype` (
 
 LOCK TABLES `vstype` WRITE;
 /*!40000 ALTER TABLE `vstype` DISABLE KEYS */;
-INSERT INTO `vstype` VALUES (1,27,'Y','지효',0),(2,27,'N','반대',0),(3,28,'Y','찬성하겠습니다',0),(4,28,'N','반대하겠습니다',1),(5,29,'Y','찬성',0),(6,29,'N','반대',0),(7,30,'Y','찬성',0),(8,30,'N','반대',0),(9,31,'Y','찬성',0),(10,31,'N','반대',1),(11,32,'Y','네거리 교차로에 우회전 차로를 설치하는것에 찬성한다',1),(12,32,'N','네거리 교차로에 우회전 차로를 설치하는것에 반대한다',0),(13,34,'Y','찬성',0),(14,34,'N','반대',0);
+INSERT INTO `vstype` VALUES (100,80,'Y','꼭 필요하다!',0),(101,80,'N','예산낭비일 수 있다!',0),(102,81,'Y','찬성',0),(103,81,'N','반대',0);
 /*!40000 ALTER TABLE `vstype` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-17  0:30:40
+-- Dump completed on 2019-09-20 18:27:00
