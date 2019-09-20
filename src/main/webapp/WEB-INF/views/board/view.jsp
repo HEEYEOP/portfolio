@@ -176,8 +176,25 @@
 								<span>${index.count}</span>
 								${Psurvey.surveyContents}
 								<div class="needBox" style="width: 50px; float: right;">
-									<p>필수</p>
+									<c:if test="${Psurvey.isEssential eq 'required'}">
+										<p>필수</p>
+									</c:if>
 								</div>
+								<div class="typeInfo">
+									<c:if test="${Psurvey.questionType eq 'TypeChoiceOne' || Psurvey.questionType eq 'TypeScale'}">
+										[객관식 설문 - 단일선택만 가능]
+									</c:if>
+									<c:if test="${Psurvey.questionType eq 'TypeChoiceTwo' }">
+										[객관식 설문 - 복수선택 ${Psurvey.maxSelectNum}개 까지 가능]
+									</c:if>
+									<c:if test="${Psurvey.questionType eq 'TypeBranch' }">
+										[객관식 설문 - 단일선택만 가능]
+									</c:if>
+									
+								</div>
+								
+								
+								
 							</div>
 							
 							<div class="surA" style="padding-left: 40px;">

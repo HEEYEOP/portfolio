@@ -415,6 +415,15 @@
 	    font-weight: bold;
 	    margin-top: 3px;
      }
+     .typeInfo{
+	    width: 100%;
+	    font-size: 14px;
+	    line-height: 8px;
+	    font-weight: bold;
+	    color: #7ac5e5;
+	    margin-bottom: 10px;
+	    margin-top: 7px;
+     }
      .selBtn{
      	width: 20px;
     	height: 20px;
