@@ -159,7 +159,7 @@
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">
 				<c:if test="${isParticipation eq null || isParticipation.size() eq 0 }">
 					<form action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post" name="surveyForm">
-						<input value="${user.userEmail}" name="participationUserEmail">
+						<input type="hidden" value="${user.userEmail}" name="participationUserEmail">
 						<div class="viewSurvey">
 							<div class="viewSurveyTitle" >
 								<i style="background-position: 0 -170px;"></i>
@@ -169,7 +169,7 @@
 								총 참여인원<strong>@@</strong>명
 							</div>
 							<div class="viewSurveyDeadline" style="top:150px;">
-								<i class="fa fa-clock-o"></i>까지
+								<i class="fa fa-clock-o"></i>${board.boardDeadline2} 까지
 							</div>
 							<div style="margin-top:40px;"></div>
 							<div class="surveyList">
@@ -210,7 +210,7 @@
 																</label>
 															</div>
 															${Asurvey.surveyContents}
-															<div class="selectValChecked">
+															<div class="selectValChecked displayNone">
 																<input name="participationSurveyTypeNum" type="checkbox"  value="${Asurvey.surveyTypeNum}">
 															</div>
 														</li>

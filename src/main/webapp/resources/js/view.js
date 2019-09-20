@@ -138,6 +138,29 @@ $(document).ready(function(){
 			return;
 		}
 		
+		
+		
+		//여기서 유효성 검사 해야함
+		//필수일때
+		//복수선택일때, 최대 복수선택 갯수만큼만 선택할 수 있게
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		$('form[name=surveyForm]').submit();
 	});
 	
