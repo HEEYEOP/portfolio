@@ -125,7 +125,16 @@
 	<select id="getSubSURVEY" resultType="kr.green.portfolio.vo.surveyTypeVO">
 		select * from surveytype where surveyTypeBoardNum =#{boardNum}
 	</select>
-
+	
+	
+	<!-- 부모, 자식 나눠서 리스트로 가져오는 작업 -->
+	<select id="getPsurvey" resultType="kr.green.portfolio.vo.surveyTypeVO">
+		select * from surveytype where surveyTypeBoardNum =#{boardNum} and depth = 1
+	</select>
+	
+	<select id="getAsurvey" resultType="kr.green.portfolio.vo.surveyTypeVO">
+		select * from surveytype where surveyTypeBoardNum =#{boardNum} and depth != 1
+	</select>
 	
 	
 	

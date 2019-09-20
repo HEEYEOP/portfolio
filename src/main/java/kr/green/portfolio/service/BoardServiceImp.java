@@ -269,8 +269,19 @@ public class BoardServiceImp implements BoardService{
 	@Override
 	public ArrayList<surveyTypeVO> getSubSURVEY(int boardNum) {
 		
-		
 		return boardDao.getSubSURVEY(boardNum);
+	}
+
+	@Override
+	public ArrayList<surveyTypeVO> getPsurvey(int boardNum) {
+		
+		return boardDao.getPsurvey(boardNum);
+	}
+
+	@Override
+	public ArrayList<surveyTypeVO> getAsurvey(int boardNum) {
+		
+		return boardDao.getAsurvey(boardNum);
 	}
 
 	

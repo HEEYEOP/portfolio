@@ -48,6 +48,11 @@ public interface BoardService {
 
 	ArrayList<surveyTypeVO> getSubSURVEY(int boardNum);
 
+		//아래부터는 부모, 자식 설문 따로 나눠서 가져오는 작업에 대한 서비스
+	ArrayList<surveyTypeVO> getPsurvey(int boardNum);
+
+	ArrayList<surveyTypeVO> getAsurvey(int boardNum);
+
 
 	
 

@@ -168,28 +168,43 @@
 					</div>
 					<div style="margin-top:40px;"></div>
 					<div class="surveyList">
-					
-					<!-- 여기에 FOREACH써서 돌리면 됨 -->
-					
+						<!-- 여기에 FOREACH써서 돌리면 됨 -->
+						<c:forEach varStatus="index" var="Psurvey" items="${Psurvey}">
 						<div class="sur">
+							
 							<div class="surQ">
-								<span>1</span>
-								귀하의 개인정보가 안전하게 보호되고 있다고 생각하십니까?
+								<span>${index.count }</span>
+								${Psurvey.surveyContents}
 								<div class="needBox" style="width: 50px; float: right;">
 									<p>필수</p>
 								</div>
 							</div>
+							
 							<div class="surA" style="padding-left: 40px;">
+			
 								<ul>
-									<li>
-										<div class="selBtn"><label></label></div>
-										매우그렇다
-									</li>
+									
+									<c:forEach var="Asurvey" items="${Asurvey}">
+										<c:if test="${Psurvey.surveyTypeNum == Asurvey.parentsQ}">
+											<li>
+												<div class="selBtn"><label></label></div>
+												${Asurvey.surveyContents}
+											</li>
+										</c:if>
+									</c:forEach>
+									
 								
 								</ul>
 							</div>
 							
 						</div>
+						</c:forEach>
+						
+						
+						
+						
+						
+						
 					</div>
 				</div>
 			</c:if>

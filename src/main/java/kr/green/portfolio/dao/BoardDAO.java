@@ -76,6 +76,11 @@ public interface BoardDAO {
 
 	ArrayList<surveyTypeVO> getSubSURVEY(int boardNum);
 
+		//부모, 자식 나눠서 리스트로 가져오는 일을 시킬 것
+	ArrayList<surveyTypeVO> getPsurvey(int boardNum);
+
+	ArrayList<surveyTypeVO> getAsurvey(int boardNum);
+
 	
 
 	

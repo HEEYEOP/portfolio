@@ -215,9 +215,20 @@ public class BoardController {
 			}
 
 		} else if (subType.equals("SURVEY")) { // 서브타입이 SURVEY일때
-			ArrayList<surveyTypeVO> survey = boardService.getSubSURVEY(getBoard.getBoardNum());
-			System.out.println("설문형 리스트 "+survey);
-		
+			//ArrayList<surveyTypeVO> survey = boardService.getSubSURVEY(getBoard.getBoardNum());
+			//System.out.println("설문형 리스트 "+survey);
+			//mv.addObject("surveyList", survey);
+			//위에 세줄은 부모/자식 구분없이 리스트로 가져온것을 보내준 것
+			
+			//지금부터 할 것은 부모, 자식 리스트를 구별해서 가져올 것임
+			ArrayList<surveyTypeVO> Psurvey = boardService.getPsurvey(getBoard.getBoardNum());
+			ArrayList<surveyTypeVO> Asurvey = boardService.getAsurvey(getBoard.getBoardNum());
+			
+			System.out.println("부모질문"+Psurvey);
+			System.out.println("자식설문"+Asurvey);
+			mv.addObject("Psurvey", Psurvey);
+			mv.addObject("Asurvey", Asurvey);
+			
 		}
 
 		// 댓글관련
