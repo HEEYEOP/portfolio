@@ -39,7 +39,7 @@ public interface BoardDAO {
 
 	void updateViewsCount(int boardNum);
 
-	ParticipationVO isParticipation(@Param("boardNum")int boardNum,@Param("userEmail")String userEmail);
+	ArrayList<ParticipationVO> isParticipation(@Param("boardNum")int boardNum,@Param("userEmail")String userEmail);
 
 	//댓글 관련----------------------------------
 	void insertComment(CommentVO cVO);

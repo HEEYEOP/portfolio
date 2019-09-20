@@ -188,12 +188,13 @@ public class BoardController {
 
 		UserVO uVO = (UserVO) r.getSession().getAttribute("user"); // 여기서문제는 세션에 유저가 없을때도 게시물은 볼 수 있어야 하는데, 세션에 유저가 없을때
 																	// 페이지 실행을 하면 nullpoint에러 남
-		ParticipationVO isParticipation = null;
+		ArrayList<ParticipationVO> isParticipation = null;
 		LikeVO isLike = null;
 		if (uVO != null) {
 			isLike = boardService.isLike(boardNum, uVO.getUserEmail());
 
 			isParticipation = boardService.isParticipation(boardNum, uVO.getUserEmail()); // 참여내역 넘기기
+			System.out.println("내가 이전에 참여한적이 있는지 리스트로 불러옴"+isParticipation);
 		}
 		mv.addObject("isLike", isLike);
 		mv.addObject("isParticipation", isParticipation);

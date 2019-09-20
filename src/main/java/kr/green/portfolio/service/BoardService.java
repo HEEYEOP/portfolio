@@ -31,7 +31,7 @@ public interface BoardService {
 
 	void updateViewsCount(int boardNum);
 
-	ParticipationVO isParticipation(int boardNum, String userEmail);
+	ArrayList<ParticipationVO> isParticipation(int boardNum, String userEmail);
 
 	void addComment(CommentVO cVO);
 

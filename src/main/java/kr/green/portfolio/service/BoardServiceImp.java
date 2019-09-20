@@ -102,11 +102,11 @@ public class BoardServiceImp implements BoardService{
 	}
 
 	@Override
-	public ParticipationVO isParticipation(int boardNum, String userEmail) {
+	public ArrayList<ParticipationVO> isParticipation(int boardNum, String userEmail) {
 		if(userEmail == null)
 			return null;
 		
-		ParticipationVO isParticipation = boardDao.isParticipation(boardNum,userEmail);
+		ArrayList<ParticipationVO> isParticipation = boardDao.isParticipation(boardNum,userEmail);
 		
 		if(isParticipation == null)
 			return null;

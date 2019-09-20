@@ -57,7 +57,7 @@
 			
 			<!-- VS타입인경우 -->
 			<c:if test="${board.boardSubtype eq 'VS'}">
-				<c:if test="${isParticipation ne null}">
+				<c:if test="${isParticipation ne null || isParticipation.size() ne 0}">
 					<div class="viewVS_res">
 						<div class="viewVS_res_title">
 							<h3>현재까지 투표 결과</h3>
@@ -89,7 +89,9 @@
 									</div>
 								</div>
 								
-								<input name="myChoice" type="hidden" value="${isParticipation.participationVsTypeNum}">
+								<c:forEach var="isParticipation" items="isParticipation">
+									<input name="myChoice" type="hidden" value="${isParticipation.participationVsTypeNum}">
+								</c:forEach>
 								<div class="viewVS_res_graphBox1" style="right:10px;">
 									<div class="viewVS_res_graphBox2" style="width:50%;"></div>
 									<div class="viewVS_res_myChoice">
@@ -112,7 +114,7 @@
 				</c:if>
 				
 				
-				<c:if test="${isParticipation eq null}">
+				<c:if test="${isParticipation eq null || isParticipation.size() eq 0}">
 					<form class="" name="vsForm" action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post">
 						
 						<div class="viewVS">
@@ -155,7 +157,7 @@
 			<!-- ---------------------------------------------------------------------------- -->
 			<!-- SURVEY타입인경우 -->
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">
-				<c:if test="${isParticipation eq null}">
+				<c:if test="${isParticipation eq null || isParticipation.size() eq 0 }">
 					<form action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post" name="surveyForm">
 						<input value="${user.userEmail}" name="participationUserEmail">
 						<div class="viewSurvey">
