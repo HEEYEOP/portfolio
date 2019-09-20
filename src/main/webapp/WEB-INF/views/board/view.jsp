@@ -156,7 +156,8 @@
 			<!-- SURVEY타입인경우 -->
 			<c:if test="${board.boardSubtype eq 'SURVEY'}">
 				<c:if test="${isParticipation eq null}">
-					<form>
+					<form action="<%=request.getContextPath()%>/board/view?participationBoardNum=${board.boardNum}&boardSubtype=${board.boardSubtype}" method="post" name="surveyForm">
+						<input value="${user.userEmail}" name="participationUserEmail">
 						<div class="viewSurvey">
 							<div class="viewSurveyTitle" >
 								<i style="background-position: 0 -170px;"></i>
@@ -218,11 +219,6 @@
 										</div>
 									</div>
 								</c:forEach>
-								
-								
-								
-								
-								
 								
 							</div>
 							<div class="submitBtnBox">

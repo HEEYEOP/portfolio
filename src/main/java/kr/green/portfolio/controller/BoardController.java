@@ -224,8 +224,6 @@ public class BoardController {
 			ArrayList<surveyTypeVO> Psurvey = boardService.getPsurvey(getBoard.getBoardNum());
 			ArrayList<surveyTypeVO> Asurvey = boardService.getAsurvey(getBoard.getBoardNum());
 			
-			System.out.println("부모질문"+Psurvey);
-			System.out.println("자식설문"+Asurvey);
 			mv.addObject("Psurvey", Psurvey);
 			mv.addObject("Asurvey", Asurvey);
 			
@@ -243,15 +241,24 @@ public class BoardController {
 	}
 
 	@RequestMapping(value = "/board/view", method = RequestMethod.POST)
-	public String viewPost(Model model, ParticipationVO pVO) {
+	public String viewPost(Model model, ParticipationVO pVO, Integer[] participationSurveyTypeNum) {
 		logger.info("설문결과 DB에 저장하는 중");
-		// System.out.println(pVO);
-		boardService.addSubRes(pVO);
+		if(pVO.getBoardSubtype().equals("VS")) {
+			boardService.addSubRes_vs(pVO);
+		}else if(pVO.getBoardSubtype().equals("SURVEY")) {
+			boardService.addSubRes_survey(pVO,participationSurveyTypeNum);
+		}
+		
 		model.addAttribute("boardNum", pVO.getParticipationBoardNum());
+		
 
 		return "redirect:/board/view";
 	}
 
+	
+	
+	
+	
 	// 댓글 관련 컨트롤러------------------------------------------------------------------------------
 
 	@RequestMapping(value = "/board/comment", method = RequestMethod.POST)

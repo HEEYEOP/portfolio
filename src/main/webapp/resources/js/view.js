@@ -130,7 +130,16 @@ $(document).ready(function(){
 		}
 		
 	});
-	
+
+	//설문형 제출 버튼 클릭 시, 유효성 검사 및 제출
+	$('#surveySubmitBtn').click(function(){
+		if($('input[name=commentUserEmail]').val() ==''){
+			alert('로그인 후 설문에 참여할 수 있습니다.');
+			return;
+		}
+		
+		$('form[name=surveyForm]').submit();
+	});
 	
 	
 	

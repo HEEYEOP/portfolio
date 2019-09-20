@@ -27,7 +27,7 @@ public interface BoardService {
 
 	ArrayList<vsTypeVO> getSubVS(int boardNum);
 
-	void addSubRes(ParticipationVO pVO);
+	void addSubRes_vs(ParticipationVO pVO);
 
 	void updateViewsCount(int boardNum);
 
@@ -52,6 +52,8 @@ public interface BoardService {
 	ArrayList<surveyTypeVO> getPsurvey(int boardNum);
 
 	ArrayList<surveyTypeVO> getAsurvey(int boardNum);
+
+	void addSubRes_survey(ParticipationVO pVO, Integer[] participationSurveyTypeNum);
 
 
 	
