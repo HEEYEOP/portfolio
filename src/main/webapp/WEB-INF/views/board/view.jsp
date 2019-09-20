@@ -168,6 +168,9 @@
 					</div>
 					<div style="margin-top:40px;"></div>
 					<div class="surveyList">
+					
+					<!-- 여기에 FOREACH써서 돌리면 됨 -->
+					
 						<div class="sur">
 							<div class="surQ">
 								<span>1</span>

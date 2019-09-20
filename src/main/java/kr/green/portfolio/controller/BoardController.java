@@ -175,7 +175,10 @@ public class BoardController {
 		return mv;
 	}
 
-	// 게시물 상세보기 페이지
+	
+	
+	
+	// 게시물 상세보기 페이지----------------------------------------------------------------------
 	@RequestMapping(value = "/board/view", method = RequestMethod.GET)
 	public ModelAndView viewGet(ModelAndView mv, int boardNum, HttpServletRequest r) throws Exception {
 		logger.info("게시물 상세보기 페이지 실행");
@@ -212,7 +215,9 @@ public class BoardController {
 			}
 
 		} else if (subType.equals("SURVEY")) { // 서브타입이 SURVEY일때
-			// surveyTypeVO sub = boardService.getSubSURVEY(getBoard.getBoardNum());
+			ArrayList<surveyTypeVO> survey = boardService.getSubSURVEY(getBoard.getBoardNum());
+			System.out.println("설문형 리스트 "+survey);
+		
 		}
 
 		// 댓글관련
@@ -236,7 +241,7 @@ public class BoardController {
 		return "redirect:/board/view";
 	}
 
-	// 댓글 관련 컨트롤러
+	// 댓글 관련 컨트롤러------------------------------------------------------------------------------
 
 	@RequestMapping(value = "/board/comment", method = RequestMethod.POST)
 	public String commentPost(Model model, CommentVO cVO) {
@@ -248,7 +253,7 @@ public class BoardController {
 		return "redirect:/board/view";
 	}
 
-	// 공감버튼 관련 컨트롤러
+	// 공감버튼 관련 컨트롤러-------------------------------------------------------------------------------
 
 	@RequestMapping(value = "/board/like", method = RequestMethod.POST)
 	@ResponseBody

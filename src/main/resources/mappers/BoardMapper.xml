@@ -121,6 +121,10 @@
 	<select id="getParentSurvey" resultType="kr.green.portfolio.vo.surveyTypeVO">
 		select * from surveytype where surveyTypeNum=#{parentsNum}
 	</select>
+	
+	<select id="getSubSURVEY" resultType="kr.green.portfolio.vo.surveyTypeVO">
+		select * from surveytype where surveyTypeBoardNum =#{boardNum}
+	</select>
 
 	
 	

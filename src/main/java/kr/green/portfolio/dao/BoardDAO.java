@@ -74,6 +74,8 @@ public interface BoardDAO {
 
 	surveyTypeVO getParentSurvey(int parentsNum);
 
+	ArrayList<surveyTypeVO> getSubSURVEY(int boardNum);
+
 	
 
 	

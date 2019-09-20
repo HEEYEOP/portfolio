@@ -8,6 +8,7 @@ import kr.green.portfolio.vo.FieldVO;
 import kr.green.portfolio.vo.FileVO;
 import kr.green.portfolio.vo.LikeVO;
 import kr.green.portfolio.vo.ParticipationVO;
+import kr.green.portfolio.vo.surveyTypeVO;
 import kr.green.portfolio.vo.vsTypeVO;
 
 public interface BoardService {
@@ -44,6 +45,8 @@ public interface BoardService {
 	//서브타입이 설문형 일때, 
 	void addSurveyType(int boardNum, String qcntArray, String[] questionType, String[] isEssential,
 			String[] surveyContents, int[] maxSelectNum);
+
+	ArrayList<surveyTypeVO> getSubSURVEY(int boardNum);
 
 
 	
