@@ -76,10 +76,10 @@ public class BoardController {
 		
 		int boardNum = boardService.addBoard(bVO);	//게시물 넣을때, 게시물타입에 따라서 deadline을 넣을지 말지 따로 나눠서 생각해줘야함, service에서 타입 나눠서 일 처리하기 
 		
-		if(vsContents != null) {
+		if(bVO.getBoardSubtype().equals("VS")) {
 			boardService.addVsType(boardNum ,vsContents);
 		}
-		if(QcntArray != "") {
+		if(bVO.getBoardSubtype().equals("SURVEY")) {
 			
 			//여기 컨트롤러에서는 간단하게 add서비스만 시키고, 매개변수로 넘어온값들을 다 서비스로 넘겨서 서비스에서 기능을 구현하려고 함
 			boardService.addSurveyType(boardNum,QcntArray,questionType,isEssential,surveyContents,maxSelectNum);

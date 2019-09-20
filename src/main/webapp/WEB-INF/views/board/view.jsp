@@ -89,8 +89,8 @@
 									</div>
 								</div>
 								
-								<c:forEach var="isParticipation" items="isParticipation">
-									<input name="myChoice" type="hidden" value="${isParticipation.participationVsTypeNum}">
+								<c:forEach var="isParticipation2" items="${isParticipation}">
+									<input name="myChoice" type="hidden" value="${isParticipation2.participationVsTypeNum}">
 								</c:forEach>
 								<div class="viewVS_res_graphBox1" style="right:10px;">
 									<div class="viewVS_res_graphBox2" style="width:50%;"></div>
@@ -123,7 +123,7 @@
 								투표에 참여해주세요
 							</div>
 							<div class="viewVsDeadline">
-								<i class="fa fa-clock-o">${board.boardDeadline}</i>까지
+								<i class="fa fa-clock-o"></i>${board.boardDeadline2} 까지
 							</div>
 							
 							<div class="viewVsSelectBox">
