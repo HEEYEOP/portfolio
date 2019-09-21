@@ -68,7 +68,7 @@ public class BoardController {
 
 	@RequestMapping(value = "/board/writing", method = RequestMethod.POST)
 	public String boardWritingPost(BoardVO bVO, String[] vsContents, MultipartFile[] fileTitle, MultipartFile mainFile,
-									 String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents, int[] maxSelectNum) throws IOException, Exception {
+									 String QcntArray, String[] questionType, String[] isEssential, String[] surveyContents, String[] maxSelectNum) throws IOException, Exception {
 		logger.info("작성한 게시물 넘기는 중");
 		
 		

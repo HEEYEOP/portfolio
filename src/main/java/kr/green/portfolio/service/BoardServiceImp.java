@@ -180,7 +180,7 @@ public class BoardServiceImp implements BoardService{
 	//서브타입이 설문형 일 때, 
 	@Override
 	public void addSurveyType(int boardNum, String qcntArray, String[] questionType, String[] isEssential,
-			String[] surveyContents, int[] maxSelectNum) {
+			String[] surveyContents, String[] maxSelectNum) {
 
 		/*
 		//이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐
@@ -219,7 +219,8 @@ public class BoardServiceImp implements BoardService{
 			sVO.setSurveyContents(surveyContents[index++]);
 			sVO.setDepth(1);
 			sVO.setParentsQ(0);
-			sVO.setMaxSelectNum(maxSelectNum[i]);
+			int maxSelectnum = Integer.parseInt(maxSelectNum[i]);
+			sVO.setMaxSelectNum(maxSelectnum);
 		
 			//System.out.println("이거 일단 부모로 넣을 얘의 정보"+ sVO);
 			
