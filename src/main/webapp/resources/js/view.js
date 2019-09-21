@@ -120,13 +120,21 @@ $(document).ready(function(){
 	$('.selBtn').click(function(){
 		console.log('버튼 테스트중');
 		$(this).find('i').toggleClass('displayNone');
-	
 		if($(this).find('i').hasClass('displayNone') == false){
 			$(this).find('label').attr('style','background-color: #ff5f4d;');
 			$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", true);
 		}else{
 			$(this).find('label').attr('style','background-color: #e5e5e5;');
 			$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", false);
+		}
+		
+		
+		if(맥시멈 숫자가 1이라면){
+			전체 해제하고 , 지금 내가 선택한 애만 체크되게
+		}else if(맥시멈 숫자가 1이 아니고 지금 체크된 갯수가 맥시멈 숫자 보다 작다면){
+			저 위에 버튼 활성화 수행하고
+		}else{
+			알럿으로 맥시멈 숫자만큼 선택할 수 있다고 알려주기 
 		}
 		
 	});
@@ -138,6 +146,10 @@ $(document).ready(function(){
 			return;
 		}
 		
+		if($('.surveyList').find('input[name=participationSurveyTypeNum]').is(':checked')== false){
+			alert('설문에 참여해주세요.');
+			return;
+		} //이거는 필수 여부와 관계없이 어떠한 것도 참여하지 않았을 경우
 		
 		
 		//여기서 유효성 검사 해야함

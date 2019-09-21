@@ -210,7 +210,7 @@
 																</label>
 															</div>
 															${Asurvey.surveyContents}
-															<div class="selectValChecked displayNone">
+															<div class="selectValChecked">
 																<input name="participationSurveyTypeNum" type="checkbox"  value="${Asurvey.surveyTypeNum}">
 															</div>
 														</li>
