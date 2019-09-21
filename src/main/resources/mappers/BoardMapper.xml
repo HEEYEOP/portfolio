@@ -70,7 +70,7 @@
 	</update>
 	
 	<update id="updateCommentsCount">
-		update board set updateCommentsCount = updateCommentsCount+1 where boardNum = #{commentBoardNum}
+		update board set commentsCount = commentsCount+1 where boardNum = #{commentBoardNum}
 	</update>
 	
 	<select id="getCommentList" resultType="kr.green.portfolio.vo.CommentVO">

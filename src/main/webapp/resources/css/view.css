@@ -414,6 +414,7 @@
 	    line-height: 23px;
 	    font-weight: bold;
 	    margin-top: 3px;
+	    margin-bottom: 0;
      }
      .typeInfo{
 	    width: 100%;
@@ -545,7 +546,21 @@
     }
     
     
-    
+    /* 설문참여후 결과 관련 */
+    .partiNum{
+	    color: #288fb4;
+	    float: right;
+    }
+    .bar{
+    	width: 100%;
+    	height: 15px;
+    	background-color: rgb(241, 241, 241);
+    	margin-bottom: 10px;
+    }
+    .resBar{
+    	height: 15px;
+    	background-color: rgb(255, 95, 77);
+    }
     
     
     
