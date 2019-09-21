@@ -195,7 +195,7 @@
 												<c:if test="${Psurvey.questionType eq 'TypeBranch'}">
 													[객관식 설문 - 단일선택만 가능]
 												</c:if>
-												
+												<input name="maxNum" type="text" value="${Psurvey.maxSelectNum}">
 											</div>
 										</div>
 										

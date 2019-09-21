@@ -119,23 +119,36 @@ $(document).ready(function(){
 	//설문형 참여시, 선택했을때
 	$('.selBtn').click(function(){
 		console.log('버튼 테스트중');
-		$(this).find('i').toggleClass('displayNone');
-		if($(this).find('i').hasClass('displayNone') == false){
+		
+		
+		var maxNum = $(this).parents('.surA').siblings('.surQ').find('input[name=maxNum]').val();
+		console.log(maxNum);
+		
+		if(maxNum == 1){
+			//전체해제
+			$(this).parent().siblings().find('i').addClass('displayNone');
+			$(this).parent().siblings().find('label').attr('style','background-color: #e5e5e5;');
+			$(this).parent().siblings().find('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", false);
+			//클릭한값 선택
+			$(this).find('i').removeClass('displayNone');
 			$(this).find('label').attr('style','background-color: #ff5f4d;');
 			$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", true);
-		}else{
-			$(this).find('label').attr('style','background-color: #e5e5e5;');
-			$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", false);
+			
+		}else{//맥시멈 숫자가 1이 아닐 때
+			
+			$(this).find('i').toggleClass('displayNone');
+			if($(this).find('i').hasClass('displayNone') == false){
+				$(this).find('label').attr('style','background-color: #ff5f4d;');
+				$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", true);
+			}else{
+				$(this).find('label').attr('style','background-color: #e5e5e5;');
+				$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", false);
+			}
+			
+			
 		}
 		
 		
-		if(맥시멈 숫자가 1이라면){
-			전체 해제하고 , 지금 내가 선택한 애만 체크되게
-		}else if(맥시멈 숫자가 1이 아니고 지금 체크된 갯수가 맥시멈 숫자 보다 작다면){
-			저 위에 버튼 활성화 수행하고
-		}else{
-			알럿으로 맥시멈 숫자만큼 선택할 수 있다고 알려주기 
-		}
 		
 	});
 
@@ -145,14 +158,27 @@ $(document).ready(function(){
 			alert('로그인 후 설문에 참여할 수 있습니다.');
 			return;
 		}
-		
 		if($('.surveyList').find('input[name=participationSurveyTypeNum]').is(':checked')== false){
 			alert('설문에 참여해주세요.');
 			return;
 		} //이거는 필수 여부와 관계없이 어떠한 것도 참여하지 않았을 경우
 		
+		//각 설문 선택값이 맥스값보다 작은지 검사해야함
 		
-		//여기서 유효성 검사 해야함
+		
+		/*
+		//지금체크된 갯수 --> 맥시멈 체크할때 이용할 코드
+		var cnt = $(this).parent().siblings().find('input[name=participationSurveyTypeNum]:checked').length;
+		if(cnt < maxNum){
+			$(this).find('i').removeClass('displayNone');
+			$(this).find('label').attr('style','background-color: #ff5f4d;');
+			$(this).siblings('.selectValChecked').find('input[name=participationSurveyTypeNum]').prop("checked", true);
+		}else{
+			alert('최대 갯수만큼 선택할 수 있습니다.')
+		}
+		
+		*/
+	
 		//필수일때
 		//복수선택일때, 최대 복수선택 갯수만큼만 선택할 수 있게
 		
