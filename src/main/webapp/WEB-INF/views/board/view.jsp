@@ -240,7 +240,7 @@
 			
 			
 			
-			<c:if test="${isParticipation ne null || isParticipation.size() ne 0}">
+			<c:if test="${isParticipation ne null || isParticipation.size() eq 0}">
 					
 						<input type="hidden" value="${user.userEmail}" name="participationUserEmail">
 						<div class="viewSurvey">
@@ -249,7 +249,7 @@
 								설문에 참여해주셔서 감사합니다.
 							</div>
 							<div class="totalNum">
-								총 참여인원<strong>@@</strong>명
+								총 참여인원<strong> @@ </strong>명
 							</div>
 							<div class="viewSurveyDeadline" style="top:150px;">
 								<i class="fa fa-clock-o"></i>${board.boardDeadline2} 까지
@@ -271,16 +271,18 @@
 											
 
 										</div>
-										<div style="margin-bottom: 20px;"></div>
+										<div style="margin-bottom: 20px; height:10px;"></div>
 										<div class="surA" style="padding-left: 40px;">
 											<ul>
 												<c:forEach var="Asurvey" items="${Asurvey}">
 													<c:if test="${Psurvey.surveyTypeNum == Asurvey.parentsQ}">
 														<li>
 															${Asurvey.surveyContents}
+															
 															<span class="partiNum">4명(36.4%)</span>
 															<div class="bar">
-																<div class="resBar" style="width: 36.4%"></div>
+																<div class="resBar" style="width: 36.4%;">
+																</div>
 															</div>
 															
 														</li>
