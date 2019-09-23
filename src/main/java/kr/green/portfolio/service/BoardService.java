@@ -43,7 +43,7 @@ public interface BoardService {
 
 	
 	//서브타입이 설문형 일때, 
-	void addSurveyType(int boardNum, String qcntArray, String[] questionType, String[] isEssential,
+	void addSurveyType(int boardNum, String QcntArray, String[] questionType, String[] isEssential,
 			String[] surveyContents, String[] maxSelectNum);
 
 	ArrayList<surveyTypeVO> getSubSURVEY(int boardNum);

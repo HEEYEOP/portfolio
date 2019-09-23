@@ -179,9 +179,10 @@ public class BoardServiceImp implements BoardService{
 	
 	//서브타입이 설문형 일 때, 
 	@Override
-	public void addSurveyType(int boardNum, String qcntArray, String[] questionType, String[] isEssential,
+	public void addSurveyType(int boardNum, String QcntArray, String[] questionType, String[] isEssential,
 			String[] surveyContents, String[] maxSelectNum) {
 
+		
 		/*
 		//이거 나중에 지울꺼야_잘 넘어오는거 확인하는거일뿐
 		System.out.println("질문갯수_배열생성");
@@ -200,14 +201,16 @@ public class BoardServiceImp implements BoardService{
 			System.out.println("["+tmp+"]");
 		}
 		System.out.println("복수선택갯수");
-		for(Integer tmp : maxSelectNum) {
+		for(String tmp : maxSelectNum) {
 			System.out.println("["+tmp+"]");
 		}
+		
 		*/
 		
 		
 		
-		String[] cntArr = qcntArray.split(",");
+		
+		String[] cntArr = QcntArray.split(",");
 	
 		//서브타입 질문 등록
 		int index = 0;
@@ -219,6 +222,7 @@ public class BoardServiceImp implements BoardService{
 			sVO.setSurveyContents(surveyContents[index++]);
 			sVO.setDepth(1);
 			sVO.setParentsQ(0);
+			
 			int maxSelectnum = Integer.parseInt(maxSelectNum[i]);
 			sVO.setMaxSelectNum(maxSelectnum);
 		

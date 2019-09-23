@@ -390,7 +390,7 @@ function Qcode(){
 	html += '			<option value="NotRequired">필수아님</option>';
 	html += '		</select>';
 	
-	html += '		<input name="maxSelectNum" class="queType displayNone" type="number" min="1" max="5" placeholder="복수선택갯수">';
+	html += '		<input name="maxSelectNum" class="queType displayNone" type="number" value="1" min="1" max="5" placeholder="복수선택갯수">';
 	
 	html += '		<select name="TypeScaleVal" class="queType displayNone">';
 	html += '			<option value="-1">항목수선택</option>';
