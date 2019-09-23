@@ -33,7 +33,7 @@ public interface BoardDAO {
 
 	ArrayList<vsTypeVO> getSubVS(int boardNum);
 
-	void addSubRes_vs(ParticipationVO pVO);
+	void addSubRes(ParticipationVO pVO);
 
 	void updateSubRes_vs(int participationVsTypeNum);
 
@@ -82,6 +82,8 @@ public interface BoardDAO {
 	ArrayList<surveyTypeVO> getAsurvey(int boardNum);
 
 	int getTotalPartiNum(int boardNum);
+
+	void updateSubRes_survey(int participationSurveyTypeNum);
 
 	
 

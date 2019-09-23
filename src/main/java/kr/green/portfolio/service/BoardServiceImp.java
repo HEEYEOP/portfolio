@@ -90,9 +90,9 @@ public class BoardServiceImp implements BoardService{
 	@Override
 	public void addSubRes_vs(ParticipationVO pVO) {
 		if(pVO.getBoardSubtype().equals("VS")) {
-			boardDao.addSubRes_vs(pVO);
+			boardDao.addSubRes(pVO);
 			boardDao.updateSubRes_vs(pVO.getParticipationVsTypeNum());	
-			//boardDao.plusTotalNum_vs(pVO.getParticipationVsTypeNum()) //이거해야되는거같은데, 구현 안해서 주석처리 해놓은것으로 보임
+			
 		}
 	}
 
@@ -290,11 +290,10 @@ public class BoardServiceImp implements BoardService{
 		if(pVO.getBoardSubtype().equals("SURVEY")) {
 			for(int tmp : participationSurveyTypeNum) {
 				pVO.setParticipationSurveyTypeNum(tmp);
-				boardDao.addSubRes_vs(pVO);
+				boardDao.addSubRes(pVO);
+				boardDao.updateSubRes_survey(pVO.getParticipationSurveyTypeNum());
 			}
 			
-			//boardDao.updateSubRes_vs(pVO.getParticipationVsTypeNum());	
-			//boardDao.plusTotalNum_vs(pVO.getParticipationVsTypeNum()) //이거해야되는거같은데, 구현 안해서 주석처리 해놓은것으로 보임
 		}
 		
 	}

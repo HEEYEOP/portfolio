@@ -43,7 +43,7 @@
 		select * from vstype where vsTypeBoardNum =#{boardNum}
 	</select>
 	
-	<insert id="addSubRes_vs">
+	<insert id="addSubRes">
 		insert into participation(participationUserEmail,boardSubtype,participationVsTypeNum,participationSurveyTypeNum,participationBoardNum)
 			values(#{participationUserEmail},#{boardSubtype},#{participationVsTypeNum},#{participationSurveyTypeNum},#{participationBoardNum})	
 	</insert>
@@ -138,8 +138,11 @@
 	
 	<select id="getTotalPartiNum" resultType="int">
 		select count(DISTINCT participationUserEmail) from participation where participationBoardNum = #{boardNum}
-	
 	</select>
+	
+	<update id="updateSubRes_survey">
+		update surveytype set totalNum = totalNum + 1 where surveyTypeNum=#{participationSurveyTypeNum}
+	</update>
 	
 	
 	

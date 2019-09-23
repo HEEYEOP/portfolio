@@ -278,11 +278,18 @@
 													<c:if test="${Psurvey.surveyTypeNum == Asurvey.parentsQ}">
 														<li>
 															${Asurvey.surveyContents}
-														 
-															<span class="partiNum">4Έν(36.4%)</span>
+															<span class="partiNum">${Asurvey.totalNum}Έν(36.4%)</span>
 															<div class="bar">
-																<div class="resBar" style="width: 36.4%;">
-																</div>
+																<c:forEach var="isParticipation1" items="${isParticipation}">
+																	<c:if test="${isParticipation1.participationSurveyTypeNum ne Asurvey.surveyTypeNum}">
+																		<div class="resBar" style="width: 36.4%;">
+																		</div>
+																	</c:if>
+																	<c:if  test="${isParticipation1.participationSurveyTypeNum eq Asurvey.surveyTypeNum}">
+																		<div class="resBar" style="background-color:#288fb4; width: 36.4%;">
+																		</div>
+																	</c:if>
+																</c:forEach>
 															</div>
 															
 														</li>
