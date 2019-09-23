@@ -217,11 +217,16 @@ $(document).ready(function(){
 	//설문참여후, 결과
 	//각질문에 대한 참여값을 배열로 가져와서 더한다음 그 값에 대해 각각의 값을 퍼센트계산하면될듯함
 	//질문하나에 대한 계산을 만들어서 각각에 적용시키려고 함
-	$('.surA').each(function(){
-		var length = $('.surA').find($('input[name=pNum]')).length;
+	//이거 surA로 each()돌리지 말고, 전체 큰 질문하나당 each 돌린 후, 그 담에 그 질문당 each돌리자
+	$('.sur').each(function(){
+		var length = $(this).find($('.surA')).find($('input[name=pNum]')).length;
 		var arr = new Array(length);
-		console.log(length);
-		console.log(arr); 
+		for(var i=0; i<length; i++){
+			arr[i] = $(this).find($('.surA')).find($('input[name=pNum]')[i]).val();
+			console.log(arr[i]);
+		}
+		//console.log(length);
+		//console.log(arr); 
 		
 	});
 	
