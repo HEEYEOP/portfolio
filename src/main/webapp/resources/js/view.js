@@ -190,14 +190,40 @@ $(document).ready(function(){
 	
 	
 	
+
+	/*
+	// 찬/반형 투표결과 %에 따른 결과 보여주기
+	var jointotal = parseInt( $('input[name=calc_Total]').val() );
+	var yesNum = parseInt( $('input[name=yesNum]').val() );
+	var noNum = parseInt( $('input[name=noNum]').val() );
+	
+	var yesWidth = parseFloat((yesNum / jointotal) * 100);
+	var noWidth = 100 - yesWidth;
+	//console.log("찬성%"+yesWidth);
+	//console.log("반대%"+noWidth);
+	
+	if(yesWidth == 0){
+		$('.viewVS_res_graphBox2').attr('style','width:'+yesWidth+'%; border: 10px solid #288fb4;');
+	}else{
+		$('.viewVS_res_graphBox2').attr('style','width:'+yesWidth+'%;');
+	}
+	
+	$('.partiNum_Yes').html(yesNum+'명'+'('+yesWidth+'%)');
+	$('.partiNum_No').html(noNum+'명'+'('+noWidth+'%)');
+	
+	*/
+	
 	
 	//설문참여후, 결과
-	
-	
-	
-	
-	
-	
+	//각질문에 대한 참여값을 배열로 가져와서 더한다음 그 값에 대해 각각의 값을 퍼센트계산하면될듯함
+	//질문하나에 대한 계산을 만들어서 각각에 적용시키려고 함
+	$('.surA').each(function(){
+		var length = $('.surA').find($('input[name=pNum]')).length;
+		var arr = new Array(length);
+		console.log(length);
+		console.log(arr); 
+		
+	});
 	
 	
 	

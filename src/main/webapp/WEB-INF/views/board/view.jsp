@@ -279,8 +279,9 @@
 														<li>
 															${Asurvey.surveyContents}
 															<span class="partiNum">${Asurvey.totalNum}Έν(36.4%)</span>
+															<input name="pNum" value="${Asurvey.totalNum}">
 															<div class="bar">
-																<c:forEach var="isParticipation1" items="${isParticipation}">
+																<%-- <c:forEach var="isParticipation1" items="${isParticipation}">
 																	<c:if test="${isParticipation1.participationSurveyTypeNum ne Asurvey.surveyTypeNum}">
 																		<div class="resBar" style="width: 36.4%;">
 																		</div>
@@ -289,7 +290,16 @@
 																		<div class="resBar" style="background-color:#288fb4; width: 36.4%;">
 																		</div>
 																	</c:if>
+																</c:forEach> --%>
+																<div class='resBar def_backColor 
+																<c:forEach var="isParticipation1" items="${isParticipation}">
+																	<c:if test="${isParticipation1.participationSurveyTypeNum eq Asurvey.surveyTypeNum}">mychoice_backColor
+																	</c:if>
 																</c:forEach>
+																' style="width: 36.4%;">
+																</div>
+																
+																
 															</div>
 															
 														</li>
