@@ -299,6 +299,12 @@ public class BoardServiceImp implements BoardService{
 		
 	}
 
+	@Override
+	public int getTotalPartiNum(int boardNum) {
+		
+		return boardDao.getTotalPartiNum(boardNum);
+	}
+
 	
 
 }

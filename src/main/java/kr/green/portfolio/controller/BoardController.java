@@ -224,10 +224,12 @@ public class BoardController {
 			//지금부터 할 것은 부모, 자식 리스트를 구별해서 가져올 것임
 			ArrayList<surveyTypeVO> Psurvey = boardService.getPsurvey(getBoard.getBoardNum());
 			ArrayList<surveyTypeVO> Asurvey = boardService.getAsurvey(getBoard.getBoardNum());
-			
+	
 			mv.addObject("Psurvey", Psurvey);
 			mv.addObject("Asurvey", Asurvey);
 			
+			int totalPartiNum = boardService.getTotalPartiNum(getBoard.getBoardNum());
+			mv.addObject("totalPartiNum", totalPartiNum);
 		}
 
 		// 댓글관련

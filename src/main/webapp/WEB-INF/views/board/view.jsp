@@ -166,7 +166,7 @@
 								설문에 참여해주세요
 							</div>
 							<div class="totalNum">
-								총 참여인원<strong>@@</strong>명
+								총 참여인원<strong> ${totalPartiNum} </strong>명
 							</div>
 							<div class="viewSurveyDeadline" style="top:150px;">
 								<i class="fa fa-clock-o"></i>${board.boardDeadline2} 까지
@@ -195,7 +195,7 @@
 												<c:if test="${Psurvey.questionType eq 'TypeBranch'}">
 													[객관식 설문 - 단일선택만 가능]
 												</c:if>
-												<input name="maxNum" type="text" value="${Psurvey.maxSelectNum}">
+												<input name="maxNum" type="hidden" value="${Psurvey.maxSelectNum}">
 											</div>
 										</div>
 										
@@ -210,7 +210,7 @@
 																</label>
 															</div>
 															${Asurvey.surveyContents}
-															<div class="selectValChecked">
+															<div class="selectValChecked displayNone">
 																<input name="participationSurveyTypeNum" type="checkbox"  value="${Asurvey.surveyTypeNum}">
 															</div>
 														</li>
@@ -249,7 +249,7 @@
 								설문에 참여해주셔서 감사합니다.
 							</div>
 							<div class="totalNum">
-								총 참여인원<strong> @@ </strong>명
+								총 참여인원<strong> ${totalPartiNum} </strong>명
 							</div>
 							<div class="viewSurveyDeadline" style="top:150px;">
 								<i class="fa fa-clock-o"></i>${board.boardDeadline2} 까지

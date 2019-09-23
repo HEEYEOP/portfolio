@@ -136,6 +136,10 @@
 		select * from surveytype where surveyTypeBoardNum =#{boardNum} and depth != 1
 	</select>
 	
+	<select id="getTotalPartiNum" resultType="int">
+		select count(DISTINCT participationUserEmail) from participation where participationBoardNum = #{boardNum}
+	
+	</select>
 	
 	
 	

@@ -81,6 +81,8 @@ public interface BoardDAO {
 
 	ArrayList<surveyTypeVO> getAsurvey(int boardNum);
 
+	int getTotalPartiNum(int boardNum);
+
 	
 
 	

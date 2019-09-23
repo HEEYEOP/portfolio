@@ -55,6 +55,8 @@ public interface BoardService {
 
 	void addSubRes_survey(ParticipationVO pVO, Integer[] participationSurveyTypeNum);
 
+	int getTotalPartiNum(int boardNum);
+
 
 	
 
