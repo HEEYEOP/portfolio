@@ -278,7 +278,7 @@
 													<c:if test="${Psurvey.surveyTypeNum == Asurvey.parentsQ}">
 														<li>
 															${Asurvey.surveyContents}
-														
+														 
 															<span class="partiNum">4Έν(36.4%)</span>
 															<div class="bar">
 																<div class="resBar" style="width: 36.4%;">
