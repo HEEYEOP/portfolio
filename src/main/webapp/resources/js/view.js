@@ -186,11 +186,7 @@ $(document).ready(function(){
 		$('form[name=surveyForm]').submit();
 	});
 	
-	
-	
-	
-	
-	//설문참여후, 결과
+	//설문 참여후, 결과
 	
 	$('.sur').each(function(){
 		var length = $(this).find('.surA').find('input[name=pNum]').length;
@@ -214,7 +210,7 @@ $(document).ready(function(){
 			$(this).find('.surA').find('.resBar').eq(i).attr('style','width:'+resPercent+'%;')
 		}
 	});
-	
+		
 	
 	
 });
