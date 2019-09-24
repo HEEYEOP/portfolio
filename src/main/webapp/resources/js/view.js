@@ -210,8 +210,8 @@ $(document).ready(function(){
 		for(var i=0; i<length; i++){
 			var resPercent = parseInt( (arr[i] / tNum) * 100 );
 			console.log(resPercent);
-			$(this).find('.surA').find('.partiNum').eq(i).html(arr[i]+'명('+resPercent+'%)');
-			
+			$(this).find('.surA').find('.partiNum').eq(i).html(arr[i]+'명 ('+resPercent+'%)');
+			$(this).find('.surA').find('.resBar').eq(i).attr('style','width:'+resPercent+'%;')
 		}
 	});
 	
