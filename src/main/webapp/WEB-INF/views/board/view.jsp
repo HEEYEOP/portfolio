@@ -279,7 +279,7 @@
 														<li>
 															${Asurvey.surveyContents}
 															<span class="partiNum">${Asurvey.totalNum}Έν(36.4%)</span>
-															<input name="pNum" value="${Asurvey.totalNum}">
+															<input name="pNum" type="hidden" value="${Asurvey.totalNum}">
 															<div class="bar">
 		
 																<div class='resBar def_backColor <c:forEach var="isParticipation1" items="${isParticipation}">
