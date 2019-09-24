@@ -43,13 +43,6 @@ public class UserController {
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	
-	@RequestMapping(value="/main/home")
-	public ModelAndView main(ModelAndView mv) throws Exception{
-		logger.info("메인페이지 실행");
-	    mv.setViewName("/main/home");
-	    return mv;
-	}
-	
 	@RequestMapping(value="/main/signup", method=RequestMethod.GET)
 	public ModelAndView signupGet(ModelAndView mv) throws Exception{
 		logger.info("회원가입페이지 실행");

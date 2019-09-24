@@ -305,5 +305,32 @@ public class BoardServiceImp implements BoardService{
 	}
 
 	
+	
+	
+	
+	//메인화면 설문리스트 가져오는 기능
+	@Override
+	public ArrayList<BoardVO> getSurveyList() {
+		
+		return boardDao.getSurveyList();
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

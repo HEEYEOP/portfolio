@@ -57,6 +57,9 @@ public interface BoardService {
 
 	int getTotalPartiNum(int boardNum);
 
+	//메인화면 설문리스트 가져오는 기능
+	ArrayList<BoardVO> getSurveyList();
+
 
 	
 

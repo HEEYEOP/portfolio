@@ -85,6 +85,8 @@ public interface BoardDAO {
 
 	void updateSubRes_survey(int participationSurveyTypeNum);
 
+	ArrayList<BoardVO> getSurveyList();
+
 	
 
 	

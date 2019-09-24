@@ -18,6 +18,9 @@
         margin: 0 auto;
         height: 300px;
         position: relative;
+        overflow: hidden;
+        background-image: url('/portfolio/resources/image/20160503_064803-706x354.jpg');
+        background-size: 100% 100%;
     }
     #mainImgContents img{
     	width : 100%;

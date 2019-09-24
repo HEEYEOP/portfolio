@@ -146,4 +146,31 @@
 	
 	
 	
+	
+	
+	<!-- 메인화면 설문리스트 가져올때 -->
+	<select id="getSurveyList" resultType="kr.green.portfolio.vo.BoardVO">
+		select * from portfolio.board where boardType = 'surveyType' order by registrationDate desc limit 0, 5;
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper> 

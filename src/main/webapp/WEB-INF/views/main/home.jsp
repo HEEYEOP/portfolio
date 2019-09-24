@@ -13,20 +13,22 @@
     <div id="mainImg">
         <div id="mainImgContents">
             <div id="mainImgServeyList"></div>
-            <ul style="margin:0;">
-            	<li class="mainImgServeyListBox">
-            		<h2>작성자 : sdsd</h2>
-            		<h5 style="float:right">~yy-mm-dd</h5>
-            		<div class="title"></div>
-            		<div style="text-align:center; font-size:30px; ">
-		        			<i class="fas fa-angle-left"></i>
-		        			<div class="divBar" style="height: 20px;"></div>
-		        			<i class="fas fa-angle-right"></i>
-            		</div>
-            	</li>
+            <ul id="slider" style="margin:0; width: 375px; height:300px; display: inline-block; overflow: hidden; ">
+            	<c:forEach var="survey" items="${surveyList}">
+	            	<li class="mainImgServeyListBox">
+	            		<h2>${survey.boardUserEmail}</h2>
+	            		<h5 style="float:right">~${survey.boardDeadline2}</h5>
+	            		<div class="title">${survey.boardTitle}</div>
+	            		<div style="text-align:center; font-size:30px; ">
+			        			<i class="fas fa-angle-left"></i>
+			        			<div class="divBar" style="height: 20px;"></div>
+			        			<i class="fas fa-angle-right"></i>
+	            		</div>
+	            	</li>
+            	</c:forEach>
             	<!-- 여기에 위에있는 <li class="mainImgServeyListBox">를 여러개 찍어줘야해 -->
             </ul>
-            <img src="<%=request.getContextPath()%>/resources/image/20160503_064803-706x354.jpg" alt="">
+            <%-- <img src="<%=request.getContextPath()%>/resources/image/20160503_064803-706x354.jpg" alt=""> --%>
         </div>
     </div>
 

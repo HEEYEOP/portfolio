@@ -23,10 +23,6 @@ $.validator.addMethod(
 
 
 
-
-
-
-
 $(document).ready(function(){
 		
 	//user_type 버튼 동작 시작----------------------------------
