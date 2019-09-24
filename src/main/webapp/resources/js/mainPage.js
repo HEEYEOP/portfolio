@@ -44,9 +44,9 @@ $(document).ready(function(){
 		slideArray[next].style.left = newNextX + "px";
 		setTimeout(function () {
 			sliding();
-		}, 20);
+		}, 30);
 	}
-	setInterval(changeSlide,2000);
+	setInterval(changeSlide,3000);
 	
 });
 
