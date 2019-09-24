@@ -218,7 +218,8 @@ $(document).ready(function(){
 	//각질문에 대한 참여값을 배열로 가져와서 더한다음 그 값에 대해 각각의 값을 퍼센트계산하면될듯함
 	//질문하나에 대한 계산을 만들어서 각각에 적용시키려고 함
 	//이거 surA로 each()돌리지 말고, 전체 큰 질문하나당 each 돌린 후, 그 담에 그 질문당 each돌리자
-	$('.sur').each(function(){
+	/*
+	$('.res.sur').each(function(){
 		var length = $(this).find($('.surA')).find($('input[name=pNum]')).length;
 		var arr = new Array(length);
 		for(var i=0; i<length; i++){
@@ -229,18 +230,29 @@ $(document).ready(function(){
 		//console.log(arr); 
 		
 	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	*/
+	$('.sur').each(function(){
+		var length = $(this).find('.surA').find('input[name=pNum]').length;
+		//console.log(length);
+		var arr= new Array(length);
+		//console.log(arr);
+		
+		for(var i=0; i<length; i++){
+			arr[i] = $(this).find('.surA').find('input[name=pNum]').eq(i).val();
+			//console.log(arr[i]); //이걸 굳이 배열에 넣을 필요가 있는건가?
+			var tNum = parseInt( 0 );
+			tNum += parseFloat( $(this).find('.surA').find('input[name=pNum]').eq(i).val() );
+		}
+		console.log("합계"+tNum);
+		
+		for(var i=0; i<length; i++){
+			var resPercent = parseFloat( arr[i] / tNum * 100 );
+			console.log(resPercent);
+			$(this).find('.surA').find('.partiNum').eq(i).html(arr[i]+'명('+resPercent+'%)');
+			
+			
+		}
+	});
 	
 	
 	

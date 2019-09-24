@@ -241,7 +241,7 @@
 			
 			
 			<c:if test="${isParticipation ne null || isParticipation.size() ne 0}">
-					
+			<div class="res">
 						<input type="hidden" value="${user.userEmail}" name="participationUserEmail">
 						<div class="viewSurvey">
 							<div class="viewSurveyTitle" >
@@ -299,7 +299,8 @@
 								
 							</div>
 						</div>
-
+						
+				</div>
 				</c:if>
 			
 			
