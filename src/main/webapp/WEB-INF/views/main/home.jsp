@@ -13,19 +13,20 @@
     <div id="mainImg">
         <div id="mainImgContents">
             <div id="mainImgServeyList"></div>
-            <ul id="slider" style="margin:0; width: 375px; height:300px; display: inline-block; overflow: hidden; ">
+            <ul id="slider" style="margin:0; width: 375px; height:300px; display: inline-block; overflow: hidden; position: relative; ">
             	<c:forEach var="survey" items="${surveyList}">
 	            	<li class="mainImgServeyListBox">
 	            		<h2>${survey.boardUserEmail}</h2>
 	            		<h5 style="float:right">~${survey.boardDeadline2}</h5>
 	            		<div class="title">${survey.boardTitle}</div>
-	            		<div style="text-align:center; font-size:30px; ">
-			        			<i class="fas fa-angle-left"></i>
-			        			<div class="divBar" style="height: 20px;"></div>
-			        			<i class="fas fa-angle-right"></i>
-	            		</div>
+	            		
 	            	</li>
             	</c:forEach>
+            	<div style="font-size:30px; position: absolute; bottom: 0; left: 45%;">
+	        			<i class="fas fa-angle-left"></i>
+	        			<div class="divBar" style="height: 20px;"></div>
+	        			<i class="fas fa-angle-right"></i>
+           		</div>
             	<!-- 여기에 위에있는 <li class="mainImgServeyListBox">를 여러개 찍어줘야해 -->
             </ul>
             <%-- <img src="<%=request.getContextPath()%>/resources/image/20160503_064803-706x354.jpg" alt=""> --%>
