@@ -23,8 +23,8 @@
 	            	</li>
             	</c:forEach>
             	
-            	<div style="font-size:30px; position: absolute; bottom: 0; left: 45%;">
-	        			<i class="fas fa-angle-left" id="prev"></i>
+            	<div style="z-index:100;font-size:30px; position: absolute; bottom: 0; left: 45%;">
+	        			<i class="fas fa-angle-left"></i>
 	        			<div class="divBar" style="height: 20px;"></div>
 	        			<i class="fas fa-angle-right"></i>
            		</div>
@@ -40,9 +40,9 @@
         	<div></div>
         	<div class="noticeButtonBox">
         		<span class="noticeButtons">
-        			<i class="fas fa-angle-left"></i>
+        			<i class="fas fa-angle-left" ></i>
         			<div class="divBar"></div>
-        			<i class="fas fa-angle-right"></i>
+        			<i class="fas fa-angle-right" ></i>
         		</span>
         	</div>
         </div>
