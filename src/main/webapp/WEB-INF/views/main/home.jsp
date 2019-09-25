@@ -12,24 +12,82 @@
 <div id="body" style="min-height: 800px">
     <div id="mainImg">
         <div id="mainImgContents">
-            <div id="mainImgServeyList"></div>
-            <ul id="slider" style="margin:0; width: 375px; height:300px; display: inline-block; overflow: hidden; position: relative; ">
-            	<!-- 여기에 위에있는 <li class="mainImgServeyListBox">를 여러개 찍어줘야해 -->
-            	<c:forEach var="survey" items="${surveyList}">
-	            	<li class="mainImgServeyListBox">
-	            		<h2>${survey.boardUserEmail}</h2>
-	            		<h5 style="float:right">~${survey.boardDeadline2}</h5>
-	            		<div class="title"><a href="<%=request.getContextPath()%>/board/view?boardNum=${survey.boardNum}">${survey.boardTitle}</a></div>
-	            	</li>
-            	</c:forEach>
-            	
-            	<div style="z-index:100;font-size:30px; position: absolute; bottom: 0; left: 45%;">
-	        			<i class="fas fa-angle-left"></i>
-	        			<div class="divBar" style="height: 20px;"></div>
-	        			<i class="fas fa-angle-right"></i>
-           		</div>
-            	
-            </ul>
+       
+            <div id="mainImgServeyList">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+					  <ul class="carousel-indicators">
+					    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					    <li data-target="#myCarousel" data-slide-to="1"></li>
+					    <li data-target="#myCarousel" data-slide-to="2"></li>
+					    <li data-target="#myCarousel" data-slide-to="3"></li>
+					    <li data-target="#myCarousel" data-slide-to="4"></li>
+					  </ul>
+					  
+					  <!-- The slideshow -->
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <img  width="1100" height="500">
+					    </div>
+					    <div class="carousel-item">
+					      <img width="1100" height="500">
+					    </div>
+					    <div class="carousel-item">
+					      <img width="1100" height="500">
+					    </div>
+					    <div class="carousel-item">
+					      <img width="1100" height="500">
+					    </div>
+					    <div class="carousel-item">
+					      <img width="1100" height="500">
+					    </div>
+					    
+					  </div>
+					  
+					  <!-- Left and right controls -->
+					  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+					    <span class="carousel-control-prev-icon"></span>
+					  </a>
+					  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+					    <span class="carousel-control-next-icon"></span>
+					  </a>
+				</div>
+			</div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
         </div>
     </div>
