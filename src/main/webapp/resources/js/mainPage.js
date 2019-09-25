@@ -2,17 +2,20 @@
  * 
  */
 $(document).ready(function(){
+	
 	var x = 375;
-	var slider = document.getElementById("slider");
-	var slideArray = slider.getElementsByTagName("li");
+	var slider = document.getElementById("slider"); //ul태그 아이디 가져옴
+	var slideArray = slider.getElementsByTagName("li"); //ul태그 밑에 li태그들 가져오는데 이렇게 하면 알아서 배열로 가져오는건가?
 	var slideMax = slideArray.length - 1;
 	var curSlideNo = 0;
  
 	for (i = 0; i <= slideMax; i++) {
-		if (i == curSlideNo) slideArray[i].style.left = 0;
-		else slideArray[i].style.left = -x + "px";
+		if (i == curSlideNo) 
+			slideArray[i].style.left = 0;
+		else 
+			slideArray[i].style.left = -x + "px";
 	}
- 
+	
 	slider.addEventListener('click', function () {
 		changeSlide();
 	}, false);
@@ -20,9 +23,14 @@ $(document).ready(function(){
 	var aniStart = false;
 	var next = 1;
 	var changeSlide = function(){
-		if (aniStart === true) return;
+		if (aniStart == true) 
+			return;
+		
 		next = curSlideNo + 1;
-		if (next > slideMax) next = 0;
+		
+		if (next > slideMax) 
+			next = 0;
+		
 		aniStart = true;
 		sliding();
 	}
@@ -46,7 +54,7 @@ $(document).ready(function(){
 			sliding();
 		}, 30);
 	}
-	setInterval(changeSlide,3000);
+	setInterval(changeSlide,4000);
 	
 });
 
